@@ -1,0 +1,2563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>African Lifestyle | Kitsamba Writes Africa</title>
+
+<meta name="description"
+content="Explore African food, fashion, music, travel, traditions, village life, city life and modern culture through Kitsamba Writes Africa.">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap"
+rel="stylesheet">
+
+<style>
+
+:root{
+    --black:#090909;
+    --dark:#111;
+    --card:#171717;
+    --gold:#d8ac56;
+    --gold-light:#f2cf83;
+    --cream:#f7f1e5;
+    --white:#fff;
+    --gray:#aaa;
+    --border:rgba(216,172,86,.25);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    background:var(--black);
+    color:white;
+    line-height:1.65;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+.eyebrow{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:.76rem;
+    font-weight:700;
+    margin-bottom:14px;
+}
+
+
+/* =========================
+NAVIGATION
+========================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:999;
+    background:rgba(8,8,8,.88);
+    backdrop-filter:blur(16px);
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+nav{
+    min-height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-shrink:0;
+}
+
+.brand-icon{
+    width:42px;
+    height:42px;
+    border:1px solid var(--gold);
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    color:var(--gold);
+}
+
+.brand-text strong{
+    display:block;
+    font-family:"Playfair Display",serif;
+    font-size:1.14rem;
+    letter-spacing:1px;
+}
+
+.brand-text span{
+    display:block;
+    color:var(--gold);
+    font-size:.66rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.nav-links > a{
+    color:#ddd;
+    font-size:.92rem;
+    font-weight:600;
+    transition:.25s;
+}
+
+.nav-links > a:hover{
+    color:var(--gold);
+}
+
+.start-reading{
+    background:var(--gold);
+    color:#111 !important;
+    padding:11px 20px;
+    border-radius:50px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.mobile-menu-btn{
+    display:none;
+    border:0;
+    background:none;
+    color:white;
+    font-size:1.5rem;
+    cursor:pointer;
+}
+
+
+/* =========================
+DROPDOWN
+========================= */
+
+.main-menu{
+    position:relative;
+}
+
+.main-menu-button{
+    border:none;
+    background:transparent;
+    color:#ddd;
+    font-size:.92rem;
+    font-weight:600;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 0;
+}
+
+.main-menu-button:hover{
+    color:var(--gold);
+}
+
+.main-menu-button .bars{
+    color:var(--gold);
+}
+
+.main-menu-button .arrow{
+    font-size:.7rem;
+    transition:.25s;
+}
+
+.main-menu.active .arrow{
+    transform:rotate(180deg);
+}
+
+.menu-dropdown{
+    position:absolute;
+    right:0;
+    top:calc(100% + 18px);
+    width:310px;
+    padding:12px;
+    background:rgba(15,15,15,.98);
+    border:1px solid var(--border);
+    border-radius:20px;
+    box-shadow:0 25px 70px rgba(0,0,0,.65);
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transform:translateY(-10px);
+    transition:.25s;
+}
+
+.main-menu.active .menu-dropdown{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    transform:translateY(0);
+}
+
+.menu-dropdown::before{
+    content:"";
+    position:absolute;
+    top:-1px;
+    left:20px;
+    right:20px;
+    height:2px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+
+.menu-title{
+    padding:10px 14px 13px;
+    border-bottom:1px solid rgba(255,255,255,.07);
+    margin-bottom:6px;
+}
+
+.menu-title strong{
+    display:block;
+    font-family:"Playfair Display",serif;
+}
+
+.menu-title span{
+    color:#888;
+    font-size:.76rem;
+}
+
+.menu-dropdown a{
+    padding:12px 15px;
+    border-radius:11px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    color:#ddd;
+    font-size:.9rem;
+    transition:.2s;
+}
+
+.menu-dropdown a i{
+    width:22px;
+    text-align:center;
+    color:var(--gold);
+}
+
+.menu-dropdown a:hover{
+    background:rgba(216,172,86,.12);
+    color:var(--gold);
+    padding-left:19px;
+}
+
+
+/* =========================
+HERO
+========================= */
+
+.lifestyle-hero{
+    padding:170px 0 105px;
+    position:relative;
+    overflow:hidden;
+    background:
+    radial-gradient(circle at 78% 20%,rgba(216,172,86,.17),transparent 30%),
+    linear-gradient(135deg,#080808,#121212);
+}
+
+.lifestyle-hero::after{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    border:1px solid rgba(216,172,86,.08);
+    border-radius:50%;
+    right:-240px;
+    top:-250px;
+}
+
+.hero-content{
+    max-width:900px;
+    position:relative;
+    z-index:2;
+}
+
+.lifestyle-hero h1{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(3.4rem,8vw,6.7rem);
+    line-height:.98;
+    margin-bottom:28px;
+}
+
+.lifestyle-hero h1 span{
+    color:var(--gold);
+}
+
+.lifestyle-hero p{
+    max-width:760px;
+    color:#bbb;
+    font-size:1.08rem;
+}
+
+.hero-pills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:11px;
+    margin-top:34px;
+}
+
+.hero-pill{
+    border:1px solid #2d2d2d;
+    padding:9px 14px;
+    border-radius:50px;
+    color:#bbb;
+    font-size:.8rem;
+}
+
+.hero-pill i{
+    color:var(--gold);
+    margin-right:7px;
+}
+
+
+/* =========================
+FEATURES
+========================= */
+
+.feature-grid-section{
+    padding:90px 0 110px;
+}
+
+.section-heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:30px;
+    margin-bottom:42px;
+}
+
+.section-heading h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(2.4rem,5vw,4rem);
+    line-height:1.1;
+    margin-bottom:13px;
+}
+
+.section-heading p{
+    max-width:690px;
+    color:#999;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1fr;
+    grid-template-rows:260px 260px;
+    gap:18px;
+}
+
+.feature-card{
+    position:relative;
+    overflow:hidden;
+    border-radius:22px;
+    border:1px solid rgba(255,255,255,.07);
+    cursor:pointer;
+    transition:.35s;
+}
+
+.feature-card:hover{
+    transform:translateY(-5px);
+    border-color:var(--border);
+}
+
+.feature-card:first-child{
+    grid-row:1 / 3;
+}
+
+.feature-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(transparent 35%,rgba(0,0,0,.88));
+}
+
+.feature-copy{
+    position:absolute;
+    left:24px;
+    right:24px;
+    bottom:22px;
+    z-index:2;
+}
+
+.feature-copy span{
+    color:var(--gold-light);
+    font-size:.7rem;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.feature-copy h3{
+    font-family:"Playfair Display",serif;
+    font-size:1.65rem;
+    line-height:1.18;
+    margin-top:5px;
+}
+
+
+/* VISUAL STYLES */
+
+.food{
+    background:
+    radial-gradient(circle at 65% 35%,rgba(255,210,120,.5),transparent 20%),
+    linear-gradient(135deg,#533323,#9b6235,#2f231b);
+}
+
+.food::before{
+    content:"";
+    position:absolute;
+    width:210px;
+    height:210px;
+    border-radius:50%;
+    background:#d59b4e;
+    left:50%;
+    top:43%;
+    transform:translate(-50%,-50%);
+    box-shadow:0 0 0 25px rgba(0,0,0,.18);
+}
+
+.food::after{
+    content:"";
+    position:absolute;
+    width:125px;
+    height:125px;
+    border-radius:50%;
+    background:
+    radial-gradient(circle,#6b351c 0 20%,#d8b06a 21% 45%,#46703d 46% 68%,#c37532 69%);
+    left:50%;
+    top:43%;
+    transform:translate(-50%,-50%);
+}
+
+.fashion{
+    background:
+    repeating-linear-gradient(
+        45deg,
+        #8b5032 0 18px,
+        #d9a652 18px 36px,
+        #2f253a 36px 54px,
+        #8f2d48 54px 72px
+    );
+}
+
+.fashion::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:95px;
+    height:175px;
+    transform:translate(-50%,-50%);
+    background:rgba(15,15,15,.72);
+    clip-path:polygon(30% 0,70% 0,83% 22%,100% 100%,0 100%,17% 22%);
+}
+
+.music{
+    background:
+    radial-gradient(circle at 65% 30%,rgba(216,172,86,.35),transparent 23%),
+    linear-gradient(135deg,#162438,#55354c,#9e653f);
+}
+
+.music::before{
+    content:"♪";
+    position:absolute;
+    left:50%;
+    top:42%;
+    transform:translate(-50%,-50%);
+    font-size:8rem;
+    color:rgba(255,255,255,.55);
+}
+
+.travel{
+    background:
+    linear-gradient(180deg,#799aaa 0%,#d0a55e 50%,#3f5a35 51%,#203320 100%);
+}
+
+.travel::before{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:55%;
+    background:#223822;
+    clip-path:polygon(0 100%,0 65%,17% 44%,35% 66%,52% 30%,70% 61%,87% 42%,100% 58%,100% 100%);
+}
+
+.tradition{
+    background:
+    repeating-linear-gradient(
+        90deg,
+        #8a562f 0 22px,
+        #c99647 22px 44px,
+        #291f1b 44px 66px
+    );
+}
+
+.tradition::before{
+    content:"";
+    position:absolute;
+    width:150px;
+    height:150px;
+    left:50%;
+    top:46%;
+    transform:translate(-50%,-50%);
+    border:4px solid rgba(255,255,255,.4);
+    border-radius:50%;
+}
+
+.citylife{
+    background:
+    linear-gradient(180deg,#111c31,#344861 60%,#17191d);
+}
+
+.citylife::before{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:68%;
+    background:#0f1117;
+    clip-path:polygon(0 100%,0 58%,10% 58%,10% 20%,20% 20%,20% 48%,31% 48%,31% 5%,42% 5%,42% 61%,54% 61%,54% 26%,65% 26%,65% 45%,76% 45%,76% 14%,87% 14%,87% 55%,100% 55%,100% 100%);
+}
+
+
+/* =========================
+LIFESTYLE STORIES
+========================= */
+
+.lifestyle-stories{
+    padding:30px 0 120px;
+}
+
+.story-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+}
+
+.story-card{
+    background:var(--card);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:20px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.story-card:hover{
+    transform:translateY(-7px);
+    border-color:var(--border);
+}
+
+.story-top{
+    height:175px;
+    display:grid;
+    place-items:center;
+    font-size:3rem;
+    position:relative;
+}
+
+.story-top i{
+    color:white;
+    z-index:2;
+}
+
+.story-top::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(transparent,rgba(0,0,0,.35));
+}
+
+.story-body{
+    padding:24px;
+}
+
+.story-body span{
+    color:var(--gold);
+    text-transform:uppercase;
+    font-size:.7rem;
+    letter-spacing:2px;
+    font-weight:800;
+}
+
+.story-body h3{
+    font-family:"Playfair Display",serif;
+    font-size:1.45rem;
+    margin:8px 0 11px;
+}
+
+.story-body p{
+    color:#999;
+    font-size:.9rem;
+    margin-bottom:18px;
+}
+
+.story-body button{
+    border:none;
+    background:none;
+    color:var(--gold);
+    font-weight:700;
+    cursor:pointer;
+}
+
+
+/* =========================
+READING MODAL
+========================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.92);
+    backdrop-filter:blur(10px);
+    z-index:3000;
+    display:none;
+    overflow-y:auto;
+    padding:45px 20px;
+}
+
+.modal.active{
+    display:block;
+}
+
+.modal-card{
+    width:min(820px,100%);
+    margin:auto;
+    background:var(--cream);
+    color:#242424;
+    border-radius:24px;
+    padding:clamp(32px,6vw,70px);
+    position:relative;
+}
+
+.close-modal{
+    position:absolute;
+    right:20px;
+    top:20px;
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:#e6ded0;
+    cursor:pointer;
+}
+
+.modal-category{
+    color:#987022;
+    text-transform:uppercase;
+    font-size:.74rem;
+    letter-spacing:2px;
+    font-weight:800;
+}
+
+.modal-card h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(2.2rem,5vw,3.8rem);
+    line-height:1.1;
+    margin:12px 0 18px;
+}
+
+.modal-meta{
+    color:#777;
+    font-size:.82rem;
+    padding-bottom:20px;
+    margin-bottom:30px;
+    border-bottom:1px solid #d6cdbb;
+}
+
+.modal-content{
+    font-family:"Playfair Display",serif;
+    font-size:1.13rem;
+    line-height:1.92;
+    color:#444;
+}
+
+.modal-content p{
+    margin-bottom:23px;
+}
+
+.modal-content p:first-child::first-letter{
+    float:left;
+    font-size:4.8rem;
+    line-height:.8;
+    padding:12px 12px 0 0;
+    color:#9a7225;
+    font-weight:800;
+}
+
+
+/* =========================
+QUOTE
+========================= */
+
+.quote{
+    padding:110px 0;
+    text-align:center;
+    background:radial-gradient(circle,rgba(216,172,86,.1),transparent 55%);
+}
+
+.quote i{
+    color:var(--gold);
+    font-size:2rem;
+    margin-bottom:28px;
+}
+
+.quote blockquote{
+    max-width:900px;
+    margin:auto;
+    font-family:"Playfair Display",serif;
+    font-size:clamp(2rem,4.5vw,3.6rem);
+    line-height:1.25;
+}
+
+.quote p{
+    margin-top:24px;
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:.78rem;
+}
+
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+    border-top:1px solid rgba(255,255,255,.08);
+    background:#070707;
+    padding:70px 0 30px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.6fr 1fr 1fr;
+    gap:50px;
+}
+
+.footer-brand h3{
+    font-family:"Playfair Display",serif;
+    font-size:1.7rem;
+    margin-bottom:15px;
+}
+
+.footer-brand p{
+    color:#999;
+    max-width:440px;
+}
+
+.socials{
+    display:flex;
+    gap:12px;
+    margin-top:22px;
+}
+
+.socials a{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:1px solid #333;
+    display:grid;
+    place-items:center;
+}
+
+.footer-column h4{
+    color:var(--gold);
+    margin-bottom:17px;
+}
+
+.footer-column a{
+    display:block;
+    color:#999;
+    margin-bottom:10px;
+}
+
+.footer-column a:hover{
+    color:white;
+}
+
+.footer-bottom{
+    border-top:1px solid #222;
+    margin-top:55px;
+    padding-top:25px;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    font-size:.82rem;
+    color:#777;
+}
+
+
+/* =========================
+TABLET
+========================= */
+
+@media(max-width:950px){
+
+.mobile-menu-btn{
+    display:block;
+}
+
+.nav-links{
+    position:fixed;
+    top:78px;
+    left:0;
+    width:100%;
+    max-height:calc(100vh - 78px);
+    overflow-y:auto;
+    background:#0c0c0c;
+    flex-direction:column;
+    align-items:flex-start;
+    padding:28px 5%;
+    gap:20px;
+    transform:translateY(-150%);
+    transition:.3s;
+    border-bottom:1px solid #222;
+}
+
+.nav-links.active{
+    transform:translateY(0);
+}
+
+.nav-links > a{
+    width:100%;
+}
+
+.start-reading{
+    justify-content:center;
+}
+
+.main-menu{
+    width:100%;
+}
+
+.main-menu-button{
+    width:100%;
+    justify-content:space-between;
+}
+
+.menu-dropdown{
+    position:static;
+    width:100%;
+    margin-top:10px;
+    display:none;
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    transform:none;
+    box-shadow:none;
+    background:#141414;
+}
+
+.main-menu.active .menu-dropdown{
+    display:block;
+}
+
+.feature-grid{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:280px 240px 240px;
+}
+
+.feature-card:first-child{
+    grid-column:1 / 3;
+    grid-row:auto;
+}
+
+.story-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.footer-grid{
+    grid-template-columns:1fr 1fr;
+}
+
+}
+
+
+/* =========================
+PHONE
+========================= */
+
+@media(max-width:650px){
+
+.brand-text strong{
+    font-size:1rem;
+}
+
+.brand-text span{
+    font-size:.58rem;
+}
+
+.lifestyle-hero{
+    padding:140px 0 75px;
+}
+
+.section-heading{
+    align-items:flex-start;
+    flex-direction:column;
+}
+
+.feature-grid{
+    grid-template-columns:1fr;
+    grid-template-rows:none;
+}
+
+.feature-card,
+.feature-card:first-child{
+    grid-column:auto;
+    grid-row:auto;
+    height:300px;
+}
+
+.story-grid{
+    grid-template-columns:1fr;
+}
+
+.footer-grid{
+    grid-template-columns:1fr;
+}
+
+.footer-bottom{
+    flex-direction:column;
+}
+
+.modal-card{
+    padding:55px 26px 35px;
+}
+
+}
+
+</style>
+
+<script src="theme.js"></script>
+</head>
+
+<body>
+
+
+<!-- =========================
+NAVIGATION
+========================= -->
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<a href="index.html" class="brand">
+
+<div class="brand-icon">
+<i class="fa-solid fa-feather-pointed"></i>
+</div>
+
+<div class="brand-text">
+<strong>Kitsamba Writes</strong>
+<span>Africa</span>
+</div>
+
+</a>
+
+
+<button class="mobile-menu-btn" id="mobileMenuBtn">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+
+<div class="nav-links" id="navLinks">
+
+<a href="index.html">Home</a>
+
+<a href="novels.html">Novels</a>
+
+
+<div class="main-menu" id="mainMenu">
+
+<button class="main-menu-button" id="mainMenuButton">
+
+<i class="fa-solid fa-bars bars"></i>
+
+Menu
+
+<i class="fa-solid fa-chevron-down arrow"></i>
+
+</button>
+
+
+<div class="menu-dropdown">
+
+<div class="menu-title">
+
+<strong>Explore Kitsamba Writes</strong>
+
+<span>Stories, culture and more</span>
+
+</div>
+
+
+<a href="index.html">
+
+<i class="fa-solid fa-house"></i>
+
+Home
+
+</a>
+
+
+<a href="about.html">
+
+<i class="fa-solid fa-user-pen"></i>
+
+About
+
+</a>
+
+
+<a href="articles.html">
+
+<i class="fa-solid fa-newspaper"></i>
+
+Articles
+
+</a>
+
+
+<a href="blog.html">
+
+<i class="fa-solid fa-pen-nib"></i>
+
+Blog
+
+</a>
+
+
+<a href="contact.html">
+
+<i class="fa-solid fa-envelope"></i>
+
+Contact
+
+</a>
+
+
+<a href="lifestyle.html">
+
+<i class="fa-solid fa-earth-africa"></i>
+
+Lifestyle
+
+</a>
+
+
+<a href="login.html">
+
+<i class="fa-solid fa-right-to-bracket"></i>
+
+Login
+
+</a>
+
+
+<a href="novels.html">
+
+<i class="fa-solid fa-book-open"></i>
+
+Novels
+
+</a>
+
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+
+<a href="videos.html">
+
+<i class="fa-solid fa-circle-play"></i>
+
+Videos
+
+</a>
+
+</div>
+
+</div>
+
+
+<a href="novels.html" class="start-reading">
+
+<i class="fa-solid fa-book-open"></i>
+
+Start Reading
+
+</a>
+
+</div>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+HERO
+========================= -->
+
+<section class="lifestyle-hero">
+
+<div class="container">
+
+<div class="hero-content">
+
+<div class="eyebrow">
+Food • Fashion • Music • Culture • Life
+</div>
+
+<h1>
+
+Experience
+<span>African life.</span>
+
+</h1>
+
+<p>
+
+Explore food, music, fashion, travel,
+traditions, village communities and
+the changing lifestyles of modern Africa.
+
+</p>
+
+<div class="hero-pills">
+
+<div class="hero-pill">
+<i class="fa-solid fa-utensils"></i>
+Food
+</div>
+
+<div class="hero-pill">
+<i class="fa-solid fa-shirt"></i>
+Fashion
+</div>
+
+<div class="hero-pill">
+<i class="fa-solid fa-music"></i>
+Music
+</div>
+
+<div class="hero-pill">
+<i class="fa-solid fa-mountain-sun"></i>
+Travel
+</div>
+
+<div class="hero-pill">
+<i class="fa-solid fa-drum"></i>
+Tradition
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+FEATURE STORIES
+========================= -->
+
+<section class="feature-grid-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div>
+
+<div class="eyebrow">
+Explore the culture
+</div>
+
+<h2>
+Africa beyond the headlines.
+</h2>
+
+<p>
+
+The continent is made of thousands
+of communities, foods, languages,
+traditions, sounds and ways of life.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="feature-grid">
+
+
+<div class="feature-card food"
+onclick="openStory(0)">
+
+<div class="feature-overlay"></div>
+
+<div class="feature-copy">
+
+<span>Food & Community</span>
+
+<h3>
+Why African Food Is About More Than Eating
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="feature-card fashion"
+onclick="openStory(1)">
+
+<div class="feature-overlay"></div>
+
+<div class="feature-copy">
+
+<span>Fashion</span>
+
+<h3>
+When Clothing Tells a Story
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="feature-card music"
+onclick="openStory(2)">
+
+<div class="feature-overlay"></div>
+
+<div class="feature-copy">
+
+<span>Music</span>
+
+<h3>
+The Rhythm That Connects Generations
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="feature-card travel"
+onclick="openStory(3)">
+
+<div class="feature-overlay"></div>
+
+<div class="feature-copy">
+
+<span>Travel</span>
+
+<h3>
+The Beauty Hidden Beyond Africa's Cities
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="feature-card tradition"
+onclick="openStory(4)">
+
+<div class="feature-overlay"></div>
+
+<div class="feature-copy">
+
+<span>Tradition</span>
+
+<h3>
+Why Cultural Memory Still Matters
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="feature-card citylife"
+onclick="openStory(5)">
+
+<div class="feature-overlay"></div>
+
+<div class="feature-copy">
+
+<span>Modern Africa</span>
+
+<h3>
+Life Between Tradition and the City
+</h3>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+MORE LIFESTYLE STORIES
+========================= -->
+
+<section class="lifestyle-stories">
+
+<div class="container">
+
+
+<div class="section-heading">
+
+<div>
+
+<div class="eyebrow">
+Lifestyle stories
+</div>
+
+<h2>
+More from everyday Africa.
+</h2>
+
+<p>
+
+Read deeper stories about family,
+fashion, music, village communities,
+city life and traditions.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="story-grid">
+
+
+<article class="story-card">
+
+<div class="story-top"
+style="background:linear-gradient(135deg,#67422a,#c58a45);">
+
+<i class="fa-solid fa-mug-hot"></i>
+
+</div>
+
+<div class="story-body">
+
+<span>Food & Family</span>
+
+<h3>
+Why Meals Still Bring Families Together
+</h3>
+
+<p>
+
+A shared meal can become one
+of the simplest ways a family
+stays connected.
+
+</p>
+
+<button onclick="openStory(6)">
+Read Full Story →
+</button>
+
+</div>
+
+</article>
+
+
+<article class="story-card">
+
+<div class="story-top"
+style="background:linear-gradient(135deg,#3a223d,#a15869);">
+
+<i class="fa-solid fa-shirt"></i>
+
+</div>
+
+<div class="story-body">
+
+<span>Style</span>
+
+<h3>
+African Fashion Is Becoming Global
+</h3>
+
+<p>
+
+African designers are taking
+local creativity and cultural
+identity to international audiences.
+
+</p>
+
+<button onclick="openStory(7)">
+Read Full Story →
+</button>
+
+</div>
+
+</article>
+
+
+<article class="story-card">
+
+<div class="story-top"
+style="background:linear-gradient(135deg,#16314d,#4d6b7e);">
+
+<i class="fa-solid fa-headphones"></i>
+
+</div>
+
+<div class="story-body">
+
+<span>Music</span>
+
+<h3>
+Why African Music Travels So Far
+</h3>
+
+<p>
+
+African sound now reaches millions,
+but its global strength still begins
+with rhythm and storytelling.
+
+</p>
+
+<button onclick="openStory(8)">
+Read Full Story →
+</button>
+
+</div>
+
+</article>
+
+
+<article class="story-card">
+
+<div class="story-top"
+style="background:linear-gradient(135deg,#31472e,#9a7d45);">
+
+<i class="fa-solid fa-house-chimney"></i>
+
+</div>
+
+<div class="story-body">
+
+<span>Village Life</span>
+
+<h3>
+What Community Means in Rural Life
+</h3>
+
+<p>
+
+Rural communities remind us that
+development and human connection
+should grow together.
+
+</p>
+
+<button onclick="openStory(9)">
+Read Full Story →
+</button>
+
+</div>
+
+</article>
+
+
+<article class="story-card">
+
+<div class="story-top"
+style="background:linear-gradient(135deg,#18233b,#465875);">
+
+<i class="fa-solid fa-building"></i>
+
+</div>
+
+<div class="story-body">
+
+<span>City Life</span>
+
+<h3>
+How African Cities Are Changing Lifestyle
+</h3>
+
+<p>
+
+Urban life is transforming how
+Africans work, travel, communicate
+and spend their time.
+
+</p>
+
+<button onclick="openStory(10)">
+Read Full Story →
+</button>
+
+</div>
+
+</article>
+
+
+<article class="story-card">
+
+<div class="story-top"
+style="background:linear-gradient(135deg,#6a472a,#ba8a4c);">
+
+<i class="fa-solid fa-users"></i>
+
+</div>
+
+<div class="story-body">
+
+<span>Tradition</span>
+
+<h3>
+The Value of Gathering Together
+</h3>
+
+<p>
+
+Ceremonies and gatherings remain
+one of the strongest ways
+communities maintain relationships.
+
+</p>
+
+<button onclick="openStory(11)">
+Read Full Story →
+</button>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+QUOTE
+========================= -->
+
+<section class="quote">
+
+<div class="container">
+
+<i class="fa-solid fa-quote-left"></i>
+
+<blockquote>
+
+Africa is not one story,
+one culture or one way of life.
+Its beauty is in the many worlds
+that exist within it.
+
+</blockquote>
+
+<p>
+Kitsamba Writes Africa
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+FOOTER
+========================= -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+
+<div class="footer-brand">
+
+<h3>
+Kitsamba Writes Africa
+</h3>
+
+<p>
+
+A home for African stories,
+novels, ideas and culture.
+
+Writing Africa,
+one story at a time.
+
+</p>
+
+<div class="socials">
+
+<a href="#">
+<i class="fa-brands fa-facebook-f"></i>
+</a>
+
+<a href="#">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="#">
+<i class="fa-brands fa-tiktok"></i>
+</a>
+
+<a href="#">
+<i class="fa-brands fa-youtube"></i>
+</a>
+
+</div>
+
+</div>
+
+
+<div class="footer-column">
+
+<h4>
+Explore
+</h4>
+
+<a href="novels.html">Novels</a>
+<a href="articles.html">Articles</a>
+<a href="blog.html">Blog</a>
+<a href="lifestyle.html">African Lifestyle</a>
+<a href="videos.html">Videos</a>
+
+</div>
+
+
+<div class="footer-column">
+
+<h4>
+Website
+</h4>
+
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="login.html">Reader Login</a>
+<a href="settings.html">Settings</a>
+
+</div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+<span>
+
+© <span id="year"></span>
+Kitsamba Writes Africa.
+All rights reserved.
+
+</span>
+
+<span>
+Culture. Stories. Africa.
+</span>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- =========================
+STORY READER
+========================= -->
+
+<div class="modal" id="storyModal">
+
+<div class="modal-card">
+
+<button
+class="close-modal"
+onclick="closeStory()">
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+<div
+class="modal-category"
+id="modalCategory">
+
+Lifestyle
+
+</div>
+
+<h2 id="modalTitle">
+Story
+</h2>
+
+<div class="modal-meta"
+id="modalMeta">
+
+By Kitsamba Joshua
+
+</div>
+
+<div
+class="modal-content"
+id="modalContent">
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+
+/* =========================================
+FULL LIFESTYLE STORIES
+========================================= */
+
+const stories=[
+
+
+{
+category:"Food & Community",
+
+title:"Why African Food Is About More Than Eating",
+
+time:"7 min read",
+
+content:`
+
+<p>Food in many African communities has never been simply about satisfying hunger. It is closely connected to family, hospitality, celebration, identity and memory.</p>
+
+<p>When a visitor enters a home, offering something to eat or drink can become one of the first expressions of welcome. Refusing to allow a guest to leave hungry is still considered an important part of hospitality in many communities.</p>
+
+<p>Meals also create opportunities for families to come together. People who may have spent the entire day studying, farming, working or running businesses finally find themselves sitting around the same table or cooking area.</p>
+
+<p>That moment can become more important than the food itself. Conversations happen. Advice is given. Stories are shared. Children learn about their families and adults reconnect after busy days.</p>
+
+<p>Traditional foods also preserve history.</p>
+
+<p>A recipe prepared by a grandmother may have been taught to her by another generation before her. Ingredients, preparation methods and even the occasions when particular foods are served can carry cultural meaning.</p>
+
+<p>Uganda alone demonstrates how diverse African food culture can be. Different communities prepare matooke, millet, cassava, sweet potatoes, groundnut sauce, fish, meat and vegetables in different ways.</p>
+
+<p>Across the continent, the variety becomes even greater. Yet one idea appears repeatedly: food brings people together.</p>
+
+<p>Meals are also connected to celebrations. Weddings, introductions, funerals, religious gatherings and community events often include food because eating together confirms that an important moment is being shared.</p>
+
+<p>Modern lifestyles are changing eating habits. Fast food, restaurants, busy work schedules and international cuisine have become more common, particularly in growing cities.</p>
+
+<p>There is nothing wrong with that change. Cultures naturally evolve and food has always changed through trade, migration and contact between communities.</p>
+
+<p>But preserving traditional recipes matters because food is one of the ways communities remember where they came from.</p>
+
+<p>When younger people learn how their parents and grandparents prepared meals, they are learning more than cooking. They are receiving cultural knowledge.</p>
+
+<p>Sometimes the story of a people is not only recorded in books and museums.</p>
+
+<p>Sometimes that story is steaming quietly inside a cooking pot, waiting to be shared around a table.</p>
+
+`
+},
+
+
+{
+category:"Fashion",
+
+title:"When Clothing Tells a Story",
+
+time:"7 min read",
+
+content:`
+
+<p>Clothing is one of the first things people notice about us, but across Africa clothing can communicate much more than personal style.</p>
+
+<p>Fabric, colour, design and accessories can sometimes reveal where somebody comes from, what ceremony they are attending or which cultural community they identify with.</p>
+
+<p>Traditional clothing has long played an important role during weddings, introductions, festivals, royal ceremonies and other significant occasions.</p>
+
+<p>In Uganda, for example, clothing such as the gomesi and kanzu remains strongly connected with cultural ceremonies and formal celebrations.</p>
+
+<p>Across other parts of Africa, fabrics such as kente, ankara and numerous locally produced textiles have become internationally recognizable.</p>
+
+<p>What makes African fashion particularly interesting today is the meeting between tradition and modern design.</p>
+
+<p>Young designers are taking patterns and ideas associated with earlier generations and transforming them into jackets, dresses, suits, shoes, bags and streetwear.</p>
+
+<p>This means traditional design is no longer limited to ceremonies.</p>
+
+<p>It can appear in offices, universities, music videos, fashion shows and international events.</p>
+
+<p>Fashion therefore becomes a conversation between generations.</p>
+
+<p>The older generation contributes cultural knowledge and craftsmanship, while younger designers experiment with new materials, new cuts and new ways of presenting traditional ideas.</p>
+
+<p>There is also an economic side to African fashion.</p>
+
+<p>Tailors, designers, photographers, models, fabric sellers, event organizers and online businesses can all benefit when locally designed clothing grows in popularity.</p>
+
+<p>Digital platforms have expanded these opportunities. A designer who once depended only on customers in one town can now display work to buyers across countries and continents.</p>
+
+<p>Yet global exposure also creates challenges. Traditional patterns and cultural symbols can sometimes be copied without credit or understanding.</p>
+
+<p>That is why cultural respect matters.</p>
+
+<p>African fashion can become global while still recognizing the communities, designers and traditions from which its inspiration comes.</p>
+
+<p>Perhaps that is what makes clothing so powerful.</p>
+
+<p>A person can wear something beautiful while simultaneously carrying a small piece of history with them.</p>
+
+`
+},
+
+
+{
+category:"Music",
+
+title:"The Rhythm That Connects Generations",
+
+time:"7 min read",
+
+content:`
+
+<p>Music has always occupied an important place in African life.</p>
+
+<p>Long before streaming platforms, smartphones and recording studios, communities used music during ceremonies, storytelling, celebrations, worship and important social events.</p>
+
+<p>Drums, string instruments, voices, clapping and dance helped communities communicate emotion and preserve stories.</p>
+
+<p>Some songs celebrated harvests. Others accompanied marriages. Some mourned the dead, while others taught younger generations important lessons.</p>
+
+<p>Music was therefore not simply entertainment. It was a form of communication.</p>
+
+<p>Modern African music sounds very different in many places, but the connection between music and everyday life remains.</p>
+
+<p>Afrobeats, amapiano, hip-hop, contemporary gospel, dancehall-influenced African music and other genres now reach audiences far beyond the continent.</p>
+
+<p>Artists increasingly combine international production styles with local languages, rhythms and storytelling.</p>
+
+<p>Technology has accelerated this movement.</p>
+
+<p>An artist can record music in Kampala, Lagos, Nairobi, Johannesburg or Accra and have listeners discovering it across the world within hours.</p>
+
+<p>Social media has also changed how songs become popular. A dance challenge or short video can introduce a song to millions of people who may never have heard of the artist before.</p>
+
+<p>This global success does not mean traditional music has lost its importance.</p>
+
+<p>Traditional rhythms continue appearing inside modern songs.</p>
+
+<p>Older instruments and melodies are being sampled, remixed and reintroduced to younger audiences.</p>
+
+<p>That creates an interesting cultural bridge.</p>
+
+<p>A grandparent and grandchild may listen to completely different types of music, yet some of the rhythms connecting those songs may come from the same cultural roots.</p>
+
+<p>Music also remains part of national identity. Certain songs become associated with important historical periods, celebrations or generations.</p>
+
+<p>African music continues changing, but its power remains familiar.</p>
+
+<p>It gives people a way to celebrate, remember, protest, worship, dance and feel something together.</p>
+
+`
+},
+
+
+{
+category:"Travel",
+
+title:"The Beauty Hidden Beyond Africa's Cities",
+
+time:"7 min read",
+
+content:`
+
+<p>When people imagine Africa, major cities often receive much of the attention.</p>
+
+<p>Kampala, Nairobi, Lagos, Johannesburg, Kigali, Cairo and other urban centres represent business, entertainment and modern African life.</p>
+
+<p>But some of the continent's most extraordinary experiences exist far beyond the cities.</p>
+
+<p>There are mountains, lakes, waterfalls, forests, savannahs, islands, rural communities and historical sites spread across the continent.</p>
+
+<p>Uganda alone offers enormous natural diversity.</p>
+
+<p>A traveler can experience Lake Victoria, the River Nile, mountain landscapes, national parks, forests and communities with very different cultural traditions.</p>
+
+<p>Travel can therefore become more than sightseeing.</p>
+
+<p>It allows people to understand how others live.</p>
+
+<p>Visiting another community can expose someone to different foods, languages, beliefs and ways of thinking.</p>
+
+<p>Domestic tourism is especially important.</p>
+
+<p>Africans sometimes know more about famous international destinations than beautiful places within their own countries.</p>
+
+<p>Exploring locally can strengthen appreciation for national heritage while supporting guides, restaurants, transport businesses, hotels and local communities.</p>
+
+<p>Tourism can also create incentives to protect natural environments.</p>
+
+<p>If forests, wildlife areas and cultural sites create sustainable economic opportunities, communities and governments have stronger reasons to preserve them.</p>
+
+<p>Responsible tourism therefore matters.</p>
+
+<p>Natural environments and cultural sites should not simply be consumed for photographs. They need protection so future generations can experience them too.</p>
+
+<p>Travel can also challenge stereotypes.</p>
+
+<p>Someone who has only heard about a community from other people may discover something completely different by visiting it personally.</p>
+
+<p>Sometimes discovering Africa does not require crossing an ocean.</p>
+
+<p>The adventure may already be waiting several hours away from home.</p>
+
+`
+},
+
+
+{
+category:"Tradition",
+
+title:"Why Cultural Memory Still Matters",
+
+time:"7 min read",
+
+content:`
+
+<p>Every generation inherits something from the people who came before it.</p>
+
+<p>Sometimes that inheritance is physical, such as land, family possessions or important objects.</p>
+
+<p>But much of what generations inherit cannot be touched.</p>
+
+<p>They inherit language, stories, names, songs, customs, beliefs and memories.</p>
+
+<p>This collection of shared knowledge becomes cultural memory.</p>
+
+<p>Cultural memory helps people understand where they came from.</p>
+
+<p>A proverb may carry lessons developed over generations. A clan story may explain relationships between families. A traditional ceremony may remind a community about responsibility and belonging.</p>
+
+<p>Modernization can put some of this knowledge under pressure.</p>
+
+<p>Young people increasingly grow up in environments influenced by global entertainment, international languages and digital culture.</p>
+
+<p>This creates opportunity, but it can also create distance between generations.</p>
+
+<p>Someone may know more about international celebrities than the stories of their own grandparents.</p>
+
+<p>Preserving cultural memory does not mean every tradition must remain unchanged.</p>
+
+<p>Some practices should be questioned when they cause harm, discrimination or injustice.</p>
+
+<p>Culture grows stronger when societies are able to preserve what is meaningful while changing what no longer serves people well.</p>
+
+<p>Elders have an important role because many stories and traditions still exist primarily through oral knowledge.</p>
+
+<p>Young people also have a role.</p>
+
+<p>Technology can be used to record languages, interviews, songs, photographs and stories that might otherwise disappear.</p>
+
+<p>Schools, writers and cultural organizations can also help ensure that younger generations understand the histories of their communities.</p>
+
+<p>The past should not control the future.</p>
+
+<p>But a society building its future without remembering its past risks losing part of itself.</p>
+
+`
+},
+
+
+{
+category:"Modern Africa",
+
+title:"Life Between Tradition and the City",
+
+time:"7 min read",
+
+content:`
+
+<p>Modern African life often exists between two worlds.</p>
+
+<p>A young professional may spend Monday working in an office using laptops, online meetings and international business systems.</p>
+
+<p>By Saturday, the same person may travel home to attend a traditional introduction ceremony surrounded by relatives and cultural customs.</p>
+
+<p>Someone may communicate professionally in English during the day but speak Luganda, Ateso, Runyankole or another local language with family members at home.</p>
+
+<p>This mixture does not necessarily represent confusion.</p>
+
+<p>It reflects how African identity continues evolving.</p>
+
+<p>Cities are accelerating that change.</p>
+
+<p>Urban residents meet people from different regions and backgrounds. Relationships, workplaces and friendships increasingly cross cultural boundaries.</p>
+
+<p>Technology adds another layer.</p>
+
+<p>Young Africans consume entertainment and ideas from around the world while still facing expectations from families and communities at home.</p>
+
+<p>Sometimes those worlds cooperate easily.</p>
+
+<p>Sometimes they clash.</p>
+
+<p>Questions about marriage, careers, clothing, gender roles, religion and family responsibilities can create tension between traditional expectations and modern lifestyles.</p>
+
+<p>A young person may believe they should choose their own career while older relatives expect a different path.</p>
+
+<p>Another person may want to marry across cultural boundaries and discover that family traditions still have strong influence.</p>
+
+<p>The challenge is not necessarily choosing one world and rejecting the other.</p>
+
+<p>Perhaps the opportunity lies in learning how to take what is valuable from both.</p>
+
+<p>Tradition can provide identity, responsibility and community.</p>
+
+<p>Modern life can provide freedom, technology and new possibilities.</p>
+
+<p>Modern African identity does not have to be either traditional or contemporary.</p>
+
+<p>It can be both.</p>
+
+`
+},
+
+
+{
+category:"Food & Family",
+
+title:"Why Meals Still Bring Families Together",
+
+time:"6 min read",
+
+content:`
+
+<p>Modern life has made family schedules increasingly complicated.</p>
+
+<p>Parents work. Children attend school. University students live away from home. Phones, television and social media compete for attention.</p>
+
+<p>Yet meals remain one of the simplest opportunities for families to reconnect.</p>
+
+<p>When people sit together to eat, something ordinary can become meaningful.</p>
+
+<p>They discuss the day. Children hear stories. Problems are mentioned. Laughter happens.</p>
+
+<p>In many African homes, preparing food itself can also be a social activity.</p>
+
+<p>People peel, chop, cook and serve together.</p>
+
+<p>Younger family members may learn recipes simply by watching older relatives prepare them repeatedly.</p>
+
+<p>Hospitality also makes meals important beyond immediate family.</p>
+
+<p>Visitors are often offered tea, fruit, food or another form of refreshment.</p>
+
+<p>The message behind the meal is simple: you are welcome here.</p>
+
+<p>Meals also create memories.</p>
+
+<p>People often remember particular foods connected to childhood, grandparents, holidays or family celebrations.</p>
+
+<p>That is why food can trigger emotion in ways that seem surprising.</p>
+
+<p>As lifestyles become busier, intentionally protecting shared meals may become increasingly important.</p>
+
+<p>It does not need to happen every day.</p>
+
+<p>What matters is creating moments when people are present with one another rather than constantly moving in separate directions.</p>
+
+<p>Sometimes strengthening a family can begin with something as ordinary as sitting down and eating together.</p>
+
+`
+},
+
+
+{
+category:"Style",
+
+title:"African Fashion Is Becoming Global",
+
+time:"6 min read",
+
+content:`
+
+<p>African fashion is increasingly visible far beyond the continent.</p>
+
+<p>Designers inspired by African textiles, patterns and craftsmanship are appearing at international events, online stores and major fashion platforms.</p>
+
+<p>This growth reflects a wider cultural shift.</p>
+
+<p>For years, global fashion influence often flowed mainly toward Africa.</p>
+
+<p>Today, African creativity is increasingly influencing global design as well.</p>
+
+<p>Traditional patterns are being combined with contemporary cuts.</p>
+
+<p>Locally produced fabrics are becoming premium fashion products.</p>
+
+<p>African musicians, actors and public figures are also helping introduce these designs to international audiences.</p>
+
+<p>Social media has made this movement faster.</p>
+
+<p>A small designer can photograph a new collection, publish it online and potentially reach customers thousands of kilometres away.</p>
+
+<p>This creates business opportunities for designers, tailors, photographers, stylists and models.</p>
+
+<p>Fashion schools and creative communities are also growing, giving younger designers new ways to develop professional skills.</p>
+
+<p>However, global recognition creates questions about ownership.</p>
+
+<p>African designs and cultural symbols should be credited and respected rather than copied without understanding their origins.</p>
+
+<p>The best future for African fashion is one where creativity grows internationally while the communities and creators behind that creativity also benefit.</p>
+
+<p>African fashion has the opportunity to become not simply a trend, but a lasting part of global design culture.</p>
+
+`
+},
+
+
+{
+category:"Music",
+
+title:"Why African Music Travels So Far",
+
+time:"6 min read",
+
+content:`
+
+<p>A song no longer needs to be played on international radio before it can reach the world.</p>
+
+<p>Streaming services, social media and short-video platforms have transformed how music spreads.</p>
+
+<p>This has created extraordinary opportunities for African musicians.</p>
+
+<p>A song released in one African city can become popular across several continents within a short period.</p>
+
+<p>But technology alone does not explain the success of African music.</p>
+
+<p>The music itself carries powerful ingredients.</p>
+
+<p>Rhythm encourages movement. Melody creates emotion. Local languages give songs identity. Storytelling allows listeners to connect even when they do not understand every word.</p>
+
+<p>Modern African music is also comfortable blending influences.</p>
+
+<p>Artists mix traditional rhythms with hip-hop, R&B, dancehall, house, gospel and electronic production.</p>
+
+<p>Rather than weakening African identity, these combinations often create something new and recognizably African.</p>
+
+<p>The global success of African music creates opportunities beyond musicians.</p>
+
+<p>Producers, dancers, video directors, fashion designers, photographers and event organizers all become part of the creative economy.</p>
+
+<p>International collaborations are also increasing, allowing African artists to enter markets that were previously difficult to reach.</p>
+
+<p>Yet the strongest music often remains connected to local experiences.</p>
+
+<p>Songs about relationships, celebration, struggle, ambition and everyday life travel because those emotions are universal.</p>
+
+<p>African music travels far because it feels both local and global.</p>
+
+<p>The language may change, but rhythm and emotion require no translation.</p>
+
+`
+},
+
+
+{
+category:"Village Life",
+
+title:"What Community Means in Rural Life",
+
+time:"6 min read",
+
+content:`
+
+<p>Rural communities face many challenges, but one of their greatest strengths can be the closeness between people.</p>
+
+<p>Neighbors often know one another personally.</p>
+
+<p>Families may have lived close together for generations.</p>
+
+<p>When somebody becomes sick, loses a relative or holds an important ceremony, the wider community may become involved.</p>
+
+<p>People contribute food, labor, advice, transport or money depending on what is needed.</p>
+
+<p>This does not mean rural communities are perfect.</p>
+
+<p>Privacy can sometimes be limited, disagreements occur and economic opportunities may be fewer.</p>
+
+<p>But the sense that people belong to something larger than themselves remains valuable.</p>
+
+<p>Children may grow up knowing several adults who look out for them.</p>
+
+<p>Elders can remain closely involved in community life.</p>
+
+<p>Families share knowledge about farming, weather, traditions and local history.</p>
+
+<p>Urbanization can weaken some of these connections.</p>
+
+<p>In cities, a person may live beside the same neighbor for years without knowing their name.</p>
+
+<p>Work schedules and long journeys reduce time available for community participation.</p>
+
+<p>There may therefore be lessons cities can learn from rural life.</p>
+
+<p>Development should not only ask how communities can become wealthier.</p>
+
+<p>It should also ask how they can remain connected.</p>
+
+<p>Economic progress becomes more meaningful when people still have others to celebrate with during good times and depend on during difficult ones.</p>
+
+`
+},
+
+
+{
+category:"City Life",
+
+title:"How African Cities Are Changing Lifestyle",
+
+time:"7 min read",
+
+content:`
+
+<p>African cities are transforming quickly.</p>
+
+<p>New businesses, universities, apartments, shopping centres, entertainment spaces and technology companies are changing how millions of people live.</p>
+
+<p>For young people especially, cities represent possibility.</p>
+
+<p>They offer access to education, professional networks and jobs that may not exist in smaller communities.</p>
+
+<p>But urban lifestyles come with their own pressures.</p>
+
+<p>Housing can be expensive.</p>
+
+<p>Traffic consumes time.</p>
+
+<p>People may work long hours simply to afford everyday expenses.</p>
+
+<p>Technology has also changed social life.</p>
+
+<p>Food can be ordered online. Work can happen remotely. Relationships can begin through social media. Entertainment is increasingly digital.</p>
+
+<p>These conveniences are valuable, but they can also reduce physical interaction.</p>
+
+<p>A person can live among millions of people while still feeling isolated.</p>
+
+<p>Cities such as Kampala represent this contradiction clearly.</p>
+
+<p>There is enormous energy, entrepreneurship and opportunity, but there is also congestion, competition and financial pressure.</p>
+
+<p>Urban lifestyles are also changing family patterns.</p>
+
+<p>Young adults may live farther away from extended family and depend more heavily on friends, colleagues and professional networks.</p>
+
+<p>Traditional community structures therefore become less automatic.</p>
+
+<p>The challenge for African cities is not simply becoming larger.</p>
+
+<p>They need to become places where people can live well.</p>
+
+<p>Better transport, safer public spaces, affordable housing and accessible services can improve everyday urban life.</p>
+
+<p>A successful city should create opportunity without making everyday existence unnecessarily exhausting.</p>
+
+`
+},
+
+
+{
+category:"Tradition",
+
+title:"The Value of Gathering Together",
+
+time:"6 min read",
+
+content:`
+
+<p>Human beings have always gathered together during important moments.</p>
+
+<p>Across African communities, weddings, introductions, funerals, festivals, religious events and family meetings continue bringing generations into the same physical space.</p>
+
+<p>These gatherings serve practical purposes, but they also perform something deeper.</p>
+
+<p>They remind people that they belong to a community.</p>
+
+<p>A wedding may bring relatives together who have not seen one another for years.</p>
+
+<p>A funeral may reveal how wide a family's network of relationships has become.</p>
+
+<p>A traditional introduction may bring two families into a completely new relationship.</p>
+
+<p>These occasions also allow younger generations to observe cultural practices directly.</p>
+
+<p>They hear languages, songs and stories they may not experience in ordinary city life.</p>
+
+<p>Gatherings therefore become classrooms without walls.</p>
+
+<p>People learn by watching, participating and listening.</p>
+
+<p>Digital communication has made staying connected easier, but online interaction cannot completely replace physical presence.</p>
+
+<p>A video call is useful, but it cannot fully reproduce sitting beside someone, sharing food, dancing together or supporting a grieving family.</p>
+
+<p>Gatherings require time and sometimes money, but they remain valuable because relationships need more than messages.</p>
+
+<p>Modern life may change how often communities gather, but the human need behind these moments remains.</p>
+
+<p>People want to know that others will show up when something important happens.</p>
+
+<p>Community is strengthened when people continue showing up for one another.</p>
+
+`
+}
+
+];
+
+
+
+/* =========================
+OPEN STORY
+========================= */
+
+function openStory(index){
+
+const story=stories[index];
+
+document.getElementById("modalCategory")
+.textContent=story.category;
+
+document.getElementById("modalTitle")
+.textContent=story.title;
+
+document.getElementById("modalMeta")
+.textContent=
+"By Kitsamba Joshua • " + story.time;
+
+document.getElementById("modalContent")
+.innerHTML=story.content;
+
+document.getElementById("storyModal")
+.classList.add("active");
+
+document.body.style.overflow="hidden";
+
+document.getElementById("storyModal")
+.scrollTop=0;
+
+}
+
+
+/* =========================
+CLOSE STORY
+========================= */
+
+function closeStory(){
+
+document.getElementById("storyModal")
+.classList.remove("active");
+
+document.body.style.overflow="";
+
+}
+
+
+/* ESC CLOSE */
+
+document.addEventListener(
+"keydown",
+function(event){
+
+if(event.key==="Escape"){
+
+closeStory();
+
+}
+
+});
+
+
+/* =========================
+NAVIGATION
+========================= */
+
+const mobileMenuBtn=
+document.getElementById("mobileMenuBtn");
+
+const navLinks=
+document.getElementById("navLinks");
+
+const mainMenu=
+document.getElementById("mainMenu");
+
+const mainMenuButton=
+document.getElementById("mainMenuButton");
+
+
+mobileMenuBtn.addEventListener(
+"click",
+function(){
+
+navLinks.classList.toggle("active");
+
+const icon=
+mobileMenuBtn.querySelector("i");
+
+if(navLinks.classList.contains("active")){
+
+icon.className=
+"fa-solid fa-xmark";
+
+}else{
+
+icon.className=
+"fa-solid fa-bars";
+
+mainMenu.classList.remove("active");
+
+}
+
+});
+
+
+mainMenuButton.addEventListener(
+"click",
+function(event){
+
+event.stopPropagation();
+
+mainMenu.classList.toggle("active");
+
+});
+
+
+document.addEventListener(
+"click",
+function(event){
+
+if(!mainMenu.contains(event.target)){
+
+mainMenu.classList.remove("active");
+
+}
+
+});
+
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+link.addEventListener(
+"click",
+function(){
+
+navLinks.classList.remove("active");
+
+mainMenu.classList.remove("active");
+
+mobileMenuBtn
+.querySelector("i")
+.className=
+"fa-solid fa-bars";
+
+});
+
+});
+
+
+/* =========================
+YEAR
+========================= */
+
+document.getElementById("year")
+.textContent=
+new Date().getFullYear();
+
+
+</script>
+
+</body>
+
+</html>

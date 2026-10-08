@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reading & Writing Videos | Kitsamba Writes Africa</title>
+
+<meta name="description"
+content="Improve your reading, writing and storytelling skills with educational lessons from Kitsamba Writes Africa.">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap"
+rel="stylesheet">
+
+
+<style>
+
+:root{
+    --black:#090909;
+    --dark:#111;
+    --card:#171717;
+    --gold:#d8ac56;
+    --gold-light:#f2cf83;
+    --cream:#f7f1e5;
+    --white:#fff;
+    --gray:#aaa;
+    --border:rgba(216,172,86,.25);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    background:var(--black);
+    color:white;
+    line-height:1.65;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+.eyebrow{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:.76rem;
+    font-weight:700;
+    margin-bottom:14px;
+}
+
+
+/* =========================
+NAVIGATION
+========================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:999;
+    background:rgba(8,8,8,.9);
+    backdrop-filter:blur(16px);
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+nav{
+    min-height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.brand-icon{
+    width:42px;
+    height:42px;
+    border:1px solid var(--gold);
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    color:var(--gold);
+}
+
+.brand-text strong{
+    display:block;
+    font-family:"Playfair Display",serif;
+    font-size:1.14rem;
+}
+
+.brand-text span{
+    display:block;
+    color:var(--gold);
+    font-size:.66rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.nav-links > a{
+    color:#ddd;
+    font-size:.92rem;
+    font-weight:600;
+}
+
+.nav-links > a:hover{
+    color:var(--gold);
+}
+
+.start-reading{
+    background:var(--gold);
+    color:#111 !important;
+    padding:11px 20px;
+    border-radius:50px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.mobile-menu-btn{
+    display:none;
+    border:0;
+    background:none;
+    color:white;
+    font-size:1.5rem;
+    cursor:pointer;
+}
+
+
+/* =========================
+DROPDOWN MENU
+========================= */
+
+.main-menu{
+    position:relative;
+}
+
+.main-menu-button{
+    border:none;
+    background:transparent;
+    color:#ddd;
+    font-size:.92rem;
+    font-weight:600;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.main-menu-button .bars{
+    color:var(--gold);
+}
+
+.menu-dropdown{
+    position:absolute;
+    right:0;
+    top:45px;
+    width:310px;
+    padding:12px;
+    background:#111;
+    border:1px solid var(--border);
+    border-radius:20px;
+    box-shadow:0 25px 70px rgba(0,0,0,.7);
+
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+
+    transform:translateY(-10px);
+    transition:.25s;
+}
+
+.main-menu.active .menu-dropdown{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    transform:translateY(0);
+}
+
+.menu-title{
+    padding:10px 14px 13px;
+    border-bottom:1px solid #292929;
+    margin-bottom:7px;
+}
+
+.menu-title strong{
+    display:block;
+    font-family:"Playfair Display",serif;
+}
+
+.menu-title span{
+    color:#777;
+    font-size:.75rem;
+}
+
+.menu-dropdown a{
+    padding:12px 15px;
+    border-radius:11px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    color:#ddd;
+    font-size:.9rem;
+}
+
+.menu-dropdown a i{
+    width:22px;
+    text-align:center;
+    color:var(--gold);
+}
+
+.menu-dropdown a:hover{
+    background:rgba(216,172,86,.12);
+    color:var(--gold);
+}
+
+
+/* =========================
+HERO
+========================= */
+
+.video-hero{
+    min-height:720px;
+    padding:160px 0 100px;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at 75% 30%,
+    rgba(216,172,86,.18),
+    transparent 30%),
+    linear-gradient(135deg,#080808,#121212);
+}
+
+.video-hero::after{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    border-radius:50%;
+    border:1px solid rgba(216,172,86,.09);
+    right:-200px;
+    top:-230px;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:70px;
+    align-items:center;
+}
+
+.hero-copy{
+    position:relative;
+    z-index:2;
+}
+
+.hero-copy h1{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(3.2rem,7vw,6rem);
+    line-height:1;
+    margin-bottom:25px;
+}
+
+.hero-copy h1 span{
+    color:var(--gold);
+}
+
+.hero-copy p{
+    color:#bbb;
+    max-width:650px;
+    font-size:1.08rem;
+    margin-bottom:30px;
+}
+
+.hero-button{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--gold);
+    color:#111;
+    padding:14px 23px;
+    border-radius:50px;
+    font-weight:800;
+}
+
+
+/* HERO BOOK */
+
+.hero-visual{
+    min-height:420px;
+    display:grid;
+    place-items:center;
+    position:relative;
+}
+
+.big-circle{
+    width:370px;
+    height:370px;
+    border-radius:50%;
+    background:
+    radial-gradient(circle,
+    rgba(216,172,86,.28),
+    rgba(216,172,86,.04) 60%,
+    transparent 61%);
+    border:1px solid rgba(216,172,86,.15);
+    display:grid;
+    place-items:center;
+}
+
+.big-circle i{
+    font-size:7rem;
+    color:var(--gold);
+}
+
+
+/* =========================
+FEATURED LESSON
+========================= */
+
+.lesson{
+    padding:100px 0;
+}
+
+.section-heading{
+    max-width:780px;
+    margin-bottom:45px;
+}
+
+.section-heading h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(2.5rem,5vw,4rem);
+    line-height:1.1;
+    margin-bottom:15px;
+}
+
+.section-heading p{
+    color:#999;
+}
+
+.lesson-grid{
+    display:grid;
+    grid-template-columns:1.3fr .7fr;
+    gap:30px;
+    align-items:start;
+}
+
+.video-wrapper{
+    position:relative;
+    width:100%;
+    padding-bottom:56.25%;
+    height:0;
+    overflow:hidden;
+    background:#111;
+    border-radius:22px;
+    border:1px solid var(--border);
+    box-shadow:0 30px 70px rgba(0,0,0,.45);
+}
+
+.video-wrapper iframe{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    border:0;
+}
+
+.lesson-info{
+    background:var(--card);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:22px;
+    padding:30px;
+}
+
+.lesson-info span{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:.72rem;
+    font-weight:800;
+}
+
+.lesson-info h3{
+    font-family:"Playfair Display",serif;
+    font-size:2rem;
+    line-height:1.2;
+    margin:11px 0 15px;
+}
+
+.lesson-info p{
+    color:#aaa;
+    margin-bottom:20px;
+}
+
+.lesson-point{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    margin-top:15px;
+    color:#bbb;
+    font-size:.9rem;
+}
+
+.lesson-point i{
+    color:var(--gold);
+    margin-top:5px;
+}
+
+
+/* =========================
+READING SKILLS
+========================= */
+
+.skills-section{
+    padding:90px 0 120px;
+    background:var(--cream);
+    color:#202020;
+}
+
+.skills-section .eyebrow{
+    color:#9b7228;
+}
+
+.skill-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+    margin-top:45px;
+}
+
+.skill-card{
+    padding:28px;
+    background:white;
+    border:1px solid #e5ddcf;
+    border-radius:18px;
+}
+
+.skill-number{
+    color:#ae7f2a;
+    font-family:"Playfair Display",serif;
+    font-size:2.2rem;
+    font-weight:800;
+    opacity:.5;
+}
+
+.skill-card i{
+    display:block;
+    color:#a77926;
+    font-size:1.5rem;
+    margin:12px 0 18px;
+}
+
+.skill-card h3{
+    font-family:"Playfair Display",serif;
+    font-size:1.35rem;
+    margin-bottom:10px;
+}
+
+.skill-card p{
+    color:#666;
+    font-size:.9rem;
+}
+
+
+/* =========================
+WRITING GUIDE
+========================= */
+
+.writing-guide{
+    padding:110px 0;
+}
+
+.guide-heading{
+    max-width:750px;
+    margin-bottom:50px;
+}
+
+.guide-heading h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(2.5rem,5vw,4rem);
+    line-height:1.1;
+    margin-bottom:15px;
+}
+
+.guide-heading p{
+    color:#999;
+}
+
+.guide-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.guide-card{
+    background:#151515;
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:20px;
+    padding:30px;
+    display:flex;
+    gap:22px;
+}
+
+.guide-icon{
+    width:55px;
+    height:55px;
+    min-width:55px;
+    border-radius:15px;
+    background:rgba(216,172,86,.12);
+    color:var(--gold);
+    display:grid;
+    place-items:center;
+    font-size:1.3rem;
+}
+
+.guide-card h3{
+    font-family:"Playfair Display",serif;
+    font-size:1.45rem;
+    margin-bottom:8px;
+}
+
+.guide-card p{
+    color:#999;
+    font-size:.9rem;
+}
+
+
+/* =========================
+7 DAY CHALLENGE
+========================= */
+
+.challenge{
+    padding:40px 0 120px;
+}
+
+.challenge-box{
+    border:1px solid var(--border);
+    border-radius:28px;
+    padding:clamp(40px,6vw,70px);
+    background:
+    linear-gradient(135deg,
+    rgba(216,172,86,.13),
+    rgba(255,255,255,.02));
+}
+
+.challenge-heading{
+    text-align:center;
+    max-width:750px;
+    margin:auto;
+}
+
+.challenge-heading h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(2.4rem,5vw,3.8rem);
+    margin-bottom:15px;
+}
+
+.challenge-heading p{
+    color:#999;
+}
+
+.days{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:11px;
+    margin-top:45px;
+}
+
+.day{
+    background:#151515;
+    border:1px solid #292929;
+    border-radius:15px;
+    padding:20px 13px;
+    text-align:center;
+}
+
+.day strong{
+    display:block;
+    color:var(--gold);
+    margin-bottom:8px;
+}
+
+.day span{
+    color:#aaa;
+    font-size:.77rem;
+}
+
+
+/* =========================
+COMING SOON
+========================= */
+
+.coming{
+    padding:30px 0 120px;
+}
+
+.coming-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.coming-card{
+    min-height:280px;
+    padding:30px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.07);
+    background:#161616;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    position:relative;
+    overflow:hidden;
+}
+
+.coming-card::before{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:rgba(216,172,86,.09);
+    top:-60px;
+    right:-60px;
+}
+
+.coming-card i{
+    position:absolute;
+    top:30px;
+    left:30px;
+    color:var(--gold);
+    font-size:2rem;
+}
+
+.coming-card span{
+    color:var(--gold);
+    text-transform:uppercase;
+    font-size:.7rem;
+    letter-spacing:2px;
+}
+
+.coming-card h3{
+    font-family:"Playfair Display",serif;
+    font-size:1.55rem;
+    margin-top:7px;
+}
+
+.coming-card p{
+    color:#999;
+    font-size:.88rem;
+    margin-top:10px;
+}
+
+
+/* =========================
+QUOTE
+========================= */
+
+.quote{
+    padding:110px 0;
+    text-align:center;
+    background:
+    radial-gradient(circle,
+    rgba(216,172,86,.1),
+    transparent 55%);
+}
+
+.quote blockquote{
+    max-width:900px;
+    margin:auto;
+    font-family:"Playfair Display",serif;
+    font-size:clamp(2rem,4.5vw,3.6rem);
+    line-height:1.25;
+}
+
+.quote p{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:3px;
+    margin-top:24px;
+    font-size:.78rem;
+}
+
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+    border-top:1px solid rgba(255,255,255,.08);
+    background:#070707;
+    padding:70px 0 30px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.6fr 1fr 1fr;
+    gap:50px;
+}
+
+.footer-brand h3{
+    font-family:"Playfair Display",serif;
+    font-size:1.7rem;
+    margin-bottom:15px;
+}
+
+.footer-brand p{
+    color:#999;
+    max-width:440px;
+}
+
+.socials{
+    display:flex;
+    gap:12px;
+    margin-top:22px;
+}
+
+.social-link{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:1px solid #333;
+    display:grid;
+    place-items:center;
+}
+
+.social-link:hover{
+    color:var(--gold);
+}
+
+.footer-column h4{
+    color:var(--gold);
+    margin-bottom:17px;
+}
+
+.footer-column a{
+    display:block;
+    color:#999;
+    margin-bottom:10px;
+}
+
+.footer-column a:hover{
+    color:white;
+}
+
+.footer-bottom{
+    border-top:1px solid #222;
+    margin-top:55px;
+    padding-top:25px;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    font-size:.82rem;
+    color:#777;
+}
+
+
+/* =========================
+TABLET
+========================= */
+
+@media(max-width:950px){
+
+.mobile-menu-btn{
+    display:block;
+}
+
+.nav-links{
+    position:fixed;
+    top:78px;
+    left:0;
+    width:100%;
+    max-height:calc(100vh - 78px);
+    overflow-y:auto;
+    background:#0c0c0c;
+    flex-direction:column;
+    align-items:flex-start;
+    padding:28px 5%;
+    gap:20px;
+    transform:translateY(-150%);
+    transition:.3s;
+}
+
+.nav-links.active{
+    transform:translateY(0);
+}
+
+.nav-links > a{
+    width:100%;
+}
+
+.main-menu{
+    width:100%;
+}
+
+.main-menu-button{
+    width:100%;
+    justify-content:space-between;
+}
+
+.menu-dropdown{
+    position:static;
+    width:100%;
+    display:none;
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    transform:none;
+    box-shadow:none;
+    margin-top:10px;
+}
+
+.main-menu.active .menu-dropdown{
+    display:block;
+}
+
+.start-reading{
+    justify-content:center;
+}
+
+.hero-grid,
+.lesson-grid{
+    grid-template-columns:1fr;
+}
+
+.hero-visual{
+    display:none;
+}
+
+.skill-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.days{
+    grid-template-columns:repeat(4,1fr);
+}
+
+.coming-grid{
+    grid-template-columns:1fr;
+}
+
+.footer-grid{
+    grid-template-columns:1fr 1fr;
+}
+
+}
+
+
+/* =========================
+PHONE
+========================= */
+
+@media(max-width:650px){
+
+.brand-text strong{
+    font-size:1rem;
+}
+
+.brand-text span{
+    font-size:.58rem;
+}
+
+.video-hero{
+    min-height:auto;
+    padding:140px 0 80px;
+}
+
+.skill-grid,
+.guide-grid{
+    grid-template-columns:1fr;
+}
+
+.days{
+    grid-template-columns:1fr;
+}
+
+.guide-card{
+    display:block;
+}
+
+.guide-icon{
+    margin-bottom:18px;
+}
+
+.footer-grid{
+    grid-template-columns:1fr;
+}
+
+.footer-bottom{
+    flex-direction:column;
+}
+
+}
+
+</style>
+
+<script src="theme.js"></script>
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<header>
+
+<div class="container">
+
+<nav>
+
+
+<a href="index.html" class="brand">
+
+<div class="brand-icon">
+<i class="fa-solid fa-feather-pointed"></i>
+</div>
+
+<div class="brand-text">
+<strong>Kitsamba Writes</strong>
+<span>Africa</span>
+</div>
+
+</a>
+
+
+<button class="mobile-menu-btn" id="mobileMenuBtn">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+
+<div class="nav-links" id="navLinks">
+
+
+<a href="index.html">
+Home
+</a>
+
+<a href="novels.html">
+Novels
+</a>
+
+
+<div class="main-menu" id="mainMenu">
+
+
+<button class="main-menu-button" id="mainMenuButton">
+
+<i class="fa-solid fa-bars bars"></i>
+
+Menu
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</button>
+
+
+<div class="menu-dropdown">
+
+<div class="menu-title">
+<strong>Explore Kitsamba Writes</strong>
+<span>Stories, culture and more</span>
+</div>
+
+<a href="index.html">
+<i class="fa-solid fa-house"></i>
+Home
+</a>
+
+<a href="about.html">
+<i class="fa-solid fa-user-pen"></i>
+About
+</a>
+
+<a href="articles.html">
+<i class="fa-solid fa-newspaper"></i>
+Articles
+</a>
+
+<a href="blog.html">
+<i class="fa-solid fa-pen-nib"></i>
+Blog
+</a>
+
+<a href="contact.html">
+<i class="fa-solid fa-envelope"></i>
+Contact
+</a>
+
+<a href="lifestyle.html">
+<i class="fa-solid fa-earth-africa"></i>
+Lifestyle
+</a>
+
+<a href="login.html">
+<i class="fa-solid fa-right-to-bracket"></i>
+Login
+</a>
+
+<a href="novels.html">
+<i class="fa-solid fa-book-open"></i>
+Novels
+</a>
+
+<a href="settings.html">
+<i class="fa-solid fa-gear"></i>
+Settings
+</a>
+
+<a href="videos.html">
+<i class="fa-solid fa-circle-play"></i>
+Videos
+</a>
+
+</div>
+
+</div>
+
+
+<a href="#lesson" class="start-reading">
+
+<i class="fa-solid fa-play"></i>
+
+Start Learning
+
+</a>
+
+</div>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+HERO
+========================= -->
+
+<section class="video-hero">
+
+<div class="container hero-grid">
+
+
+<div class="hero-copy">
+
+<div class="eyebrow">
+Kitsamba Learning Corner
+</div>
+
+<h1>
+
+Read better.
+<br>
+<span>Write better.</span>
+
+</h1>
+
+<p>
+
+Reading and writing are skills that improve
+with practice.
+
+This learning corner is designed to help
+readers, students and young writers develop
+stronger reading habits, improve their writing
+and learn how powerful stories are created.
+
+</p>
+
+<a href="#lesson" class="hero-button">
+
+<i class="fa-solid fa-circle-play"></i>
+
+Watch Today's Lesson
+
+</a>
+
+</div>
+
+
+<div class="hero-visual">
+
+<div class="big-circle">
+
+<i class="fa-solid fa-book-open-reader"></i>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+FEATURED VIDEO
+========================= -->
+
+<section class="lesson" id="lesson">
+
+<div class="container">
+
+
+<div class="section-heading">
+
+<div class="eyebrow">
+Featured Learning Video
+</div>
+
+<h2>
+Reading and writing strengthen each other.
+</h2>
+
+<p>
+
+Watch this lesson and then use the practical
+reading and writing exercises below.
+
+</p>
+
+</div>
+
+
+<div class="lesson-grid">
+
+
+<div class="video-wrapper">
+
+<iframe
+src="https://www.youtube.com/embed/4A0Vf5P7QKg"
+title="Reading Writing and Learning"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen>
+</iframe>
+
+</div>
+
+
+<div class="lesson-info">
+
+<span>
+Today's Lesson
+</span>
+
+<h3>
+Become a stronger reader and writer.
+</h3>
+
+<p>
+
+Good readers pay attention not only to
+what a writer says, but also to how the
+writer communicates the idea.
+
+Writers improve by reading different
+types of material and then practising
+their own writing regularly.
+
+</p>
+
+
+<div class="lesson-point">
+
+<i class="fa-solid fa-check"></i>
+
+<div>
+Read actively instead of simply passing your eyes over words.
+</div>
+
+</div>
+
+
+<div class="lesson-point">
+
+<i class="fa-solid fa-check"></i>
+
+<div>
+Notice vocabulary, sentence structure and how ideas are organized.
+</div>
+
+</div>
+
+
+<div class="lesson-point">
+
+<i class="fa-solid fa-check"></i>
+
+<div>
+Write regularly rather than waiting until you feel perfectly inspired.
+</div>
+
+</div>
+
+
+<div class="lesson-point">
+
+<i class="fa-solid fa-check"></i>
+
+<div>
+Edit your first draft. Good writing is often created during rewriting.
+</div>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+READING SKILLS
+========================= -->
+
+<section class="skills-section">
+
+<div class="container">
+
+
+<div class="section-heading">
+
+<div class="eyebrow">
+Become a Better Reader
+</div>
+
+<h2>
+Four habits that can transform your reading.
+</h2>
+
+<p>
+
+Reading more is useful, but how you read
+also matters. Try making these habits part
+of your everyday learning.
+
+</p>
+
+</div>
+
+
+<div class="skill-grid">
+
+
+<div class="skill-card">
+
+<div class="skill-number">
+01
+</div>
+
+<i class="fa-solid fa-calendar-check"></i>
+
+<h3>
+Read Every Day
+</h3>
+
+<p>
+
+Set aside at least 20–30 minutes for reading.
+A few pages every day can become several
+books over the course of a year.
+
+</p>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-number">
+02
+</div>
+
+<i class="fa-solid fa-marker"></i>
+
+<h3>
+Read Actively
+</h3>
+
+<p>
+
+Underline important ideas, write questions,
+identify unfamiliar words and think about
+why the writer chose particular examples.
+
+</p>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-number">
+03
+</div>
+
+<i class="fa-solid fa-book"></i>
+
+<h3>
+Build Vocabulary
+</h3>
+
+<p>
+
+When you discover a new word, understand
+its meaning and try using it naturally
+in your own sentence.
+
+</p>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-number">
+04
+</div>
+
+<i class="fa-solid fa-brain"></i>
+
+<h3>
+Summarize
+</h3>
+
+<p>
+
+After reading, explain the main idea using
+your own words. If you cannot explain it,
+you may need to read the section again.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+WRITING GUIDE
+========================= -->
+
+<section class="writing-guide">
+
+<div class="container">
+
+
+<div class="guide-heading">
+
+<div class="eyebrow">
+Become a Better Writer
+</div>
+
+<h2>
+Strong writing is built one habit at a time.
+</h2>
+
+<p>
+
+You do not need to become perfect before you
+start. You become better by writing, reviewing,
+learning and writing again.
+
+</p>
+
+</div>
+
+
+<div class="guide-grid">
+
+
+<div class="guide-card">
+
+<div class="guide-icon">
+<i class="fa-solid fa-pen"></i>
+</div>
+
+<div>
+
+<h3>
+Write Something Every Day
+</h3>
+
+<p>
+
+Keep a journal, write a short story,
+describe something you saw or record
+an idea. Consistency develops confidence.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="guide-card">
+
+<div class="guide-icon">
+<i class="fa-solid fa-lightbulb"></i>
+</div>
+
+<div>
+
+<h3>
+Begin With a Clear Idea
+</h3>
+
+<p>
+
+Before writing, know what you want your
+reader to understand, feel or imagine.
+Strong writing usually begins with clear thinking.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="guide-card">
+
+<div class="guide-icon">
+<i class="fa-solid fa-eye"></i>
+</div>
+
+<div>
+
+<h3>
+Show, Don't Only Tell
+</h3>
+
+<p>
+
+Instead of writing “the village was beautiful,”
+describe the morning mist, red roads,
+gardens and sounds that make the reader see it.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="guide-card">
+
+<div class="guide-icon">
+<i class="fa-solid fa-eraser"></i>
+</div>
+
+<div>
+
+<h3>
+Never Fear Editing
+</h3>
+
+<p>
+
+Your first draft does not need to be perfect.
+Remove unnecessary words, improve weak sentences
+and make your ideas clearer.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="guide-card">
+
+<div class="guide-icon">
+<i class="fa-solid fa-comments"></i>
+</div>
+
+<div>
+
+<h3>
+Listen to Feedback
+</h3>
+
+<p>
+
+Allow trusted readers to review your work.
+You do not have to accept every suggestion,
+but feedback can reveal weaknesses you missed.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="guide-card">
+
+<div class="guide-icon">
+<i class="fa-solid fa-heart"></i>
+</div>
+
+<div>
+
+<h3>
+Develop Your Own Voice
+</h3>
+
+<p>
+
+Learn from writers you admire without trying
+to become them. The goal is eventually to
+sound confidently like yourself.
+
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+7 DAY CHALLENGE
+========================= -->
+
+<section class="challenge">
+
+<div class="container">
+
+
+<div class="challenge-box">
+
+
+<div class="challenge-heading">
+
+<div class="eyebrow">
+Try This Yourself
+</div>
+
+<h2>
+The 7-Day Reading & Writing Challenge
+</h2>
+
+<p>
+
+Seven simple activities to start building
+better reading and writing habits this week.
+
+</p>
+
+</div>
+
+
+<div class="days">
+
+
+<div class="day">
+<strong>Day 1</strong>
+<span>Read for 20 minutes.</span>
+</div>
+
+
+<div class="day">
+<strong>Day 2</strong>
+<span>Learn five new words.</span>
+</div>
+
+
+<div class="day">
+<strong>Day 3</strong>
+<span>Write 300 words.</span>
+</div>
+
+
+<div class="day">
+<strong>Day 4</strong>
+<span>Summarize what you read.</span>
+</div>
+
+
+<div class="day">
+<strong>Day 5</strong>
+<span>Edit yesterday's writing.</span>
+</div>
+
+
+<div class="day">
+<strong>Day 6</strong>
+<span>Read a different genre.</span>
+</div>
+
+
+<div class="day">
+<strong>Day 7</strong>
+<span>Write a complete short story.</span>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+COMING SOON
+========================= -->
+
+<section class="coming">
+
+<div class="container">
+
+
+<div class="section-heading">
+
+<div class="eyebrow">
+Coming to Kitsamba Learning
+</div>
+
+<h2>
+More lessons are on the way.
+</h2>
+
+<p>
+
+As Kitsamba Writes Africa grows,
+this page can become a home for original
+video lessons produced by the platform.
+
+</p>
+
+</div>
+
+
+<div class="coming-grid">
+
+
+<div class="coming-card">
+
+<i class="fa-solid fa-book-open"></i>
+
+<span>Coming Soon</span>
+
+<h3>
+How to Understand Difficult Books
+</h3>
+
+<p>
+
+Strategies for comprehension,
+note-taking and identifying main ideas.
+
+</p>
+
+</div>
+
+
+<div class="coming-card">
+
+<i class="fa-solid fa-feather-pointed"></i>
+
+<span>Coming Soon</span>
+
+<h3>
+How to Write Your First Short Story
+</h3>
+
+<p>
+
+Learn characters, conflict,
+setting, plot and satisfying endings.
+
+</p>
+
+</div>
+
+
+<div class="coming-card">
+
+<i class="fa-solid fa-spell-check"></i>
+
+<span>Coming Soon</span>
+
+<h3>
+How to Improve Your English Writing
+</h3>
+
+<p>
+
+Clear sentences, stronger vocabulary,
+grammar and effective communication.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+QUOTE
+========================= -->
+
+<section class="quote">
+
+<div class="container">
+
+<blockquote>
+
+A reader enters other people's worlds.
+A writer learns how to create worlds of their own.
+
+</blockquote>
+
+<p>
+Kitsamba Writes Africa
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+FOOTER
+========================= -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+
+<div class="footer-brand">
+
+<h3>
+Kitsamba Writes Africa
+</h3>
+
+<p>
+
+Writing Africa.
+One Story at a Time.
+
+A home for African literature,
+ideas, culture and learning.
+
+</p>
+
+
+<div class="socials">
+
+<a href="#" class="social-link">
+<i class="fab fa-facebook"></i>
+</a>
+
+<a href="#" class="social-link">
+<i class="fab fa-twitter"></i>
+</a>
+
+<a href="#" class="social-link">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="#" class="social-link">
+<i class="fab fa-youtube"></i>
+</a>
+
+</div>
+
+</div>
+
+
+<div class="footer-column">
+
+<h4>
+Explore
+</h4>
+
+<a href="novels.html">Novels</a>
+<a href="articles.html">Articles</a>
+<a href="blog.html">Blog</a>
+<a href="lifestyle.html">Lifestyle</a>
+<a href="videos.html">Learning Videos</a>
+
+</div>
+
+
+<div class="footer-column">
+
+<h4>
+Website
+</h4>
+
+<a href="about.html">About Joshua</a>
+<a href="contact.html">Contact</a>
+<a href="login.html">Reader Login</a>
+<a href="settings.html">Settings</a>
+
+</div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+<span>
+
+© <span id="year"></span>
+Kitsamba Writes Africa.
+All rights reserved.
+
+</span>
+
+<span>
+Read. Write. Grow.
+</span>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<script>
+
+
+const mobileMenuBtn=
+document.getElementById("mobileMenuBtn");
+
+const navLinks=
+document.getElementById("navLinks");
+
+const mainMenu=
+document.getElementById("mainMenu");
+
+const mainMenuButton=
+document.getElementById("mainMenuButton");
+
+
+mobileMenuBtn.addEventListener(
+"click",
+function(){
+
+navLinks.classList.toggle("active");
+
+const icon=
+mobileMenuBtn.querySelector("i");
+
+if(navLinks.classList.contains("active")){
+
+icon.className="fa-solid fa-xmark";
+
+}else{
+
+icon.className="fa-solid fa-bars";
+
+mainMenu.classList.remove("active");
+
+}
+
+});
+
+
+mainMenuButton.addEventListener(
+"click",
+function(event){
+
+event.stopPropagation();
+
+mainMenu.classList.toggle("active");
+
+});
+
+
+document.addEventListener(
+"click",
+function(event){
+
+if(!mainMenu.contains(event.target)){
+
+mainMenu.classList.remove("active");
+
+}
+
+});
+
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(
+function(link){
+
+link.addEventListener(
+"click",
+function(){
+
+navLinks.classList.remove("active");
+
+mainMenu.classList.remove("active");
+
+mobileMenuBtn
+.querySelector("i")
+.className="fa-solid fa-bars";
+
+});
+
+});
+
+
+document.getElementById("year")
+.textContent=
+new Date().getFullYear();
+
+
+</script>
+
+</body>
+
+</html>

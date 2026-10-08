@@ -1,0 +1,5032 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Reader Settings | Kitsamba Writes Africa</title>
+
+<meta name="description"
+content="Personalize your Kitsamba Writes Africa reader experience, profile, reading preferences and account settings.">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap"
+rel="stylesheet">
+
+
+<style>
+
+:root{
+
+--black:#080808;
+--dark:#101010;
+--dark2:#151515;
+--card:#181818;
+
+--gold:#d8ac56;
+--gold-light:#f2cf83;
+
+--cream:#f7f1e5;
+--white:#fff;
+
+--gray:#aaa;
+--gray2:#777;
+
+--border:rgba(216,172,86,.22);
+
+--green:#3d9b62;
+--red:#c85a5a;
+
+}
+
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+
+body{
+
+font-family:"DM Sans",sans-serif;
+
+background:var(--black);
+
+color:white;
+
+line-height:1.65;
+
+overflow-x:hidden;
+
+}
+
+
+button,
+input,
+select{
+
+font-family:inherit;
+
+}
+
+
+button{
+
+cursor:pointer;
+
+}
+
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+
+.container{
+
+width:min(1220px,94%);
+
+margin:auto;
+
+}
+
+
+
+/* ======================================
+HEADER
+====================================== */
+
+header{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+
+z-index:1000;
+
+background:rgba(7,7,7,.9);
+
+backdrop-filter:blur(16px);
+
+border-bottom:
+1px solid rgba(255,255,255,.06);
+
+}
+
+
+nav{
+
+height:76px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:25px;
+
+}
+
+
+.brand{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+
+.brand-icon{
+
+width:42px;
+height:42px;
+
+border:1px solid var(--gold);
+
+border-radius:50%;
+
+display:grid;
+
+place-items:center;
+
+color:var(--gold);
+
+}
+
+
+.brand-text strong{
+
+display:block;
+
+font-family:"Playfair Display",serif;
+
+font-size:1.12rem;
+
+}
+
+
+.brand-text span{
+
+display:block;
+
+color:var(--gold);
+
+font-size:.63rem;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+}
+
+
+.header-actions{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+}
+
+
+.header-btn{
+
+height:42px;
+
+padding:0 16px;
+
+border-radius:50px;
+
+border:1px solid #303030;
+
+background:#111;
+
+color:#ddd;
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
+
+font-size:.85rem;
+
+font-weight:700;
+
+}
+
+
+.header-btn:hover{
+
+border-color:var(--gold);
+
+color:var(--gold);
+
+}
+
+
+.header-profile{
+
+width:42px;
+height:42px;
+
+border-radius:50%;
+
+border:1px solid var(--border);
+
+background:#191919;
+
+display:grid;
+
+place-items:center;
+
+color:var(--gold);
+
+overflow:hidden;
+
+}
+
+
+.header-profile img{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+}
+
+
+
+/* ======================================
+PAGE BACKGROUND
+====================================== */
+
+.settings-page{
+
+padding:115px 0 80px;
+
+min-height:100vh;
+
+background:
+
+radial-gradient(
+circle at 85% 5%,
+rgba(216,172,86,.11),
+transparent 27%
+),
+
+radial-gradient(
+circle at 8% 80%,
+rgba(216,172,86,.06),
+transparent 25%
+),
+
+#090909;
+
+}
+
+
+
+/* ======================================
+LAYOUT
+====================================== */
+
+.settings-layout{
+
+display:grid;
+
+grid-template-columns:280px minmax(0,1fr);
+
+gap:27px;
+
+align-items:start;
+
+}
+
+
+
+/* ======================================
+SIDEBAR
+====================================== */
+
+.sidebar{
+
+position:sticky;
+
+top:102px;
+
+background:
+linear-gradient(
+180deg,
+#171717,
+#111
+);
+
+border:
+1px solid rgba(255,255,255,.07);
+
+border-radius:25px;
+
+overflow:hidden;
+
+}
+
+
+.sidebar-user{
+
+padding:28px 22px;
+
+border-bottom:
+1px solid rgba(255,255,255,.06);
+
+text-align:center;
+
+}
+
+
+.sidebar-avatar{
+
+width:82px;
+height:82px;
+
+margin:0 auto 14px;
+
+border-radius:50%;
+
+display:grid;
+
+place-items:center;
+
+background:
+linear-gradient(
+135deg,
+#252525,
+#111
+);
+
+border:2px solid var(--gold);
+
+font-family:"Playfair Display",serif;
+
+font-size:2rem;
+
+color:var(--gold);
+
+overflow:hidden;
+
+}
+
+
+.sidebar-avatar img{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+}
+
+
+.sidebar-user h3{
+
+font-family:"Playfair Display",serif;
+
+font-size:1.25rem;
+
+margin-bottom:3px;
+
+}
+
+
+.sidebar-user p{
+
+color:#777;
+
+font-size:.78rem;
+
+word-break:break-word;
+
+}
+
+
+.reader-badge{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:6px;
+
+margin-top:12px;
+
+padding:6px 10px;
+
+border-radius:50px;
+
+background:rgba(216,172,86,.1);
+
+color:var(--gold-light);
+
+font-size:.67rem;
+
+font-weight:700;
+
+text-transform:uppercase;
+
+letter-spacing:1px;
+
+}
+
+
+.sidebar-nav{
+
+padding:13px;
+
+}
+
+
+.sidebar-link{
+
+width:100%;
+
+border:none;
+
+background:transparent;
+
+color:#aaa;
+
+padding:13px 14px;
+
+border-radius:12px;
+
+display:flex;
+
+align-items:center;
+
+gap:13px;
+
+font-size:.87rem;
+
+font-weight:600;
+
+text-align:left;
+
+margin-bottom:3px;
+
+}
+
+
+.sidebar-link i{
+
+width:21px;
+
+color:#777;
+
+text-align:center;
+
+}
+
+
+.sidebar-link:hover,
+.sidebar-link.active{
+
+background:rgba(216,172,86,.1);
+
+color:white;
+
+}
+
+
+.sidebar-link.active i{
+
+color:var(--gold);
+
+}
+
+
+
+/* ======================================
+MAIN CONTENT
+====================================== */
+
+.settings-main{
+
+min-width:0;
+
+}
+
+
+.settings-hero{
+
+border:
+1px solid var(--border);
+
+border-radius:27px;
+
+padding:
+clamp(32px,5vw,55px);
+
+margin-bottom:24px;
+
+position:relative;
+
+overflow:hidden;
+
+background:
+
+radial-gradient(
+circle at 88% 30%,
+rgba(216,172,86,.17),
+transparent 25%
+),
+
+linear-gradient(
+135deg,
+#171717,
+#101010
+);
+
+}
+
+
+.settings-hero::after{
+
+content:"";
+
+position:absolute;
+
+width:340px;
+height:340px;
+
+border-radius:50%;
+
+border:
+1px solid rgba(216,172,86,.1);
+
+right:-150px;
+
+top:-160px;
+
+}
+
+
+.eyebrow{
+
+color:var(--gold);
+
+text-transform:uppercase;
+
+font-size:.72rem;
+
+font-weight:700;
+
+letter-spacing:3px;
+
+margin-bottom:12px;
+
+}
+
+
+.settings-hero h1{
+
+font-family:"Playfair Display",serif;
+
+font-size:
+clamp(2.8rem,6vw,5rem);
+
+line-height:1;
+
+max-width:700px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+.settings-hero h1 span{
+
+color:var(--gold);
+
+}
+
+
+.settings-hero p{
+
+max-width:700px;
+
+color:#999;
+
+margin-top:18px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+.hero-status{
+
+display:flex;
+
+gap:10px;
+
+flex-wrap:wrap;
+
+margin-top:27px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+.status-pill{
+
+padding:8px 12px;
+
+border-radius:50px;
+
+background:#111;
+
+border:1px solid #292929;
+
+font-size:.75rem;
+
+color:#aaa;
+
+display:flex;
+
+align-items:center;
+
+gap:7px;
+
+}
+
+
+.status-pill i{
+
+color:var(--gold);
+
+}
+
+
+
+/* ======================================
+SETTINGS SECTION
+====================================== */
+
+.settings-section{
+
+background:
+linear-gradient(
+180deg,
+#171717,
+#131313
+);
+
+border:
+1px solid rgba(255,255,255,.07);
+
+border-radius:24px;
+
+margin-bottom:22px;
+
+overflow:hidden;
+
+scroll-margin-top:105px;
+
+}
+
+
+.section-header{
+
+padding:27px 29px 22px;
+
+border-bottom:
+1px solid rgba(255,255,255,.06);
+
+display:flex;
+
+align-items:flex-start;
+
+justify-content:space-between;
+
+gap:20px;
+
+}
+
+
+.section-title-wrap{
+
+display:flex;
+
+gap:15px;
+
+}
+
+
+.section-icon{
+
+width:46px;
+height:46px;
+
+min-width:46px;
+
+border-radius:13px;
+
+display:grid;
+
+place-items:center;
+
+background:
+rgba(216,172,86,.1);
+
+color:var(--gold);
+
+}
+
+
+.section-header h2{
+
+font-family:"Playfair Display",serif;
+
+font-size:1.65rem;
+
+line-height:1.2;
+
+}
+
+
+.section-header p{
+
+font-size:.82rem;
+
+color:#777;
+
+margin-top:4px;
+
+}
+
+
+.section-body{
+
+padding:28px 29px;
+
+}
+
+
+
+/* ======================================
+PROFILE
+====================================== */
+
+.profile-grid{
+
+display:grid;
+
+grid-template-columns:
+200px minmax(0,1fr);
+
+gap:35px;
+
+align-items:start;
+
+}
+
+
+.profile-photo-card{
+
+text-align:center;
+
+}
+
+
+.profile-photo{
+
+width:145px;
+height:145px;
+
+margin:auto;
+
+border-radius:50%;
+
+background:#111;
+
+border:3px solid var(--gold);
+
+display:grid;
+
+place-items:center;
+
+font-family:"Playfair Display",serif;
+
+font-size:3rem;
+
+color:var(--gold);
+
+overflow:hidden;
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.3);
+
+}
+
+
+.profile-photo img{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+}
+
+
+.profile-status{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:6px;
+
+margin-top:16px;
+
+padding:7px 11px;
+
+border-radius:50px;
+
+background:
+rgba(61,155,98,.12);
+
+color:#76c792;
+
+font-size:.7rem;
+
+font-weight:700;
+
+}
+
+
+.profile-status.guest{
+
+background:
+rgba(216,172,86,.1);
+
+color:var(--gold-light);
+
+}
+
+
+.field-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:16px;
+
+}
+
+
+.form-group{
+
+margin-bottom:16px;
+
+}
+
+
+.form-group.full{
+
+grid-column:1 / -1;
+
+}
+
+
+.form-group label{
+
+display:block;
+
+font-size:.78rem;
+
+font-weight:700;
+
+color:#aaa;
+
+margin-bottom:7px;
+
+}
+
+
+.form-group input{
+
+width:100%;
+
+height:48px;
+
+border-radius:11px;
+
+border:1px solid #303030;
+
+background:#0f0f0f;
+
+color:white;
+
+padding:0 14px;
+
+outline:none;
+
+}
+
+
+.form-group input:focus{
+
+border-color:var(--gold);
+
+box-shadow:
+0 0 0 3px rgba(216,172,86,.08);
+
+}
+
+
+.form-group input:disabled{
+
+opacity:.6;
+
+}
+
+
+.button-row{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:10px;
+
+margin-top:5px;
+
+}
+
+
+.primary-btn,
+.secondary-btn,
+.danger-btn{
+
+border:none;
+
+padding:12px 18px;
+
+border-radius:11px;
+
+font-weight:800;
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:8px;
+
+}
+
+
+.primary-btn{
+
+background:var(--gold);
+
+color:#111;
+
+}
+
+
+.secondary-btn{
+
+background:#242424;
+
+color:#ddd;
+
+border:
+1px solid #333;
+
+}
+
+
+.danger-btn{
+
+background:
+rgba(200,90,90,.12);
+
+color:#e78383;
+
+border:
+1px solid rgba(200,90,90,.25);
+
+}
+
+
+
+/* ======================================
+READING APPEARANCE
+====================================== */
+
+.theme-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:14px;
+
+margin-bottom:30px;
+
+}
+
+
+.theme-option{
+
+border:2px solid transparent;
+
+border-radius:16px;
+
+padding:11px;
+
+background:#101010;
+
+cursor:pointer;
+
+}
+
+
+.theme-option.active{
+
+border-color:var(--gold);
+
+}
+
+
+.theme-preview{
+
+height:105px;
+
+border-radius:11px;
+
+margin-bottom:10px;
+
+padding:15px;
+
+font-family:"Playfair Display",serif;
+
+font-size:.9rem;
+
+}
+
+
+.preview-night{
+
+background:#090909;
+color:#dedede;
+
+}
+
+
+.preview-paper{
+
+background:#faf6ec;
+color:#292929;
+
+}
+
+
+.preview-sepia{
+
+background:#efe0be;
+color:#433621;
+
+}
+
+
+.theme-option strong{
+
+display:block;
+
+font-size:.82rem;
+
+}
+
+
+.theme-option span{
+
+font-size:.7rem;
+
+color:#777;
+
+}
+
+
+.slider-setting{
+
+display:grid;
+
+grid-template-columns:
+190px minmax(0,1fr) 65px;
+
+gap:20px;
+
+align-items:center;
+
+padding:18px 0;
+
+border-top:
+1px solid rgba(255,255,255,.06);
+
+}
+
+
+.slider-label strong{
+
+display:block;
+
+font-size:.87rem;
+
+}
+
+
+.slider-label span{
+
+color:#777;
+
+font-size:.72rem;
+
+}
+
+
+.slider-setting input[type="range"]{
+
+width:100%;
+
+accent-color:var(--gold);
+
+}
+
+
+.slider-value{
+
+text-align:right;
+
+color:var(--gold-light);
+
+font-size:.82rem;
+
+font-weight:700;
+
+}
+
+
+.reading-preview{
+
+margin-top:28px;
+
+border-radius:18px;
+
+padding:
+clamp(25px,4vw,40px);
+
+transition:.25s;
+
+}
+
+
+.reading-preview h3{
+
+font-family:"Playfair Display",serif;
+
+font-size:1.9rem;
+
+margin-bottom:15px;
+
+}
+
+
+.reading-preview p{
+
+font-family:"Playfair Display",serif;
+
+max-width:var(--preview-width,700px);
+
+margin:auto;
+
+}
+
+
+
+/* ======================================
+CONTENT INTERESTS
+====================================== */
+
+.interests-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:12px;
+
+}
+
+
+.interest{
+
+border:
+1px solid #2d2d2d;
+
+background:#101010;
+
+padding:17px;
+
+border-radius:14px;
+
+cursor:pointer;
+
+transition:.2s;
+
+}
+
+
+.interest:hover{
+
+border-color:#555;
+
+}
+
+
+.interest.active{
+
+border-color:var(--gold);
+
+background:
+rgba(216,172,86,.08);
+
+}
+
+
+.interest i{
+
+color:var(--gold);
+
+font-size:1.2rem;
+
+margin-bottom:10px;
+
+}
+
+
+.interest strong{
+
+display:block;
+
+font-size:.85rem;
+
+}
+
+
+.interest span{
+
+display:block;
+
+color:#777;
+
+font-size:.7rem;
+
+margin-top:3px;
+
+}
+
+
+
+/* ======================================
+TOGGLES
+====================================== */
+
+.setting-row{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:25px;
+
+padding:19px 0;
+
+border-bottom:
+1px solid rgba(255,255,255,.06);
+
+}
+
+
+.setting-row:last-child{
+
+border-bottom:none;
+
+}
+
+
+.setting-info strong{
+
+display:block;
+
+font-size:.9rem;
+
+}
+
+
+.setting-info p{
+
+color:#777;
+
+font-size:.75rem;
+
+margin-top:3px;
+
+max-width:650px;
+
+}
+
+
+.toggle{
+
+position:relative;
+
+width:48px;
+height:27px;
+
+min-width:48px;
+
+}
+
+
+.toggle input{
+
+display:none;
+
+}
+
+
+.toggle-slider{
+
+position:absolute;
+
+inset:0;
+
+background:#353535;
+
+border-radius:50px;
+
+transition:.25s;
+
+}
+
+
+.toggle-slider::before{
+
+content:"";
+
+position:absolute;
+
+width:21px;
+height:21px;
+
+left:3px;
+top:3px;
+
+background:white;
+
+border-radius:50%;
+
+transition:.25s;
+
+}
+
+
+.toggle input:checked +
+.toggle-slider{
+
+background:var(--gold);
+
+}
+
+
+.toggle input:checked +
+.toggle-slider::before{
+
+transform:translateX(21px);
+
+background:#111;
+
+}
+
+
+
+/* ======================================
+ACCOUNT CARDS
+====================================== */
+
+.account-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:14px;
+
+}
+
+
+.account-card{
+
+border:
+1px solid #2c2c2c;
+
+border-radius:16px;
+
+padding:21px;
+
+background:#101010;
+
+}
+
+
+.account-card i{
+
+color:var(--gold);
+
+font-size:1.25rem;
+
+margin-bottom:12px;
+
+}
+
+
+.account-card h3{
+
+font-family:"Playfair Display",serif;
+
+font-size:1.2rem;
+
+margin-bottom:6px;
+
+}
+
+
+.account-card p{
+
+color:#777;
+
+font-size:.77rem;
+
+min-height:50px;
+
+margin-bottom:15px;
+
+}
+
+
+
+/* ======================================
+SUPPORT
+====================================== */
+
+.support-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:14px;
+
+}
+
+
+.support-card{
+
+padding:23px;
+
+border-radius:16px;
+
+background:#101010;
+
+border:1px solid #2c2c2c;
+
+transition:.25s;
+
+}
+
+
+.support-card:hover{
+
+transform:translateY(-4px);
+
+border-color:var(--border);
+
+}
+
+
+.support-card i{
+
+color:var(--gold);
+
+font-size:1.3rem;
+
+margin-bottom:16px;
+
+}
+
+
+.support-card h3{
+
+font-family:"Playfair Display",serif;
+
+font-size:1.2rem;
+
+margin-bottom:7px;
+
+}
+
+
+.support-card p{
+
+color:#777;
+
+font-size:.76rem;
+
+margin-bottom:13px;
+
+}
+
+
+.support-card a{
+
+color:var(--gold-light);
+
+font-size:.78rem;
+
+font-weight:700;
+
+}
+
+
+
+/* ======================================
+MEMBERSHIP CARD
+====================================== */
+
+.membership-card{
+
+padding:
+clamp(28px,5vw,50px);
+
+border-radius:23px;
+
+background:
+
+radial-gradient(
+circle at 85% 30%,
+rgba(255,255,255,.14),
+transparent 25%
+),
+
+linear-gradient(
+135deg,
+#9b742d,
+#d8ac56 48%,
+#7d5a22
+);
+
+color:#17130c;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+.membership-card::after{
+
+content:"";
+
+position:absolute;
+
+width:220px;
+height:220px;
+
+border-radius:50%;
+
+border:
+1px solid rgba(0,0,0,.15);
+
+right:-80px;
+
+top:-100px;
+
+}
+
+
+.membership-top{
+
+display:flex;
+
+justify-content:space-between;
+
+gap:25px;
+
+align-items:flex-start;
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+.membership-card small{
+
+text-transform:uppercase;
+
+letter-spacing:3px;
+
+font-weight:800;
+
+}
+
+
+.membership-card h2{
+
+font-family:"Playfair Display",serif;
+
+font-size:
+clamp(2rem,4vw,3rem);
+
+margin-top:6px;
+
+}
+
+
+.membership-symbol{
+
+width:60px;
+height:60px;
+
+border-radius:50%;
+
+background:#111;
+
+color:var(--gold);
+
+display:grid;
+
+place-items:center;
+
+font-size:1.4rem;
+
+}
+
+
+.membership-details{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:30px;
+
+margin-top:35px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+.member-detail span{
+
+display:block;
+
+font-size:.65rem;
+
+font-weight:800;
+
+text-transform:uppercase;
+
+letter-spacing:1px;
+
+opacity:.65;
+
+}
+
+
+.member-detail strong{
+
+display:block;
+
+margin-top:2px;
+
+}
+
+
+
+/* ======================================
+MESSAGES
+====================================== */
+
+.toast{
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+max-width:370px;
+
+padding:14px 18px;
+
+border-radius:13px;
+
+background:#181818;
+
+border:
+1px solid #333;
+
+box-shadow:
+0 20px 50px rgba(0,0,0,.5);
+
+z-index:4000;
+
+transform:
+translateY(130%);
+
+opacity:0;
+
+transition:.3s;
+
+font-size:.82rem;
+
+}
+
+
+.toast.show{
+
+transform:
+translateY(0);
+
+opacity:1;
+
+}
+
+
+.toast.success{
+
+border-color:
+rgba(61,155,98,.45);
+
+}
+
+
+.toast.error{
+
+border-color:
+rgba(200,90,90,.5);
+
+}
+
+
+
+/* ======================================
+FOOTER
+====================================== */
+
+footer{
+
+padding:40px 0;
+
+border-top:
+1px solid rgba(255,255,255,.06);
+
+background:#070707;
+
+}
+
+
+.footer-row{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:20px;
+
+color:#666;
+
+font-size:.78rem;
+
+}
+
+
+.footer-links{
+
+display:flex;
+
+gap:17px;
+
+}
+
+
+.footer-links a:hover{
+
+color:var(--gold);
+
+}
+
+
+
+/* ======================================
+TABLET
+====================================== */
+
+@media(max-width:950px){
+
+.settings-layout{
+
+grid-template-columns:1fr;
+
+}
+
+
+.sidebar{
+
+position:static;
+
+}
+
+
+.sidebar-user{
+
+display:none;
+
+}
+
+
+.sidebar-nav{
+
+display:flex;
+
+overflow-x:auto;
+
+gap:5px;
+
+}
+
+
+.sidebar-link{
+
+width:auto;
+
+min-width:max-content;
+
+margin:0;
+
+}
+
+
+.profile-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.profile-photo-card{
+
+text-align:left;
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+}
+
+
+.profile-photo{
+
+margin:0;
+
+width:100px;
+height:100px;
+
+}
+
+
+.theme-grid{
+
+grid-template-columns:1fr 1fr 1fr;
+
+}
+
+
+.interests-grid{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+
+.support-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+
+
+/* ======================================
+PHONE
+====================================== */
+
+@media(max-width:620px){
+
+.header-btn span{
+
+display:none;
+
+}
+
+
+.settings-page{
+
+padding-top:95px;
+
+}
+
+
+.settings-hero{
+
+padding:30px 24px;
+
+}
+
+
+.section-header,
+.section-body{
+
+padding-left:20px;
+padding-right:20px;
+
+}
+
+
+.field-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.form-group.full{
+
+grid-column:auto;
+
+}
+
+
+.theme-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.interests-grid,
+.account-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.slider-setting{
+
+grid-template-columns:1fr;
+
+gap:8px;
+
+}
+
+
+.slider-value{
+
+text-align:left;
+
+}
+
+
+.setting-row{
+
+align-items:flex-start;
+
+}
+
+
+.membership-top{
+
+align-items:center;
+
+}
+
+
+.membership-symbol{
+
+width:50px;
+height:50px;
+
+}
+
+
+.footer-row{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+}
+
+</style>
+
+<script src="theme.js"></script>
+</head>
+
+
+<body>
+
+
+<!-- ======================================
+HEADER
+====================================== -->
+
+<header>
+
+<div class="container">
+
+<nav>
+
+
+<a href="index.html"
+class="brand">
+
+<div class="brand-icon">
+
+<i class="fa-solid fa-feather-pointed"></i>
+
+</div>
+
+
+<div class="brand-text">
+
+<strong>
+Kitsamba Writes
+</strong>
+
+<span>
+Africa
+</span>
+
+</div>
+
+</a>
+
+
+<div class="header-actions">
+
+
+<a
+href="index.html"
+class="header-btn">
+
+<i class="fa-solid fa-house"></i>
+
+<span>
+Website
+</span>
+
+</a>
+
+
+<a
+href="novels.html"
+class="header-btn">
+
+<i class="fa-solid fa-book-open"></i>
+
+<span>
+Read
+</span>
+
+</a>
+
+
+<div
+class="header-profile"
+id="headerProfile">
+
+<i class="fa-solid fa-user"></i>
+
+</div>
+
+
+</div>
+
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- ======================================
+PAGE
+====================================== -->
+
+<main class="settings-page">
+
+<div class="container">
+
+
+<div class="settings-layout">
+
+
+<!-- ======================================
+SIDEBAR
+====================================== -->
+
+<aside class="sidebar">
+
+
+<div class="sidebar-user">
+
+
+<div
+class="sidebar-avatar"
+id="sidebarAvatar">
+
+R
+
+</div>
+
+
+<h3 id="sidebarName">
+
+Reader
+
+</h3>
+
+
+<p id="sidebarEmail">
+
+Not signed in
+
+</p>
+
+
+<div class="reader-badge">
+
+<i class="fa-solid fa-feather"></i>
+
+Kitsamba Reader
+
+</div>
+
+
+</div>
+
+
+<div class="sidebar-nav">
+
+
+<button
+class="sidebar-link active"
+data-target="profile">
+
+<i class="fa-solid fa-user"></i>
+
+Profile
+
+</button>
+
+
+<button
+class="sidebar-link"
+data-target="reading">
+
+<i class="fa-solid fa-book-open-reader"></i>
+
+Reading
+
+</button>
+
+
+<button
+class="sidebar-link"
+data-target="interests">
+
+<i class="fa-solid fa-heart"></i>
+
+Interests
+
+</button>
+
+
+<button
+class="sidebar-link"
+data-target="notifications">
+
+<i class="fa-solid fa-bell"></i>
+
+Notifications
+
+</button>
+
+
+<button
+class="sidebar-link"
+data-target="privacy">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+Privacy
+
+</button>
+
+
+<button
+class="sidebar-link"
+data-target="support">
+
+<i class="fa-solid fa-circle-question"></i>
+
+Help
+
+</button>
+
+
+</div>
+
+
+</aside>
+
+
+<!-- ======================================
+MAIN
+====================================== -->
+
+<div class="settings-main">
+
+
+<!-- HERO -->
+
+<section class="settings-hero">
+
+
+<div class="eyebrow">
+
+Reader Control Centre
+
+</div>
+
+
+<h1>
+
+Make reading
+<span>feel like yours.</span>
+
+</h1>
+
+
+<p>
+
+Personalize your Kitsamba Writes Africa
+experience, manage your reader account,
+choose what interests you and shape how
+stories appear when you read.
+
+</p>
+
+
+<div class="hero-status">
+
+
+<div class="status-pill">
+
+<i class="fa-solid fa-book"></i>
+
+Reader preferences
+
+</div>
+
+
+<div class="status-pill">
+
+<i class="fa-solid fa-mobile-screen"></i>
+
+Responsive on every device
+
+</div>
+
+
+<div class="status-pill">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+Firebase account ready
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<!-- ======================================
+PROFILE
+====================================== -->
+
+<section
+class="settings-section"
+id="profile">
+
+
+<div class="section-header">
+
+
+<div class="section-title-wrap">
+
+
+<div class="section-icon">
+
+<i class="fa-solid fa-user-pen"></i>
+
+</div>
+
+
+<div>
+
+<h2>
+Reader Profile
+</h2>
+
+<p>
+Your identity inside Kitsamba Writes Africa.
+</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<div class="section-body">
+
+
+<div class="profile-grid">
+
+
+<div class="profile-photo-card">
+
+
+<div
+class="profile-photo"
+id="profilePhoto">
+
+R
+
+</div>
+
+
+<div>
+
+<div
+class="profile-status guest"
+id="profileStatus">
+
+<i class="fa-solid fa-circle"></i>
+
+Guest Reader
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div>
+
+
+<div class="field-grid">
+
+
+<div class="form-group">
+
+<label>
+Display Name
+</label>
+
+<input
+type="text"
+id="profileName"
+placeholder="Your reader name">
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Email Address
+</label>
+
+<input
+type="email"
+id="profileEmail"
+placeholder="Not signed in"
+disabled>
+
+</div>
+
+
+<div class="form-group full">
+
+<label>
+Reader Bio
+</label>
+
+<input
+type="text"
+id="readerBio"
+maxlength="120"
+placeholder="Example: I love African novels, culture and inspiring stories.">
+
+</div>
+
+
+</div>
+
+
+<div class="button-row">
+
+
+<button
+class="primary-btn"
+id="saveProfile">
+
+<i class="fa-solid fa-floppy-disk"></i>
+
+Save Profile
+
+</button>
+
+
+<a
+href="login.html"
+class="secondary-btn"
+id="loginProfileButton">
+
+<i class="fa-solid fa-right-to-bracket"></i>
+
+Sign In
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<!-- ======================================
+READING EXPERIENCE
+====================================== -->
+
+<section
+class="settings-section"
+id="reading">
+
+
+<div class="section-header">
+
+
+<div class="section-title-wrap">
+
+
+<div class="section-icon">
+
+<i class="fa-solid fa-book-open-reader"></i>
+
+</div>
+
+
+<div>
+
+<h2>
+Reading Experience
+</h2>
+
+<p>
+Shape how long-form stories feel on your screen.
+</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<div class="section-body">
+
+
+<div class="theme-grid">
+
+
+<div
+class="theme-option active"
+data-theme="night">
+
+<div class="theme-preview preview-night">
+
+Once upon a quiet African evening,
+a new story began...
+
+</div>
+
+<strong>
+Night
+</strong>
+
+<span>
+Easy on the eyes
+</span>
+
+</div>
+
+
+<div
+class="theme-option"
+data-theme="paper">
+
+<div class="theme-preview preview-paper">
+
+Once upon a quiet African evening,
+a new story began...
+
+</div>
+
+<strong>
+Paper
+</strong>
+
+<span>
+Clean book-style reading
+</span>
+
+</div>
+
+
+<div
+class="theme-option"
+data-theme="sepia">
+
+<div class="theme-preview preview-sepia">
+
+Once upon a quiet African evening,
+a new story began...
+
+</div>
+
+<strong>
+Sepia
+</strong>
+
+<span>
+Warm traditional page
+</span>
+
+</div>
+
+
+</div>
+
+
+<div class="slider-setting">
+
+
+<div class="slider-label">
+
+<strong>
+Text Size
+</strong>
+
+<span>
+Make reading larger or smaller.
+</span>
+
+</div>
+
+
+<input
+type="range"
+id="fontSize"
+min="15"
+max="24"
+value="18">
+
+
+<div
+class="slider-value"
+id="fontSizeValue">
+
+18 px
+
+</div>
+
+
+</div>
+
+
+<div class="slider-setting">
+
+
+<div class="slider-label">
+
+<strong>
+Line Spacing
+</strong>
+
+<span>
+Control space between lines.
+</span>
+
+</div>
+
+
+<input
+type="range"
+id="lineHeight"
+min="1.4"
+max="2.2"
+step=".1"
+value="1.8">
+
+
+<div
+class="slider-value"
+id="lineHeightValue">
+
+1.8
+
+</div>
+
+
+</div>
+
+
+<div class="slider-setting">
+
+
+<div class="slider-label">
+
+<strong>
+Reading Width
+</strong>
+
+<span>
+Choose how wide paragraphs appear.
+</span>
+
+</div>
+
+
+<input
+type="range"
+id="readingWidth"
+min="520"
+max="850"
+step="10"
+value="700">
+
+
+<div
+class="slider-value"
+id="readingWidthValue">
+
+700 px
+
+</div>
+
+
+</div>
+
+
+<div
+class="reading-preview preview-night"
+id="readingPreview">
+
+
+<h3>
+A Preview of Your Reading Style
+</h3>
+
+
+<p>
+
+Stories allow us to travel without leaving
+our seats. Through them, we meet people we
+have never known, experience places we have
+never visited and sometimes discover parts
+of ourselves we had not noticed before.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<!-- ======================================
+INTERESTS
+====================================== -->
+
+<section
+class="settings-section"
+id="interests">
+
+
+<div class="section-header">
+
+
+<div class="section-title-wrap">
+
+
+<div class="section-icon">
+
+<i class="fa-solid fa-heart"></i>
+
+</div>
+
+
+<div>
+
+<h2>
+Your Interests
+</h2>
+
+<p>
+Tell Kitsamba Writes what you enjoy reading.
+</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<div class="section-body">
+
+
+<div class="interests-grid">
+
+
+<div
+class="interest active"
+data-interest="novels">
+
+<i class="fa-solid fa-book"></i>
+
+<strong>
+Novels
+</strong>
+
+<span>
+Fiction and long-form storytelling
+</span>
+
+</div>
+
+
+<div
+class="interest"
+data-interest="relationships">
+
+<i class="fa-solid fa-heart"></i>
+
+<strong>
+Relationships & Life
+</strong>
+
+<span>
+Love, friendship and human experience
+</span>
+
+</div>
+
+
+<div
+class="interest"
+data-interest="youth">
+
+<i class="fa-solid fa-people-group"></i>
+
+<strong>
+Youth & Society
+</strong>
+
+<span>
+Young African voices and ideas
+</span>
+
+</div>
+
+
+<div
+class="interest"
+data-interest="culture">
+
+<i class="fa-solid fa-earth-africa"></i>
+
+<strong>
+African Culture
+</strong>
+
+<span>
+Traditions, identity and heritage
+</span>
+
+</div>
+
+
+<div
+class="interest"
+data-interest="lifestyle">
+
+<i class="fa-solid fa-music"></i>
+
+<strong>
+Lifestyle
+</strong>
+
+<span>
+Food, fashion, music and travel
+</span>
+
+</div>
+
+
+<div
+class="interest"
+data-interest="education">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+<strong>
+Learning
+</strong>
+
+<span>
+Reading, writing and educational ideas
+</span>
+
+</div>
+
+
+</div>
+
+
+<div class="button-row"
+style="margin-top:22px;">
+
+
+<button
+class="primary-btn"
+id="saveInterests">
+
+<i class="fa-solid fa-check"></i>
+
+Save Interests
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<!-- ======================================
+NOTIFICATIONS
+====================================== -->
+
+<section
+class="settings-section"
+id="notifications">
+
+
+<div class="section-header">
+
+
+<div class="section-title-wrap">
+
+
+<div class="section-icon">
+
+<i class="fa-solid fa-bell"></i>
+
+</div>
+
+
+<div>
+
+<h2>
+Notifications
+</h2>
+
+<p>
+Choose the updates you would like to receive.
+</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<div class="section-body">
+
+
+<div class="setting-row">
+
+
+<div class="setting-info">
+
+<strong>
+New Novels & Chapters
+</strong>
+
+<p>
+Be interested in notifications when new fiction
+or chapters become available.
+</p>
+
+</div>
+
+
+<label class="toggle">
+
+<input
+type="checkbox"
+id="notifyNovels"
+checked>
+
+<span class="toggle-slider"></span>
+
+</label>
+
+
+</div>
+
+
+<div class="setting-row">
+
+
+<div class="setting-info">
+
+<strong>
+New Articles
+</strong>
+
+<p>
+Receive updates about new articles and essays.
+</p>
+
+</div>
+
+
+<label class="toggle">
+
+<input
+type="checkbox"
+id="notifyArticles"
+checked>
+
+<span class="toggle-slider"></span>
+
+</label>
+
+
+</div>
+
+
+<div class="setting-row">
+
+
+<div class="setting-info">
+
+<strong>
+Kitsamba Learning
+</strong>
+
+<p>
+Reading, writing and storytelling lessons from
+Kitsamba Writes TV.
+</p>
+
+</div>
+
+
+<label class="toggle">
+
+<input
+type="checkbox"
+id="notifyLearning">
+
+<span class="toggle-slider"></span>
+
+</label>
+
+
+</div>
+
+
+<div class="setting-row">
+
+
+<div class="setting-info">
+
+<strong>
+Weekly Reading Digest
+</strong>
+
+<p>
+A preference for receiving a weekly selection
+of stories and ideas.
+</p>
+
+</div>
+
+
+<label class="toggle">
+
+<input
+type="checkbox"
+id="notifyDigest">
+
+<span class="toggle-slider"></span>
+
+</label>
+
+
+</div>
+
+
+<p
+style="
+color:#666;
+font-size:.72rem;
+margin-top:16px;
+">
+
+These notification choices are saved as reader
+preferences. Actual email notifications can be
+connected later when the mailing system is activated.
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+<!-- ======================================
+PRIVACY & ACCOUNT
+====================================== -->
+
+<section
+class="settings-section"
+id="privacy">
+
+
+<div class="section-header">
+
+
+<div class="section-title-wrap">
+
+
+<div class="section-icon">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+</div>
+
+
+<div>
+
+<h2>
+Privacy & Account
+</h2>
+
+<p>
+Control your local preferences and reader account.
+</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<div class="section-body">
+
+
+<div class="setting-row">
+
+
+<div class="setting-info">
+
+<strong>
+Remember My Preferences
+</strong>
+
+<p>
+Store your reading settings in this browser.
+</p>
+
+</div>
+
+
+<label class="toggle">
+
+<input
+type="checkbox"
+id="rememberPreferences"
+checked>
+
+<span class="toggle-slider"></span>
+
+</label>
+
+
+</div>
+
+
+<div class="setting-row">
+
+
+<div class="setting-info">
+
+<strong>
+Show Profile Picture
+</strong>
+
+<p>
+Display your Google/Firebase profile picture
+inside the reader interface when available.
+</p>
+
+</div>
+
+
+<label class="toggle">
+
+<input
+type="checkbox"
+id="showProfilePicture"
+checked>
+
+<span class="toggle-slider"></span>
+
+</label>
+
+
+</div>
+
+
+<div class="account-grid"
+style="margin-top:25px;">
+
+
+<div class="account-card">
+
+
+<i class="fa-solid fa-key"></i>
+
+<h3>
+Password
+</h3>
+
+<p>
+
+Signed-in email readers can request
+a password reset message.
+
+</p>
+
+
+<button
+class="secondary-btn"
+id="passwordResetButton">
+
+Reset Password
+
+</button>
+
+
+</div>
+
+
+<div class="account-card">
+
+
+<i class="fa-solid fa-download"></i>
+
+<h3>
+Export Preferences
+</h3>
+
+<p>
+
+Download a small copy of your saved
+reader preferences to this computer.
+
+</p>
+
+
+<button
+class="secondary-btn"
+id="exportSettings">
+
+Download Settings
+
+</button>
+
+
+</div>
+
+
+<div class="account-card">
+
+
+<i class="fa-solid fa-rotate-left"></i>
+
+<h3>
+Reset Preferences
+</h3>
+
+<p>
+
+Restore this Settings page to its
+original reading preferences.
+
+</p>
+
+
+<button
+class="secondary-btn"
+id="resetPreferences">
+
+Reset Settings
+
+</button>
+
+
+</div>
+
+
+<div class="account-card">
+
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+<h3>
+Reader Session
+</h3>
+
+<p>
+
+Securely sign out of your Firebase
+reader account on this device.
+
+</p>
+
+
+<button
+class="danger-btn"
+id="signOutButton">
+
+Sign Out
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<!-- ======================================
+SUPPORT
+====================================== -->
+
+<section
+class="settings-section"
+id="support">
+
+
+<div class="section-header">
+
+
+<div class="section-title-wrap">
+
+
+<div class="section-icon">
+
+<i class="fa-solid fa-circle-question"></i>
+
+</div>
+
+
+<div>
+
+<h2>
+Help & Support
+</h2>
+
+<p>
+Need assistance or want to learn more?
+</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<div class="section-body">
+
+
+<div class="support-grid">
+
+
+<div class="support-card">
+
+
+<i class="fa-solid fa-envelope"></i>
+
+<h3>
+Contact Us
+</h3>
+
+<p>
+
+Send a reader question, feedback
+or partnership message.
+
+</p>
+
+<a href="contact.html">
+
+Open Contact Page →
+
+</a>
+
+
+</div>
+
+
+<div class="support-card">
+
+
+<i class="fa-solid fa-user-pen"></i>
+
+<h3>
+About Joshua
+</h3>
+
+<p>
+
+Learn about the writer and the story
+behind Kitsamba Writes Africa.
+
+</p>
+
+<a href="about.html">
+
+Meet the Writer →
+
+</a>
+
+
+</div>
+
+
+<div class="support-card">
+
+
+<i class="fa-solid fa-book-open-reader"></i>
+
+<h3>
+Reading & Writing
+</h3>
+
+<p>
+
+Explore the Kitsamba Learning Corner
+and improve your skills.
+
+</p>
+
+<a href="videos.html">
+
+Start Learning →
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<!-- ======================================
+MEMBERSHIP CARD
+====================================== -->
+
+<section class="membership-card">
+
+
+<div class="membership-top">
+
+
+<div>
+
+<small>
+Kitsamba Writes Africa
+</small>
+
+<h2>
+Reader Membership
+</h2>
+
+</div>
+
+
+<div class="membership-symbol">
+
+<i class="fa-solid fa-feather-pointed"></i>
+
+</div>
+
+
+</div>
+
+
+<div class="membership-details">
+
+
+<div class="member-detail">
+
+<span>
+Reader
+</span>
+
+<strong id="membershipName">
+
+Guest Reader
+
+</strong>
+
+</div>
+
+
+<div class="member-detail">
+
+<span>
+Status
+</span>
+
+<strong id="membershipStatus">
+
+Guest
+
+</strong>
+
+</div>
+
+
+<div class="member-detail">
+
+<span>
+Favourite Theme
+</span>
+
+<strong id="membershipTheme">
+
+Night
+
+</strong>
+
+</div>
+
+
+<div class="member-detail">
+
+<span>
+Platform
+</span>
+
+<strong>
+Kitsamba Writes Africa
+</strong>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<!-- ======================================
+FOOTER
+====================================== -->
+
+<footer>
+
+<div class="container">
+
+
+<div class="footer-row">
+
+
+<div>
+
+© <span id="year"></span>
+Kitsamba Writes Africa
+
+</div>
+
+
+<div class="footer-links">
+
+<a href="index.html">
+Home
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+<a href="about.html">
+About
+</a>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</footer>
+
+
+<div
+class="toast"
+id="toast">
+
+Settings saved.
+
+</div>
+
+
+<!-- ======================================
+FIREBASE + SETTINGS SCRIPT
+====================================== -->
+
+<script type="module">
+
+
+/* ======================================
+FIREBASE IMPORTS
+====================================== */
+
+import {
+
+initializeApp
+
+}
+
+from
+
+"https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+
+
+import {
+
+getAuth,
+
+onAuthStateChanged,
+
+updateProfile,
+
+sendPasswordResetEmail,
+
+signOut
+
+}
+
+from
+
+"https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
+
+
+
+/* ======================================
+FIREBASE CONFIG
+====================================== */
+
+const firebaseConfig = {
+
+apiKey:
+"AIzaSyCEQNYqNKCL2uZSenJlv8AO60fNh31F5fg",
+
+authDomain:
+"kitsamba-writes-africa.firebaseapp.com",
+
+projectId:
+"kitsamba-writes-africa",
+
+storageBucket:
+"kitsamba-writes-africa.firebasestorage.app",
+
+messagingSenderId:
+"345094514691",
+
+appId:
+"1:345094514691:web:11ad3be96e1cc312f04636"
+
+};
+
+
+const app =
+initializeApp(firebaseConfig);
+
+
+const auth =
+getAuth(app);
+
+
+let currentUser = null;
+
+
+/* ======================================
+DEFAULT SETTINGS
+====================================== */
+
+const defaultSettings = {
+
+theme:"night",
+
+fontSize:18,
+
+lineHeight:1.8,
+
+readingWidth:700,
+
+bio:"",
+
+interests:[
+"novels"
+],
+
+notifyNovels:true,
+
+notifyArticles:true,
+
+notifyLearning:false,
+
+notifyDigest:false,
+
+rememberPreferences:true,
+
+showProfilePicture:true
+
+};
+
+
+let settings = {
+
+...defaultSettings
+
+};
+
+
+
+/* ======================================
+ELEMENTS
+====================================== */
+
+const profileName =
+document.getElementById("profileName");
+
+
+const profileEmail =
+document.getElementById("profileEmail");
+
+
+const readerBio =
+document.getElementById("readerBio");
+
+
+const profilePhoto =
+document.getElementById("profilePhoto");
+
+
+const sidebarAvatar =
+document.getElementById("sidebarAvatar");
+
+
+const headerProfile =
+document.getElementById("headerProfile");
+
+
+const sidebarName =
+document.getElementById("sidebarName");
+
+
+const sidebarEmail =
+document.getElementById("sidebarEmail");
+
+
+const profileStatus =
+document.getElementById("profileStatus");
+
+
+const loginProfileButton =
+document.getElementById("loginProfileButton");
+
+
+const membershipName =
+document.getElementById("membershipName");
+
+
+const membershipStatus =
+document.getElementById("membershipStatus");
+
+
+const membershipTheme =
+document.getElementById("membershipTheme");
+
+
+const toast =
+document.getElementById("toast");
+
+
+
+/* ======================================
+TOAST
+====================================== */
+
+function showToast(
+message,
+type="success"
+){
+
+toast.textContent =
+message;
+
+
+toast.className =
+"toast show " + type;
+
+
+setTimeout(
+function(){
+
+toast.className =
+"toast";
+
+},
+2800
+);
+
+}
+
+
+
+/* ======================================
+LOAD SETTINGS
+====================================== */
+
+function loadSettings(){
+
+try{
+
+const saved =
+localStorage.getItem(
+"kitsambaReaderSettings"
+);
+
+
+if(saved){
+
+settings = {
+
+...defaultSettings,
+
+...JSON.parse(saved)
+
+};
+
+}
+
+}
+catch(error){
+
+console.error(
+"Could not load settings:",
+error
+);
+
+}
+
+
+applySettings();
+
+}
+
+
+
+/* ======================================
+SAVE SETTINGS
+====================================== */
+
+function saveSettings(){
+
+if(
+settings.rememberPreferences
+){
+
+localStorage.setItem(
+"kitsambaReaderSettings",
+JSON.stringify(settings)
+);
+
+}
+else{
+
+localStorage.removeItem(
+"kitsambaReaderSettings"
+);
+
+}
+
+}
+
+
+
+/* ======================================
+READING PREVIEW
+====================================== */
+
+const readingPreview =
+document.getElementById(
+"readingPreview"
+);
+
+
+const fontSize =
+document.getElementById(
+"fontSize"
+);
+
+
+const lineHeight =
+document.getElementById(
+"lineHeight"
+);
+
+
+const readingWidth =
+document.getElementById(
+"readingWidth"
+);
+
+
+const fontSizeValue =
+document.getElementById(
+"fontSizeValue"
+);
+
+
+const lineHeightValue =
+document.getElementById(
+"lineHeightValue"
+);
+
+
+const readingWidthValue =
+document.getElementById(
+"readingWidthValue"
+);
+
+
+function updateReadingPreview(){
+
+readingPreview.className =
+"reading-preview preview-" +
+settings.theme;
+
+
+readingPreview.style.fontSize =
+settings.fontSize + "px";
+
+
+readingPreview.style.lineHeight =
+settings.lineHeight;
+
+
+readingPreview.style.setProperty(
+"--preview-width",
+settings.readingWidth + "px"
+);
+
+
+fontSizeValue.textContent =
+settings.fontSize + " px";
+
+
+lineHeightValue.textContent =
+settings.lineHeight;
+
+
+readingWidthValue.textContent =
+settings.readingWidth + " px";
+
+
+membershipTheme.textContent =
+settings.theme
+.charAt(0)
+.toUpperCase()
++
+settings.theme.slice(1);
+
+}
+
+
+
+/* ======================================
+APPLY SETTINGS
+====================================== */
+
+function applySettings(){
+
+readerBio.value =
+settings.bio || "";
+
+
+fontSize.value =
+settings.fontSize;
+
+
+lineHeight.value =
+settings.lineHeight;
+
+
+readingWidth.value =
+settings.readingWidth;
+
+
+document.getElementById(
+"notifyNovels"
+).checked =
+settings.notifyNovels;
+
+
+document.getElementById(
+"notifyArticles"
+).checked =
+settings.notifyArticles;
+
+
+document.getElementById(
+"notifyLearning"
+).checked =
+settings.notifyLearning;
+
+
+document.getElementById(
+"notifyDigest"
+).checked =
+settings.notifyDigest;
+
+
+document.getElementById(
+"rememberPreferences"
+).checked =
+settings.rememberPreferences;
+
+
+document.getElementById(
+"showProfilePicture"
+).checked =
+settings.showProfilePicture;
+
+
+document
+.querySelectorAll(
+".theme-option"
+)
+.forEach(
+function(option){
+
+option.classList.toggle(
+"active",
+option.dataset.theme ===
+settings.theme
+);
+
+});
+
+
+document
+.querySelectorAll(
+".interest"
+)
+.forEach(
+function(card){
+
+card.classList.toggle(
+"active",
+settings.interests.includes(
+card.dataset.interest
+)
+);
+
+});
+
+
+updateReadingPreview();
+
+}
+
+
+
+/* ======================================
+THEME OPTIONS
+====================================== */
+
+document
+.querySelectorAll(
+".theme-option"
+)
+.forEach(
+function(option){
+
+option.addEventListener(
+"click",
+function(){
+
+settings.theme =
+option.dataset.theme;
+
+
+document
+.querySelectorAll(
+".theme-option"
+)
+.forEach(
+item =>
+item.classList.remove(
+"active"
+)
+);
+
+
+option.classList.add(
+"active"
+);
+
+
+updateReadingPreview();
+
+saveSettings();
+
+
+showToast(
+"Reading theme updated."
+);
+
+});
+
+});
+
+
+
+/* ======================================
+SLIDERS
+====================================== */
+
+fontSize.addEventListener(
+"input",
+function(){
+
+settings.fontSize =
+Number(this.value);
+
+updateReadingPreview();
+
+saveSettings();
+
+});
+
+
+lineHeight.addEventListener(
+"input",
+function(){
+
+settings.lineHeight =
+Number(this.value);
+
+updateReadingPreview();
+
+saveSettings();
+
+});
+
+
+readingWidth.addEventListener(
+"input",
+function(){
+
+settings.readingWidth =
+Number(this.value);
+
+updateReadingPreview();
+
+saveSettings();
+
+});
+
+
+
+/* ======================================
+INTERESTS
+====================================== */
+
+document
+.querySelectorAll(
+".interest"
+)
+.forEach(
+function(card){
+
+card.addEventListener(
+"click",
+function(){
+
+const interest =
+card.dataset.interest;
+
+
+if(
+settings.interests.includes(
+interest
+)
+){
+
+settings.interests =
+settings.interests.filter(
+item =>
+item !== interest
+);
+
+}
+else{
+
+settings.interests.push(
+interest
+);
+
+}
+
+
+card.classList.toggle(
+"active"
+);
+
+});
+
+});
+
+
+document
+.getElementById(
+"saveInterests"
+)
+.addEventListener(
+"click",
+function(){
+
+saveSettings();
+
+showToast(
+"Your interests have been saved."
+);
+
+});
+
+
+
+/* ======================================
+TOGGLES
+====================================== */
+
+const toggleMap = {
+
+notifyNovels:
+"notifyNovels",
+
+notifyArticles:
+"notifyArticles",
+
+notifyLearning:
+"notifyLearning",
+
+notifyDigest:
+"notifyDigest",
+
+rememberPreferences:
+"rememberPreferences",
+
+showProfilePicture:
+"showProfilePicture"
+
+};
+
+
+Object.entries(
+toggleMap
+)
+.forEach(
+function(
+[id,key]
+){
+
+document
+.getElementById(id)
+.addEventListener(
+"change",
+function(){
+
+settings[key] =
+this.checked;
+
+
+saveSettings();
+
+
+if(
+key ===
+"showProfilePicture"
+){
+
+renderUser(
+currentUser
+);
+
+}
+
+
+showToast(
+"Preference updated."
+);
+
+});
+
+});
+
+
+
+/* ======================================
+SAVE PROFILE
+====================================== */
+
+document
+.getElementById(
+"saveProfile"
+)
+.addEventListener(
+"click",
+async function(){
+
+settings.bio =
+readerBio.value.trim();
+
+
+saveSettings();
+
+
+if(
+currentUser
+){
+
+const newName =
+profileName.value.trim();
+
+
+try{
+
+if(
+newName &&
+newName !==
+currentUser.displayName
+){
+
+await updateProfile(
+currentUser,
+{
+
+displayName:newName
+
+}
+);
+
+}
+
+
+renderUser(
+auth.currentUser
+);
+
+
+showToast(
+"Reader profile updated."
+);
+
+}
+catch(error){
+
+console.error(error);
+
+
+showToast(
+"Profile could not be updated.",
+"error"
+);
+
+}
+
+}
+else{
+
+showToast(
+"Local reader preferences saved. Sign in to save your Firebase profile name."
+);
+
+}
+
+});
+
+
+
+/* ======================================
+USER AVATAR
+====================================== */
+
+function avatarHTML(
+user
+){
+
+if(
+user &&
+user.photoURL &&
+settings.showProfilePicture
+){
+
+return `
+<img
+src="${user.photoURL}"
+alt="Reader profile">
+`;
+
+}
+
+
+const text =
+
+(
+user?.displayName ||
+user?.email ||
+"R"
+)
+
+.charAt(0)
+.toUpperCase();
+
+
+return text;
+
+}
+
+
+
+/* ======================================
+RENDER FIREBASE USER
+====================================== */
+
+function renderUser(
+user
+){
+
+currentUser =
+user;
+
+
+if(user){
+
+const name =
+user.displayName ||
+"Reader";
+
+
+profileName.value =
+name;
+
+
+profileEmail.value =
+user.email || "";
+
+
+sidebarName.textContent =
+name;
+
+
+sidebarEmail.textContent =
+user.email || "";
+
+
+membershipName.textContent =
+name;
+
+
+membershipStatus.textContent =
+"Signed In";
+
+
+profileStatus.className =
+"profile-status";
+
+
+profileStatus.innerHTML =
+`
+<i class="fa-solid fa-circle-check"></i>
+Signed In
+`;
+
+
+loginProfileButton.style.display =
+"none";
+
+
+const avatar =
+avatarHTML(user);
+
+
+profilePhoto.innerHTML =
+avatar;
+
+
+sidebarAvatar.innerHTML =
+avatar;
+
+
+headerProfile.innerHTML =
+avatar;
+
+}
+else{
+
+profileName.value =
+"";
+
+
+profileEmail.value =
+"";
+
+
+sidebarName.textContent =
+"Guest Reader";
+
+
+sidebarEmail.textContent =
+"Not signed in";
+
+
+membershipName.textContent =
+"Guest Reader";
+
+
+membershipStatus.textContent =
+"Guest";
+
+
+profileStatus.className =
+"profile-status guest";
+
+
+profileStatus.innerHTML =
+`
+<i class="fa-solid fa-circle"></i>
+Guest Reader
+`;
+
+
+loginProfileButton.style.display =
+"inline-flex";
+
+
+profilePhoto.textContent =
+"R";
+
+
+sidebarAvatar.textContent =
+"R";
+
+
+headerProfile.innerHTML =
+'<i class="fa-solid fa-user"></i>';
+
+}
+
+}
+
+
+
+/* ======================================
+AUTH STATE
+====================================== */
+
+onAuthStateChanged(
+auth,
+function(user){
+
+renderUser(user);
+
+});
+
+
+
+/* ======================================
+PASSWORD RESET
+====================================== */
+
+document
+.getElementById(
+"passwordResetButton"
+)
+.addEventListener(
+"click",
+async function(){
+
+if(
+!currentUser ||
+!currentUser.email
+){
+
+showToast(
+"Sign in first to reset your password.",
+"error"
+);
+
+return;
+
+}
+
+
+try{
+
+await sendPasswordResetEmail(
+auth,
+currentUser.email
+);
+
+
+showToast(
+"Password reset instructions were sent to your email."
+);
+
+}
+catch(error){
+
+console.error(error);
+
+
+showToast(
+"Password reset email could not be sent.",
+"error"
+);
+
+}
+
+});
+
+
+
+/* ======================================
+SIGN OUT
+====================================== */
+
+document
+.getElementById(
+"signOutButton"
+)
+.addEventListener(
+"click",
+async function(){
+
+if(
+!currentUser
+){
+
+showToast(
+"You are not currently signed in."
+);
+
+return;
+
+}
+
+
+try{
+
+await signOut(auth);
+
+
+showToast(
+"You have been signed out."
+);
+
+}
+catch(error){
+
+console.error(error);
+
+
+showToast(
+"Sign out could not be completed.",
+"error"
+);
+
+}
+
+});
+
+
+
+/* ======================================
+EXPORT SETTINGS
+====================================== */
+
+document
+.getElementById(
+"exportSettings"
+)
+.addEventListener(
+"click",
+function(){
+
+const exportData = {
+
+platform:
+"Kitsamba Writes Africa",
+
+exported:
+new Date()
+.toISOString(),
+
+preferences:
+settings
+
+};
+
+
+const blob =
+new Blob(
+
+[
+JSON.stringify(
+exportData,
+null,
+2
+)
+],
+
+{
+type:
+"application/json"
+}
+
+);
+
+
+const url =
+URL.createObjectURL(blob);
+
+
+const a =
+document.createElement("a");
+
+
+a.href =
+url;
+
+
+a.download =
+"kitsamba-reader-settings.json";
+
+
+a.click();
+
+
+URL.revokeObjectURL(
+url
+);
+
+
+showToast(
+"Reader preferences downloaded."
+);
+
+});
+
+
+
+/* ======================================
+RESET SETTINGS
+====================================== */
+
+document
+.getElementById(
+"resetPreferences"
+)
+.addEventListener(
+"click",
+function(){
+
+const confirmed =
+confirm(
+"Reset all reader preferences on this device?"
+);
+
+
+if(!confirmed){
+
+return;
+
+}
+
+
+settings = {
+
+...defaultSettings
+
+};
+
+
+localStorage.removeItem(
+"kitsambaReaderSettings"
+);
+
+
+applySettings();
+
+
+showToast(
+"Reader settings restored."
+);
+
+});
+
+
+
+/* ======================================
+SIDEBAR NAVIGATION
+====================================== */
+
+const sidebarLinks =
+document.querySelectorAll(
+".sidebar-link"
+);
+
+
+sidebarLinks.forEach(
+function(link){
+
+link.addEventListener(
+"click",
+function(){
+
+sidebarLinks.forEach(
+item =>
+item.classList.remove(
+"active"
+)
+);
+
+
+link.classList.add(
+"active"
+);
+
+
+document
+.getElementById(
+link.dataset.target
+)
+.scrollIntoView(
+{
+
+behavior:"smooth",
+
+block:"start"
+
+}
+);
+
+});
+
+});
+
+
+
+/* ======================================
+YEAR
+====================================== */
+
+document
+.getElementById(
+"year"
+)
+.textContent =
+new Date()
+.getFullYear();
+
+
+
+/* ======================================
+START
+====================================== */
+
+loadSettings();
+
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b0a08">
+<title>Novels | Kitsamba Writes Africa</title>
+<meta name="description" content="Explore original African novels by Kitsamba Joshua. Read free previews and purchase full novels from Kitsamba Writes Africa.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700;800&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+:root{
+  --ink:#0b0a08;
+  --ink2:#11100d;
+  --ink3:#181612;
+  --paper:#f6f0e4;
+  --gold:#c99a43;
+  --gold2:#e6c175;
+  --text:#f8f5ef;
+  --muted:#aaa39a;
+  --line:rgba(255,255,255,.10);
+  --shadow:0 28px 70px rgba(0,0,0,.38);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{background:var(--ink);color:var(--text);font-family:"Inter",sans-serif;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+img{display:block;width:100%;max-width:100%}
+.container{width:min(1180px,92%);margin:auto}
+
+/* HEADER */
+.site-header{
+  position:sticky;top:0;z-index:2000;
+  background:rgba(11,10,8,.91);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+.navbar{
+  min-height:82px;display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;gap:30px;
+}
+.brand{display:flex;align-items:center;gap:12px;white-space:nowrap}
+.brand-mark{
+  width:43px;height:43px;border-radius:50%;
+  border:1px solid rgba(201,154,67,.65);
+  display:grid;place-items:center;color:var(--gold2);
+  font-family:"Cormorant Garamond",serif;
+  font-size:1.35rem;font-weight:700;
+  background:rgba(201,154,67,.06);
+}
+.brand-copy{line-height:1.03}
+.brand-copy strong{display:block;font-family:"Cormorant Garamond",serif;font-size:1.27rem;font-weight:700}
+.brand-copy small{display:block;color:#8e887f;font-size:.57rem;letter-spacing:2px;text-transform:uppercase;font-weight:700}
+.nav-links{justify-self:center;display:flex;gap:7px;align-items:center}
+.nav-links a{padding:9px 13px;border-radius:999px;color:#c8c1b8;font-size:.81rem;font-weight:600;transition:.2s}
+.nav-links a:hover,.nav-links a.active{background:rgba(255,255,255,.06);color:#fff}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 17px;border-radius:999px;
+  background:var(--gold);color:#111;
+  font-size:.79rem;font-weight:800;
+}
+.menu-btn{
+  display:none;width:42px;height:42px;border-radius:12px;
+  border:1px solid #333;background:#15130f;color:#fff;cursor:pointer;
+}
+.mobile-menu{display:none}
+
+/* HERO */
+.hero{
+  position:relative;isolation:isolate;
+  padding:86px 0 92px;
+  border-bottom:1px solid var(--line);
+  overflow:hidden;
+}
+.hero:before{
+  content:"";position:absolute;inset:-15%;z-index:-2;
+  background:
+    radial-gradient(circle at 74% 22%,rgba(201,154,67,.20),transparent 28%),
+    radial-gradient(circle at 10% 75%,rgba(201,154,67,.07),transparent 27%);
+}
+.hero:after{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(105deg,rgba(11,10,8,.38),rgba(11,10,8,.91));
+}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 500px;gap:65px;align-items:center}
+.kicker{
+  display:inline-flex;align-items:center;gap:9px;
+  color:var(--gold2);text-transform:uppercase;
+  letter-spacing:3px;font-size:.67rem;font-weight:800;margin-bottom:18px;
+}
+.kicker:before{content:"";width:29px;height:1px;background:var(--gold)}
+.hero h1{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(4rem,7.5vw,7rem);
+  font-weight:600;line-height:.85;letter-spacing:-2px;
+  max-width:780px;margin-bottom:23px;
+}
+.hero p{color:#b7b0a6;max-width:690px;font-size:1rem;line-height:1.9}
+.hero-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:27px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:13px 19px;border-radius:999px;
+  font-size:.78rem;font-weight:800;transition:.2s;
+}
+.btn-primary{background:var(--gold);color:#111}
+.btn-secondary{border:1px solid #37332e;background:rgba(255,255,255,.02)}
+.btn:hover{transform:translateY(-2px)}
+.hero-books{height:430px;position:relative}
+.hero-book{
+  position:absolute;width:205px;border-radius:18px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 35px 80px rgba(0,0,0,.65);background:#15130f;
+}
+.hero-book img{aspect-ratio:2/3;object-fit:cover}
+.hero-book.one{left:0;top:88px;transform:rotate(-8deg)}
+.hero-book.two{left:147px;top:7px;z-index:2}
+.hero-book.three{right:0;top:94px;transform:rotate(8deg)}
+
+/* SECTIONS */
+.library{padding:85px 0 110px}
+.section-heading{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:34px}
+.section-heading h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(2.8rem,5vw,4.4rem);
+  line-height:.95;font-weight:600;
+}
+.section-heading p{max-width:620px;color:#918b82;font-size:.85rem}
+.count-badge{
+  border:1px solid rgba(201,154,67,.28);
+  background:rgba(201,154,67,.055);
+  color:var(--gold2);border-radius:999px;
+  padding:9px 13px;font-size:.69rem;font-weight:800;white-space:nowrap;
+}
+.book-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.book-card{
+  background:var(--ink2);border:1px solid var(--line);
+  border-radius:24px;overflow:hidden;transition:.28s;
+}
+.book-card:hover{transform:translateY(-6px);border-color:rgba(201,154,67,.32);box-shadow:var(--shadow)}
+.cover{position:relative;aspect-ratio:2/3;background:#171510;overflow:hidden}
+.cover img{height:100%;object-fit:cover;transition:.45s}
+.book-card:hover .cover img{transform:scale(1.025)}
+.badge{
+  position:absolute;top:15px;left:15px;
+  display:inline-flex;align-items:center;gap:6px;
+  padding:7px 11px;border-radius:999px;
+  background:rgba(11,10,8,.90);backdrop-filter:blur(12px);
+  color:var(--gold2);font-size:.64rem;font-weight:800;
+}
+.number{
+  position:absolute;right:15px;bottom:15px;width:42px;height:42px;
+  border-radius:50%;background:var(--gold);color:#111;
+  display:grid;place-items:center;
+  font-family:"Cormorant Garamond",serif;font-size:1.1rem;font-weight:700;
+}
+.book-body{padding:25px}
+.book-meta{display:flex;flex-wrap:wrap;gap:10px;color:#777169;font-size:.67rem;margin-bottom:12px}
+.book-meta span{display:inline-flex;align-items:center;gap:5px}
+.book-meta i{color:var(--gold)}
+.book-body h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:2rem;font-weight:600;line-height:1.02;margin-bottom:12px;
+}
+.description{color:#9d968d;font-size:.8rem;line-height:1.75;min-height:84px}
+.price-box{
+  margin:19px 0 18px;border:1px solid rgba(201,154,67,.23);
+  background:rgba(201,154,67,.055);border-radius:15px;padding:14px 15px;
+}
+.price-label{text-transform:uppercase;letter-spacing:1.7px;color:#7e776e;font-size:.56rem;font-weight:800}
+.local-price{font-family:"Cormorant Garamond",serif;color:var(--gold2);font-size:1.9rem;font-weight:700;line-height:1.1;margin:3px 0}
+.price-note{color:#888178;font-size:.64rem}
+.currency-status{color:#6f6962;font-size:.61rem;margin-top:4px}
+.primary-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.book-btn{
+  min-height:46px;border-radius:999px;display:flex;align-items:center;
+  justify-content:center;gap:7px;font-size:.69rem;font-weight:800;transition:.2s;
+}
+.read-btn{background:var(--gold);color:#111}
+.buy-btn{background:#f4eee4;color:#17130f}
+.book-btn:hover{transform:translateY(-1px)}
+.secondary-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.small-btn{
+  min-height:39px;border-radius:999px;border:1px solid #302c27;
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  color:#8f887f;font-size:.63rem;font-weight:700;
+}
+.small-btn i{color:var(--gold)}
+.small-btn:hover{color:#fff;border-color:#5e5038}
+
+/* COMING SOON */
+.coming-section{padding:0 0 110px}
+.coming-card .cover:after{
+  content:"Coming Soon";position:absolute;inset:auto 14px 14px 14px;
+  padding:10px;border-radius:12px;text-align:center;
+  background:rgba(11,10,8,.9);border:1px solid rgba(255,255,255,.10);
+  color:#b6aea4;text-transform:uppercase;letter-spacing:2px;font-size:.58rem;font-weight:800;
+}
+.coming-card{opacity:.86}
+.coming-card .description{min-height:84px}
+.coming-note{
+  margin-top:18px;padding:14px;border:1px solid #29251f;border-radius:13px;
+  color:#79736b;font-size:.68rem;text-align:center;background:#0f0e0c;
+}
+
+/* READER STRIP */
+.reader-strip{
+  margin-top:75px;border:1px solid rgba(201,154,67,.28);
+  border-radius:28px;padding:clamp(35px,5vw,58px);
+  background:linear-gradient(145deg,#18140e,#0e0d0b 70%);
+  display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;
+}
+.reader-strip h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(2.6rem,4.5vw,4rem);font-weight:600;line-height:.98;
+}
+.reader-strip p{color:#958e85;font-size:.8rem;margin-top:13px;max-width:580px}
+.reader-features{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.feature{
+  border:1px solid #29251f;background:#11100d;border-radius:14px;padding:16px;
+  display:flex;gap:11px;align-items:flex-start;
+}
+.feature i{color:var(--gold);margin-top:2px}
+.feature strong{display:block;font-size:.72rem}
+.feature span{display:block;color:#756f67;font-size:.61rem;margin-top:2px}
+
+/* FOOTER */
+footer{border-top:1px solid var(--line);padding:35px 0;color:#716b64;font-size:.69rem}
+.footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center}
+.footer-links{display:flex;flex-wrap:wrap;gap:14px}
+.footer-links a:hover{color:#fff}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-books{display:none}
+  .book-grid{grid-template-columns:repeat(2,1fr)}
+  .reader-strip{grid-template-columns:1fr}
+  .nav-links,.nav-cta{display:none}
+  .navbar{grid-template-columns:1fr auto}
+  .menu-btn{display:block}
+  .mobile-menu{
+    display:none;position:absolute;left:0;right:0;top:82px;
+    padding:15px 4%;background:#0d0c0a;border-bottom:1px solid var(--line);
+  }
+  .mobile-menu.open{display:grid}
+  .mobile-menu a{padding:13px 10px;border-bottom:1px solid #1d1b17;color:#c5bdb4;font-size:.8rem}
+}
+@media(max-width:680px){
+  .hero{padding:70px 0}
+  .hero h1{font-size:clamp(3.6rem,16vw,5.4rem)}
+  .book-grid{grid-template-columns:1fr}
+  .book-card{max-width:440px;width:100%;margin:auto}
+  .section-heading{align-items:flex-start;flex-direction:column}
+  .reader-features{grid-template-columns:1fr}
+  .footer-row{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:430px){
+  .primary-actions,.secondary-actions{grid-template-columns:1fr}
+  .brand-copy strong{font-size:1.1rem}
+}
+</style>
+<script src="theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">K</span>
+      <span class="brand-copy">
+        <strong>Kitsamba Writes Africa</strong>
+        <small>Stories from Africa</small>
+      </span>
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a class="active" href="novels.html">Novels</a>
+      <a href="articles.html">Articles</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <a class="nav-cta" href="#available"><i class="fa-solid fa-book-open-reader"></i> Start Reading</a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="novels.html">Novels</a>
+    <a href="articles.html">Articles</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="kicker">The Kitsamba Library</div>
+      <h1>Stories made to stay with you.</h1>
+      <p>Begin with the novels that are available to read now. Each available title includes a free preview, a clear full-novel price, and a secure PayPal checkout before the remaining chapters are provided.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#available"><i class="fa-solid fa-book-open"></i> Read Available Novels</a>
+        <a class="btn btn-secondary" href="#coming"><i class="fa-solid fa-clock"></i> See Coming Soon</a>
+      </div>
+    </div>
+
+    <div class="hero-books" aria-label="Available books">
+      <div class="hero-book one"><img src="images/The Streets of Fate.png" alt="The Streets of Fate"></div>
+      <div class="hero-book two"><img src="images/The Silence At 2PM.png" alt="The Silence at 2PM"></div>
+      <div class="hero-book three"><img src="images/When Our Hearts Learned Silence.png" alt="When Our Hearts Learned Silence"></div>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="library" id="available">
+  <div class="container">
+    <div class="section-heading">
+      <div>
+        <div class="kicker">Available now</div>
+        <h2>Read these first.</h2>
+        <p>These novels already have reading content on the website. Start with the free chapters, then purchase the full story when you are ready to continue.</p>
+      </div>
+      <div class="count-badge"><i class="fa-solid fa-circle-check"></i> 3 novels available</div>
+    </div>
+
+    <div class="book-grid">
+
+      <!-- 1: THE SILENCE AT 2PM -->
+      <article class="book-card">
+        <div class="cover">
+          <img src="images/The Silence At 2PM.png" alt="The Silence at 2PM">
+          <span class="badge"><i class="fa-solid fa-unlock"></i> 3 Chapters Free</span>
+          <span class="number">01</span>
+        </div>
+        <div class="book-body">
+          <div class="book-meta">
+            <span><i class="fa-solid fa-book"></i> Emotional Drama</span>
+            <span><i class="fa-solid fa-earth-africa"></i> African Fiction</span>
+          </div>
+          <h3>The Silence at 2PM</h3>
+          <p class="description">A story of grief, memory, family and the difficult road toward making peace with loss.</p>
+
+          <div class="price-box" data-ugx-price="18000">
+            <div class="price-label">Full Novel</div>
+            <div class="local-price">UGX 18,000</div>
+            <div class="price-note">Uganda price: UGX 18,000 • PayPal checkout: $4.85 USD</div>
+            <div class="currency-status">Checking your local currency…</div>
+          </div>
+
+          <div class="primary-actions">
+            <a class="book-btn read-btn" href="silence-at-2pm.html"><i class="fa-solid fa-book-open"></i> Read Preview</a>
+            <a class="book-btn buy-btn" href="silence-at-2pm.html?buy=1"><i class="fa-brands fa-paypal"></i> Buy Full Novel</a>
+          </div>
+          <div class="secondary-actions">
+            <a class="small-btn" href="silence-at-2pm.html#feedback"><i class="fa-solid fa-star"></i> Feedback</a>
+            <a class="small-btn" href="silence-at-2pm.html#comments"><i class="fa-solid fa-comments"></i> Comments</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2: THE STREETS OF FATE -->
+      <article class="book-card">
+        <div class="cover">
+          <img src="images/The Streets of Fate.png" alt="The Streets of Fate">
+          <span class="badge"><i class="fa-solid fa-unlock"></i> 6 Chapters Free</span>
+          <span class="number">02</span>
+        </div>
+        <div class="book-body">
+          <div class="book-meta">
+            <span><i class="fa-solid fa-road"></i> Life & Destiny</span>
+            <span><i class="fa-solid fa-location-dot"></i> Kampala</span>
+          </div>
+          <h3>The Streets of Fate</h3>
+          <p class="description">Mooli's journey moves through loss, the streets, survival, betrayal and the long climb toward dignity and purpose.</p>
+
+          <div class="price-box" data-ugx-price="16500">
+            <div class="price-label">Full Novel</div>
+            <div class="local-price">UGX 16,500</div>
+            <div class="price-note">Uganda price: UGX 16,500 • PayPal checkout: $4.44 USD</div>
+            <div class="currency-status">Checking your local currency…</div>
+          </div>
+
+          <div class="primary-actions">
+            <a class="book-btn read-btn" href="streets-of-fate.html"><i class="fa-solid fa-book-open"></i> Read Preview</a>
+            <a class="book-btn buy-btn" href="streets-of-fate.html?buy=1"><i class="fa-brands fa-paypal"></i> Buy Full Novel</a>
+          </div>
+          <div class="secondary-actions">
+            <a class="small-btn" href="streets-of-fate.html#feedback"><i class="fa-solid fa-star"></i> Feedback</a>
+            <a class="small-btn" href="streets-of-fate.html#comments"><i class="fa-solid fa-comments"></i> Comments</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3: WHEN OUR HEARTS LEARNED SILENCE -->
+      <article class="book-card">
+        <div class="cover">
+          <img src="images/When Our Hearts Learned Silence.png" alt="When Our Hearts Learned Silence">
+          <span class="badge"><i class="fa-solid fa-unlock"></i> 3 Chapters Free</span>
+          <span class="number">03</span>
+        </div>
+        <div class="book-body">
+          <div class="book-meta">
+            <span><i class="fa-solid fa-heart"></i> Contemporary Romance</span>
+            <span><i class="fa-solid fa-palette"></i> Healing & Love</span>
+          </div>
+          <h3>When Our Hearts Learned Silence</h3>
+          <p class="description">Elijah and Naomi meet beside Lake Victoria, carrying different wounds and slowly discovering what healing, truth and love require.</p>
+
+          <div class="price-box" data-ugx-price="17000">
+            <div class="price-label">Full Novel</div>
+            <div class="local-price">UGX 17,000</div>
+            <div class="price-note">Uganda price: UGX 17,000 • PayPal checkout: $4.58 USD</div>
+            <div class="currency-status">Checking your local currency…</div>
+          </div>
+
+          <div class="primary-actions">
+            <a class="book-btn read-btn" href="when-our-hearts-learned-silence.html"><i class="fa-solid fa-book-open"></i> Read Preview</a>
+            <a class="book-btn buy-btn" href="when-our-hearts-learned-silence.html?buy=1"><i class="fa-brands fa-paypal"></i> Buy Full Novel</a>
+          </div>
+          <div class="secondary-actions">
+            <a class="small-btn" href="when-our-hearts-learned-silence.html#feedback"><i class="fa-solid fa-star"></i> Feedback</a>
+            <a class="small-btn" href="when-our-hearts-learned-silence.html#comments"><i class="fa-solid fa-comments"></i> Comments</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="reader-strip">
+      <div>
+        <div class="kicker">For readers</div>
+        <h2>Read first. Buy when the story speaks to you.</h2>
+        <p>Available books include free opening chapters. The remaining chapters stay locked until purchase, and your payment is handled through the PayPal checkout attached to each novel.</p>
+      </div>
+
+      <div class="reader-features">
+        <div class="feature"><i class="fa-solid fa-book-open"></i><div><strong>Free previews</strong><span>Try the story before paying.</span></div></div>
+        <div class="feature"><i class="fa-brands fa-paypal"></i><div><strong>PayPal checkout</strong><span>Purchase from each novel page.</span></div></div>
+        <div class="feature"><i class="fa-solid fa-comments"></i><div><strong>Reader comments</strong><span>Discuss the story respectfully.</span></div></div>
+        <div class="feature"><i class="fa-solid fa-star"></i><div><strong>Feedback</strong><span>Send your reaction to the author.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="coming-section" id="coming">
+  <div class="container">
+    <div class="section-heading">
+      <div>
+        <div class="kicker">Coming soon</div>
+        <h2>More stories are on the way.</h2>
+        <p>These titles remain visible in the library, but they come after the novels that already have readable content.</p>
+      </div>
+      <div class="count-badge"><i class="fa-solid fa-clock"></i> 3 titles coming soon</div>
+    </div>
+
+    <div class="book-grid">
+      <article class="book-card coming-card">
+        <div class="cover">
+          <img src="images/A Love Written In Rain.png" alt="A Love Written in Rain">
+          <span class="number">04</span>
+        </div>
+        <div class="book-body">
+          <div class="book-meta"><span><i class="fa-solid fa-heart"></i> Romance</span><span><i class="fa-solid fa-cloud-rain"></i> Kampala</span></div>
+          <h3>A Love Written in Rain</h3>
+          <p class="description">Two wounded hearts meet during a violent storm in Kampala, and destiny seems determined to bring them together again.</p>
+          <div class="coming-note"><i class="fa-solid fa-clock"></i> Reading preview not published yet.</div>
+        </div>
+      </article>
+
+      <article class="book-card coming-card">
+        <div class="cover">
+          <img src="images/Before The Last Goodbye.png" alt="Before the Last Goodbye">
+          <span class="number">05</span>
+        </div>
+        <div class="book-body">
+          <div class="book-meta"><span><i class="fa-solid fa-heart-crack"></i> Romantic Drama</span><span><i class="fa-solid fa-hourglass-half"></i> Emotional</span></div>
+          <h3>Before the Last Goodbye</h3>
+          <p class="description">Nathan discovers that lost love and time are colliding, forcing him to confront what can still be said before goodbye arrives.</p>
+          <div class="coming-note"><i class="fa-solid fa-clock"></i> Reading preview not published yet.</div>
+        </div>
+      </article>
+
+      <article class="book-card coming-card">
+        <div class="cover">
+          <img src="images/The Season Between Us.png" alt="The Season Between Us">
+          <span class="number">06</span>
+        </div>
+        <div class="book-body">
+          <div class="book-meta"><span><i class="fa-solid fa-leaf"></i> Second Chances</span><span><i class="fa-solid fa-heart"></i> Romance</span></div>
+          <h3>The Season Between Us</h3>
+          <p class="description">Daniel and Grace meet again after years apart, bringing old wounds and the possibility that love may deserve another season.</p>
+          <div class="coming-note"><i class="fa-solid fa-clock"></i> Reading preview not published yet.</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>© <span id="year"></span> Kitsamba Writes Africa. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="novels.html">Novels</a>
+      <a href="articles.html">Articles</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuBtn.addEventListener("click", () => {
+  const open = mobileMenu.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", String(open));
+  menuBtn.innerHTML = open
+    ? '<i class="fa-solid fa-xmark"></i>'
+    : '<i class="fa-solid fa-bars"></i>';
+});
+
+mobileMenu.querySelectorAll("a").forEach(a => {
+  a.addEventListener("click", () => {
+    mobileMenu.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded", "false");
+    menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+  });
+});
+
+async function loadLocalCurrencyPrices(){
+  const boxes = [...document.querySelectorAll("[data-ugx-price]")];
+  if(!boxes.length) return;
+
+  let visitorCurrency = "USD";
+  let visitorCountry = "";
+
+  try{
+    const locationResponse = await fetch("https://ipapi.co/json/");
+    if(locationResponse.ok){
+      const locationData = await locationResponse.json();
+      visitorCurrency = locationData.currency || "USD";
+      visitorCountry = locationData.country_code || "";
+    }
+  }catch(e){}
+
+  if(visitorCountry === "UG" || visitorCurrency === "UGX"){
+    boxes.forEach(box => {
+      const amount = Number(box.dataset.ugxPrice);
+      box.querySelector(".local-price").textContent =
+        new Intl.NumberFormat("en-UG",{
+          style:"currency",
+          currency:"UGX",
+          maximumFractionDigits:0
+        }).format(amount);
+      box.querySelector(".currency-status").textContent = "Price shown in Uganda Shillings.";
+    });
+    return;
+  }
+
+  try{
+    const rateResponse = await fetch("https://open.er-api.com/v6/latest/UGX");
+    const rateData = await rateResponse.json();
+    const rate = rateData?.rates?.[visitorCurrency];
+    if(!rate) throw new Error("Rate unavailable");
+
+    boxes.forEach(box => {
+      const converted = Number(box.dataset.ugxPrice) * rate;
+      try{
+        box.querySelector(".local-price").textContent =
+          new Intl.NumberFormat(undefined,{
+            style:"currency",
+            currency:visitorCurrency,
+            maximumFractionDigits:2
+          }).format(converted);
+      }catch(e){
+        box.querySelector(".local-price").textContent =
+          visitorCurrency + " " + converted.toFixed(2);
+      }
+      box.querySelector(".currency-status").textContent =
+        "Approximate price in " + visitorCurrency + ".";
+    });
+  }catch(e){
+    boxes.forEach(box => {
+      box.querySelector(".currency-status").textContent =
+        "International conversion temporarily unavailable.";
+    });
+  }
+}
+
+loadLocalCurrencyPrices();
+</script>
+</body>
+</html>

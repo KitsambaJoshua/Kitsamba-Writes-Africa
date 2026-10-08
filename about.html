@@ -1,0 +1,2320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Joshua | Kitsamba Writes Africa</title>
+
+<meta name="description"
+content="Meet Kitsamba Joshua, a Ugandan novelist and storyteller behind Kitsamba Writes Africa.">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap"
+rel="stylesheet">
+
+
+<style>
+
+:root{
+    --black:#090909;
+    --dark:#111;
+    --card:#171717;
+    --gold:#d8ac56;
+    --gold-light:#f2cf83;
+    --cream:#f7f1e5;
+    --white:#fff;
+    --gray:#aaa;
+    --border:rgba(216,172,86,.25);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    background:var(--black);
+    color:white;
+    line-height:1.7;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+.eyebrow{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:.76rem;
+    font-weight:700;
+    margin-bottom:14px;
+}
+
+
+/* =========================
+NAVIGATION
+========================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:999;
+    background:rgba(8,8,8,.88);
+    backdrop-filter:blur(16px);
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+nav{
+    min-height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-shrink:0;
+}
+
+.brand-icon{
+    width:42px;
+    height:42px;
+    border:1px solid var(--gold);
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    color:var(--gold);
+}
+
+.brand-text strong{
+    display:block;
+    font-family:"Playfair Display",serif;
+    font-size:1.14rem;
+    letter-spacing:1px;
+}
+
+.brand-text span{
+    display:block;
+    color:var(--gold);
+    font-size:.66rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.nav-links > a{
+    color:#ddd;
+    font-size:.92rem;
+    font-weight:600;
+    transition:.25s;
+}
+
+.nav-links > a:hover{
+    color:var(--gold);
+}
+
+.start-reading{
+    background:var(--gold);
+    color:#111 !important;
+    padding:11px 20px;
+    border-radius:50px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.mobile-menu-btn{
+    display:none;
+    border:0;
+    background:none;
+    color:white;
+    font-size:1.5rem;
+    cursor:pointer;
+}
+
+
+/* =========================
+MENU DROPDOWN
+========================= */
+
+.main-menu{
+    position:relative;
+}
+
+.main-menu-button{
+    border:none;
+    background:transparent;
+    color:#ddd;
+    font-size:.92rem;
+    font-weight:600;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 0;
+}
+
+.main-menu-button:hover{
+    color:var(--gold);
+}
+
+.main-menu-button .bars{
+    color:var(--gold);
+}
+
+.main-menu-button .arrow{
+    font-size:.7rem;
+    transition:.25s;
+}
+
+.main-menu.active .arrow{
+    transform:rotate(180deg);
+}
+
+.menu-dropdown{
+    position:absolute;
+    right:0;
+    top:calc(100% + 18px);
+    width:310px;
+    padding:12px;
+    background:rgba(15,15,15,.98);
+    border:1px solid var(--border);
+    border-radius:20px;
+    box-shadow:0 25px 70px rgba(0,0,0,.65);
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transform:translateY(-10px);
+    transition:.25s;
+}
+
+.main-menu.active .menu-dropdown{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    transform:translateY(0);
+}
+
+.menu-dropdown::before{
+    content:"";
+    position:absolute;
+    top:-1px;
+    left:20px;
+    right:20px;
+    height:2px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+
+.menu-title{
+    padding:10px 14px 13px;
+    border-bottom:1px solid rgba(255,255,255,.07);
+    margin-bottom:6px;
+}
+
+.menu-title strong{
+    display:block;
+    font-family:"Playfair Display",serif;
+}
+
+.menu-title span{
+    color:#888;
+    font-size:.76rem;
+}
+
+.menu-dropdown a{
+    padding:12px 15px;
+    border-radius:11px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    color:#ddd;
+    font-size:.9rem;
+    transition:.2s;
+}
+
+.menu-dropdown a i{
+    width:22px;
+    text-align:center;
+    color:var(--gold);
+}
+
+.menu-dropdown a:hover{
+    background:rgba(216,172,86,.12);
+    color:var(--gold);
+    padding-left:19px;
+}
+
+
+/* =========================
+ABOUT HERO
+========================= */
+
+.about-hero{
+    padding:150px 0 100px;
+    position:relative;
+    overflow:hidden;
+
+    background:
+    radial-gradient(
+        circle at 82% 25%,
+        rgba(216,172,86,.18),
+        transparent 30%
+    ),
+    linear-gradient(
+        135deg,
+        #080808,
+        #111
+    );
+}
+
+.about-hero::before{
+    content:"";
+    position:absolute;
+    width:520px;
+    height:520px;
+    border-radius:50%;
+    border:1px solid rgba(216,172,86,.1);
+    right:-180px;
+    top:-180px;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+    gap:80px;
+    align-items:center;
+}
+
+.hero-image-wrap{
+    position:relative;
+    max-width:470px;
+}
+
+.hero-image{
+    border-radius:28px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.1);
+    box-shadow:0 35px 90px rgba(0,0,0,.55);
+}
+
+.hero-image img{
+    height:620px;
+    object-fit:cover;
+    object-position:center top;
+}
+
+.author-badge{
+    position:absolute;
+    right:-25px;
+    bottom:28px;
+    background:var(--cream);
+    color:#111;
+    border-radius:18px;
+    padding:20px 24px;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+}
+
+.author-badge span{
+    display:block;
+    color:#917029;
+    font-size:.72rem;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-weight:700;
+}
+
+.author-badge strong{
+    font-family:"Playfair Display",serif;
+    font-size:1.35rem;
+}
+
+.hero-copy h1{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(3.2rem,7vw,6rem);
+    line-height:1;
+    margin-bottom:17px;
+}
+
+.hero-copy h1 span{
+    color:var(--gold);
+}
+
+.hero-role{
+    color:var(--gold-light);
+    font-size:1.15rem;
+    font-weight:600;
+    margin-bottom:24px;
+}
+
+.hero-copy p{
+    color:#bbb;
+    margin-bottom:18px;
+    font-size:1.03rem;
+}
+
+.hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:28px;
+}
+
+.btn{
+    padding:14px 23px;
+    border-radius:50px;
+    font-weight:700;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    transition:.25s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.btn-gold{
+    background:var(--gold);
+    color:#111;
+}
+
+.btn-outline{
+    border:1px solid rgba(255,255,255,.3);
+    color:white;
+}
+
+
+/* =========================
+SOCIAL MEDIA
+========================= */
+
+.author-socials{
+    display:flex;
+    flex-wrap:wrap;
+    gap:11px;
+    margin-top:28px;
+}
+
+.social-link{
+    width:45px;
+    height:45px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.16);
+    color:#ddd;
+    font-size:1.05rem;
+    transition:.25s;
+}
+
+.social-link:hover{
+    background:var(--gold);
+    color:#111;
+    border-color:var(--gold);
+    transform:translateY(-3px);
+}
+
+
+/* =========================
+MY STORY
+========================= */
+
+.story-section{
+    padding:120px 0;
+}
+
+.story-grid{
+    display:grid;
+    grid-template-columns:.82fr 1.18fr;
+    gap:80px;
+}
+
+.story-side{
+    position:sticky;
+    top:120px;
+}
+
+.story-side h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(2.5rem,5vw,4rem);
+    line-height:1.08;
+    margin-bottom:20px;
+}
+
+.story-side p{
+    color:#888;
+}
+
+.story-content{
+    font-family:"Playfair Display",serif;
+    font-size:1.2rem;
+    line-height:1.95;
+    color:#ddd;
+}
+
+.story-content p{
+    margin-bottom:26px;
+}
+
+.story-content p:first-child::first-letter{
+    float:left;
+    font-size:5rem;
+    line-height:.8;
+    padding:12px 13px 0 0;
+    color:var(--gold);
+    font-weight:700;
+}
+
+
+/* =========================
+MISSION VISION PASSION
+========================= */
+
+.values-section{
+    padding:105px 0 120px;
+    background:#0f0f0f;
+}
+
+.section-heading{
+    max-width:770px;
+    margin:0 auto 55px;
+    text-align:center;
+}
+
+.section-heading h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(2.4rem,5vw,4rem);
+    margin-bottom:15px;
+}
+
+.section-heading p{
+    color:#999;
+}
+
+.value-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.value-card{
+    padding:35px;
+    border-radius:20px;
+    background:#161616;
+    border:1px solid rgba(255,255,255,.07);
+    transition:.3s;
+}
+
+.value-card:hover{
+    transform:translateY(-6px);
+    border-color:var(--border);
+}
+
+.value-icon{
+    width:54px;
+    height:54px;
+    display:grid;
+    place-items:center;
+    border-radius:14px;
+    background:rgba(216,172,86,.12);
+    color:var(--gold);
+    font-size:1.3rem;
+    margin-bottom:22px;
+}
+
+.value-card h3{
+    font-family:"Playfair Display",serif;
+    font-size:1.6rem;
+    margin-bottom:13px;
+}
+
+.value-card p{
+    color:#aaa;
+}
+
+
+/* =========================
+ACHIEVEMENTS
+========================= */
+
+.achievements{
+    padding:100px 0;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border:1px solid var(--border);
+    border-radius:24px;
+    overflow:hidden;
+}
+
+.stat{
+    padding:45px 20px;
+    text-align:center;
+    background:
+    linear-gradient(
+        180deg,
+        rgba(216,172,86,.07),
+        transparent
+    );
+    border-right:1px solid rgba(255,255,255,.07);
+}
+
+.stat:last-child{
+    border-right:none;
+}
+
+.stat strong{
+    display:block;
+    color:var(--gold);
+    font-family:"Playfair Display",serif;
+    font-size:2.4rem;
+    margin-bottom:7px;
+}
+
+.stat span{
+    color:#999;
+    font-size:.9rem;
+}
+
+
+/* =========================
+WRITING JOURNEY
+========================= */
+
+.journey{
+    padding:110px 0;
+    background:var(--cream);
+    color:#171717;
+}
+
+.journey-heading{
+    max-width:760px;
+    margin-bottom:60px;
+}
+
+.journey-heading h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(2.5rem,5vw,4rem);
+    margin-bottom:15px;
+}
+
+.journey-heading p{
+    color:#5c5c5c;
+}
+
+.timeline{
+    position:relative;
+    margin-left:20px;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:20px;
+    width:2px;
+    background:#d9c59c;
+}
+
+.timeline-item{
+    position:relative;
+    display:grid;
+    grid-template-columns:120px 1fr;
+    gap:35px;
+    padding-bottom:45px;
+}
+
+.timeline-item:last-child{
+    padding-bottom:0;
+}
+
+.timeline-dot{
+    position:absolute;
+    left:12px;
+    top:9px;
+    width:18px;
+    height:18px;
+    background:#a77c2a;
+    border:4px solid var(--cream);
+    border-radius:50%;
+    box-shadow:0 0 0 2px #a77c2a;
+}
+
+.timeline-label{
+    padding-left:55px;
+    color:#9a7225;
+    font-weight:800;
+}
+
+.timeline-card{
+    padding:25px 28px;
+    border-radius:17px;
+    background:white;
+    border:1px solid #e1d8c6;
+}
+
+.timeline-card h3{
+    font-family:"Playfair Display",serif;
+    font-size:1.4rem;
+    margin-bottom:8px;
+}
+
+.timeline-card p{
+    color:#666;
+}
+
+
+/* =========================
+QUOTE
+========================= */
+
+.quote-section{
+    padding:120px 0;
+    text-align:center;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(216,172,86,.1),
+        transparent 55%
+    );
+}
+
+.quote-section i{
+    color:var(--gold);
+    font-size:2rem;
+    margin-bottom:28px;
+}
+
+.quote-section blockquote{
+    max-width:900px;
+    margin:auto;
+    font-family:"Playfair Display",serif;
+    font-size:clamp(2rem,4.5vw,3.6rem);
+    line-height:1.25;
+}
+
+.quote-section p{
+    margin-top:24px;
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:.78rem;
+}
+
+
+/* =========================
+CTA
+========================= */
+
+.cta-section{
+    padding:30px 0 120px;
+}
+
+.cta-box{
+    padding:clamp(45px,7vw,80px);
+    border:1px solid var(--border);
+    border-radius:28px;
+    background:
+    linear-gradient(
+        120deg,
+        rgba(216,172,86,.12),
+        rgba(255,255,255,.02)
+    );
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:45px;
+}
+
+.cta-box h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(2.2rem,5vw,3.7rem);
+    line-height:1.12;
+    margin-bottom:15px;
+}
+
+.cta-box p{
+    color:#999;
+    max-width:640px;
+}
+
+.cta-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+    border-top:1px solid rgba(255,255,255,.08);
+    background:#070707;
+    padding:70px 0 30px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.6fr 1fr 1fr;
+    gap:50px;
+}
+
+.footer-brand h3{
+    font-family:"Playfair Display",serif;
+    font-size:1.7rem;
+    margin-bottom:15px;
+}
+
+.footer-brand p{
+    color:#999;
+    max-width:440px;
+}
+
+.footer-socials{
+    display:flex;
+    gap:12px;
+    margin-top:22px;
+}
+
+.footer-socials .social-link{
+    width:40px;
+    height:40px;
+}
+
+.footer-column h4{
+    color:var(--gold);
+    margin-bottom:17px;
+}
+
+.footer-column a{
+    display:block;
+    color:#999;
+    margin-bottom:10px;
+}
+
+.footer-column a:hover{
+    color:white;
+}
+
+.footer-bottom{
+    border-top:1px solid #222;
+    margin-top:55px;
+    padding-top:25px;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    font-size:.82rem;
+    color:#777;
+}
+
+
+/* =========================
+TABLET
+========================= */
+
+@media(max-width:950px){
+
+.mobile-menu-btn{
+    display:block;
+}
+
+.nav-links{
+    position:fixed;
+    top:78px;
+    left:0;
+    width:100%;
+    max-height:calc(100vh - 78px);
+    overflow-y:auto;
+    background:#0c0c0c;
+    flex-direction:column;
+    align-items:flex-start;
+    padding:28px 5%;
+    gap:20px;
+    transform:translateY(-150%);
+    transition:.3s;
+    border-bottom:1px solid #222;
+}
+
+.nav-links.active{
+    transform:translateY(0);
+}
+
+.nav-links > a{
+    width:100%;
+}
+
+.start-reading{
+    justify-content:center;
+}
+
+.main-menu{
+    width:100%;
+}
+
+.main-menu-button{
+    width:100%;
+    justify-content:space-between;
+}
+
+.menu-dropdown{
+    position:static;
+    width:100%;
+    margin-top:10px;
+    display:none;
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    transform:none;
+    box-shadow:none;
+    background:#141414;
+}
+
+.main-menu.active .menu-dropdown{
+    display:block;
+}
+
+.hero-grid{
+    grid-template-columns:1fr;
+}
+
+.hero-image-wrap{
+    margin:auto;
+}
+
+.author-badge{
+    right:15px;
+}
+
+.story-grid{
+    grid-template-columns:1fr;
+}
+
+.story-side{
+    position:static;
+}
+
+.value-grid{
+    grid-template-columns:1fr;
+}
+
+.stats-grid{
+    grid-template-columns:1fr 1fr;
+}
+
+.stat:nth-child(2){
+    border-right:none;
+}
+
+.stat:nth-child(1),
+.stat:nth-child(2){
+    border-bottom:1px solid rgba(255,255,255,.07);
+}
+
+.cta-box{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.footer-grid{
+    grid-template-columns:1fr 1fr;
+}
+
+}
+
+
+/* =========================
+PHONE
+========================= */
+
+@media(max-width:650px){
+
+.brand-text strong{
+    font-size:1rem;
+}
+
+.brand-text span{
+    font-size:.58rem;
+}
+
+.about-hero{
+    padding:135px 0 70px;
+}
+
+.hero-image img{
+    height:480px;
+}
+
+.author-badge{
+    position:static;
+    margin-top:15px;
+}
+
+.story-section{
+    padding:85px 0;
+}
+
+.story-content{
+    font-size:1.08rem;
+}
+
+.stats-grid{
+    grid-template-columns:1fr;
+}
+
+.stat{
+    border-right:none;
+    border-bottom:1px solid rgba(255,255,255,.07);
+}
+
+.stat:last-child{
+    border-bottom:none;
+}
+
+.timeline{
+    margin-left:0;
+}
+
+.timeline::before{
+    left:10px;
+}
+
+.timeline-item{
+    grid-template-columns:1fr;
+    padding-left:35px;
+    gap:8px;
+}
+
+.timeline-dot{
+    left:2px;
+}
+
+.timeline-label{
+    padding-left:0;
+}
+
+.footer-grid{
+    grid-template-columns:1fr;
+}
+
+.footer-bottom{
+    flex-direction:column;
+}
+
+}
+
+</style>
+
+<script src="theme.js"></script>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+NAVIGATION
+========================= -->
+
+<header>
+
+<div class="container">
+
+<nav>
+
+
+<a href="index.html" class="brand">
+
+<div class="brand-icon">
+
+<i class="fa-solid fa-feather-pointed"></i>
+
+</div>
+
+
+<div class="brand-text">
+
+<strong>Kitsamba Writes</strong>
+
+<span>Africa</span>
+
+</div>
+
+</a>
+
+
+<button
+class="mobile-menu-btn"
+id="mobileMenuBtn"
+aria-label="Open navigation">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+
+<div class="nav-links" id="navLinks">
+
+
+<a href="index.html">
+Home
+</a>
+
+
+<a href="novels.html">
+Novels
+</a>
+
+
+<div class="main-menu" id="mainMenu">
+
+
+<button
+class="main-menu-button"
+id="mainMenuButton"
+type="button">
+
+<i class="fa-solid fa-bars bars"></i>
+
+Menu
+
+<i class="fa-solid fa-chevron-down arrow"></i>
+
+</button>
+
+
+<div class="menu-dropdown">
+
+
+<div class="menu-title">
+
+<strong>
+Explore Kitsamba Writes
+</strong>
+
+<span>
+Stories, culture and more
+</span>
+
+</div>
+
+
+<a href="index.html">
+<i class="fa-solid fa-house"></i>
+Home
+</a>
+
+
+<a href="about.html">
+<i class="fa-solid fa-user-pen"></i>
+About
+</a>
+
+
+<a href="articles.html">
+<i class="fa-solid fa-newspaper"></i>
+Articles
+</a>
+
+
+<a href="blog.html">
+<i class="fa-solid fa-pen-nib"></i>
+Blog
+</a>
+
+
+<a href="contact.html">
+<i class="fa-solid fa-envelope"></i>
+Contact
+</a>
+
+
+<a href="lifestyle.html">
+<i class="fa-solid fa-earth-africa"></i>
+Lifestyle
+</a>
+
+
+<a href="login.html">
+<i class="fa-solid fa-right-to-bracket"></i>
+Login
+</a>
+
+
+<a href="novels.html">
+<i class="fa-solid fa-book-open"></i>
+Novels
+</a>
+
+
+<a href="settings.html">
+<i class="fa-solid fa-gear"></i>
+Settings
+</a>
+
+
+<a href="videos.html">
+<i class="fa-solid fa-circle-play"></i>
+Videos
+</a>
+
+
+</div>
+
+</div>
+
+
+<a href="novels.html" class="start-reading">
+
+<i class="fa-solid fa-book-open"></i>
+
+Start Reading
+
+</a>
+
+
+</div>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+ABOUT HERO
+========================= -->
+
+<section class="about-hero">
+
+<div class="container hero-grid">
+
+
+<div class="hero-image-wrap">
+
+
+<div class="hero-image">
+
+<img
+src="images/Kitsamba Joshua.jpg"
+alt="Kitsamba Joshua">
+
+</div>
+
+
+<div class="author-badge">
+
+<span>
+Author & Storyteller
+</span>
+
+<strong>
+Kitsamba Joshua
+</strong>
+
+</div>
+
+
+</div>
+
+
+<div class="hero-copy">
+
+
+<div class="eyebrow">
+The writer behind the stories
+</div>
+
+
+<h1>
+
+Kitsamba
+<span>Joshua.</span>
+
+</h1>
+
+
+<div class="hero-role">
+
+Ugandan Novelist & Storyteller
+
+</div>
+
+
+<p>
+
+I'm a passionate writer dedicated to
+crafting compelling African stories that
+inspire, entertain, and transform.
+
+</p>
+
+
+<p>
+
+Through my novels and articles, I explore
+the depths of human emotion and the beauty
+of African culture.
+
+</p>
+
+
+<div class="hero-actions">
+
+
+<a href="novels.html"
+class="btn btn-gold">
+
+<i class="fa-solid fa-book-open"></i>
+
+Explore My Novels
+
+</a>
+
+
+<a href="contact.html"
+class="btn btn-outline">
+
+Contact Me
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</a>
+
+
+</div>
+
+
+<!-- CORRECT OLD SOCIAL MEDIA ICON SETUP -->
+
+<div class="author-socials">
+
+<a href="#"
+class="social-link"
+aria-label="Facebook">
+
+<i class="fab fa-facebook"></i>
+
+</a>
+
+
+<a href="#"
+class="social-link"
+aria-label="Twitter">
+
+<i class="fab fa-twitter"></i>
+
+</a>
+
+
+<a href="#"
+class="social-link"
+aria-label="Instagram">
+
+<i class="fab fa-instagram"></i>
+
+</a>
+
+
+<a href="#"
+class="social-link"
+aria-label="YouTube">
+
+<i class="fab fa-youtube"></i>
+
+</a>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+MY STORY
+========================= -->
+
+<section class="story-section">
+
+<div class="container story-grid">
+
+
+<div class="story-side">
+
+
+<div class="eyebrow">
+My Story
+</div>
+
+
+<h2>
+
+Stories became one of the strongest ways I learned to express life.
+
+</h2>
+
+
+<p>
+
+My writing is rooted in people,
+emotion, African experiences and
+the belief that stories can carry
+truth from one person to another.
+
+</p>
+
+
+</div>
+
+
+<div class="story-content">
+
+
+<p>
+
+I'm Kitsamba Joshua, a Ugandan novelist and storyteller with a passion for crafting compelling and thought-provoking fiction. Drawing inspiration from everyday life, culture, and the vibrant experiences of African people, I write stories that resonate with readers across the continent and beyond.
+
+</p>
+
+
+<p>
+
+I attended Kireka Hill Infant School in Kireka, Ebenezer Primary School in Wakiso, Nabumali High School, and Hawthorne Scribner High School. My passion for storytelling infused every stage of my education, as I discovered that stories are among the most powerful vehicles for conveying truth, emotion, and meaning.
+
+</p>
+
+
+<p>
+
+Through my writing, I aim to inspire readers with stories rooted in resilience, hope, and transformation.
+
+</p>
+
+
+<p>
+
+My novels explore themes of love, loss, survival, destiny, and the interconnectedness of human experiences.
+
+</p>
+
+
+<p>
+
+Whether examining the pain of grief, the uncertainty of difficult choices, the struggle to survive or the joy of unexpected human connection, my work celebrates the complexity and beauty of life.
+
+</p>
+
+
+<p>
+
+Kitsamba Writes Africa grew from that passion.
+
+</p>
+
+
+<p>
+
+It is a place where I can share fiction, ideas, cultural stories and reflections about African life while continuing to develop my voice as a writer.
+
+</p>
+
+
+<p>
+
+For me, writing is not only about producing words.
+
+It is about creating something another person can recognize themselves inside.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+MISSION VISION PASSION
+========================= -->
+
+<section class="values-section">
+
+<div class="container">
+
+
+<div class="section-heading">
+
+
+<div class="eyebrow">
+My Mission & Vision
+</div>
+
+
+<h2>
+The purpose behind the writing.
+</h2>
+
+
+<p>
+
+Kitsamba Writes Africa exists to
+celebrate African voices while telling
+stories that can speak to readers
+wherever they are.
+
+</p>
+
+
+</div>
+
+
+<div class="value-grid">
+
+
+<div class="value-card">
+
+
+<div class="value-icon">
+
+<i class="fa-solid fa-bullseye"></i>
+
+</div>
+
+
+<h3>
+My Mission
+</h3>
+
+
+<p>
+
+To tell authentic African stories that
+celebrate our culture, inspire readers,
+and contribute to a global understanding
+of the African experience.
+
+I believe in the transformative power of
+literature to heal, educate, and unite
+people across borders.
+
+</p>
+
+
+</div>
+
+
+<div class="value-card">
+
+
+<div class="value-icon">
+
+<i class="fa-solid fa-eye"></i>
+
+</div>
+
+
+<h3>
+My Vision
+</h3>
+
+
+<p>
+
+To establish Kitsamba Writes Africa
+as a beacon of African literary
+excellence, where authentic voices
+are celebrated, cultural heritage is
+honored, and stories inspire positive
+change in the world.
+
+</p>
+
+
+</div>
+
+
+<div class="value-card">
+
+
+<div class="value-icon">
+
+<i class="fa-solid fa-heart"></i>
+
+</div>
+
+
+<h3>
+My Passion
+</h3>
+
+
+<p>
+
+I am dedicated to creating narratives
+that touch the heart, challenge the mind,
+and elevate African storytelling on the
+global stage.
+
+Every story I write is a gift to readers
+who seek meaning and connection.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+ACHIEVEMENTS
+========================= -->
+
+<section class="achievements">
+
+<div class="container">
+
+
+<div class="section-heading">
+
+<div class="eyebrow">
+Achievements & Milestones
+</div>
+
+<h2>
+A journey still being written.
+</h2>
+
+</div>
+
+
+<div class="stats-grid">
+
+
+<div class="stat">
+
+<strong>
+6+
+</strong>
+
+<span>
+Novels Published
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>
+Thousands
+</strong>
+
+<span>
+Readers Worldwide
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>
+100+
+</strong>
+
+<span>
+Blog Articles & Stories
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>
+Africa
+</strong>
+
+<span>
+Stories That Inspire
+</span>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+WRITING JOURNEY
+========================= -->
+
+<section class="journey">
+
+<div class="container">
+
+
+<div class="journey-heading">
+
+
+<div class="eyebrow">
+My Writing Journey
+</div>
+
+
+<h2>
+From the first story to Kitsamba Writes Africa.
+</h2>
+
+
+<p>
+
+Every stage of the journey has helped
+shape the writer and the platform
+you see today.
+
+</p>
+
+
+</div>
+
+
+<div class="timeline">
+
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-label">
+Beginning
+</div>
+
+<div class="timeline-card">
+
+<h3>
+Started Writing
+</h3>
+
+<p>
+
+Began my journey as a novelist,
+exploring themes of love, loss
+and resilience through fiction.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-label">
+First Book
+</div>
+
+<div class="timeline-card">
+
+<h3>
+Published My First Novel
+</h3>
+
+<p>
+
+Published my first novel,
+marking the beginning of a literary
+career dedicated to African storytelling.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-label">
+Growth
+</div>
+
+<div class="timeline-card">
+
+<h3>
+Expanded My Writing
+</h3>
+
+<p>
+
+Released multiple novels and began
+contributing more articles, stories
+and reflections.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-label">
+Readers
+</div>
+
+<div class="timeline-card">
+
+<h3>
+Growing Readership
+</h3>
+
+<p>
+
+Stories began reaching readers across
+Africa and beyond, strengthening the
+vision for a larger literary platform.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-label">
+Platform
+</div>
+
+<div class="timeline-card">
+
+<h3>
+Kitsamba Writes Africa
+</h3>
+
+<p>
+
+Established Kitsamba Writes Africa
+to share my work, celebrate African
+literature and create a home for
+stories, ideas and culture.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-label">
+Today
+</div>
+
+<div class="timeline-card">
+
+<h3>
+The Journey Continues
+</h3>
+
+<p>
+
+Continuing to write, improve,
+reach new readers and build
+a platform capable of carrying
+African stories even further.
+
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+QUOTE
+========================= -->
+
+<section class="quote-section">
+
+<div class="container">
+
+<i class="fa-solid fa-quote-left"></i>
+
+
+<blockquote>
+
+Stories are among the most powerful
+ways we can carry truth, emotion,
+memory and hope from one generation
+to another.
+
+</blockquote>
+
+
+<p>
+Kitsamba Joshua
+</p>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+CALL TO ACTION
+========================= -->
+
+<section class="cta-section">
+
+<div class="container">
+
+
+<div class="cta-box">
+
+
+<div>
+
+
+<div class="eyebrow">
+Join Me On This Literary Journey
+</div>
+
+
+<h2>
+The story does not end here.
+</h2>
+
+
+<p>
+
+Explore my novels, read the blog,
+discover African lifestyle stories,
+and stay connected for the latest
+writing from Kitsamba Writes Africa.
+
+</p>
+
+
+</div>
+
+
+<div class="cta-actions">
+
+
+<a href="novels.html"
+class="btn btn-gold">
+
+<i class="fa-solid fa-book-open"></i>
+
+Read Novels
+
+</a>
+
+
+<a href="blog.html"
+class="btn btn-outline">
+
+Explore Blog
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+FOOTER
+========================= -->
+
+<footer>
+
+<div class="container">
+
+
+<div class="footer-grid">
+
+
+<div class="footer-brand">
+
+
+<h3>
+Kitsamba Writes Africa
+</h3>
+
+
+<p>
+
+Writing Africa.
+One Story at a Time.
+
+A home for African stories,
+literature, culture and inspiration.
+
+</p>
+
+
+<!-- OLD WORKING SOCIAL ICONS -->
+
+<div class="footer-socials">
+
+
+<a href="#"
+class="social-link"
+aria-label="Facebook">
+
+<i class="fab fa-facebook"></i>
+
+</a>
+
+
+<a href="#"
+class="social-link"
+aria-label="Twitter">
+
+<i class="fab fa-twitter"></i>
+
+</a>
+
+
+<a href="#"
+class="social-link"
+aria-label="Instagram">
+
+<i class="fab fa-instagram"></i>
+
+</a>
+
+
+<a href="#"
+class="social-link"
+aria-label="YouTube">
+
+<i class="fab fa-youtube"></i>
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+<div class="footer-column">
+
+
+<h4>
+Explore
+</h4>
+
+
+<a href="index.html">
+Home
+</a>
+
+
+<a href="novels.html">
+Novels
+</a>
+
+
+<a href="blog.html">
+Blog
+</a>
+
+
+<a href="articles.html">
+Articles
+</a>
+
+
+<a href="lifestyle.html">
+African Lifestyle
+</a>
+
+
+</div>
+
+
+<div class="footer-column">
+
+
+<h4>
+More
+</h4>
+
+
+<a href="about.html">
+About Joshua
+</a>
+
+
+<a href="contact.html">
+Contact
+</a>
+
+
+<a href="videos.html">
+Videos
+</a>
+
+
+<a href="login.html">
+Reader Login
+</a>
+
+
+<a href="settings.html">
+Settings
+</a>
+
+
+</div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+
+<span>
+
+© <span id="year"></span>
+Kitsamba Writes Africa.
+All Rights Reserved.
+
+</span>
+
+
+<span>
+Proudly African. Passionately Written.
+</span>
+
+
+</div>
+
+
+</div>
+
+</footer>
+
+
+<script>
+
+
+/* MOBILE MENU */
+
+const mobileMenuBtn=
+document.getElementById("mobileMenuBtn");
+
+const navLinks=
+document.getElementById("navLinks");
+
+const mainMenu=
+document.getElementById("mainMenu");
+
+const mainMenuButton=
+document.getElementById("mainMenuButton");
+
+
+mobileMenuBtn.addEventListener(
+"click",
+function(){
+
+navLinks.classList.toggle("active");
+
+const icon=
+mobileMenuBtn.querySelector("i");
+
+
+if(
+navLinks.classList.contains("active")
+){
+
+icon.className=
+"fa-solid fa-xmark";
+
+}else{
+
+icon.className=
+"fa-solid fa-bars";
+
+mainMenu.classList.remove("active");
+
+}
+
+});
+
+
+/* DROPDOWN */
+
+mainMenuButton.addEventListener(
+"click",
+function(event){
+
+event.stopPropagation();
+
+mainMenu.classList.toggle("active");
+
+});
+
+
+document.addEventListener(
+"click",
+function(event){
+
+if(
+!mainMenu.contains(event.target)
+){
+
+mainMenu.classList.remove("active");
+
+}
+
+});
+
+
+/* CLOSE MOBILE MENU */
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(
+function(link){
+
+link.addEventListener(
+"click",
+function(){
+
+navLinks.classList.remove("active");
+
+mainMenu.classList.remove("active");
+
+mobileMenuBtn
+.querySelector("i")
+.className=
+"fa-solid fa-bars";
+
+});
+
+});
+
+
+/* YEAR */
+
+document
+.getElementById("year")
+.textContent=
+new Date().getFullYear();
+
+
+</script>
+
+
+</body>
+
+</html>

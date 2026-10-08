@@ -1,0 +1,2039 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact | Kitsamba Writes Africa</title>
+
+<meta name="description"
+content="Contact Kitsamba Writes Africa for reader messages, partnerships, sponsorship, media inquiries, book discussions and general feedback.">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap"
+rel="stylesheet">
+
+<style>
+
+:root{
+    --black:#090909;
+    --dark:#111;
+    --card:#171717;
+    --gold:#d8ac56;
+    --gold-light:#f2cf83;
+    --cream:#f7f1e5;
+    --white:#fff;
+    --gray:#aaa;
+    --border:rgba(216,172,86,.25);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    background:var(--black);
+    color:white;
+    line-height:1.65;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+textarea,
+select{
+    font-family:inherit;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+.eyebrow{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:.76rem;
+    font-weight:700;
+    margin-bottom:14px;
+}
+
+
+/* =========================
+NAVIGATION
+========================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:999;
+    background:rgba(8,8,8,.88);
+    backdrop-filter:blur(16px);
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+nav{
+    min-height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-shrink:0;
+}
+
+.brand-icon{
+    width:42px;
+    height:42px;
+    border:1px solid var(--gold);
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    color:var(--gold);
+}
+
+.brand-text strong{
+    display:block;
+    font-family:"Playfair Display",serif;
+    font-size:1.14rem;
+    letter-spacing:1px;
+}
+
+.brand-text span{
+    display:block;
+    color:var(--gold);
+    font-size:.66rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.nav-links > a{
+    color:#ddd;
+    font-size:.92rem;
+    font-weight:600;
+    transition:.25s;
+}
+
+.nav-links > a:hover{
+    color:var(--gold);
+}
+
+.start-reading{
+    background:var(--gold);
+    color:#111 !important;
+    padding:11px 20px;
+    border-radius:50px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.mobile-menu-btn{
+    display:none;
+    border:0;
+    background:none;
+    color:white;
+    font-size:1.5rem;
+    cursor:pointer;
+}
+
+
+/* =========================
+MENU DROPDOWN
+========================= */
+
+.main-menu{
+    position:relative;
+}
+
+.main-menu-button{
+    border:none;
+    background:transparent;
+    color:#ddd;
+    font-size:.92rem;
+    font-weight:600;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 0;
+}
+
+.main-menu-button:hover{
+    color:var(--gold);
+}
+
+.main-menu-button .bars{
+    color:var(--gold);
+}
+
+.main-menu-button .arrow{
+    font-size:.7rem;
+    transition:.25s;
+}
+
+.main-menu.active .arrow{
+    transform:rotate(180deg);
+}
+
+.menu-dropdown{
+    position:absolute;
+    right:0;
+    top:calc(100% + 18px);
+    width:310px;
+    padding:12px;
+    background:rgba(15,15,15,.98);
+    border:1px solid var(--border);
+    border-radius:20px;
+    box-shadow:0 25px 70px rgba(0,0,0,.65);
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transform:translateY(-10px);
+    transition:.25s;
+}
+
+.main-menu.active .menu-dropdown{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    transform:translateY(0);
+}
+
+.menu-dropdown::before{
+    content:"";
+    position:absolute;
+    top:-1px;
+    left:20px;
+    right:20px;
+    height:2px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+
+.menu-title{
+    padding:10px 14px 13px;
+    border-bottom:1px solid rgba(255,255,255,.07);
+    margin-bottom:6px;
+}
+
+.menu-title strong{
+    display:block;
+    font-family:"Playfair Display",serif;
+}
+
+.menu-title span{
+    color:#888;
+    font-size:.76rem;
+}
+
+.menu-dropdown a{
+    padding:12px 15px;
+    border-radius:11px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    color:#ddd;
+    font-size:.9rem;
+    transition:.2s;
+}
+
+.menu-dropdown a i{
+    width:22px;
+    text-align:center;
+    color:var(--gold);
+}
+
+.menu-dropdown a:hover{
+    background:rgba(216,172,86,.12);
+    color:var(--gold);
+    padding-left:19px;
+}
+
+
+/* =========================
+CONTACT HERO
+========================= */
+
+.contact-hero{
+    padding:170px 0 100px;
+    position:relative;
+    overflow:hidden;
+    background:
+    radial-gradient(circle at 78% 20%,rgba(216,172,86,.17),transparent 30%),
+    linear-gradient(135deg,#080808,#121212);
+}
+
+.contact-hero::after{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    border:1px solid rgba(216,172,86,.08);
+    border-radius:50%;
+    right:-240px;
+    top:-250px;
+}
+
+.hero-content{
+    max-width:900px;
+    position:relative;
+    z-index:2;
+}
+
+.contact-hero h1{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(3.4rem,8vw,6.7rem);
+    line-height:.98;
+    margin-bottom:28px;
+}
+
+.contact-hero h1 span{
+    color:var(--gold);
+}
+
+.contact-hero p{
+    max-width:760px;
+    color:#bbb;
+    font-size:1.08rem;
+}
+
+.hero-contact-pills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:11px;
+    margin-top:34px;
+}
+
+.contact-pill{
+    border:1px solid #2d2d2d;
+    padding:9px 14px;
+    border-radius:50px;
+    color:#bbb;
+    font-size:.8rem;
+}
+
+.contact-pill i{
+    color:var(--gold);
+    margin-right:7px;
+}
+
+
+/* =========================
+CONTACT AREA
+========================= */
+
+.contact-section{
+    padding:95px 0 120px;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:45px;
+    align-items:start;
+}
+
+.contact-info{
+    position:sticky;
+    top:115px;
+}
+
+.contact-info h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(2.4rem,5vw,4rem);
+    line-height:1.08;
+    margin-bottom:18px;
+}
+
+.contact-info > p{
+    color:#999;
+    margin-bottom:30px;
+}
+
+.info-cards{
+    display:grid;
+    gap:14px;
+}
+
+.info-card{
+    background:#151515;
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:16px;
+    padding:20px;
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+}
+
+.info-icon{
+    width:45px;
+    height:45px;
+    flex-shrink:0;
+    border-radius:12px;
+    background:rgba(216,172,86,.12);
+    color:var(--gold);
+    display:grid;
+    place-items:center;
+}
+
+.info-card strong{
+    display:block;
+    margin-bottom:3px;
+}
+
+.info-card span{
+    color:#999;
+    font-size:.88rem;
+}
+
+.response-note{
+    margin-top:22px;
+    padding:18px;
+    border-radius:14px;
+    background:rgba(216,172,86,.08);
+    border:1px solid rgba(216,172,86,.18);
+    color:#bbb;
+    font-size:.88rem;
+}
+
+.response-note i{
+    color:var(--gold);
+    margin-right:7px;
+}
+
+
+/* =========================
+FORM
+========================= */
+
+.contact-form-card{
+    background:var(--cream);
+    color:#222;
+    border-radius:26px;
+    padding:clamp(30px,5vw,55px);
+}
+
+.contact-form-card h3{
+    font-family:"Playfair Display",serif;
+    font-size:2rem;
+    margin-bottom:8px;
+}
+
+.form-intro{
+    color:#666;
+    margin-bottom:28px;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+    font-size:.86rem;
+    font-weight:700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    border:1px solid #d7cfbf;
+    background:white;
+    color:#222;
+    outline:none;
+    border-radius:12px;
+    padding:14px 15px;
+}
+
+.form-group textarea{
+    min-height:160px;
+    resize:vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:#aa7c27;
+    box-shadow:0 0 0 3px rgba(170,124,39,.1);
+}
+
+.submit-btn{
+    width:100%;
+    border:none;
+    background:#111;
+    color:white;
+    border-radius:12px;
+    padding:15px 20px;
+    font-weight:800;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    transition:.25s;
+}
+
+.submit-btn:hover{
+    background:#2a2a2a;
+    transform:translateY(-2px);
+}
+
+.submit-btn:disabled{
+    opacity:.65;
+    cursor:not-allowed;
+    transform:none;
+}
+
+.form-status{
+    margin-top:14px;
+    padding:12px 14px;
+    border-radius:10px;
+    font-size:.88rem;
+    display:none;
+}
+
+.form-status.success{
+    display:block;
+    background:#e8f6ec;
+    color:#27623b;
+}
+
+.form-status.error{
+    display:block;
+    background:#fce8e8;
+    color:#8b2727;
+}
+
+
+/* =========================
+SUPPORT JOURNEY
+========================= */
+
+.support-section{
+    padding:20px 0 120px;
+}
+
+.support-card{
+    background:var(--cream);
+    color:#222;
+    border-radius:30px;
+    overflow:hidden;
+    display:grid;
+    grid-template-columns:.7fr 1.3fr;
+    min-height:650px;
+}
+
+.support-visual{
+    background:
+    radial-gradient(circle at 65% 25%,rgba(216,172,86,.5),transparent 22%),
+    linear-gradient(160deg,#20180f,#5e4325,#15110c);
+    position:relative;
+    overflow:hidden;
+}
+
+.support-visual::before{
+    content:"";
+    position:absolute;
+    width:320px;
+    height:320px;
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:50%;
+    left:50%;
+    top:42%;
+    transform:translate(-50%,-50%);
+}
+
+.support-visual::after{
+    content:"";
+    position:absolute;
+    width:210px;
+    height:210px;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:50%;
+    left:50%;
+    top:42%;
+    transform:translate(-50%,-50%);
+}
+
+.support-symbol{
+    position:absolute;
+    left:50%;
+    top:42%;
+    transform:translate(-50%,-50%);
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    background:var(--gold);
+    color:#111;
+    display:grid;
+    place-items:center;
+    font-size:2.6rem;
+    z-index:2;
+}
+
+.support-caption{
+    position:absolute;
+    left:35px;
+    right:35px;
+    bottom:35px;
+    z-index:2;
+}
+
+.support-caption span{
+    color:var(--gold-light);
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:.72rem;
+}
+
+.support-caption strong{
+    display:block;
+    font-family:"Playfair Display",serif;
+    font-size:2rem;
+    line-height:1.1;
+    color:white;
+    margin-top:6px;
+}
+
+.support-content{
+    padding:clamp(40px,6vw,75px);
+}
+
+.support-content h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(2.6rem,5vw,4.3rem);
+    line-height:1.08;
+    margin-bottom:22px;
+}
+
+.support-content p{
+    color:#565656;
+    margin-bottom:18px;
+    font-size:1rem;
+}
+
+.support-highlight{
+    margin:25px 0;
+    padding:22px;
+    border-left:4px solid #aa7a25;
+    background:#eee5d4;
+    font-family:"Playfair Display",serif;
+    font-size:1.22rem;
+    line-height:1.6;
+}
+
+.signature{
+    margin-top:28px;
+    font-family:"Playfair Display",serif;
+}
+
+.signature strong{
+    display:block;
+    font-size:1.25rem;
+}
+
+.signature span{
+    color:#777;
+    font-style:italic;
+}
+
+.support-actions{
+    margin-top:30px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.support-btn{
+    border:none;
+    background:#111;
+    color:white;
+    padding:14px 22px;
+    border-radius:50px;
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    font-weight:800;
+    cursor:pointer;
+}
+
+.support-outline{
+    border:1px solid #b9aa90;
+    background:transparent;
+    color:#222;
+}
+
+
+/* =========================
+PARTNERSHIP
+========================= */
+
+.partner-section{
+    padding:0 0 120px;
+}
+
+.partner-box{
+    border:1px solid var(--border);
+    border-radius:26px;
+    padding:clamp(40px,6vw,70px);
+    background:
+    linear-gradient(120deg,rgba(216,172,86,.12),rgba(255,255,255,.02));
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:45px;
+}
+
+.partner-box h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(2.2rem,5vw,3.7rem);
+    line-height:1.1;
+    margin-bottom:15px;
+}
+
+.partner-box p{
+    max-width:680px;
+    color:#999;
+}
+
+.partner-btn{
+    flex-shrink:0;
+    background:var(--gold);
+    color:#111;
+    padding:14px 22px;
+    border-radius:50px;
+    font-weight:800;
+}
+
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+    border-top:1px solid rgba(255,255,255,.08);
+    background:#070707;
+    padding:70px 0 30px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.6fr 1fr 1fr;
+    gap:50px;
+}
+
+.footer-brand h3{
+    font-family:"Playfair Display",serif;
+    font-size:1.7rem;
+    margin-bottom:15px;
+}
+
+.footer-brand p{
+    color:#999;
+    max-width:440px;
+}
+
+.socials{
+    display:flex;
+    gap:12px;
+    margin-top:22px;
+}
+
+.socials a{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:1px solid #333;
+    display:grid;
+    place-items:center;
+}
+
+.footer-column h4{
+    color:var(--gold);
+    margin-bottom:17px;
+}
+
+.footer-column a{
+    display:block;
+    color:#999;
+    margin-bottom:10px;
+}
+
+.footer-column a:hover{
+    color:white;
+}
+
+.footer-bottom{
+    border-top:1px solid #222;
+    margin-top:55px;
+    padding-top:25px;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    font-size:.82rem;
+    color:#777;
+}
+
+
+/* =========================
+TABLET
+========================= */
+
+@media(max-width:950px){
+
+.mobile-menu-btn{
+    display:block;
+}
+
+.nav-links{
+    position:fixed;
+    top:78px;
+    left:0;
+    width:100%;
+    max-height:calc(100vh - 78px);
+    overflow-y:auto;
+    background:#0c0c0c;
+    flex-direction:column;
+    align-items:flex-start;
+    padding:28px 5%;
+    gap:20px;
+    transform:translateY(-150%);
+    transition:.3s;
+    border-bottom:1px solid #222;
+}
+
+.nav-links.active{
+    transform:translateY(0);
+}
+
+.nav-links > a{
+    width:100%;
+}
+
+.start-reading{
+    justify-content:center;
+}
+
+.main-menu{
+    width:100%;
+}
+
+.main-menu-button{
+    width:100%;
+    justify-content:space-between;
+}
+
+.menu-dropdown{
+    position:static;
+    width:100%;
+    margin-top:10px;
+    display:none;
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    transform:none;
+    box-shadow:none;
+    background:#141414;
+}
+
+.main-menu.active .menu-dropdown{
+    display:block;
+}
+
+.contact-grid{
+    grid-template-columns:1fr;
+}
+
+.contact-info{
+    position:static;
+}
+
+.support-card{
+    grid-template-columns:1fr;
+}
+
+.support-visual{
+    min-height:420px;
+}
+
+.partner-box{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.footer-grid{
+    grid-template-columns:1fr 1fr;
+}
+
+}
+
+
+/* =========================
+PHONE
+========================= */
+
+@media(max-width:650px){
+
+.brand-text strong{
+    font-size:1rem;
+}
+
+.brand-text span{
+    font-size:.58rem;
+}
+
+.contact-hero{
+    padding:140px 0 75px;
+}
+
+.form-row{
+    grid-template-columns:1fr;
+}
+
+.support-content{
+    padding:38px 28px;
+}
+
+.footer-grid{
+    grid-template-columns:1fr;
+}
+
+.footer-bottom{
+    flex-direction:column;
+}
+
+}
+
+</style>
+
+<script src="theme.js"></script>
+</head>
+
+<body>
+
+
+<!-- =========================
+NAVIGATION
+========================= -->
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<a href="index.html" class="brand">
+
+<div class="brand-icon">
+<i class="fa-solid fa-feather-pointed"></i>
+</div>
+
+<div class="brand-text">
+<strong>Kitsamba Writes</strong>
+<span>Africa</span>
+</div>
+
+</a>
+
+
+<button class="mobile-menu-btn" id="mobileMenuBtn">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+
+<div class="nav-links" id="navLinks">
+
+<a href="index.html">Home</a>
+
+<a href="novels.html">Novels</a>
+
+
+<div class="main-menu" id="mainMenu">
+
+<button class="main-menu-button" id="mainMenuButton">
+
+<i class="fa-solid fa-bars bars"></i>
+
+Menu
+
+<i class="fa-solid fa-chevron-down arrow"></i>
+
+</button>
+
+
+<div class="menu-dropdown">
+
+<div class="menu-title">
+
+<strong>Explore Kitsamba Writes</strong>
+
+<span>Stories, culture and more</span>
+
+</div>
+
+<a href="index.html">
+<i class="fa-solid fa-house"></i>
+Home
+</a>
+
+<a href="about.html">
+<i class="fa-solid fa-user-pen"></i>
+About
+</a>
+
+<a href="articles.html">
+<i class="fa-solid fa-newspaper"></i>
+Articles
+</a>
+
+<a href="blog.html">
+<i class="fa-solid fa-pen-nib"></i>
+Blog
+</a>
+
+<a href="contact.html">
+<i class="fa-solid fa-envelope"></i>
+Contact
+</a>
+
+<a href="lifestyle.html">
+<i class="fa-solid fa-earth-africa"></i>
+Lifestyle
+</a>
+
+<a href="login.html">
+<i class="fa-solid fa-right-to-bracket"></i>
+Login
+</a>
+
+<a href="novels.html">
+<i class="fa-solid fa-book-open"></i>
+Novels
+</a>
+
+<a href="settings.html">
+<i class="fa-solid fa-gear"></i>
+Settings
+</a>
+
+<a href="videos.html">
+<i class="fa-solid fa-circle-play"></i>
+Videos
+</a>
+
+</div>
+
+</div>
+
+
+<a href="novels.html" class="start-reading">
+
+<i class="fa-solid fa-book-open"></i>
+
+Start Reading
+
+</a>
+
+</div>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+HERO
+========================= -->
+
+<section class="contact-hero">
+
+<div class="container">
+
+<div class="hero-content">
+
+<div class="eyebrow">
+Let's connect
+</div>
+
+<h1>
+
+Every message
+<span>matters.</span>
+
+</h1>
+
+<p>
+
+Whether you are a reader, supporter,
+organization, sponsor, journalist or fellow
+creative, Kitsamba Writes Africa would
+love to hear from you.
+
+</p>
+
+<div class="hero-contact-pills">
+
+<div class="contact-pill">
+<i class="fa-solid fa-book-open-reader"></i>
+Reader Messages
+</div>
+
+<div class="contact-pill">
+<i class="fa-solid fa-handshake"></i>
+Partnerships
+</div>
+
+<div class="contact-pill">
+<i class="fa-solid fa-microphone"></i>
+Media
+</div>
+
+<div class="contact-pill">
+<i class="fa-solid fa-heart"></i>
+Support
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+CONTACT FORM
+========================= -->
+
+<section class="contact-section">
+
+<div class="container">
+
+<div class="contact-grid">
+
+
+<div class="contact-info">
+
+<div class="eyebrow">
+Contact Kitsamba Writes
+</div>
+
+<h2>
+Start a conversation.
+</h2>
+
+<p>
+
+Choose the reason for your message
+and send it directly through the form.
+Serious reader messages, collaborations,
+media requests and sponsorship inquiries
+are welcome.
+
+</p>
+
+
+<div class="info-cards">
+
+
+<div class="info-card">
+
+<div class="info-icon">
+<i class="fa-solid fa-book-open"></i>
+</div>
+
+<div>
+<strong>Reader Messages</strong>
+<span>
+Thoughts about novels, articles and stories.
+</span>
+</div>
+
+</div>
+
+
+<div class="info-card">
+
+<div class="info-icon">
+<i class="fa-solid fa-handshake"></i>
+</div>
+
+<div>
+<strong>Partnerships & Sponsorship</strong>
+<span>
+Organizations, brands and supporters interested in collaboration.
+</span>
+</div>
+
+</div>
+
+
+<div class="info-card">
+
+<div class="info-icon">
+<i class="fa-solid fa-microphone-lines"></i>
+</div>
+
+<div>
+<strong>Media & Interviews</strong>
+<span>
+Interviews, features, podcasts and media requests.
+</span>
+</div>
+
+</div>
+
+
+<div class="info-card">
+
+<div class="info-icon">
+<i class="fa-solid fa-lightbulb"></i>
+</div>
+
+<div>
+<strong>General Feedback</strong>
+<span>
+Ideas, suggestions and constructive feedback.
+</span>
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="response-note">
+
+<i class="fa-regular fa-clock"></i>
+
+Messages are reviewed personally. Please provide a valid email address so a reply can be sent when needed.
+
+</div>
+
+</div>
+
+
+<div class="contact-form-card">
+
+<h3>
+Send a Message
+</h3>
+
+<p class="form-intro">
+
+Fill in the form below and your message will be delivered directly to Kitsamba Writes Africa.
+
+</p>
+
+
+<form id="contactForm">
+
+
+<!-- IMPORTANT:
+REPLACE YOUR_ACCESS_KEY_HERE
+WITH YOUR REAL WEB3FORMS ACCESS KEY
+-->
+
+<input
+type="hidden"
+name="access_key"
+value="YOUR_REAL_ACCESS_KEY"
+
+
+<input
+type="hidden"
+name="subject"
+value="New message from Kitsamba Writes Africa">
+
+
+<input
+type="hidden"
+name="from_name"
+value="Kitsamba Writes Africa Website">
+
+
+<div class="form-row">
+
+
+<div class="form-group">
+
+<label for="name">
+Full Name
+</label>
+
+<input
+type="text"
+id="name"
+name="name"
+placeholder="Your full name"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="email">
+Email Address
+</label>
+
+<input
+type="email"
+id="email"
+name="email"
+placeholder="you@example.com"
+required>
+
+</div>
+
+
+</div>
+
+
+<div class="form-row">
+
+
+<div class="form-group">
+
+<label for="country">
+Country
+</label>
+
+<input
+type="text"
+id="country"
+name="country"
+placeholder="Your country">
+
+</div>
+
+
+<div class="form-group">
+
+<label for="inquiry">
+Reason for Contact
+</label>
+
+<select
+id="inquiry"
+name="inquiry_type"
+required>
+
+<option value="">
+Select one
+</option>
+
+<option value="Reader Message">
+Reader Message
+</option>
+
+<option value="Book Inquiry">
+Book Inquiry
+</option>
+
+<option value="Partnership">
+Partnership / Collaboration
+</option>
+
+<option value="Sponsorship">
+Sponsorship / Support
+</option>
+
+<option value="Media">
+Media / Interview
+</option>
+
+<option value="Feedback">
+General Feedback
+</option>
+
+<option value="Other">
+Other
+</option>
+
+</select>
+
+</div>
+
+
+</div>
+
+
+<div class="form-group">
+
+<label for="message">
+Your Message
+</label>
+
+<textarea
+id="message"
+name="message"
+placeholder="Tell us what you would like to discuss..."
+required></textarea>
+
+</div>
+
+
+<button
+type="submit"
+class="submit-btn"
+id="submitBtn">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+Send Message
+
+</button>
+
+
+<div
+class="form-status"
+id="formStatus">
+</div>
+
+
+</form>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+SUPPORT MY JOURNEY
+========================= -->
+
+<section class="support-section" id="support">
+
+<div class="container">
+
+<div class="support-card">
+
+
+<div class="support-visual">
+
+<div class="support-symbol">
+
+<i class="fa-solid fa-heart"></i>
+
+</div>
+
+<div class="support-caption">
+
+<span>
+Support African Creativity
+</span>
+
+<strong>
+Help a dream continue growing.
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="support-content">
+
+<div class="eyebrow">
+Support My Journey
+</div>
+
+<h2>
+Help me keep building Kitsamba Writes Africa.
+</h2>
+
+<p>
+
+Every meaningful journey begins with a dream, but turning that dream into reality often requires the support of others.
+
+</p>
+
+<p>
+
+I am building <strong>Kitsamba Writes Africa</strong> with passion, determination, and a strong belief in the power of words and African stories. However, I am currently not financially stable, and meeting the costs involved in developing this work can be a real challenge.
+
+</p>
+
+<p>
+
+That is why I am reaching out to people, organizations, and sponsors who believe in supporting young creators, African voices, and meaningful stories.
+
+</p>
+
+
+<div class="support-highlight">
+
+<strong>
+Your support, no matter how small, can make a difference.
+</strong>
+
+It can help me continue writing, creating, improving my work, reaching more people, and building something that can grow beyond me.
+
+</div>
+
+
+<p>
+
+I may not have all the financial resources I need today, but I have the vision, the willingness to work, and the determination to keep going. With your support, I believe I can make it.
+
+</p>
+
+<p>
+
+If you believe in what I am trying to build, I would be deeply grateful for your support.
+
+<strong>
+You would not simply be supporting a website—you would be supporting a dream, a voice, and the possibility of something greater.
+</strong>
+
+</p>
+
+<p>
+
+Thank you for believing in my journey and for considering being part of it.
+
+</p>
+
+<p>
+
+<strong>
+Every contribution counts. Every encouragement matters. Every helping hand brings me one step closer.
+</strong>
+
+</p>
+
+
+<div class="signature">
+
+<strong>
+— Kitsamba Wisdom Joshua
+</strong>
+
+<span>
+Founder, Kitsamba Writes Africa
+</span>
+
+</div>
+
+
+<div class="support-actions">
+
+<a
+href="#contactForm"
+class="support-btn"
+onclick="selectSupport()">
+
+<i class="fa-solid fa-hand-holding-heart"></i>
+
+Offer Support
+
+</a>
+
+
+<a
+href="#contactForm"
+class="support-btn support-outline"
+onclick="selectPartnership()">
+
+<i class="fa-solid fa-handshake"></i>
+
+Discuss Sponsorship
+
+</a>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+PARTNERSHIP CTA
+========================= -->
+
+<section class="partner-section">
+
+<div class="container">
+
+<div class="partner-box">
+
+<div>
+
+<div class="eyebrow">
+Organizations & Partners
+</div>
+
+<h2>
+Interested in building something together?
+</h2>
+
+<p>
+
+Kitsamba Writes Africa welcomes meaningful
+partnerships with organizations, publishers,
+media platforms, literary communities,
+creative brands and supporters who believe
+in African voices and storytelling.
+
+</p>
+
+</div>
+
+
+<a
+href="#contactForm"
+class="partner-btn"
+onclick="selectPartnership()">
+
+Let's Talk
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+FOOTER
+========================= -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+
+<div class="footer-brand">
+
+<h3>
+Kitsamba Writes Africa
+</h3>
+
+<p>
+
+A home for African stories,
+novels, ideas and culture.
+
+Writing Africa,
+one story at a time.
+
+</p>
+
+<div class="socials">
+
+<a href="#">
+<i class="fa-brands fa-facebook-f"></i>
+</a>
+
+<a href="#">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="#">
+<i class="fa-brands fa-tiktok"></i>
+</a>
+
+<a href="#">
+<i class="fa-brands fa-youtube"></i>
+</a>
+
+</div>
+
+</div>
+
+
+<div class="footer-column">
+
+<h4>
+Explore
+</h4>
+
+<a href="novels.html">Novels</a>
+<a href="articles.html">Articles</a>
+<a href="blog.html">Blog</a>
+<a href="lifestyle.html">African Lifestyle</a>
+<a href="videos.html">Videos</a>
+
+</div>
+
+
+<div class="footer-column">
+
+<h4>
+Website
+</h4>
+
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="login.html">Reader Login</a>
+<a href="settings.html">Settings</a>
+
+</div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+<span>
+
+© <span id="year"></span>
+Kitsamba Writes Africa.
+All rights reserved.
+
+</span>
+
+<span>
+Every message matters.
+</span>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<script>
+
+
+/* =========================
+WEB3FORMS SUBMISSION
+========================= */
+
+const contactForm=
+document.getElementById("contactForm");
+
+const submitBtn=
+document.getElementById("submitBtn");
+
+const formStatus=
+document.getElementById("formStatus");
+
+
+contactForm.addEventListener(
+"submit",
+async function(event){
+
+event.preventDefault();
+
+
+const accessKey=
+contactForm
+.querySelector('input[name="access_key"]')
+.value;
+
+
+if(
+accessKey==="YOUR_ACCESS_KEY_HERE" ||
+accessKey.trim()===""
+){
+
+formStatus.className=
+"form-status error";
+
+formStatus.textContent=
+"Please add your Web3Forms access key before using this form.";
+
+return;
+
+}
+
+
+submitBtn.disabled=true;
+
+submitBtn.innerHTML=
+'<i class="fa-solid fa-circle-notch fa-spin"></i> Sending...';
+
+
+formStatus.style.display=
+"none";
+
+
+const formData=
+new FormData(contactForm);
+
+
+const object=
+Object.fromEntries(formData);
+
+
+const json=
+JSON.stringify(object);
+
+
+try{
+
+
+const response=
+await fetch(
+"https://api.web3forms.com/submit",
+{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json",
+"Accept":"application/json"
+},
+
+body:json
+
+});
+
+
+const result=
+await response.json();
+
+
+if(result.success){
+
+
+formStatus.className=
+"form-status success";
+
+formStatus.textContent=
+"Thank you. Your message has been sent successfully to Kitsamba Writes Africa.";
+
+
+contactForm.reset();
+
+
+}else{
+
+
+formStatus.className=
+"form-status error";
+
+formStatus.textContent=
+result.message ||
+"Your message could not be sent. Please try again.";
+
+
+}
+
+
+}catch(error){
+
+
+formStatus.className=
+"form-status error";
+
+formStatus.textContent=
+"Something went wrong while sending your message. Please check your internet connection and try again.";
+
+
+}
+
+
+submitBtn.disabled=false;
+
+submitBtn.innerHTML=
+'<i class="fa-solid fa-paper-plane"></i> Send Message';
+
+
+});
+
+
+/* =========================
+SUPPORT BUTTONS
+========================= */
+
+function selectSupport(){
+
+setTimeout(function(){
+
+document.getElementById("inquiry").value=
+"Sponsorship";
+
+document.getElementById("message").focus();
+
+},300);
+
+}
+
+
+function selectPartnership(){
+
+setTimeout(function(){
+
+document.getElementById("inquiry").value=
+"Partnership";
+
+document.getElementById("message").focus();
+
+},300);
+
+}
+
+
+/* =========================
+MOBILE NAVIGATION
+========================= */
+
+const mobileMenuBtn=
+document.getElementById("mobileMenuBtn");
+
+const navLinks=
+document.getElementById("navLinks");
+
+const mainMenu=
+document.getElementById("mainMenu");
+
+const mainMenuButton=
+document.getElementById("mainMenuButton");
+
+
+mobileMenuBtn.addEventListener(
+"click",
+function(){
+
+navLinks.classList.toggle("active");
+
+const icon=
+mobileMenuBtn.querySelector("i");
+
+if(navLinks.classList.contains("active")){
+
+icon.className=
+"fa-solid fa-xmark";
+
+}else{
+
+icon.className=
+"fa-solid fa-bars";
+
+mainMenu.classList.remove("active");
+
+}
+
+});
+
+
+mainMenuButton.addEventListener(
+"click",
+function(event){
+
+event.stopPropagation();
+
+mainMenu.classList.toggle("active");
+
+});
+
+
+document.addEventListener(
+"click",
+function(event){
+
+if(!mainMenu.contains(event.target)){
+
+mainMenu.classList.remove("active");
+
+}
+
+});
+
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+link.addEventListener(
+"click",
+function(){
+
+navLinks.classList.remove("active");
+
+mainMenu.classList.remove("active");
+
+mobileMenuBtn
+.querySelector("i")
+.className=
+"fa-solid fa-bars";
+
+});
+
+});
+
+
+/* =========================
+YEAR
+========================= */
+
+document.getElementById("year")
+.textContent=
+new Date().getFullYear();
+
+
+</script>
+
+</body>
+
+</html>

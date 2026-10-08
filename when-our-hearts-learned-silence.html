@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b0a08">
+<title>When Our Hearts Learned Silence | Kitsamba Writes Africa</title>
+<meta name="description" content="Read the opening chapters of When Our Hearts Learned Silence by Kitsamba Joshua and purchase the complete novel on Kitsamba Writes Africa.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700;800&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+:root{
+  --ink:#0b0a08; --ink-2:#11100d; --ink-3:#191713;
+  --paper:#f6f0e4; --paper-2:#fffaf0;
+  --gold:#c99a43; --gold-2:#e6c175;
+  --line:rgba(255,255,255,.10); --muted:#a8a198; --text:#f8f5ef;
+  --shadow:0 28px 70px rgba(0,0,0,.35); --radius:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{background:var(--ink);color:var(--text);font-family:"Inter",sans-serif;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+img{display:block;max-width:100%}
+.container{width:min(1180px,92%);margin:auto}
+
+.site-header{position:sticky;top:0;z-index:2000;background:rgba(11,10,8,.90);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.navbar{height:82px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:32px}
+.brand{display:flex;align-items:center;gap:12px;white-space:nowrap}
+.brand-mark{width:43px;height:43px;border:1px solid rgba(201,154,67,.65);border-radius:50%;display:grid;place-items:center;color:var(--gold-2);font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:700;background:rgba(201,154,67,.06)}
+.brand-copy{line-height:1.05}
+.brand-copy strong{font-family:"Cormorant Garamond",serif;font-size:1.28rem;letter-spacing:.2px;display:block}
+.brand-copy small{color:#8f8980;text-transform:uppercase;letter-spacing:2px;font-size:.58rem;font-weight:700}
+.nav-links{justify-self:center;display:flex;align-items:center;gap:7px}
+.nav-links a{padding:9px 13px;border-radius:999px;color:#c9c3bb;font-size:.81rem;font-weight:600;transition:.2s}
+.nav-links a:hover,.nav-links a.active{color:#fff;background:rgba(255,255,255,.06)}
+.nav-buy{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#111;padding:11px 17px;border-radius:999px;font-size:.79rem;font-weight:800;transition:.2s}
+.nav-buy:hover{transform:translateY(-1px);background:var(--gold-2)}
+.menu-btn{display:none;width:42px;height:42px;border:1px solid #333;background:#141310;color:#fff;border-radius:12px;cursor:pointer}
+
+.hero{position:relative;isolation:isolate;padding:82px 0 76px;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero:before{content:"";position:absolute;inset:-15%;z-index:-2;background:radial-gradient(circle at 74% 25%,rgba(201,154,67,.20),transparent 28%),radial-gradient(circle at 15% 70%,rgba(201,154,67,.08),transparent 26%)}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(105deg,rgba(11,10,8,.35),rgba(11,10,8,.86))}
+.hero-grid{display:grid;grid-template-columns:310px minmax(0,1fr);gap:70px;align-items:center}
+.cover-wrap{position:relative}
+.cover-wrap:before{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid rgba(201,154,67,.28);border-radius:24px;z-index:-1}
+.cover{border-radius:20px;overflow:hidden;box-shadow:0 38px 90px rgba(0,0,0,.58);border:1px solid rgba(255,255,255,.10);background:#161410}
+.cover img{width:100%;aspect-ratio:2/3;object-fit:cover}
+.kicker{display:inline-flex;align-items:center;gap:9px;color:var(--gold-2);text-transform:uppercase;letter-spacing:3px;font-size:.69rem;font-weight:800;margin-bottom:19px}
+.kicker:before{content:"";width:30px;height:1px;background:var(--gold)}
+.hero h1{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(3.7rem,7.5vw,6.8rem);line-height:.86;letter-spacing:-2px;max-width:900px;margin-bottom:18px}
+.byline{font-family:"Cormorant Garamond",serif;color:#d7cfc5;font-size:1.25rem;font-style:italic;margin-bottom:24px}
+.hero-copy{max-width:720px;color:#b9b2a9;font-size:1rem;line-height:1.85}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 22px}
+.meta-pill{display:inline-flex;align-items:center;gap:7px;border:1px solid #312e29;background:rgba(255,255,255,.025);padding:8px 11px;border-radius:999px;color:#c9c2b9;font-size:.72rem;font-weight:600}
+.meta-pill i{color:var(--gold)}
+.price-strip{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:24px;padding:17px 19px;border:1px solid rgba(201,154,67,.25);background:rgba(201,154,67,.055);border-radius:16px;max-width:650px}
+.price-main small{display:block;color:#8e887f;text-transform:uppercase;letter-spacing:1.8px;font-size:.58rem;font-weight:800}
+.price-main strong{font-family:"Cormorant Garamond",serif;color:var(--gold-2);font-size:2.05rem;line-height:1}
+.price-side{padding-left:20px;border-left:1px solid rgba(255,255,255,.1);color:#a9a299;font-size:.76rem}
+.price-side b{color:#fff}
+.hero-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 19px;border-radius:999px;font-size:.79rem;font-weight:800;transition:.2s}
+.btn-primary{background:var(--gold);color:#111}
+.btn-primary:hover{background:var(--gold-2);transform:translateY(-1px)}
+.btn-secondary{border:1px solid #37332e;color:#eee;background:rgba(255,255,255,.02)}
+.btn-secondary:hover{border-color:#655a49;background:rgba(255,255,255,.045)}
+
+.reader-shell{display:grid;grid-template-columns:285px minmax(0,1fr);gap:48px;padding:58px 0 110px}
+.toc{position:sticky;top:105px;align-self:start;border:1px solid var(--line);border-radius:20px;background:var(--ink-2);overflow:hidden;max-height:calc(100vh - 130px)}
+.toc-head{padding:22px 20px 16px;border-bottom:1px solid var(--line)}
+.toc-head small{display:block;color:var(--gold);text-transform:uppercase;letter-spacing:2px;font-size:.59rem;font-weight:800;margin-bottom:4px}
+.toc-head h2{font-family:"Cormorant Garamond",serif;font-size:1.75rem;font-weight:600;line-height:1.05}
+.toc-progress{display:flex;align-items:center;justify-content:space-between;color:#8d877e;font-size:.64rem;margin-top:12px}
+.progress-bar{height:3px;background:#27241f;margin-top:9px;border-radius:4px;overflow:hidden}
+.progress-bar span{display:block;width:20%;height:100%;background:var(--gold)}
+.toc-scroll{padding:12px;overflow-y:auto;max-height:calc(100vh - 240px)}
+.toc-label{padding:11px 9px 5px;color:#736d65;text-transform:uppercase;letter-spacing:1.7px;font-size:.55rem;font-weight:800}
+.toc a,.toc .locked{display:flex;align-items:flex-start;gap:10px;padding:9px 10px;border-radius:10px;color:#aaa39a;font-size:.72rem;line-height:1.35;margin-bottom:2px;transition:.2s}
+.toc a i,.toc .locked i{width:13px;margin-top:2px;text-align:center}
+.toc a i{color:var(--gold)}
+.toc a:hover,.toc a.current{background:rgba(201,154,67,.08);color:#f6ede1}
+.toc .locked{color:#5e5a54}
+.reader-column{min-width:0}
+.reader-intro{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:22px;padding:0 6px}
+.reader-intro h2{font-family:"Cormorant Garamond",serif;font-size:2.4rem;font-weight:600}
+.reader-intro p{color:#817b73;font-size:.75rem}
+.chapter{background:var(--paper);color:#1c1915;border-radius:24px;padding:clamp(34px,6vw,70px);margin-bottom:40px;box-shadow:var(--shadow);border:1px solid #e9ddcb;position:relative;overflow:hidden}
+.chapter:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--gold),rgba(201,154,67,.12))}
+.chapter-kicker{color:#906727;text-transform:uppercase;letter-spacing:2.4px;font-family:"Inter",sans-serif;font-size:.61rem;font-weight:800;margin-bottom:10px}
+.chapter h2{font-family:"Cormorant Garamond",serif;font-size:clamp(2.6rem,5vw,4.15rem);font-weight:600;line-height:.98;letter-spacing:-.8px;margin-bottom:34px;color:#18130e}
+.chapter-text{max-width:760px;margin:auto}
+.chapter-text p{font-family:"Libre Baskerville",serif;font-size:1.01rem;line-height:2.02;margin-bottom:1.38em;color:#302a24}
+.chapter-nav{display:flex;justify-content:space-between;gap:12px;margin-top:40px;padding-top:23px;border-top:1px solid #ddd0bd;font-family:"Inter",sans-serif}
+.nav-btn{display:inline-flex;align-items:center;justify-content:center;background:#17140f;color:#fff;padding:10px 15px;border-radius:999px;font-size:.68rem;font-weight:800}
+.nav-btn.secondary{background:#e8dece;color:#272018}
+
+.premium{position:relative;overflow:hidden;border:1px solid rgba(201,154,67,.32);border-radius:28px;background:linear-gradient(145deg,#18140e,#0d0c0a 62%);padding:clamp(38px,6vw,68px);text-align:center;margin-top:10px}
+.premium:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:rgba(201,154,67,.08);filter:blur(10px);top:-390px;left:50%;transform:translateX(-50%)}
+.lock-icon{width:70px;height:70px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(201,154,67,.32);background:rgba(201,154,67,.08);color:var(--gold-2);font-size:1.4rem}
+.premium h2{font-family:"Cormorant Garamond",serif;font-size:clamp(2.8rem,5vw,4.3rem);font-weight:600;line-height:.98;margin-bottom:14px}
+.premium-copy{max-width:680px;margin:0 auto;color:#aaa299;font-size:.9rem}
+.checkout-card{max-width:610px;margin:30px auto 0;border:1px solid #2c2822;background:#12110e;border-radius:20px;padding:25px}
+.checkout-label{color:#81796f;text-transform:uppercase;letter-spacing:2px;font-size:.59rem;font-weight:800}
+.checkout-price{font-family:"Cormorant Garamond",serif;color:var(--gold-2);font-size:3rem;font-weight:700;line-height:1.05;margin:6px 0 2px}
+.checkout-sub{color:#918a81;font-size:.72rem;margin-bottom:20px}
+.paypal-hosted{display:flex;justify-content:center;margin-top:8px}
+.paypal-hosted form{max-width:100%}
+.after-pay{max-width:610px;margin:18px auto 0;padding:17px 19px;border:1px solid #292621;border-radius:15px;background:rgba(255,255,255,.018);text-align:left}
+.after-pay strong{color:var(--gold-2);font-size:.8rem}
+.after-pay p{color:#8e877e;font-size:.72rem;margin:5px 0 10px}
+.after-pay a{color:#e9dfd2;font-size:.7rem;font-weight:800;display:inline-flex;gap:7px;align-items:center}
+.locked-grid{max-width:760px;margin:30px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:8px;text-align:left}
+.locked-item{display:flex;align-items:flex-start;gap:9px;border:1px solid #26231f;background:#11100e;border-radius:11px;padding:10px 12px;color:#777169;font-size:.69rem;line-height:1.35}
+.locked-item i{color:#8d6b36;margin-top:2px}
+
+.community{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+.community-card{border:1px solid var(--line);background:var(--ink-2);border-radius:20px;padding:28px}
+.community-card .mini{color:var(--gold);text-transform:uppercase;letter-spacing:2px;font-size:.56rem;font-weight:800}
+.community-card h3{font-family:"Cormorant Garamond",serif;font-size:2rem;font-weight:600;margin:5px 0 8px}
+.community-card p{color:#8f8980;font-size:.76rem}
+.community-card .btn{margin-top:17px}
+.comments-box{margin-top:16px;background:#0b0a08;border-radius:12px;padding:5px;overflow:hidden}
+
+footer{border-top:1px solid var(--line);padding:35px 0;color:#736e67;font-size:.72rem}
+.footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center}
+.footer-links{display:flex;gap:14px;flex-wrap:wrap}
+.footer-links a:hover{color:#b9b1a7}
+
+@media(max-width:980px){
+  .nav-links{display:none}
+  .navbar{grid-template-columns:1fr auto auto;gap:10px}
+  .menu-btn{display:grid;place-items:center}
+  .nav-buy{font-size:0;width:42px;height:42px;padding:0;display:grid;place-items:center}
+  .nav-buy i{font-size:.86rem}
+  .mobile-menu{display:none;position:absolute;left:4%;right:4%;top:76px;padding:10px;border:1px solid #2b2823;background:#12110f;border-radius:15px;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+  .mobile-menu.open{display:grid}
+  .mobile-menu a{padding:12px;border-radius:9px;color:#bdb6ac;font-size:.78rem;font-weight:700}
+  .mobile-menu a:hover{background:#1b1915;color:#fff}
+  .hero-grid{grid-template-columns:250px 1fr;gap:45px}
+  .reader-shell{grid-template-columns:1fr}
+  .toc{position:relative;top:auto;max-height:none}
+  .toc-scroll{max-height:420px}
+}
+@media(min-width:981px){.mobile-menu{display:none!important}}
+@media(max-width:700px){
+  .navbar{height:72px}
+  .brand-copy strong{font-size:1.05rem} .brand-copy small{display:none} .brand-mark{width:38px;height:38px}
+  .hero{padding:46px 0 55px}
+  .hero-grid{grid-template-columns:1fr;gap:35px}
+  .cover-wrap{max-width:230px;margin:auto}
+  .hero h1{font-size:clamp(3.2rem,16vw,4.8rem);text-align:center}
+  .kicker,.byline,.hero-copy{justify-content:center;text-align:center;margin-left:auto;margin-right:auto}
+  .meta-row,.hero-actions{justify-content:center}
+  .price-strip{margin-left:auto;margin-right:auto;justify-content:center;text-align:center}
+  .price-side{border-left:0;padding-left:0;width:100%}
+  .reader-shell{padding-top:35px}
+  .reader-intro{align-items:flex-start;flex-direction:column;gap:1px}
+  .chapter{padding:32px 24px;border-radius:18px}
+  .chapter-text p{font-size:.95rem;line-height:1.92}
+  .chapter-nav{flex-direction:column}
+  .nav-btn{width:100%}
+  .locked-grid,.community{grid-template-columns:1fr}
+  .checkout-card{padding:20px 14px}
+  .footer-row{flex-direction:column;text-align:center}
+}
+</style>
+<script src="theme.js"></script>
+</head>
+
+<body id="top">
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="index.html" aria-label="Kitsamba Writes Africa home">
+      <span class="brand-mark">K</span>
+      <span class="brand-copy"><strong>Kitsamba Writes Africa</strong><small>Stories from Africa</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a class="active" href="novels.html">Novels</a>
+      <a href="articles.html">Articles</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="nav-buy" href="#premium"><i class="fa-solid fa-bag-shopping"></i><span>Buy Novel</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a><a href="novels.html">Novels</a><a href="articles.html">Articles</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="cover-wrap"><div class="cover"><img src="images/When Our Hearts Learned Silence.png" alt="When Our Hearts Learned Silence book cover"></div></div>
+    <div>
+      <div class="kicker">Seasons of the Heart · Book One</div>
+      <h1>When Our Hearts<br>Learned Silence</h1>
+      <div class="byline">A novel by Kitsamba Joshua</div>
+      <p class="hero-copy">A story of healing, forgiveness, emotional intimacy, and finding peace after loss.</p>
+
+      <div class="meta-row">
+        <span class="meta-pill"><i class="fa-solid fa-heart"></i> Contemporary Romance</span>
+        <span class="meta-pill"><i class="fa-solid fa-masks-theater"></i> Emotional Drama</span>
+        <span class="meta-pill"><i class="fa-solid fa-location-dot"></i> Kampala & Jinja</span>
+        <span class="meta-pill"><i class="fa-solid fa-unlock"></i> Chapters 1–3 Free</span>
+      </div>
+
+      <div class="price-strip">
+        <div class="price-main"><small>Full novel</small><strong id="localPrice">UGX 17,000</strong></div>
+        <div class="price-side">Official Uganda price: <b>UGX 17,000</b><br>PayPal checkout: <b>$4.58 USD</b></div>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#chapter-1"><i class="fa-solid fa-book-open-reader"></i> Start Reading Free</a>
+        <a class="btn btn-secondary" href="#premium"><i class="fa-brands fa-paypal"></i> Buy Full Novel</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="container reader-shell">
+  <aside class="toc">
+    <div class="toc-head">
+      <small>Reading guide</small>
+      <h2>Table of Contents</h2>
+      <div class="toc-progress"><span>3 chapters free</span><span>12 locked</span></div>
+      <div class="progress-bar"><span></span></div>
+    </div>
+    <div class="toc-scroll">
+      <div class="toc-label">Free preview</div>
+      <a href="#chapter-1"><i class="fa-regular fa-circle-check"></i><span>Chapter 1: The Road East</span></a>
+      <a href="#chapter-2"><i class="fa-regular fa-circle-check"></i><span>Chapter 2: The Artist by the Water</span></a>
+      <a href="#chapter-3"><i class="fa-regular fa-circle-check"></i><span>Chapter 3: Notes Between Strangers</span></a>
+      <div class="toc-label">Premium chapters</div>
+      <div class="locked"><i class="fa-solid fa-lock"></i><span>Chapter 4: The Dream She Buried</span></div>
+      <div class="locked"><i class="fa-solid fa-lock"></i><span>Chapter 5: Rain on the Tin Roof</span></div>
+      <div class="locked"><i class="fa-solid fa-lock"></i><span>Chapter 6: What Quiet People Notice</span></div>
+      <div class="locked"><i class="fa-solid fa-lock"></i><span>Chapter 7: The Email from Abroad</span></div>
+      <div class="locked"><i class="fa-solid fa-lock"></i><span>Chapter 8: The Name on the Documents</span></div>
+      <div class="locked"><i class="fa-solid fa-lock"></i><span>Chapter 9: Home Is Where the Truth Waits</span></div>
+      <div class="locked"><i class="fa-solid fa-lock"></i><span>Chapter 10: The Space Forgiveness Needs</span></div>
+      <div class="locked"><i class="fa-solid fa-lock"></i><span>Chapter 11: Five Weeks</span></div>
+      <div class="locked"><i class="fa-solid fa-lock"></i><span>Chapter 12: Holding On, Letting Go</span></div>
+      <div class="locked"><i class="fa-solid fa-lock"></i><span>Chapter 13: The Last Sunset Before Leaving</span></div>
+      <div class="locked"><i class="fa-solid fa-lock"></i><span>Chapter 14: The Distance Between Two Notes</span></div>
+      <div class="locked"><i class="fa-solid fa-lock"></i><span>Chapter 15: When Our Hearts Learned Silence</span></div>
+    </div>
+  </aside>
+
+  <section class="reader-column">
+    <div class="reader-intro">
+      <div><div class="kicker">Free preview</div><h2>Begin Elijah and Naomi's story</h2></div>
+      <p>Three opening chapters • Read online</p>
+    </div>
+
+
+    <article class="chapter" id="chapter-1">
+      <div class="chapter-kicker">Free Chapter 1 of 3</div>
+      <h2>Chapter 1: The Road East</h2>
+      <div class="chapter-text">
+          <p>Elijah Kato left Kampala before the city had properly awakened.</p>
+          <p>At half past five, the streets were still carrying the last shadows of night. A few taxis moved through the junctions with their conductors calling destinations into the cool air. Boda boda riders waited beside fuel stations, shoulders hunched against the morning chill. Shopkeepers lifted metal shutters. Somewhere behind a row of buildings, a radio preacher spoke loudly about beginning again.</p>
+          <p>Elijah almost laughed at the timing.</p>
+          <p>Beginning again was exactly what he had told everyone he was doing.</p>
+          <p>His mother had called it running away.</p>
+          <p>He had packed two suitcases, three boxes of books, his laptop, and the framed photograph he had nearly left behind. The photograph lay facedown in the glove compartment because he could not bear to look at it while driving. He knew the image without seeing it: his father in a pale shirt, one hand resting on Elijah&#x27;s shoulder, both of them squinting into sunlight at a family gathering three years before Joseph Kato died.</p>
+          <p>Three years. Elijah had learned that grief did not care about calendars. People liked to say time softened things, but some memories simply learned how to wait quietly until the room was empty.</p>
+          <p>He drove east with the windows slightly open.</p>
+          <p>At Mukono, his phone lit up on the passenger seat.</p>
+          <p>MUM.</p>
+          <p>He let it ring twice before answering.</p>
+          <p>&quot;You have gone?&quot;</p>
+          <p>Sarah Kato&#x27;s voice was steady, which meant she had already cried.</p>
+          <p>&quot;I&#x27;m on the road.&quot;</p>
+          <p>&quot;You could have waited until daylight.&quot;</p>
+          <p>&quot;Traffic.&quot;</p>
+          <p>&quot;Elijah.&quot;</p>
+          <p>He tightened his hand on the steering wheel.</p>
+          <p>&quot;I&#x27;ll call when I reach Jinja.&quot;</p>
+          <p>A pause.</p>
+          <p>&quot;A new town will not remove what is inside you.&quot;</p>
+          <p>He looked ahead at the road.</p>
+          <p>&quot;I know.&quot;</p>
+          <p>&quot;Do you?&quot;</p>
+          <p>He had no answer that would not become an argument, so he said, &quot;I&#x27;ll call when I arrive.&quot;</p>
+          <p>His mother sighed. &quot;Travel safely.&quot;</p>
+          <p>The line went quiet.</p>
+          <p>Elijah kept driving.</p>
+          <p>He had accepted a remote project-management position six months earlier, and when a former university classmate mentioned a small house available near Jinja, Elijah had taken it before asking sensible questions. He needed distance from the family home in Kampala, from the dining chair nobody used anymore, from his sister Ruth&#x27;s careful politeness, from the unspoken accusation that lived in every conversation about their father.</p>
+          <p>Most of all, he needed distance from himself.</p>
+          <p>Jinja greeted him with a slower rhythm than Kampala. The roads seemed less impatient. The air smelled different near the water, fresher somehow, though Elijah knew that might have been imagination. His rented house stood behind a low hedge on a quiet lane, a modest two-bedroom place with cream walls, a green roof, and a veranda that faced a mango tree.</p>
+          <p>The landlord handed him the keys and talked for fifteen minutes about water bills, rubbish collection, and a neighbour&#x27;s goat that occasionally behaved as though property boundaries were suggestions.</p>
+          <p>Elijah listened, nodded, and carried his boxes inside.</p>
+          <p>By late afternoon, the house looked like a place someone had entered but not yet chosen to live in. Boxes remained unopened. A single mug stood beside the sink. His clothes were folded in one room, his books stacked in another.</p>
+          <p>The photograph remained in the car.</p>
+          <p>He tried working, but the silence of the house felt too deliberate.</p>
+          <p>So he walked.</p>
+          <p>He followed a road toward the lake without knowing exactly where it would take him. Children passed him carrying a football. A woman sold roasted maize near a junction. Farther on, the view opened and Lake Victoria appeared between trees, broad and silver-blue beneath the lowering sun.</p>
+          <p>Elijah stopped.</p>
+          <p>For the first time that day, his breathing slowed.</p>
+          <p>There were people along the shore, but not many. A fisherman pulled at a rope near a wooden boat. Two teenagers sat on a low wall sharing earphones. And several metres away, beneath a tree, a woman stood before an easel.</p>
+          <p>She wore a loose white blouse with paint on one sleeve. Her hair was tied back carelessly, and a canvas rested in front of her.</p>
+          <p>Elijah would have walked past if the painting had matched the evening.</p>
+          <p>It did not.</p>
+          <p>The sky above the lake was burning orange, but on the canvas the woman had painted the water in deep blue and the horizon in shades of grey.</p>
+          <p>He paused too long.</p>
+          <p>Without turning, she said, &quot;You can come closer. The painting will not bite you.&quot;</p>
+          <p>Elijah looked behind him, as though she might be speaking to someone else.</p>
+          <p>The woman glanced over her shoulder.</p>
+          <p>Her smile was quick but warm.</p>
+          <p>&quot;Unless you always inspect paintings from that distance.&quot;</p>
+          <p>&quot;I wasn&#x27;t inspecting it.&quot;</p>
+          <p>&quot;You were standing very still.&quot;</p>
+          <p>He stepped closer, embarrassed by the fact that she was right.</p>
+          <p>Up close, the painting was stranger and more beautiful. Naomi had not tried to reproduce the lake faithfully. Her brushstrokes were loose, almost restless, and the grey along the horizon looked less like weather than a memory refusing to clear.</p>
+          <p>&quot;Do you always question strangers about their paintings?&quot; she asked.</p>
+          <p>&quot;Only when the painting argues with the sky.&quot;</p>
+          <p>Naomi tipped her head, studying him instead of the canvas. &quot;And which one do you trust more?&quot;</p>
+          <p>Elijah glanced at the sunset. &quot;The sky.&quot;</p>
+          <p>&quot;That is because you think seeing is the same as knowing.&quot;</p>
+          <p>&quot;Is this how artists insult people politely?&quot;</p>
+          <p>&quot;No. If I were insulting you, you would know.&quot;</p>
+          <p>The answer surprised a laugh out of him. It was small, almost rusty. Naomi noticed. She did not celebrate it or ask why it seemed unusual. She merely dipped her brush into a jar of cloudy water and returned to the canvas.</p>
+          <p>&quot;You are new here,&quot; she said.</p>
+          <p>&quot;That obvious?&quot;</p>
+          <p>&quot;People who belong somewhere rarely look at everything as if they are memorising the exits.&quot;</p>
+          <p>Elijah looked toward the path behind him. &quot;Maybe I just like knowing where I am.&quot;</p>
+          <p>&quot;That sounded prepared.&quot;</p>
+          <p>&quot;I work in project management. Prepared answers are part of the job.&quot;</p>
+          <p>&quot;That sounds terrible.&quot;</p>
+          <p>&quot;It pays rent.&quot;</p>
+          <p>Naomi smiled. &quot;Then I respect it.&quot;</p>
+          <p>A fisherman farther along the shore called to another man, and the sound travelled cleanly over the water. Elijah watched Naomi add another streak of blue. There was paint on the side of her hand and a thin white line near her wrist where she had wiped a brush without noticing.</p>
+          <p>&quot;What about you?&quot; he asked. &quot;Do you paint for rent?&quot;</p>
+          <p>&quot;Sometimes. Portraits, signs, illustrations, whatever people will pay for. The paintings I actually care about are usually the ones nobody orders.&quot;</p>
+          <p>&quot;That seems inefficient.&quot;</p>
+          <p>&quot;You really are a project manager.&quot;</p>
+          <p>He smiled again, and this time it came more easily.</p>
+          <p>For several minutes they watched the lake without speaking. Elijah expected the quiet to become awkward. It did not. Naomi seemed comfortable allowing a conversation to stop without rushing to rescue it. That was unusual. Most people treated silence as an emergency.</p>
+          <p>&quot;I am Naomi,&quot; she said eventually.</p>
+          <p>&quot;Elijah.&quot;</p>
+          <p>&quot;Kampala?&quot;</p>
+          <p>He looked at her. &quot;How did you know?&quot;</p>
+          <p>&quot;You said rent like someone who has recently been shocked by how much less it can cost elsewhere.&quot;</p>
+          <p>&quot;Fair.&quot;</p>
+          <p>&quot;And what brings Elijah-from-Kampala to Jinja?&quot;</p>
+          <p>The true answer rose too quickly: my father died, my family broke, and I got tired of hearing my own guilt in every room. He pushed it back down.</p>
+          <p>&quot;Work. A quieter place. A change.&quot;</p>
+          <p>Naomi nodded as though she could hear the missing parts but had decided not to reach for them.</p>
+          <p>&quot;Changes are expensive,&quot; she said.</p>
+          <p>&quot;You just said rent was cheaper.&quot;</p>
+          <p>&quot;Not that kind of expensive.&quot;</p>
+          <p>He looked at her, but she had already turned back to the painting.</p>
+          <p>When the light began to fade, Naomi packed slowly. Elijah almost offered to carry the easel, then stopped himself. He did not want to turn one conversation into an obligation.</p>
+          <p>Naomi folded the legs of the easel and glanced at him. &quot;You can help with that jar if you want to prove project managers are useful outside offices.&quot;</p>
+          <p>He picked it up. &quot;Dangerous. If I succeed, you may start expecting things.&quot;</p>
+          <p>&quot;I already expect you not to spill paint water on my shoes.&quot;</p>
+          <p>They walked only as far as the path where their directions separated. Naomi took the jar from him.</p>
+          <p>&quot;Goodnight, Elijah-from-Kampala.&quot;</p>
+          <p>&quot;Goodnight, Naomi-who-paints-the-wrong-sky.&quot;</p>
+          <p>She laughed and walked away.</p>
+          <p>Elijah stayed where he was for a moment longer than necessary. He had come to the lake because he wanted to be left alone. It unsettled him that the first person he had spoken to there had made aloneness feel slightly less necessary.</p>
+          <p>&quot;The sky isn&#x27;t grey,&quot; he said.</p>
+          <p>She looked at the real sunset, then at her canvas.</p>
+          <p>&quot;I know.&quot;</p>
+          <p>&quot;Then why paint it that way?&quot;</p>
+          <p>Her brush hovered over the canvas.</p>
+          <p>For a moment, the smile disappeared from her face.</p>
+          <p>&quot;Because sometimes you paint how a place feels, not how it looks.&quot;</p>
+          <p>The answer struck him harder than it should have.</p>
+          <p>He studied the water instead.</p>
+          <p>&quot;You&#x27;re new,&quot; she said.</p>
+          <p>&quot;Is it obvious?&quot;</p>
+          <p>&quot;A little.&quot;</p>
+          <p>&quot;How?&quot;</p>
+          <p>&quot;People who live here don&#x27;t look at the lake as if it has personally invited them to stay.&quot;</p>
+          <p>That pulled a small laugh from him.</p>
+          <p>The woman dipped her brush into blue paint.</p>
+          <p>&quot;I&#x27;m Naomi.&quot;</p>
+          <p>&quot;Elijah.&quot;</p>
+          <p>&quot;Welcome to Jinja, Elijah.&quot;</p>
+          <p>He nodded.</p>
+          <p>No questions followed. She did not ask where he had come from, why he was alone, what he did, whether he was married, or what kind of trouble had brought sadness into his face.</p>
+          <p>She simply returned to painting.</p>
+          <p>Elijah remained for another minute before moving farther down the shore.</p>
+          <p>When he finally turned back, Naomi was still beneath the tree, adding darkness to a sunset that was bright enough to make the lake glow.</p>
+          <p>He did not know why he remembered her words all the way home.</p>
+          <p>Sometimes you paint how a place feels, not how it looks.</p>
+          <p>That night, Elijah took his father&#x27;s photograph from the glove compartment.</p>
+          <p>He placed it inside the top drawer of his desk.</p>
+          <p>Facedown.</p>
+      </div>
+      <div class="chapter-nav">
+        <a class="nav-btn secondary" href="#top"><i class="fa-solid fa-arrow-up"></i> Back to top</a>
+        <a class="nav-btn" href="#chapter-2">Next chapter <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </article>
+
+
+    <article class="chapter" id="chapter-2">
+      <div class="chapter-kicker">Free Chapter 2 of 3</div>
+      <h2>Chapter 2: The Artist by the Water</h2>
+      <div class="chapter-text">
+          <p>For the next three evenings, Elijah returned to the lake.</p>
+          <p>He told himself it was because the house became unbearable after work. The walls were too clean, the rooms too orderly, the silence too much like the silence that had settled over his mother&#x27;s home after the funeral.</p>
+          <p>It had nothing to do with Naomi.</p>
+          <p>On the fourth evening, she was there.</p>
+          <p>Naomi did not invite him to sit, but she shifted the woven mat enough to leave space beside her. Elijah noticed the gesture and pretended not to. He lowered himself onto the dry grass instead, close enough to speak without raising his voice.</p>
+          <p>&quot;Still afraid of artist property?&quot; she asked.</p>
+          <p>&quot;I have seen the price of paint. I am protecting myself from liability.&quot;</p>
+          <p>&quot;Good answer.&quot;</p>
+          <p>Her pencil moved over the page. Elijah tried not to look, failed, and finally asked, &quot;What are you drawing?&quot;</p>
+          <p>&quot;Nothing important.&quot;</p>
+          <p>&quot;That is suspicious.&quot;</p>
+          <p>Naomi turned the sketchbook around. She had drawn the old tree, the slope toward the water and, almost hidden near the edge, a man standing with his hands in his pockets.</p>
+          <p>&quot;That is me.&quot;</p>
+          <p>&quot;It could be anyone.&quot;</p>
+          <p>&quot;It has my jacket.&quot;</p>
+          <p>&quot;Many people own jackets.&quot;</p>
+          <p>&quot;In Jinja, at this exact tree?&quot;</p>
+          <p>She closed the book. &quot;Artists require mystery.&quot;</p>
+          <p>Elijah shook his head, but he was smiling.</p>
+          <p>Later they bought tea from a woman with a flask near the road. Naomi took hers without sugar. Elijah added two spoons.</p>
+          <p>&quot;Two?&quot; she said.</p>
+          <p>&quot;Do not judge me.&quot;</p>
+          <p>&quot;I am observing.&quot;</p>
+          <p>&quot;That is judgement with better branding.&quot;</p>
+          <p>They carried the cups back to the shore. Naomi asked about his work, and Elijah explained the remote construction projects he coordinated, the deadlines, budgets and calls that often lasted longer than the problems they were meant to solve.</p>
+          <p>&quot;You sound bored when you talk about it,&quot; she said.</p>
+          <p>&quot;I am good at it.&quot;</p>
+          <p>&quot;Those are different things.&quot;</p>
+          <p>&quot;Not everyone gets to love their job.&quot;</p>
+          <p>&quot;True.&quot; Naomi rubbed her thumb along the rim of the cup. &quot;But people can disappear inside things they are only good at.&quot;</p>
+          <p>Elijah glanced at her. &quot;Experience?&quot;</p>
+          <p>For the first time, she hesitated.</p>
+          <p>&quot;Maybe.&quot;</p>
+          <p>He understood the boundary and did not press.</p>
+          <p>Instead he asked, &quot;What would you paint if nobody could tell you whether it was practical?&quot;</p>
+          <p>Naomi looked out over the lake so long that he thought she would ignore the question.</p>
+          <p>&quot;People,&quot; she said finally. &quot;Not portraits exactly. The things people carry without showing. I used to imagine a whole exhibition about that.&quot;</p>
+          <p>&quot;Used to?&quot;</p>
+          <p>She gave him a sideways look. &quot;You ask a lot for someone who answers almost nothing.&quot;</p>
+          <p>&quot;Occupational habit.&quot;</p>
+          <p>&quot;Convenient habit.&quot;</p>
+          <p>Elijah accepted the correction.</p>
+          <p>A group of children ran past chasing a ball. One boy kicked too hard and sent it rolling toward the water. Elijah trapped it with his shoe before it reached the slope and tossed it back. The children shouted thanks and disappeared.</p>
+          <p>Naomi watched him. &quot;You looked happy for three seconds.&quot;</p>
+          <p>&quot;Were you timing me?&quot;</p>
+          <p>&quot;Artists observe.&quot;</p>
+          <p>&quot;That is judgement with better branding.&quot;</p>
+          <p>She laughed at having her own words returned to her.</p>
+          <p>As the evening cooled, their conversation thinned naturally. Naomi sketched. Elijah answered two work messages, then put his phone away. They sat without talking for nearly twenty minutes.</p>
+          <p>It should have felt strange with someone he barely knew. Instead Elijah became aware of the difference between being alone and being left alone. Naomi was not demanding a performance from him. She did not need him to be cheerful, interesting or healed. She simply occupied the same quiet.</p>
+          <p>When she finally closed her sketchbook, she said, &quot;You know, people think silence means nothing is happening.&quot;</p>
+          <p>&quot;Doesn&#x27;t it?&quot;</p>
+          <p>&quot;No.&quot; She tapped the cover of her book. &quot;Most of the important things happen before anyone finds the right words.&quot;</p>
+          <p>Elijah looked at the darkening water. The sentence stayed with him because it sounded less like an opinion and more like something Naomi had learned the difficult way.</p>
+          <p>This time she was sitting cross-legged on a woven mat with a sketchbook resting on her knees. No easel. No blue sunset. Just a pencil moving quickly across paper.</p>
+          <p>Elijah slowed.</p>
+          <p>&quot;You&#x27;re staring again,&quot; she said.</p>
+          <p>He had not realised she had seen him.</p>
+          <p>&quot;You have an unusual definition of staring.&quot;</p>
+          <p>&quot;And you have an unusual habit of returning to places you pretend not to be interested in.&quot;</p>
+          <p>He smiled despite himself and sat on the low wall several metres away.</p>
+          <p>Naomi looked up. &quot;That is a very formal distance.&quot;</p>
+          <p>&quot;We barely know each other.&quot;</p>
+          <p>&quot;True. You may be dangerous.&quot;</p>
+          <p>&quot;You invited me closer last time.&quot;</p>
+          <p>&quot;That was before I understood your suspicious interest in badly coloured sunsets.&quot;</p>
+          <p>He laughed properly this time.</p>
+          <p>Naomi&#x27;s pencil paused.</p>
+          <p>&quot;There.&quot;</p>
+          <p>&quot;There what?&quot;</p>
+          <p>&quot;You do know how to laugh.&quot;</p>
+          <p>Elijah looked away. &quot;Apparently.&quot;</p>
+          <p>They sat with the lake moving quietly before them. Naomi sketched. Elijah checked messages on his phone and ignored two from Ruth.</p>
+          <p>After a while, Naomi tore a page from the sketchbook.</p>
+          <p>&quot;Here.&quot;</p>
+          <p>He walked over.</p>
+          <p>The drawing showed a man sitting alone on a wall beside the water. His face was not visible. Around him, Naomi had drawn the suggestion of moving trees and ripples, but the figure remained still.</p>
+          <p>&quot;That&#x27;s me?&quot;</p>
+          <p>&quot;It could be anyone.&quot;</p>
+          <p>&quot;He looks lonely.&quot;</p>
+          <p>Naomi tilted her head. &quot;Does he?&quot;</p>
+          <p>Elijah looked again.</p>
+          <p>Perhaps lonely was not the right word. The figure seemed paused, as though he had arrived somewhere without deciding whether to stay.</p>
+          <p>&quot;How much?&quot; he asked.</p>
+          <p>&quot;How much what?&quot;</p>
+          <p>&quot;For the drawing.&quot;</p>
+          <p>Naomi frowned. &quot;Not everything has to be bought.&quot;</p>
+          <p>&quot;Artists need to eat.&quot;</p>
+          <p>&quot;We do. Fortunately, I also design illustrations for people who believe art should match their curtains.&quot;</p>
+          <p>He laughed.</p>
+          <p>She folded the page once and handed it to him.</p>
+          <p>&quot;Keep it.&quot;</p>
+          <p>He did.</p>
+          <p>The next evening he brought two cups of tea from a nearby cafe.</p>
+          <p>&quot;Payment,&quot; he said.</p>
+          <p>&quot;For a free drawing?&quot;</p>
+          <p>&quot;Interest.&quot;</p>
+          <p>Naomi accepted the cup.</p>
+          <p>They began to talk in fragments.</p>
+          <p>Elijah told her he worked online managing infrastructure projects. Naomi told him she illustrated children&#x27;s books, painted portraits when she needed money, and painted the lake when she needed herself.</p>
+          <p>&quot;What does that mean?&quot; he asked.</p>
+          <p>&quot;It means clients tell me what colours to use. The lake does not.&quot;</p>
+          <p>She asked why he had moved to Jinja.</p>
+          <p>&quot;Work,&quot; he said.</p>
+          <p>Naomi sipped her tea.</p>
+          <p>&quot;That answer sounds ironed.&quot;</p>
+          <p>&quot;Ironed?&quot;</p>
+          <p>&quot;Flat. Prepared. No wrinkles.&quot;</p>
+          <p>&quot;It is true.&quot;</p>
+          <p>&quot;I didn&#x27;t say it wasn&#x27;t.&quot;</p>
+          <p>He expected her to push further.</p>
+          <p>She did not.</p>
+          <p>That became the first thing Elijah noticed about Naomi: she knew when not to ask.</p>
+          <p>The second thing was that her smiles arrived easily but never stayed long.</p>
+          <p>One evening a man passed by and greeted her with enthusiastic familiarity. Naomi responded politely, but after he left, her shoulders tightened.</p>
+          <p>&quot;Friend?&quot; Elijah asked.</p>
+          <p>&quot;My cousin&#x27;s friend.&quot;</p>
+          <p>The words were simple, but something had changed.</p>
+          <p>He could have asked why.</p>
+          <p>Instead he offered her the packet of groundnuts he had brought.</p>
+          <p>She looked at him for a second, then smiled.</p>
+          <p>&quot;Thank you.&quot;</p>
+          <p>Another evening, Naomi arrived to find a small piece of paper tucked beneath the strap of her paint bag.</p>
+          <p>She unfolded it.</p>
+          <p>In Elijah&#x27;s neat handwriting were the words:</p>
+          <p>The sunset is orange today. Please try not to insult it.</p>
+          <p>She laughed so loudly that a fisherman nearby turned to look.</p>
+          <p>The following day, Elijah found a note slipped beneath the windscreen wiper of his car.</p>
+          <p>Art is not a police report. Accuracy is optional.</p>
+          <p>He kept it.</p>
+          <p>Soon the notes became a game.</p>
+          <p>Your tea is too sweet.</p>
+          <p>Your opinions are too serious.</p>
+          <p>You forgot your pencil.</p>
+          <p>You noticed.</p>
+          <p>You are late.</p>
+          <p>You waited.</p>
+          <p>The notes said very little, yet Elijah found himself reading them more carefully than most conversations.</p>
+          <p>Some evenings they talked for an hour. Other evenings they barely spoke. Naomi painted while Elijah read. He discovered that silence beside her felt different from silence at home.</p>
+          <p>It did not accuse him.</p>
+          <p>It did not demand explanation.</p>
+          <p>It simply allowed him to exist.</p>
+          <p>One Friday, as the light faded, Naomi closed her sketchbook and said, &quot;You know, most people become uncomfortable when nobody is talking.&quot;</p>
+          <p>&quot;Maybe most people talk too much.&quot;</p>
+          <p>&quot;Maybe.&quot;</p>
+          <p>She looked out over the water.</p>
+          <p>&quot;Or maybe silence makes them hear things they are trying not to hear.&quot;</p>
+          <p>Elijah&#x27;s hand tightened around his cup.</p>
+          <p>Naomi did not look at him.</p>
+          <p>He wondered what she heard in her own silence.</p>
+          <p>He wondered, for the first time, whether she had come to the lake for the same reason he had.</p>
+          <p>Not to admire the view.</p>
+          <p>To survive what followed them there.</p>
+      </div>
+      <div class="chapter-nav">
+        <a class="nav-btn secondary" href="#chapter-1"><i class="fa-solid fa-arrow-left"></i> Previous chapter</a>
+        <a class="nav-btn" href="#chapter-3">Next chapter <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </article>
+
+
+    <article class="chapter" id="chapter-3">
+      <div class="chapter-kicker">Free Chapter 3 of 3</div>
+      <h2>Chapter 3: Notes Between Strangers</h2>
+      <div class="chapter-text">
+          <p>By the end of Elijah&#x27;s first month in Jinja, the house had begun to look less temporary.</p>
+          <p>A rug appeared in the sitting room. Books moved from boxes onto shelves. He bought a second mug after Naomi laughed at the fact that he owned only one.</p>
+          <p>&quot;What happens when someone visits?&quot; she had asked.</p>
+          <p>&quot;They drink after me.&quot;</p>
+          <p>&quot;That is not hospitality.&quot;</p>
+          <p>&quot;It is efficient.&quot;</p>
+          <p>The next afternoon she arrived carrying two bright ceramic mugs painted with uneven yellow flowers.</p>
+          <p>&quot;I bought them from a woman near the market,&quot; Naomi announced as though she had delivered emergency supplies. &quot;Your house can now survive visitors.&quot;</p>
+          <p>Elijah held one mug at arm&#x27;s length. &quot;These flowers look frightened.&quot;</p>
+          <p>&quot;They are handmade.&quot;</p>
+          <p>&quot;That does not make them less frightened.&quot;</p>
+          <p>&quot;You have no taste.&quot;</p>
+          <p>&quot;My taste is exactly why I object.&quot;</p>
+          <p>Naomi walked into the kitchen, opened a cupboard without asking and placed the mugs beside his plain white one. &quot;There. Character.&quot;</p>
+          <p>Elijah leaned against the doorway. &quot;Do you normally rearrange the homes of people you have known for four weeks?&quot;</p>
+          <p>&quot;Only the depressing ones.&quot;</p>
+          <p>&quot;My house is not depressing.&quot;</p>
+          <p>Naomi looked around at the grey curtains, bare walls and single plant that had begun dying three days after he bought it.</p>
+          <p>&quot;Elijah.&quot;</p>
+          <p>&quot;Fine. It is disciplined.&quot;</p>
+          <p>&quot;It looks like an office waiting for employees.&quot;</p>
+          <p>That afternoon became the first time Naomi stayed for a meal. Elijah attempted to cook rice and chicken while she sat on the counter offering criticism that was neither requested nor useful.</p>
+          <p>&quot;Why are you cutting onions like that?&quot;</p>
+          <p>&quot;With a knife?&quot;</p>
+          <p>&quot;Violently.&quot;</p>
+          <p>&quot;They are onions, Naomi. They will recover.&quot;</p>
+          <p>&quot;They will not. That is what cooking means.&quot;</p>
+          <p>He pointed the knife toward the door. &quot;You are free to leave.&quot;</p>
+          <p>&quot;And abandon the chicken? Never.&quot;</p>
+          <p>She eventually took over the sauce, claiming his version had &quot;the emotional depth of boiled water.&quot; Elijah complained, but secretly he liked the easy disorder she brought into the rooms.</p>
+          <p>While they ate, Naomi slid a folded square of paper across the table.</p>
+          <p>&quot;What is this?&quot;</p>
+          <p>&quot;A review of dinner.&quot;</p>
+          <p>Elijah opened it.</p>
+          <p>Your rice is acceptable. Your house is still too quiet. The yellow mugs are an improvement whether you admit it or not.</p>
+          <p>He looked up. &quot;You wrote this while sitting two metres away from me.&quot;</p>
+          <p>&quot;Handwritten criticism has authority.&quot;</p>
+          <p>Elijah found a pen, wrote beneath her message and pushed it back.</p>
+          <p>The mugs remain terrible. The company is tolerable.</p>
+          <p>Naomi read it twice.</p>
+          <p>&quot;Tolerable?&quot;</p>
+          <p>&quot;That is high praise.&quot;</p>
+          <p>&quot;I regret the mugs.&quot;</p>
+          <p>But she folded the paper carefully instead of throwing it away.</p>
+          <p>After that, notes became a private game. One appeared beneath Elijah&#x27;s windscreen wiper: Try looking at the lake instead of your phone today. He left one inside Naomi&#x27;s sketchbook when she went to buy tea: Your trees all lean left. Is this political? She replied the next day: My trees are trying to escape your project-management opinions.</p>
+          <p>Some notes were jokes. Others arrived more quietly.</p>
+          <p>One evening Elijah found a line tucked beneath his laptop:</p>
+          <p>You are allowed to have a good day without betraying the bad ones.</p>
+          <p>He stared at it for a long time.</p>
+          <p>When he saw Naomi later, he held up the note. &quot;What made you write this?&quot;</p>
+          <p>She shrugged, too casually. &quot;You looked guilty when you laughed yesterday.&quot;</p>
+          <p>&quot;I did not.&quot;</p>
+          <p>&quot;You did.&quot;</p>
+          <p>&quot;You cannot diagnose guilt from a laugh.&quot;</p>
+          <p>&quot;I can notice when someone punishes himself for enjoying things.&quot;</p>
+          <p>Elijah folded the note along its existing crease. &quot;And what do you punish yourself for?&quot;</p>
+          <p>Naomi looked away.</p>
+          <p>&quot;That is not how this game works.&quot;</p>
+          <p>&quot;Convenient.&quot;</p>
+          <p>&quot;Very.&quot;</p>
+          <p>He could have pushed. Instead he slipped the note into his pocket.</p>
+          <p>The restraint mattered to Naomi more than he knew. Andrew had always treated silence as evidence that she owed him an explanation. Elijah seemed to understand that curiosity did not create entitlement.</p>
+          <p>Before leaving that evening, she wrote one last line and left it on his table.</p>
+          <p>Thank you for not opening every closed door just because you noticed it.</p>
+          <p>Elijah read the note after she was gone. Then he walked to his desk, opened the drawer containing his father&#x27;s photograph and placed Naomi&#x27;s note beside it.</p>
+          <p>He did not know why those two things belonged together. Only that both seemed to ask him for a kind of courage he had not yet found.</p>
+          <p>&quot;These are terrible,&quot; Elijah said.</p>
+          <p>&quot;They are cheerful.&quot;</p>
+          <p>&quot;They look like a school project.&quot;</p>
+          <p>&quot;Exactly. Your kitchen needs less dignity.&quot;</p>
+          <p>He used them every day.</p>
+          <p>Their friendship grew in similarly small ways.</p>
+          <p>Naomi learned that Elijah forgot to eat whenever he was concentrating. Elijah learned that Naomi became quiet before showing anyone a new painting. He knew she hated pawpaw, loved old Ugandan music, and kept three different notebooks because she claimed thoughts behaved differently depending on the paper.</p>
+          <p>She learned he woke before six, never took sugar in coffee, and could repair almost anything in a house except his own habit of pretending he was fine.</p>
+          <p>That last observation arrived in a note.</p>
+          <p>You are very good at answering &quot;I&#x27;m fine&quot; before anyone asks.</p>
+          <p>Elijah had stared at it for several minutes.</p>
+          <p>He wrote back:</p>
+          <p>And you smile whenever you want people to stop looking closely.</p>
+          <p>Naomi read his reply while they sat beside the lake.</p>
+          <p>Her smile vanished.</p>
+          <p>For a few seconds Elijah regretted writing it.</p>
+          <p>Then she folded the paper carefully and slid it between the pages of her sketchbook.</p>
+          <p>&quot;Fair,&quot; she said.</p>
+          <p>They did not discuss it.</p>
+          <p>A week later, Naomi invited him to her studio.</p>
+          <p>It occupied two rooms behind a small craft shop owned by an elderly woman everyone called Auntie Rose. The front room was crowded with canvases, jars of brushes, frames, scraps of fabric and stacks of paper. The back room contained a desk, a narrow shelf of art books and a window that caught afternoon light.</p>
+          <p>Elijah walked slowly among the paintings.</p>
+          <p>Some were landscapes. Others showed women with faces half hidden by flowers, children running through rain, fishermen leaning into wind.</p>
+          <p>One canvas stood turned toward the wall.</p>
+          <p>&quot;What&#x27;s that one?&quot; he asked.</p>
+          <p>Naomi moved quickly. &quot;Nothing.&quot;</p>
+          <p>&quot;Nothing looks large.&quot;</p>
+          <p>She laughed, but her hand remained on the canvas.</p>
+          <p>&quot;It isn&#x27;t finished.&quot;</p>
+          <p>Elijah could tell she did not want him to see it.</p>
+          <p>&quot;Then I&#x27;ll wait.&quot;</p>
+          <p>The tension left her shoulders.</p>
+          <p>He turned toward another painting instead.</p>
+          <p>On the desk lay a brochure for an international artists&#x27; residency. The photograph showed a bright studio with enormous windows. Naomi reached for the brochure before he could read much.</p>
+          <p>&quot;Old thing,&quot; she said.</p>
+          <p>&quot;You&#x27;re interested?&quot;</p>
+          <p>&quot;I was.&quot;</p>
+          <p>&quot;Was?&quot;</p>
+          <p>She folded it and pushed it beneath a book.</p>
+          <p>&quot;Some dreams have expiry dates.&quot;</p>
+          <p>&quot;Who decided that?&quot;</p>
+          <p>Naomi looked at him.</p>
+          <p>&quot;Life.&quot;</p>
+          <p>&quot;Life writes official notices now?&quot;</p>
+          <p>A small smile touched her mouth.</p>
+          <p>&quot;You are becoming annoying.&quot;</p>
+          <p>&quot;I&#x27;m adapting to Jinja.&quot;</p>
+          <p>She threw a cloth at him.</p>
+          <p>He caught it, laughing.</p>
+          <p>Later, while Naomi mixed paint, Elijah noticed a photograph partly hidden beneath a stack of papers. Naomi was standing beside a tall man in a dark jacket. She looked younger, brighter. On her left hand was a ring.</p>
+          <p>Elijah looked away before she noticed.</p>
+          <p>Or so he thought.</p>
+          <p>&quot;His name is Andrew,&quot; Naomi said.</p>
+          <p>Elijah turned.</p>
+          <p>She continued mixing paint without looking at him.</p>
+          <p>&quot;We were engaged.&quot;</p>
+          <p>He waited.</p>
+          <p>&quot;Two years ago.&quot;</p>
+          <p>&quot;I&#x27;m sorry.&quot;</p>
+          <p>&quot;Don&#x27;t be. It ended before the wedding. Better than ending after.&quot;</p>
+          <p>Her tone was light, but the brush moved too hard against the palette.</p>
+          <p>&quot;Did he hurt you?&quot;</p>
+          <p>Naomi&#x27;s eyes lifted.</p>
+          <p>Elijah immediately added, &quot;You don&#x27;t have to answer.&quot;</p>
+          <p>She considered him.</p>
+          <p>&quot;He didn&#x27;t hit me, if that&#x27;s what you&#x27;re asking.&quot;</p>
+          <p>&quot;I wasn&#x27;t.&quot;</p>
+          <p>&quot;He was not a monster. That would have been easier.&quot;</p>
+          <p>She set the brush down.</p>
+          <p>&quot;He loved the version of me that fitted inside his plans. He wanted Kampala, his family business, a proper home, children quickly. He wanted me to paint, but only when painting did not interfere with being the woman he had imagined.&quot;</p>
+          <p>Elijah glanced toward the hidden residency brochure.</p>
+          <p>Naomi noticed.</p>
+          <p>&quot;Yes,&quot; she said quietly. &quot;I had opportunities. I let some go.&quot;</p>
+          <p>&quot;For him?&quot;</p>
+          <p>&quot;For us. At least that is what I told myself.&quot;</p>
+          <p>She walked to the turned canvas and finally rotated it.</p>
+          <p>The painting showed a woman in a white dress standing before an open doorway. Behind her, the room was dark. Beyond the doorway was a wide field filled with impossible colours.</p>
+          <p>The woman was facing the room.</p>
+          <p>Not the field.</p>
+          <p>&quot;I painted it the week before I returned the ring,&quot; Naomi said.</p>
+          <p>Elijah studied it.</p>
+          <p>&quot;Why is she looking backward?&quot;</p>
+          <p>&quot;Because leaving something can still hurt even when staying would hurt more.&quot;</p>
+          <p>He felt the sentence enter the private place where memories of his father lived.</p>
+          <p>He wanted to tell her that he understood.</p>
+          <p>Instead he said, &quot;It&#x27;s beautiful.&quot;</p>
+          <p>Naomi smiled, but this time she did not use the smile to end the conversation.</p>
+          <p>&quot;Thank you.&quot;</p>
+          <p>That evening, Elijah returned home and opened the desk drawer.</p>
+          <p>His father&#x27;s photograph lay facedown exactly where he had left it.</p>
+          <p>For the first time since moving to Jinja, he turned it over.</p>
+          <p>Joseph Kato looked back at him with one hand on his son&#x27;s shoulder.</p>
+          <p>Elijah sat there until the room grew dark.</p>
+          <p>Then he took a blank piece of paper and wrote a note he did not intend to give anyone.</p>
+          <p>There are things I left behind that followed me anyway.</p>
+          <p>He folded it twice and placed it beneath the photograph.</p>
+      </div>
+      <div class="chapter-nav">
+        <a class="nav-btn secondary" href="#chapter-2"><i class="fa-solid fa-arrow-left"></i> Previous chapter</a>
+        <a class="nav-btn" href="#premium">Continue with full novel <i class="fa-solid fa-lock-open"></i></a>
+      </div>
+    </article>
+
+
+    <section class="premium" id="premium">
+      <div class="lock-icon"><i class="fa-solid fa-lock-open"></i></div>
+      <div class="kicker" style="justify-content:center">Complete the story</div>
+      <h2>Continue beyond Chapter Three.</h2>
+      <p class="premium-copy">Purchase the complete novel to continue Elijah and Naomi's journey from Chapter Four through Chapter Fifteen.</p>
+
+      <div class="checkout-card">
+        <div class="checkout-label">Complete novel access</div>
+        <div class="checkout-price">UGX 17,000</div>
+        <div class="checkout-sub">Secure PayPal checkout: <strong style="color:#eee">$4.58 USD</strong></div>
+
+        <div class="paypal-hosted">
+          <div>
+            <style>.pp-3TQLN5VSDP6HG{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
+            <form action="https://www.paypal.com/ncp/payment/3TQLN5VSDP6HG" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
+              <input class="pp-3TQLN5VSDP6HG" type="submit" value="Buy Now" />
+              <img src="https://www.paypalobjects.com/images/Debit_Credit.svg" alt="cards" />
+              <section style="font-size:0.75rem;"> Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;display:inline;width:auto;"/></section>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="after-pay">
+        <strong>Already paid?</strong>
+        <p>Keep your PayPal receipt. Until automatic account unlocking is added, send your payment confirmation to Kitsamba Writes Africa so your full access can be arranged.</p>
+        <a href="contact.html"><i class="fa-solid fa-envelope"></i> I have paid — contact the author</a>
+      </div>
+
+      <div class="locked-grid">
+        <div class="locked-item"><i class="fa-solid fa-lock"></i><span>Chapter 4: The Dream She Buried</span></div>
+        <div class="locked-item"><i class="fa-solid fa-lock"></i><span>Chapter 5: Rain on the Tin Roof</span></div>
+        <div class="locked-item"><i class="fa-solid fa-lock"></i><span>Chapter 6: What Quiet People Notice</span></div>
+        <div class="locked-item"><i class="fa-solid fa-lock"></i><span>Chapter 7: The Email from Abroad</span></div>
+        <div class="locked-item"><i class="fa-solid fa-lock"></i><span>Chapter 8: The Name on the Documents</span></div>
+        <div class="locked-item"><i class="fa-solid fa-lock"></i><span>Chapter 9: Home Is Where the Truth Waits</span></div>
+        <div class="locked-item"><i class="fa-solid fa-lock"></i><span>Chapter 10: The Space Forgiveness Needs</span></div>
+        <div class="locked-item"><i class="fa-solid fa-lock"></i><span>Chapter 11: Five Weeks</span></div>
+        <div class="locked-item"><i class="fa-solid fa-lock"></i><span>Chapter 12: Holding On, Letting Go</span></div>
+        <div class="locked-item"><i class="fa-solid fa-lock"></i><span>Chapter 13: The Last Sunset Before Leaving</span></div>
+        <div class="locked-item"><i class="fa-solid fa-lock"></i><span>Chapter 14: The Distance Between Two Notes</span></div>
+        <div class="locked-item"><i class="fa-solid fa-lock"></i><span>Chapter 15: When Our Hearts Learned Silence</span></div>
+      </div>
+    </section>
+
+    <div class="community">
+      <section class="community-card" id="feedback">
+        <div class="mini">Reader feedback</div>
+        <h3>Tell the author what stayed with you.</h3>
+        <p>Share private feedback, suggestions or your reaction to Elijah and Naomi's story.</p>
+        <a class="btn btn-primary" href="contact.html"><i class="fa-solid fa-star"></i> Give Feedback</a>
+      </section>
+
+      <section class="community-card" id="comments">
+        <div class="mini">Reader community</div>
+        <h3>Comments & discussion</h3>
+        <p>Discuss the story respectfully. Please warn other readers before posting major spoilers.</p>
+        <div class="comments-box">
+          <script src="https://utteranc.es/client.js" repo="KitsambaWisdomJoshua/Kitsamba-Writes-Africa" issue-term="pathname" label="reader-comments" theme="github-dark" crossorigin="anonymous" async></script>
+        </div>
+      </section>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>© <span id="year"></span> Kitsamba Writes Africa. All rights reserved.</div>
+    <div class="footer-links"><a href="novels.html">Novels</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a></div>
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+menuBtn.addEventListener("click",()=>{
+  const open = mobileMenu.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded",String(open));
+  menuBtn.innerHTML = open ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+});
+mobileMenu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>mobileMenu.classList.remove("open")));
+
+function activateChapterTracking(){
+  const tocLinks = [...document.querySelectorAll('.toc a[href^="#chapter-"]')];
+  const chapters = [...document.querySelectorAll("article.chapter")];
+  if(!("IntersectionObserver" in window)) return;
+  const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        tocLinks.forEach(a=>a.classList.toggle("current",a.getAttribute("href") === "#"+entry.target.id));
+      }
+    });
+  },{rootMargin:"-25% 0px -62% 0px",threshold:0});
+  chapters.forEach(c=>observer.observe(c));
+}
+
+async function loadLocalPrice(){
+  const el = document.getElementById("localPrice");
+  const ugx = 17000;
+  try{
+    const location = await fetch("https://ipapi.co/json/").then(r=>r.json());
+    if(location.country_code === "UG" || location.currency === "UGX"){el.textContent="UGX 17,000";return;}
+    const currency = location.currency || "USD";
+    const rates = await fetch("https://open.er-api.com/v6/latest/UGX").then(r=>r.json());
+    if(!rates.rates || !rates.rates[currency]) return;
+    const value = ugx * rates.rates[currency];
+    el.textContent = new Intl.NumberFormat(undefined,{style:"currency",currency,maximumFractionDigits:2}).format(value);
+  }catch(e){
+    el.textContent="UGX 17,000";
+  }
+}
+
+const params = new URLSearchParams(location.search);
+if(params.get("buy") === "1") setTimeout(()=>document.getElementById("premium").scrollIntoView({behavior:"smooth"}),500);
+
+activateChapterTracking();
+loadLocalPrice();
+</script>
+</body>
+</html>
