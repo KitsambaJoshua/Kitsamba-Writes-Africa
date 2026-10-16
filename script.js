@@ -1,23 +1,14 @@
 // ========================================
-// KITSAMBA WRITES AFRICA - JAVASCRIPT (UPDATED)
-// Consolidated initialization, null guards, menu extensions, add-story via localStorage
+// KITSAMBA WRITES AFRICA - JAVASCRIPT
 // ========================================
 
-document.addEventListener('DOMContentLoaded', initializeApp);
-
-function initializeApp() {
+document.addEventListener('DOMContentLoaded', function() {
     initializeNavigation();
     initializeSmoothScroll();
     initializeFormHandling();
     initializeAnimations();
     setActiveNavLink();
-    initializeMenuExtensions();
-    initializeHeroButtons();
-    initializeReadMoreButtons();
-    initializeSideMenuControls();
-    // load dynamic sections (plays/poems) from storage if present
-    loadEntriesIntoSections();
-}
+});
 
 // ========================================
 // NAVIGATION
@@ -30,7 +21,7 @@ function initializeNavigation() {
     const exploreBtn = document.querySelector('.explore-btn');
 
     // Hamburger menu toggle
-    if (hamburger && navMenu) {
+    if (hamburger) {
         hamburger.addEventListener('click', () => {
             navMenu.classList.toggle('active');
             hamburger.classList.toggle('active');
@@ -38,14 +29,12 @@ function initializeNavigation() {
     }
 
     // Close menu when link is clicked
-    if (navLinks) {
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (navMenu) navMenu.classList.remove('active');
-                if (hamburger) hamburger.classList.remove('active');
-            });
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
         });
-    }
+    });
 
     // Explore button functionality
     if (exploreBtn) {
@@ -62,14 +51,9 @@ function setActiveNavLink() {
     navLinks.forEach(link => {
         link.classList.remove('active');
         const href = link.getAttribute('href');
-
-        if (href === currentPage || (currentPage === '' && href === 'index.html') || (href && href.endsWith('#' + (location.hash || '').replace('#','')))) {
-            // if the link points to the current page or the current hash
-            if (href && href.includes('#') && location.hash && href.endsWith(location.hash)) {
-                link.classList.add('active');
-            } else if (href === currentPage) {
-                link.classList.add('active');
-            }
+        
+        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+            link.classList.add('active');
         }
     });
 }
@@ -80,10 +64,10 @@ function setActiveNavLink() {
 
 function initializeSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+        anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             const target = document.querySelector(href);
-
+            
             if (target) {
                 e.preventDefault();
                 target.scrollIntoView({
@@ -114,34 +98,31 @@ function initializeFormHandling() {
 
 function handleContactFormSubmit(e) {
     e.preventDefault();
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
+    
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData);
 
-    // TODO: wire this to a backend or form service
+    // Here you would typically send the form data to a server
     console.log('Contact Form Data:', data);
+
+    // Show success message
     showNotification('Thank you for your message! I will get back to you soon.', 'success');
-    form.reset();
+
+    // Reset form
+    this.reset();
 }
 
 function handleNewsletterSubmit(e) {
     e.preventDefault();
-    const form = e.currentTarget;
-    const emailInput = form.querySelector('input[type="email"]');
-    const email = emailInput ? emailInput.value.trim() : '';
-
-    if (!email || !validateEmail(email)) {
-        showNotification('Please enter a valid email address.', 'info');
-        return;
-    }
-
+    
+    const email = this.querySelector('input[type="email"]').value;
     console.log('Newsletter Signup:', email);
-    showNotification('Successfully subscribed to our newsletter!', 'success');
-    form.reset();
-}
 
-function validateEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    // Show success message
+    showNotification('Successfully subscribed to our newsletter!', 'success');
+
+    // Reset form
+    this.reset();
 }
 
 // ========================================
@@ -179,6 +160,7 @@ function showNotification(message, type = 'info') {
 // ========================================
 
 function initializeAnimations() {
+    // Intersection Observer for scroll animations
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -100px 0px'
@@ -193,15 +175,17 @@ function initializeAnimations() {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.novel-card, .section-card, .blog-card, .lifestyle-card, .mission-card, .stat-card, .beyond-card').forEach(el => {
+    // Observe all cards and sections
+    document.querySelectorAll('.novel-card, .section-card, .blog-card, .lifestyle-card, .mission-card, .stat-card').forEach(el => {
         observer.observe(el);
     });
 }
 
 // ========================================
-// UTILITIES
+// UTILITY FUNCTIONS
 // ========================================
 
+// Debounce function for scroll events
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -214,6 +198,7 @@ function debounce(func, wait) {
     };
 }
 
+// Throttle function
 function throttle(func, limit) {
     let inThrottle;
     return function(...args) {
@@ -226,205 +211,91 @@ function throttle(func, limit) {
 }
 
 // ========================================
-// THEME / MENU EXTENSIONS / ADD STORY
+// ADD CSS ANIMATIONS
 // ========================================
 
-function initializeMenuExtensions() {
-    const navLinksContainer = document.querySelector('.nav-links');
-    if (!navLinksContainer) return;
-
-    // Avoid double-inserting if already present
-    if (document.getElementById('nav-plays-link')) return;
-
-    // Plays link
-    const playsLink = document.createElement('a');
-    playsLink.className = 'nav-link';
-    playsLink.id = 'nav-plays-link';
-    playsLink.href = 'index.html#plays';
-    playsLink.textContent = 'Plays';
-
-    // Poems link
-    const poemsLink = document.createElement('a');
-    poemsLink.className = 'nav-link';
-    poemsLink.id = 'nav-poems-link';
-    poemsLink.href = 'index.html#poems';
-    poemsLink.textContent = 'Poems';
-
-    // Add a Story button
-    const addStoryBtn = document.createElement('button');
-    addStoryBtn.className = 'main-menu-button';
-    addStoryBtn.id = 'add-story-btn';
-    addStoryBtn.type = 'button';
-    addStoryBtn.innerHTML = '<i class="fa fa-plus"></i> Add a Story';
-    addStoryBtn.addEventListener('click', openAddStoryModal);
-
-    navLinksContainer.appendChild(playsLink);
-    navLinksContainer.appendChild(poemsLink);
-
-    // put button inside a wrapper if main-menu exists, otherwise append to nav
-    const mainMenu = document.querySelector('.main-menu');
-    if (mainMenu) {
-        mainMenu.appendChild(addStoryBtn);
-    } else {
-        navLinksContainer.appendChild(addStoryBtn);
-    }
-}
-
-// Modal for adding stories (created on demand)
-function openAddStoryModal() {
-    // prevent duplicates
-    if (document.getElementById('kw-add-story-modal')) return;
-
-    const modal = document.createElement('div');
-    modal.id = 'kw-add-story-modal';
-    modal.style.cssText = `position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:20000;background:rgba(0,0,0,0.6);`;
-
-    const box = document.createElement('div');
-    box.style.cssText = 'width:min(900px,94%);background:var(--card);padding:22px;border-radius:12px;border:1px solid var(--border);color:inherit;';
-
-    box.innerHTML = `
-      <h2 style="font-family:Playfair Display, serif;margin-bottom:6px;">Add a Story</h2>
-      <p style="color:#aaa;margin-bottom:12px;">Submit a Play, Poem, or Story. Submissions are saved locally (preview). You can later transfer them to server or paste them manually.</p>
-      <form id="kw-add-story-form">
-        <div style="display:flex;gap:10px;margin-bottom:10px;">
-          <select name="type" required style="padding:10px;border-radius:8px;border:1px solid #333;background:#0f0f0f;color:#fff;">
-            <option value="play">Play</option>
-            <option value="poem">Poem</option>
-            <option value="story">Story</option>
-            <option value="novel">Novel</option>
-          </select>
-          <input name="title" placeholder="Title" required style="flex:1;padding:10px;border-radius:8px;border:1px solid #333;background:#0f0f0f;color:#fff;" />
-        </div>
-        <div style="margin-bottom:10px;"><input name="author" placeholder="Author (optional)" style="width:100%;padding:10px;border-radius:8px;border:1px solid #333;background:#0f0f0f;color:#fff;" /></div>
-        <div style="margin-bottom:12px;"><textarea name="content" rows="8" placeholder="Write or paste your story here..." required style="width:100%;padding:12px;border-radius:8px;border:1px solid #333;background:#0f0f0f;color:#fff;font-family:inherit;"></textarea></div>
-        <div style="display:flex;gap:8px;justify-content:flex-end;">
-          <button type="button" id="kw-cancel-add" class="main-menu-button" style="background:transparent;">Cancel</button>
-          <button type="submit" class="main-menu-button" style="background:var(--gold);color:#111;">Add Story</button>
-        </div>
-      </form>
-    `;
-
-    modal.appendChild(box);
-    document.body.appendChild(modal);
-
-    document.getElementById('kw-cancel-add').addEventListener('click', () => modal.remove());
-    document.getElementById('kw-add-story-form').addEventListener('submit', function (e) {
-        e.preventDefault();
-        const form = e.currentTarget;
-        const fd = new FormData(form);
-        const entry = {
-            id: 'entry_' + Date.now(),
-            type: fd.get('type'),
-            title: (fd.get('title') || '').trim(),
-            author: (fd.get('author') || '').trim(),
-            content: (fd.get('content') || '').trim(),
-            createdAt: new Date().toISOString()
-        };
-
-        saveEntry(entry);
-        showNotification('Saved locally — your story appears in the chosen section.', 'success');
-        modal.remove();
-
-        // navigate to the relevant section on the current page
-        if (entry.type === 'play') location.href = (location.pathname.endsWith('index.html') || location.pathname.endsWith('/') ? 'index.html' : 'index.html') + '#plays';
-        else if (entry.type === 'poem') location.href = (location.pathname.endsWith('index.html') || location.pathname.endsWith('/') ? 'index.html' : 'index.html') + '#poems';
-        else location.reload();
-    });
-}
-
-function saveEntry(entry) {
-    try {
-        const raw = localStorage.getItem('kw_entries');
-        const arr = raw ? JSON.parse(raw) : [];
-        arr.unshift(entry);
-        localStorage.setItem('kw_entries', JSON.stringify(arr));
-    } catch (e) {
-        console.error('Failed to save entry', e);
-    }
-}
-
-function getEntries() {
-    try {
-        const raw = localStorage.getItem('kw_entries');
-        return raw ? JSON.parse(raw) : [];
-    } catch (e) {
-        return [];
-    }
-}
-
-function loadEntriesIntoSections() {
-    const playsContainer = document.getElementById('plays-list');
-    const poemsContainer = document.getElementById('poems-list');
-    const entries = getEntries();
-
-    if (playsContainer) {
-        // clear existing dynamic entries placeholder area (we keep static sample)
-        const dyn = playsContainer.querySelector('.dynamic-entries');
-        if (dyn) dyn.innerHTML = '';
-        entries.filter(en => en.type === 'play').forEach(en => {
-            appendEntryCard(en, playsContainer.querySelector('.dynamic-entries'));
-        });
+const style = document.createElement('style');
+style.innerHTML = `
+    @keyframes slideIn {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
     }
 
-    if (poemsContainer) {
-        const dyn = poemsContainer.querySelector('.dynamic-entries');
-        if (dyn) dyn.innerHTML = '';
-        entries.filter(en => en.type === 'poem').forEach(en => {
-            appendEntryCard(en, poemsContainer.querySelector('.dynamic-entries'));
-        });
+    @keyframes slideOut {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(100%);
+            opacity: 0;
+        }
     }
-}
 
-function appendEntryCard(entry, container) {
-    if (!container) return;
-    const card = document.createElement('article');
-    card.className = 'beyond-card';
-    card.style.marginBottom = '12px';
-    card.innerHTML = `
-      <strong style="font-family:Playfair Display, serif;">${escapeHtml(entry.title)}</strong>
-      <div style="color:#888;margin-top:6px;font-size:.95rem;">${entry.author ? 'By ' + escapeHtml(entry.author) : ''}</div>
-      <p style="color:#bbb;margin-top:10px;white-space:pre-wrap;">${escapeHtml(entry.content.substring(0, 800))}${entry.content.length>800?'...':''}</p>
-      <a class="read-story" href="#" data-entry-id="${entry.id}">Read more</a>
-    `;
-    container.appendChild(card);
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 
-    // Read more handler
-    const readMore = card.querySelector('.read-story');
-    readMore.addEventListener('click', (e) => {
-        e.preventDefault();
-        showEntryModal(entry);
-    });
-}
+    .fade-in {
+        animation: fadeIn 0.6s ease forwards;
+    }
 
-function showEntryModal(entry) {
-    const modal = document.createElement('div');
-    modal.style.cssText = 'position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:20000;background:rgba(0,0,0,0.6);';
-    modal.id = 'kw-entry-modal-' + entry.id;
-    const box = document.createElement('div');
-    box.style.cssText = 'width:min(900px,94%);background:var(--card);padding:22px;border-radius:12px;border:1px solid var(--border);color:inherit;max-height:80vh;overflow:auto;';
-    box.innerHTML = `
-      <h2 style="font-family:Playfair Display, serif;margin-bottom:6px;">${escapeHtml(entry.title)}</h2>
-      <p style="color:#aaa;margin-bottom:12px;">${entry.author ? 'By ' + escapeHtml(entry.author) : ''} — ${new Date(entry.createdAt).toLocaleString()}</p>
-      <div style="white-space:pre-wrap;color:#ddd;">${escapeHtml(entry.content)}</div>
-      <div style="display:flex;justify-content:flex-end;margin-top:12px;"><button class="main-menu-button" id="kw-entry-close">Close</button></div>
-    `;
-    modal.appendChild(box);
-    document.body.appendChild(modal);
-    document.getElementById('kw-entry-close').addEventListener('click', () => modal.remove());
-}
+    .notification {
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        font-weight: 500;
+    }
 
-function escapeHtml(s) {
-    if (!s) return '';
-    return s.replace(/[&<>"']/g, function (c) {
-        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"}[c];
-    });
-}
+    /* Mobile Navigation Enhancement */
+    .nav-menu.active {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--dark-secondary);
+        border-bottom: 2px solid var(--primary-color);
+        z-index: 999;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(10px, 10px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    @media (max-width: 768px) {
+        .nav-menu {
+            display: none;
+        }
+    }
+`;
+document.head.appendChild(style);
 
 // ========================================
-// HERO BUTTONS (moved to function so can be initialized once)
+// HERO BUTTON FUNCTIONALITY
 // ========================================
 
-function initializeHeroButtons() {
+document.addEventListener('DOMContentLoaded', function() {
     const exploreStoriesBtn = document.querySelector('.explore-stories-btn');
     const learnMoreBtn = document.querySelector('.learn-more-btn');
 
@@ -439,76 +310,152 @@ function initializeHeroButtons() {
             window.location.href = 'about.html';
         });
     }
-}
+});
 
 // ========================================
 // READ MORE BUTTONS
 // ========================================
 
-function initializeReadMoreButtons() {
-    document.querySelectorAll('.read-more').forEach(btn => {
-        btn.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-
-            // If it's an internal page link, allow navigation
-            if (href && href !== '#') {
-                return;
-            }
-
-            // Otherwise, show a placeholder message
-            e.preventDefault();
-            showNotification('This feature will be available soon!', 'info');
-        });
+document.querySelectorAll('.read-more').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        
+        // If it's an internal page link, allow navigation
+        if (href && href !== '#') {
+            return;
+        }
+        
+        // Otherwise, show a placeholder message
+        e.preventDefault();
+        showNotification('This feature will be available soon!', 'info');
     });
-}
+});
 
 // ========================================
-// SIDE MENU CONTROL
+// SETTINGS PAGE FUNCTIONALITY
 // ========================================
 
-function initializeSideMenuControls() {
-    const menuToggle = document.getElementById('menuToggle');
-    const sideMenu = document.getElementById('sideMenu');
-
-    if (menuToggle && sideMenu) {
-        menuToggle.addEventListener('click', function () {
-            sideMenu.classList.add('active');
-        });
-    }
-
-    // closeMenu function preserved
-    window.closeMenu = function () {
-        const sideMenu = document.getElementById('sideMenu');
-        if (sideMenu) sideMenu.classList.remove('active');
-    };
-}
-
-// ========================================
-// SETTINGS PAGE: safe switchTab signature
-// ========================================
-
-function switchTab(tabName, evt) {
+function switchTab(tabName) {
     // Hide all sections
     const sections = document.querySelectorAll('.settings-section');
-    sections.forEach(section => section.classList.remove('active'));
+    sections.forEach(section => {
+        section.classList.remove('active');
+    });
 
     // Remove active class from all sidebar items
     const sidebarItems = document.querySelectorAll('.settings-sidebar li');
-    sidebarItems.forEach(item => item.classList.remove('active'));
+    sidebarItems.forEach(item => {
+        item.classList.remove('active');
+    });
 
     // Show selected section
     const selectedSection = document.getElementById(tabName);
-    if (selectedSection) selectedSection.classList.add('active');
+    if (selectedSection) {
+        selectedSection.classList.add('active');
+    }
 
-    // Add active class to clicked sidebar item (use passed event)
-    if (evt && evt.target) {
-        const closestLi = evt.target.closest('li');
-        if (closestLi) closestLi.classList.add('active');
+    // Add active class to clicked sidebar item
+    if (event && event.target) {
+        const closestLi = event.target.closest('li');
+        if (closestLi) {
+            closestLi.classList.add('active');
+        }
     }
 }
 
 // ========================================
-// FINAL: small utilities
+// BLOG SEARCH & FILTER
 // ========================================
 
-console.log('Kitsamba Writes Africa - Website script loaded (updated)');
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.querySelector('.search-input');
+    const filterSelect = document.querySelector('.filter-select');
+    const blogCards = document.querySelectorAll('.blog-card');
+
+    if (searchInput) {
+        searchInput.addEventListener('keyup', filterBlogPosts);
+    }
+
+    if (filterSelect) {
+        filterSelect.addEventListener('change', filterBlogPosts);
+    }
+
+    function filterBlogPosts() {
+        const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+        const selectedCategory = filterSelect ? filterSelect.value : '';
+
+        blogCards.forEach(card => {
+            const title = card.querySelector('h3')?.textContent.toLowerCase() || '';
+            const description = card.querySelector('p')?.textContent.toLowerCase() || '';
+            const category = card.querySelector('.blog-category')?.textContent.toLowerCase() || '';
+
+            const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
+            const matchesCategory = !selectedCategory || category.includes(selectedCategory);
+
+            if (matchesSearch && matchesCategory) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+});
+
+console.log('Kitsamba Writes Africa - Website loaded successfully!');
+// SIDE MENU CONTROL
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    const menuToggle = document.getElementById("menuToggle");
+    const sideMenu = document.getElementById("sideMenu");
+
+    if(menuToggle && sideMenu){
+
+        menuToggle.addEventListener("click", function(){
+
+            sideMenu.classList.add("active");
+
+        });
+
+    }
+
+});
+
+
+function closeMenu(){
+
+    const sideMenu = document.getElementById("sideMenu");
+
+    if(sideMenu){
+
+        sideMenu.classList.remove("active");
+
+    }
+
+}
+
+// ALL PAGES DROPDOWN
+
+const pagesBtn = document.getElementById("pagesBtn");
+
+const pagesDropdown = document.getElementById("pagesDropdown");
+
+
+pagesBtn.addEventListener("click", function(){
+
+    pagesDropdown.classList.toggle("active");
+
+});
+
+
+// Close dropdown when clicking outside
+
+document.addEventListener("click", function(event){
+
+    if(!pagesBtn.contains(event.target) && !pagesDropdown.contains(event.target)){
+
+        pagesDropdown.classList.remove("active");
+
+    }
+
+});
