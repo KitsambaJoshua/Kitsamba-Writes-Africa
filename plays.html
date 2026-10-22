@@ -1,77 +1,773 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Plays | Kitsamba Writes Africa</title><meta name="description" content="Discover upcoming plays and dramatic writing by Kitsamba Writes Africa.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plays | Kitsamba Writes Africa</title>
+<meta name="description" content="Discover upcoming plays by Kitsamba Writes Africa.">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-:root{--black:#090909;--dark:#111;--card:#171717;--gold:#d8ac56;--gold-light:#f2cf83;--cream:#f7f1e5;--gray:#aaa;--border:rgba(216,172,86,.25)}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:"DM Sans",sans-serif;background:var(--black);color:#fff;line-height:1.7;overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-img{display:block;width:100%}
-.container{width:min(1180px,92%);margin:auto}
-header{position:sticky;top:0;z-index:100;background:rgba(8,8,8,.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07)}
-nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:12px}
-.brand-icon{width:42px;height:42px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:1.2rem}
-.brand-text strong{display:block;font-family:"Playfair Display",serif;font-size:1.1rem}
-.brand-text span{display:block;color:var(--gold);font-size:.63rem;letter-spacing:2px;text-transform:uppercase}
-.nav-links{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-.nav-links a{color:#ddd;font-size:.9rem;font-weight:700}
-.nav-links a:hover,.nav-links a.active{color:var(--gold)}
-.hero{padding:105px 0 80px;background:radial-gradient(circle at 80% 15%,rgba(216,172,86,.16),transparent 30%),linear-gradient(135deg,#080808,#141414);border-bottom:1px solid rgba(216,172,86,.12)}
-.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:3px;font-size:.75rem;font-weight:700;margin-bottom:14px}
-h1,h2,h3{font-family:"Playfair Display",serif;line-height:1.12}
-h1{font-size:clamp(3rem,7vw,5.6rem);max-width:900px;margin-bottom:20px}
-.hero p{max-width:720px;color:#bbb;font-size:1.05rem}
-.section{padding:70px 0 100px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:30px}
-.section-head h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:10px}
-.section-head p{color:#999;max-width:700px}
-.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
-.card{background:linear-gradient(145deg,#191919,#111);border:1px solid rgba(255,255,255,.08);border-radius:20px;overflow:hidden;transition:.25s}
-.card:hover{transform:translateY(-5px);border-color:var(--border)}
-.card img{height:250px;object-fit:cover}
-.card-body{padding:26px}
-.tag{color:var(--gold);font-size:.7rem;letter-spacing:2px;text-transform:uppercase;font-weight:800}
-.card h3{font-size:1.8rem;margin:10px 0}
-.card p{color:#aaa}
-.status{display:inline-block;border:1px solid rgba(216,172,86,.45);color:var(--gold-light);padding:5px 11px;border-radius:40px;font-size:.75rem;font-weight:700;margin-top:17px}
-.note{margin-top:28px;padding:20px 23px;border-left:3px solid var(--gold);background:#131313;color:#aaa;border-radius:0 12px 12px 0}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--gold);color:#111;font-weight:800;padding:13px 21px;border-radius:50px;margin-top:20px;transition:.2s}
-.btn:hover{transform:translateY(-2px);background:var(--gold-light)}
-footer{background:#070707;border-top:1px solid #222;padding:30px 0;color:#888;font-size:.85rem}
-.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-@media(max-width:720px){nav{align-items:flex-start;padding:15px 0;flex-direction:column}.nav-links{gap:12px}.cards{grid-template-columns:1fr}.card img{height:220px}.section-head{display:block}.hero{padding:75px 0 60px}}
-</style></head><body>
+:root {
+    --black:#090909;
+    --dark:#111;
+    --card:#171717;
+    --gold:#d8ac56;
+    --gold-light:#f2cf83;
+    --cream:#f7f1e5;
+    --gray:#aaa;
+    --border:rgba(216,172,86,.25);
+}
 
-<header><div class="container"><nav>
-<a href="index.html" class="brand"><span class="brand-icon">✒</span><span class="brand-text"><strong>Kitsamba Writes</strong><span>Africa</span></span></a>
-<div class="nav-links">
-<a href="index.html">Home</a><a href="novels.html">Novels</a><a href="plays.html">Plays</a><a href="poems.html">Poems</a><a href="stakeholders.html">Stakeholders</a><a href="about.html">About</a><a href="contact.html">Contact</a>
-</div></nav></div></header>
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-<main><section class="hero"><div class="container"><div class="eyebrow">Stage · Voice · Imagination</div><h1>Stories made for the stage.</h1><p>Explore upcoming plays from Kitsamba Writes Africa—dramatic stories shaped by human choices, relationships, destiny and the moments that change a life.</p></div></section>
-<section class="section"><div class="container"><div class="section-head"><div><h2>Coming to the page</h2><p>These works are presented as upcoming projects. More details and release announcements will be added as each work develops.</p></div></div>
-<div class="cards">
-<article class="card">
-<img src="https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=1200&q=85" alt="A theatre stage lit before a performance" loading="lazy">
-<div class="card-body">
-<span class="tag">Upcoming play</span>
-<h3>UNPREDICTABLE DESTINY</h3>
-<p>A dramatic story about the turns life takes, the choices we make, and the consequences no one sees coming.</p>
-<span class="status">Upcoming work</span>
-</div></article>
+html { scroll-behavior:smooth; }
 
-<article class="card">
-<img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=1200&q=85" alt="A theatre performance space with dramatic lighting" loading="lazy">
-<div class="card-body">
-<span class="tag">Upcoming play</span>
-<h3>LAST MEET</h3>
-<p>A story about one final encounter, the words left unsaid, and what remains when paths separate.</p>
-<span class="status">Upcoming work</span>
-</div></article></div><div class="note">Release dates and performance details will be announced when confirmed. These titles are listed as upcoming works, not as currently released plays.</div></div></section></main>
-<footer><div class="container footer-row"><span>© <span id="year"></span> Kitsamba Writes Africa</span><span>Writing Africa, one story at a time.</span></div></footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
-</body></html>
+body {
+    font-family:"DM Sans",sans-serif;
+    background:var(--black);
+    color:white;
+    line-height:1.65;
+    overflow-x:hidden;
+}
+
+a { text-decoration:none; color:inherit; }
+button { font-family:inherit; }
+img { width:100%; display:block; }
+
+.container {
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+.eyebrow {
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:.75rem;
+    font-weight:700;
+    margin-bottom:14px;
+}
+
+/* HOMEPAGE NAVIGATION */
+
+header {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(8,8,8,.93);
+    backdrop-filter:blur(16px);
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.site-nav {
+    min-height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+}
+
+.brand {
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-shrink:0;
+}
+
+.brand-icon {
+    width:42px;
+    height:42px;
+    border:1px solid var(--gold);
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    color:var(--gold);
+}
+
+.brand-text strong {
+    display:block;
+    font-family:"Playfair Display",serif;
+    font-size:1.12rem;
+}
+
+.brand-text span {
+    display:block;
+    color:var(--gold);
+    font-size:.63rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.nav-links {
+    display:flex;
+    align-items:center;
+    gap:22px;
+}
+
+.nav-link {
+    color:#ddd;
+    font-size:.92rem;
+    font-weight:700;
+}
+
+.nav-link:hover { color:var(--gold); }
+
+.main-menu { position:relative; }
+
+.main-menu-button {
+    border:1px solid rgba(216,172,86,.55);
+    background:rgba(216,172,86,.08);
+    color:white;
+    padding:10px 16px;
+    border-radius:50px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:.9rem;
+    font-weight:800;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.main-menu-button:hover,
+.main-menu.active .main-menu-button {
+    background:var(--gold);
+    color:#111;
+}
+
+.main-menu-button .bars { color:var(--gold); }
+.main-menu-button:hover .bars { color:#111; }
+
+.main-menu-button .arrow {
+    font-size:.68rem;
+    transition:.25s;
+}
+
+.main-menu.active .arrow { transform:rotate(180deg); }
+
+.menu-dropdown {
+    position:absolute;
+    right:0;
+    top:calc(100% + 16px);
+    width:310px;
+    max-height:75vh;
+    overflow-y:auto;
+    padding:12px;
+    background:#111;
+    border:1px solid var(--border);
+    border-radius:20px;
+    box-shadow:0 25px 70px rgba(0,0,0,.7);
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transform:translateY(-10px);
+    transition:.25s;
+}
+
+.main-menu.active .menu-dropdown {
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    transform:translateY(0);
+}
+
+.menu-title {
+    padding:10px 14px 13px;
+    border-bottom:1px solid rgba(255,255,255,.07);
+    margin-bottom:7px;
+}
+
+.menu-title strong {
+    display:block;
+    font-family:"Playfair Display",serif;
+}
+
+.menu-title span {
+    color:#777;
+    font-size:.75rem;
+}
+
+.menu-dropdown a {
+    padding:12px 15px;
+    border-radius:11px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    color:#ddd;
+    font-size:.9rem;
+    transition:.2s;
+}
+
+.menu-dropdown a i {
+    width:22px;
+    text-align:center;
+    color:var(--gold);
+}
+
+.menu-dropdown a:hover {
+    background:rgba(216,172,86,.12);
+    color:var(--gold);
+    padding-left:19px;
+}
+
+.start-reading {
+    background:var(--gold);
+    color:#111 !important;
+    padding:11px 19px;
+    border-radius:50px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-weight:800;
+    white-space:nowrap;
+}
+
+.mobile-menu-btn {
+    display:none;
+    border:none;
+    background:none;
+    color:white;
+    font-size:1.5rem;
+    cursor:pointer;
+}
+
+/* PAGE HERO */
+
+.page-hero {
+    min-height:580px;
+    padding:155px 0 90px;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 78% 25%,rgba(216,172,86,.17),transparent 29%),
+        linear-gradient(135deg,#080808,#121212);
+    border-bottom:1px solid rgba(216,172,86,.12);
+}
+
+.page-hero h1 {
+    font-family:"Playfair Display",serif;
+    font-size:clamp(3.7rem,8vw,6.5rem);
+    line-height:.98;
+    margin-bottom:28px;
+    max-width:900px;
+}
+
+.page-hero h1 span { color:var(--gold); }
+
+.page-hero p {
+    max-width:770px;
+    color:#bbb;
+    font-size:1.08rem;
+}
+
+.page-section { padding:100px 0; }
+
+.section-heading { margin-bottom:40px; }
+
+.section-heading h2 {
+    font-family:"Playfair Display",serif;
+    font-size:clamp(2.6rem,5vw,4rem);
+    line-height:1.08;
+    margin-bottom:12px;
+}
+
+.section-heading p {
+    color:#999;
+    max-width:700px;
+}
+
+/* PLAY CARDS */
+
+.play-grid {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:24px;
+}
+
+.play-card {
+    background:var(--card);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:20px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.play-card:hover {
+    transform:translateY(-7px);
+    border-color:var(--border);
+}
+
+.play-image {
+    height:300px;
+    overflow:hidden;
+    background:#111;
+}
+
+.play-image img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .4s;
+}
+
+.play-card:hover .play-image img {
+    transform:scale(1.04);
+}
+
+.play-body { padding:28px; }
+
+.play-tag {
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:.7rem;
+    font-weight:800;
+}
+
+.play-body h3 {
+    font-family:"Playfair Display",serif;
+    font-size:clamp(1.6rem,3vw,2.2rem);
+    line-height:1.15;
+    margin:12px 0;
+}
+
+.play-body p { color:#aaa; }
+
+.status {
+    display:inline-block;
+    border:1px solid rgba(216,172,86,.45);
+    color:var(--gold-light);
+    padding:6px 13px;
+    border-radius:40px;
+    font-size:.75rem;
+    font-weight:700;
+    margin-top:20px;
+}
+
+.notice {
+    margin-top:30px;
+    padding:22px 24px;
+    border-left:3px solid var(--gold);
+    background:#131313;
+    color:#aaa;
+    border-radius:0 12px 12px 0;
+}
+
+/* HOMEPAGE FOOTER */
+
+footer {
+    border-top:1px solid rgba(255,255,255,.08);
+    background:#070707;
+    padding:70px 0 30px;
+}
+
+.footer-grid {
+    display:grid;
+    grid-template-columns:1.6fr 1fr 1fr;
+    gap:50px;
+}
+
+.footer-brand h3 {
+    font-family:"Playfair Display",serif;
+    font-size:1.7rem;
+    margin-bottom:15px;
+}
+
+.footer-brand p {
+    color:#999;
+    max-width:440px;
+}
+
+.socials {
+    display:flex;
+    gap:12px;
+    margin-top:22px;
+}
+
+.social-link {
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:1px solid #333;
+    display:grid;
+    place-items:center;
+}
+
+.social-link:hover {
+    color:var(--gold);
+    border-color:var(--gold);
+}
+
+.footer-column h4 {
+    color:var(--gold);
+    margin-bottom:17px;
+}
+
+.footer-column a {
+    display:block;
+    color:#999;
+    margin-bottom:10px;
+}
+
+.footer-column a:hover { color:white; }
+
+.footer-bottom {
+    border-top:1px solid #222;
+    margin-top:55px;
+    padding-top:25px;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    font-size:.82rem;
+    color:#777;
+}
+
+/* MOBILE AND TABLET */
+
+@media(max-width:950px) {
+    .mobile-menu-btn { display:block; }
+
+    .nav-links {
+        position:fixed;
+        top:78px;
+        left:0;
+        width:100%;
+        max-height:calc(100vh - 78px);
+        overflow-y:auto;
+        background:#0c0c0c;
+        flex-direction:column;
+        align-items:flex-start;
+        padding:25px 5%;
+        gap:18px;
+        transform:translateY(-150%);
+        transition:.3s;
+        border-bottom:1px solid #222;
+    }
+
+    .nav-links.active { transform:translateY(0); }
+
+    .nav-link,
+    .start-reading,
+    .main-menu { width:100%; }
+
+    .start-reading { justify-content:center; }
+
+    .main-menu-button {
+        width:100%;
+        justify-content:space-between;
+        padding:13px 16px;
+    }
+
+    .menu-dropdown {
+        position:static;
+        width:100%;
+        margin-top:10px;
+        display:none;
+        opacity:1;
+        visibility:visible;
+        pointer-events:auto;
+        transform:none;
+        box-shadow:none;
+        background:#151515;
+    }
+
+    .main-menu.active .menu-dropdown { display:block; }
+
+    .page-hero {
+        min-height:auto;
+        padding:145px 0 80px;
+    }
+
+    .footer-grid { grid-template-columns:1fr 1fr; }
+}
+
+@media(max-width:650px) {
+    .brand-text strong { font-size:1rem; }
+    .brand-text span { font-size:.56rem; }
+
+    .page-hero { padding:130px 0 65px; }
+
+    .page-hero h1 { font-size:3.4rem; }
+
+    .page-section { padding:70px 0; }
+
+    .play-grid { grid-template-columns:1fr; }
+
+    .play-image { height:240px; }
+
+    .footer-grid { grid-template-columns:1fr; }
+
+    .footer-bottom { flex-direction:column; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- SAME NAVIGATION STYLE AS THE HOMEPAGE -->
+
+<header>
+    <div class="container">
+        <nav class="site-nav">
+
+            <a href="index.html" class="brand">
+                <div class="brand-icon">
+                    <i class="fa-solid fa-feather-pointed"></i>
+                </div>
+                <div class="brand-text">
+                    <strong>Kitsamba Writes</strong>
+                    <span>Africa</span>
+                </div>
+            </a>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="novels.html" class="nav-link">Novels</a>
+
+                <div class="main-menu" id="mainMenu">
+                    <button class="main-menu-button" id="mainMenuButton">
+                        <i class="fa-solid fa-bars bars"></i>
+                        MENU
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+
+                    <div class="menu-dropdown">
+                        <div class="menu-title">
+                            <strong>Explore the website</strong>
+                            <span>Stories, ideas and African voices</span>
+                        </div>
+
+                        <a href="about.html"><i class="fa-solid fa-user-pen"></i>About</a>
+                        <a href="articles.html"><i class="fa-solid fa-newspaper"></i>Articles</a>
+                        <a href="blog.html"><i class="fa-solid fa-pen-nib"></i>Blog</a>
+                        <a href="contact.html"><i class="fa-solid fa-envelope"></i>Contact</a>
+                        <a href="lifestyle.html"><i class="fa-solid fa-earth-africa"></i>Lifestyle</a>
+                        <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i>Login</a>
+                        <a href="novels.html"><i class="fa-solid fa-book-open"></i>Novels</a>
+                        <a href="settings.html"><i class="fa-solid fa-gear"></i>Settings</a>
+                        <a href="videos.html"><i class="fa-solid fa-circle-play"></i>Videos</a>
+                        <a href="plays.html"><i class="fa-solid fa-masks-theater"></i>Plays</a>
+                        <a href="poems.html"><i class="fa-solid fa-feather-pointed"></i>Poems</a>
+                        <a href="stakeholders.html"><i class="fa-solid fa-hand-holding-heart"></i>Stakeholders</a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="novels.html" class="start-reading">
+                <i class="fa-solid fa-book-open"></i>
+                Start Reading
+            </a>
+
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <section class="page-hero">
+        <div class="container">
+            <div class="eyebrow">Stage · Voice · Imagination</div>
+
+            <h1>Stories made for <span>the stage.</span></h1>
+
+            <p>
+                Explore upcoming plays from Kitsamba Writes Africa—dramatic
+                stories shaped by human choices, relationships, destiny and
+                the moments that change a life.
+            </p>
+        </div>
+    </section>
+
+    <section class="page-section">
+        <div class="container">
+
+            <div class="section-heading">
+                <div class="eyebrow">Upcoming works</div>
+                <h2>Coming to the page.</h2>
+                <p>
+                    Discover the plays currently being developed by
+                    Kitsamba Writes Africa. Release announcements and
+                    further details will be added as each work develops.
+                </p>
+            </div>
+
+            <div class="play-grid">
+
+                <article class="play-card">
+                    <div class="play-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=1200&q=85"
+                            alt="A theatre stage prepared for a performance"
+                            loading="lazy">
+                    </div>
+
+                    <div class="play-body">
+                        <span class="play-tag">Upcoming play</span>
+                        <h3>UNPREDICTABLE DESTINY</h3>
+                        <p>
+                            A dramatic story about the turns life takes,
+                            the choices we make, and the consequences
+                            no one sees coming.
+                        </p>
+                        <span class="status">Upcoming work</span>
+                    </div>
+                </article>
+
+                <article class="play-card">
+                    <div class="play-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=1200&q=85"
+                            alt="A dramatic performance space"
+                            loading="lazy">
+                    </div>
+
+                    <div class="play-body">
+                        <span class="play-tag">Upcoming play</span>
+                        <h3>LAST MEET</h3>
+                        <p>
+                            A story about one final encounter, the words
+                            left unsaid, and what remains when paths
+                            separate.
+                        </p>
+                        <span class="status">Upcoming work</span>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="notice">
+                Release dates and performance details will be announced
+                when confirmed. These titles are listed as upcoming works.
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<!-- SAME FOOTER STYLE AS THE HOMEPAGE -->
+
+<footer>
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+                <h3>Kitsamba Writes Africa</h3>
+
+                <p>
+                    A home for African stories, novels, ideas and culture.
+                    Writing Africa, one story at a time.
+                </p>
+
+                <div class="socials">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>Explore</h4>
+                <a href="novels.html">Novels</a>
+                <a href="articles.html">Articles</a>
+                <a href="blog.html">Blog</a>
+                <a href="lifestyle.html">African Lifestyle</a>
+                <a href="videos.html">Videos</a>
+                <a href="plays.html">Plays</a>
+                <a href="poems.html">Poems</a>
+                <a href="stakeholders.html">Stakeholders</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Website</h4>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Reader Login</a>
+                <a href="settings.html">Settings</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>
+                © <span id="year"></span> Kitsamba Writes Africa.
+                All rights reserved.
+            </span>
+
+            <span>Made for readers who believe African stories matter.</span>
+        </div>
+
+    </div>
+</footer>
+
+<script>
+const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+const navLinks = document.getElementById("navLinks");
+const mainMenu = document.getElementById("mainMenu");
+const mainMenuButton = document.getElementById("mainMenuButton");
+
+mobileMenuBtn.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+
+    const icon = mobileMenuBtn.querySelector("i");
+
+    if (navLinks.classList.contains("active")) {
+        icon.className = "fa-solid fa-xmark";
+    } else {
+        icon.className = "fa-solid fa-bars";
+        mainMenu.classList.remove("active");
+    }
+});
+
+mainMenuButton.addEventListener("click", function (event) {
+    event.stopPropagation();
+    mainMenu.classList.toggle("active");
+});
+
+document.addEventListener("click", function (event) {
+    if (!mainMenu.contains(event.target)) {
+        mainMenu.classList.remove("active");
+    }
+});
+
+document.querySelectorAll(".nav-links a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+        mainMenu.classList.remove("active");
+        mobileMenuBtn.querySelector("i").className = "fa-solid fa-bars";
+    });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
