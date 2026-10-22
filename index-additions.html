@@ -1,0 +1,31 @@
+NAVIGATION LINKS
+
+<!-- Add these three links inside the existing .menu-dropdown, alongside About, Blog, etc. -->
+<a href="plays.html"><i class="fa-solid fa-masks-theater"></i> Plays</a>
+<a href="poems.html"><i class="fa-solid fa-feather-pointed"></i> Poems</a>
+<a href="stakeholders.html"><i class="fa-solid fa-handshake-angle"></i> Stakeholders</a>
+
+
+BEHIND THE STORIES PHOTO GALLERY
+
+<!-- Add this inside the existing Behind the Stories section, after .author-grid and before its closing section tag. -->
+<div class="story-photo-journal">
+  <figure class="story-photo"><img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=85" alt="Writer drafting a story in a notebook"><figcaption><span>Behind the words</span>Where every story begins</figcaption></figure>
+  <figure class="story-photo"><img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=900&q=85" alt="Open book in warm light"><figcaption><span>The craft</span>Pages full of possibility</figcaption></figure>
+  <figure class="story-photo"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85" alt="Sunlit landscape"><figcaption><span>Our inspiration</span>Stories rooted in place</figcaption></figure>
+  <figure class="story-photo"><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=85" alt="Quiet landscape"><figcaption><span>Everyday wonder</span>Life becomes literature</figcaption></figure>
+</div>
+
+<!-- Add this to the existing <style> block in index.html -->
+<style>
+.story-photo-journal{display:grid;grid-template-columns:1.2fr .8fr 1fr;grid-template-rows:190px 190px;gap:14px;margin-top:48px}
+.story-photo{position:relative;overflow:hidden;border-radius:18px;border:1px solid rgba(216,172,86,.22);background:#171717}
+.story-photo:first-child{grid-row:span 2}
+.story-photo img{width:100%;height:100%;object-fit:cover;transition:transform .55s;opacity:.88}
+.story-photo:hover img{transform:scale(1.06);opacity:1}
+.story-photo:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.82))}
+.story-photo figcaption{position:absolute;z-index:1;left:18px;right:18px;bottom:16px;color:#fff;font-family:"Playfair Display",serif;font-size:1.1rem}
+.story-photo figcaption span{display:block;font:700 .65rem "DM Sans",sans-serif;color:#f2cf83;letter-spacing:2px;text-transform:uppercase}
+@media(max-width:950px){.story-photo-journal{grid-template-columns:1fr 1fr;grid-template-rows:230px 180px}.story-photo:first-child{grid-row:auto;grid-column:span 2}}
+@media(max-width:650px){.story-photo-journal{grid-template-columns:1fr;grid-template-rows:220px}.story-photo:first-child{grid-column:auto}}
+</style>
