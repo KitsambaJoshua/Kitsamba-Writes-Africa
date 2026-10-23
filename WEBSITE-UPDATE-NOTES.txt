@@ -1,0 +1,20 @@
+KITSAMBA WRITES AFRICA — WEBSITE UPDATE NOTES
+
+What was updated in this ZIP:
+1. Removed the founder portrait from the homepage hero beside “Stories born from Africa” and removed the duplicate portrait from the homepage “Behind the Stories” section. The founder portrait is now featured on the Stakeholders page.
+2. Added a founder and CEO profile for Kitamba Joshua on stakeholders.html, with the two novels, literary influences, and a support/partnership invitation.
+3. Made the homepage MENU button more compact and positioned it at the far end of the navigation row. Expanded the page list in its dropdown.
+4. Added a compact page menu to the Stakeholders page and expanded the menus on the three novel pages so visitors can navigate to the site's main pages.
+5. Added reader-only copy deterrents to the three novel pages, targeting casual copy/right-click actions in reading areas rather than the whole site.
+
+IMPORTANT BOOK PROTECTION LIMITATION:
+These browser restrictions only discourage casual copying. They cannot prevent screenshots, developer tools, or access to chapter text that is publicly delivered to a browser. The two novels currently load preview chapters from public raw GitHub sources, so this does not securely protect paid chapters. For real paid-content protection, full chapters must be served from a private, authenticated backend after payment/access verification.
+
+HOW TO PUBLISH:
+1. Keep a backup of your current repository.
+2. Extract this ZIP on your computer.
+3. Open your GitHub repository and upload/replace the updated files while preserving the folder structure and image assets.
+4. Commit the changes to the branch used by GitHub Pages (usually main).
+5. Wait a few minutes, then hard-refresh the live site (Ctrl+F5 on Windows).
+
+This ZIP contains the complete website files from the uploaded archive with the changes above; it has not itself been uploaded or published to GitHub.

@@ -162,7 +162,7 @@ header{
 .nav-links{
     display:flex;
     align-items:center;
-
+    flex:1;
     gap:22px;
 }
 
@@ -178,12 +178,17 @@ header{
 }
 
 
+.start-reading{order:3;}
+
 /* ======================================
 MENU BUTTON
 ====================================== */
 
 .main-menu{
     position:relative;
+    margin-left:auto;
+    flex-shrink:0;
+    order:4;
 }
 
 .main-menu-button{
@@ -193,16 +198,16 @@ MENU BUTTON
 
     color:white;
 
-    padding:10px 16px;
+    padding:7px 10px;
 
     border-radius:50px;
 
     display:flex;
     align-items:center;
 
-    gap:8px;
+    gap:6px;
 
-    font-size:.9rem;
+    font-size:.76rem;
 
     font-weight:800;
 
@@ -449,7 +454,7 @@ HERO
 .hero-grid{
     display:grid;
 
-    grid-template-columns:1fr 280px;
+    grid-template-columns:1fr;
 
     gap:70px;
 
@@ -771,11 +776,9 @@ AUTHOR
 
 .author-grid{
     display:grid;
-
-    grid-template-columns:260px 1fr;
-
-    gap:65px;
-
+    grid-template-columns:minmax(0,820px);
+    justify-content:center;
+    gap:0;
     align-items:center;
 }
 
@@ -1202,11 +1205,10 @@ TABLET
 }
 
 .main-menu-button{
-    width:100%;
-
-    justify-content:space-between;
-
-    padding:13px 16px;
+    width:auto;
+    min-width:100px;
+    justify-content:center;
+    padding:8px 11px;
 }
 
 .menu-dropdown{
@@ -1259,14 +1261,6 @@ TABLET
     justify-content:center;
 }
 
-.hero-photo-area{
-    order:-1;
-}
-
-.hero-portrait{
-    width:190px;
-    height:190px;
-}
 
 
 /* NOVELS */
@@ -1539,6 +1533,12 @@ About
 
 </a>
 
+<a href="authors.html"><i class="fa-solid fa-feather"></i> Authors</a>
+
+<a href="book.html"><i class="fa-solid fa-book"></i> Book Library</a>
+
+<a href="free-books.html"><i class="fa-solid fa-book-open"></i> Free Books</a>
+
 
 <a href="articles.html">
 
@@ -1777,23 +1777,7 @@ Stories still to be told
 </div>
 
 
-<!-- SMALL CIRCULAR PHOTO ON RIGHT -->
-
-<div class="hero-photo-area">
-
-
-<div class="hero-portrait">
-
-
-<img
-src="images/KItsamba Joshua.png"
-alt="Kitsamba Joshua">
-
-
-</div>
-
-
-</div>
+<!-- Founder portrait now appears on the Stakeholders page. -->
 
 
 </div>
@@ -2083,21 +2067,7 @@ BEHIND THE STORIES
 <div class="author-grid">
 
 
-<div class="author-image-wrap">
-
-
-<div class="author-image">
-
-
-<img
-src="images/KItsamba Joshua.png"
-alt="Kitsamba Joshua">
-
-
-</div>
-
-
-</div>
+<!-- Founder portrait is featured on stakeholders.html. -->
 
 
 <div class="author-copy">

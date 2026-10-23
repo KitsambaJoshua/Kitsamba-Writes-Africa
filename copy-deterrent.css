@@ -1,11 +1,5 @@
-/* Optional styling for the reader-only copy deterrent. */
-.copy-deterrent-enabled {
-  -webkit-user-select: none;
-  user-select: none;
-}
+/* Applies only to the novel reading area, not navigation or checkout controls. */
+.copy-deterrent-enabled { -webkit-user-select:none; user-select:none; }
 .copy-deterrent-enabled input,
 .copy-deterrent-enabled textarea,
-.copy-deterrent-enabled [contenteditable="true"] {
-  -webkit-user-select: text;
-  user-select: text;
-}
+.copy-deterrent-enabled [contenteditable="true"] { -webkit-user-select:text; user-select:text; }
