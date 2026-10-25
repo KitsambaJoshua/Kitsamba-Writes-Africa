@@ -1406,6 +1406,29 @@ PHONE
 
 }
 
+
+
+/* Compact account action matching the existing gold call-to-action */
+.account-nav-button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:10px 15px;
+    border-radius:50px;
+    background:var(--gold);
+    color:#111;
+    font-size:.78rem;
+    font-weight:800;
+    white-space:nowrap;
+    order:2;
+    transition:.25s;
+}
+.account-nav-button:hover{background:var(--gold-light);transform:translateY(-1px)}
+@media(max-width:950px){
+ .account-nav-button{width:100%;order:initial}
+}
+
 </style>
 
 <script src="theme.js"></script>
@@ -1633,6 +1656,11 @@ Videos
 
 </div>
 
+
+<a href="login.html" class="account-nav-button" aria-label="Login or create an account">
+<i class="fa-solid fa-user-plus"></i>
+<span>Login / Create Account</span>
+</a>
 
 <a
 href="novels.html"
