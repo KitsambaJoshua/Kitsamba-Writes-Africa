@@ -1,61 +1,29 @@
-KITSAMBA WRITES AFRICA — UPDATE KIT
-===================================
+KITSAMBA WRITES AFRICA — WEBSITE UPDATE PACK
 
-What this ZIP contains
-----------------------
-1. founder-profile-section.html
-   A founder/CEO profile with your portrait, novels, literary influences, and a
-   support invitation for sponsors, mentors, publishers, developers, and partners.
+WHAT IS INCLUDED
+- index.html: complete replacement Home page with the “Meet Kitsamba Joshua” profile and existing image path.
+- stakeholders.html: complete replacement Stakeholders page with the founder message, Kitamba Paul supporter placeholder, and support/contact button.
+- theme-overrides.css: shared black/gold dark theme and cream/white light theme.
+- theme.js: shared theme toggle; saves the selected theme in the browser.
+- images/README.txt: reminder about the Kitamba Paul photo filename.
 
-2. founder-profile.css
-   Black-and-gold styling intended to fit the existing site.
+IMPORTANT
+This ZIP is an update pack, not a ZIP of every existing page in your repository. Your existing novels, poems, plays, articles, login and other pages are not included, so they will remain in GitHub when you add these files. This avoids deleting or replacing your other site pages.
 
-3. copy-deterrent.js and copy-deterrent.css
-   Optional deterrents against casual copying in public preview text.
+HOW TO APPLY ON GITHUB (PHONE)
+1. Download this ZIP and extract it using your phone's Files app.
+2. Open your GitHub repository: KitsambaJoshua/Kitsamba-Writes-Africa.
+3. Open index.html, tap the pencil/Edit icon, select all the old code, paste the complete code from the extracted index.html, and commit the change.
+4. Repeat for stakeholders.html using the extracted stakeholders.html.
+5. Add theme-overrides.css to the repository root as a new file and paste its complete code.
+6. Open theme.js in GitHub, replace its full contents with the extracted theme.js, and commit.
+7. To make the same theme work on every other page, each other HTML page must load BOTH theme-overrides.css and theme.js in its <head> (or near the end of body for the JS). This ZIP does not replace those other pages automatically.
+8. Wait a few minutes, then refresh the live site. On Android Chrome, refresh or open the site in an Incognito tab if an old cached version remains.
 
-IMPORTANT STATUS
-----------------
-This is a PATCH KIT, not a complete copy of the website. It does not contain all
-of your existing repository files and has NOT been uploaded to GitHub. Your live
-site remains unchanged until these changes are applied to the repository.
+IMAGE FILES
+- Your founder photo must exist at: images/kitsamba-joshua-new.jpg
+- When you receive Kitamba Paul's photo, upload it into the repository's images folder with this exact name: kitsamba-paul.jpg
+- The supporter section currently shows a temporary KP placeholder. After uploading his photo, we can change that placeholder into the actual image.
 
-HOW TO APPLY THE PROFILE
------------------------
-1. Open your repository:
-   https://github.com/KitsambaJoshua/Kitsamba-Writes-Africa
-2. Open stakeholders.html and click the pencil (Edit) icon.
-3. Open founder-profile-section.html from this ZIP and copy its complete contents.
-4. Paste the section after the existing stakeholders-page hero section and before
-   the next content section.
-5. Open founder-profile.css, copy its contents, and paste them inside the existing
-   <style> ... </style> area in stakeholders.html, before </style>.
-6. Save the file with Commit changes.
-7. Open index.html and remove only the homepage portrait block that contains:
-   <div class="hero-photo-area"> ... </div>
-   Keep the surrounding hero content and its closing tags. Preview the page after
-   editing to ensure the headline still aligns correctly.
-
-HOW TO APPLY THE COPY DETERRENT
--------------------------------
-1. Upload copy-deterrent.js and copy-deterrent.css into the repository root.
-2. On each public novel-preview page, include the CSS inside its existing style
-   area or link the file:
-   <link rel="stylesheet" href="copy-deterrent.css">
-3. Add this before </body> on those pages:
-   <script src="copy-deterrent.js" defer></script>
-4. Test that links, navigation, and mobile reading still work.
-
-CRITICAL BOOK-PROTECTION WARNING
--------------------------------
-JavaScript and CSS cannot reliably prevent copying. A visitor can still use
-screenshots, browser tools, or download public source files. The current novel
-pages load chapter text from public raw GitHub HTML files. If full paid chapters
-are stored in publicly accessible files, the content is not truly protected.
-For meaningful paid access, keep full chapters on a private backend or a
-payment/access service that checks the buyer before delivering the text. GitHub
-Pages alone cannot securely hide paid book content.
-
-SUPPORT LANGUAGE
-----------------
-The profile asks for help clearly but respectfully. It does not claim awards,
-sales, funding, or achievements that have not been confirmed.
+PLEASE NOTE
+Uploading the ZIP file itself to GitHub does not unpack it or update the website. The individual files inside the ZIP must be extracted and placed in the repository. Do not delete your other HTML pages, books, images, or folders.

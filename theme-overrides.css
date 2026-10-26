@@ -1,199 +1,73 @@
-/* Paste these rules inside the CSS template in theme.js, immediately before its closing backtick.
-   The existing theme.js already applies html.kw-light and html.kw-dark and stores the selected mode. */
-
-/* DARK MODE: one consistent black/navy palette across every section. */
-html.kw-dark {
-  --kw-dark-bg: #080d18;
-  --kw-dark-surface: #0c1322;
-  --kw-dark-card: #111a2b;
-  --kw-dark-text: #f5f3ee;
-  --kw-dark-muted: #b7c0ce;
-  --kw-dark-border: rgba(216,172,86,.2);
-}
-html.kw-dark body,
-html.kw-dark main,
-html.kw-dark main > section,
-html.kw-dark section,
-html.kw-dark .hero,
-html.kw-dark .page-hero,
-html.kw-dark .hero-section,
-html.kw-dark .section,
-html.kw-dark .page-section,
-html.kw-dark .author-section,
-html.kw-dark .founder-section,
-html.kw-dark .beyond-section,
-html.kw-dark .quote-section,
-html.kw-dark .newsletter,
-html.kw-dark .content-section,
-html.kw-dark .about-section,
-html.kw-dark .contact-section,
-html.kw-dark .library,
-html.kw-dark .discover,
-html.kw-dark .lifestyle,
-html.kw-dark .articles,
-html.kw-dark .blog,
-html.kw-dark footer,
-html.kw-dark .footer {
-  background-color: var(--kw-dark-bg) !important;
-  background-image: none !important;
-  color: var(--kw-dark-text) !important;
-  border-color: var(--kw-dark-border) !important;
-}
-html.kw-dark header,
-html.kw-dark .header,
-html.kw-dark .site-header,
-html.kw-dark .navbar,
-html.kw-dark nav,
-html.kw-dark .nav-links,
-html.kw-dark .navlinks,
-html.kw-dark .menu-dropdown,
-html.kw-dark .dropdown-menu {
-  background-color: #080d18 !important;
-  color: var(--kw-dark-text) !important;
-  border-color: var(--kw-dark-border) !important;
-}
-html.kw-dark .card,
-html.kw-dark .novel-card,
-html.kw-dark .play-card,
-html.kw-dark .article-card,
-html.kw-dark .blog-card,
-html.kw-dark .feature-card,
-html.kw-dark .info-card,
-html.kw-dark .contact-card,
-html.kw-dark .form-card,
-html.kw-dark .login-card,
-html.kw-dark .settings-card,
-html.kw-dark .book-card,
-html.kw-dark .supporter-card,
-html.kw-dark .support-panel,
-html.kw-dark .beyond-card,
-html.kw-dark .notice,
-html.kw-dark .note,
-html.kw-dark .reader-card,
-html.kw-dark .paper {
-  background: var(--kw-dark-card) !important;
-  color: var(--kw-dark-text) !important;
-  border-color: var(--kw-dark-border) !important;
-}
-html.kw-dark p,
-html.kw-dark li,
-html.kw-dark small,
-html.kw-dark label,
-html.kw-dark .subtitle,
-html.kw-dark .description,
-html.kw-dark .meta,
-html.kw-dark .section-heading p,
-html.kw-dark .section-head p,
-html.kw-dark .hero p,
-html.kw-dark .page-hero p,
-html.kw-dark .author-copy p,
-html.kw-dark .founder-copy p {
-  color: var(--kw-dark-muted) !important;
-}
-html.kw-dark h1, html.kw-dark h2, html.kw-dark h3,
-html.kw-dark h4, html.kw-dark h5, html.kw-dark h6,
-html.kw-dark strong, html.kw-dark .nav-link, html.kw-dark nav a {
-  color: var(--kw-dark-text);
-}
-
-/* LIGHT MODE: all page sections use cream; cards can be clean white/ivory. */
-html.kw-light body,
-html.kw-light main,
-html.kw-light main > section,
-html.kw-light section,
-html.kw-light .hero,
-html.kw-light .page-hero,
-html.kw-light .hero-section,
-html.kw-light .section,
-html.kw-light .page-section,
-html.kw-light .author-section,
-html.kw-light .founder-section,
-html.kw-light .beyond-section,
-html.kw-light .quote-section,
-html.kw-light .newsletter,
-html.kw-light .content-section,
-html.kw-light .about-section,
-html.kw-light .contact-section,
-html.kw-light .library,
-html.kw-light .discover,
-html.kw-light .lifestyle,
-html.kw-light .articles,
-html.kw-light .blog,
-html.kw-light footer,
-html.kw-light .footer {
-  background-color: var(--kw-light-bg) !important;
-  background-image: none !important;
-  color: var(--kw-light-text) !important;
-  border-color: var(--kw-light-border) !important;
-}
-html.kw-light .card,
-html.kw-light .novel-card,
-html.kw-light .play-card,
-html.kw-light .article-card,
-html.kw-light .blog-card,
-html.kw-light .feature-card,
-html.kw-light .info-card,
-html.kw-light .contact-card,
-html.kw-light .form-card,
-html.kw-light .login-card,
-html.kw-light .settings-card,
-html.kw-light .book-card,
-html.kw-light .supporter-card,
-html.kw-light .support-panel,
-html.kw-light .beyond-card,
-html.kw-light .notice,
-html.kw-light .note,
-html.kw-light .reader-card,
-html.kw-light .paper {
-  background: var(--kw-light-surface) !important;
-  color: var(--kw-light-text) !important;
-  border-color: var(--kw-light-border) !important;
-}
-html.kw-light p,
-html.kw-light li,
-html.kw-light small,
-html.kw-light label,
-html.kw-light .subtitle,
-html.kw-light .description,
-html.kw-light .meta,
-html.kw-light .section-heading p,
-html.kw-light .section-head p,
-html.kw-light .hero p,
-html.kw-light .page-hero p,
-html.kw-light .author-copy p,
-html.kw-light .founder-copy p {
-  color: var(--kw-light-muted) !important;
-}
-html.kw-light h1, html.kw-light h2, html.kw-light h3,
-html.kw-light h4, html.kw-light h5, html.kw-light h6,
-html.kw-light strong, html.kw-light .nav-link, html.kw-light nav a {
-  color: var(--kw-light-text);
-}
-html.kw-light .btn, html.kw-light .btn-gold,
-html.kw-light .start-reading, html.kw-light .account-nav-button,
-html.kw-light .stakeholder-reading {
-  background: var(--kw-gold) !important;
-  color: #17120c !important;
-}
-
-/* Supporter card with a temporary initials placeholder until Kitamba Paul's photo is added. */
-.supporter-grid { display:grid; grid-template-columns:minmax(0,760px); gap:22px; }
-.supporter-card { display:grid; grid-template-columns:minmax(180px,260px) minmax(0,1fr); overflow:hidden; border:1px solid rgba(216,172,86,.25); border-radius:20px; background:linear-gradient(145deg,#111a2b,#0c1322); }
-.supporter-photo-placeholder { min-height:280px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; background:linear-gradient(145deg,#17233a,#0c1322); color:#f2cf83; border-right:1px solid rgba(216,172,86,.2); }
-.supporter-photo-placeholder span { width:90px; height:90px; display:grid; place-items:center; border:2px solid #d8ac56; border-radius:50%; font:700 2rem "Playfair Display",serif; }
-.supporter-photo-placeholder small { color:#b7c0ce; font-size:.72rem; letter-spacing:1px; text-transform:uppercase; }
-.supporter-card-body { padding:28px; }
-.supporter-card-body h3 { font-size:1.8rem; margin:10px 0; }
-.supporter-card-body p { color:#b7c0ce; }
-.supporter-thanks { color:#f2cf83 !important; font-style:italic; margin-top:12px; }
-.supporter-cta { margin-top:38px; padding:28px; border:1px solid rgba(216,172,86,.24); border-radius:18px; background:rgba(216,172,86,.06); }
-.supporter-cta h3 { margin-bottom:10px; color:#f2cf83; font-size:1.6rem; }
-.supporter-cta p { color:#b7c0ce; }
-html.kw-light .supporter-photo-placeholder { background:#efe5d6 !important; color:#8d6424 !important; border-color:var(--kw-light-border) !important; }
-html.kw-light .supporter-photo-placeholder small { color:#6f6458 !important; }
-html.kw-light .supporter-cta { background:#fffaf2 !important; border-color:var(--kw-light-border) !important; }
-@media(max-width:760px) {
-  .supporter-card { grid-template-columns:1fr; }
-  .supporter-photo-placeholder { min-height:190px; border-right:0; border-bottom:1px solid rgba(216,172,86,.2); }
-  .supporter-card-body { padding:22px; }
-}
+/* Kitsamba Writes Africa — unified black/gold and cream theme */
+:root{--kw-bg:#090909;--kw-surface:#121212;--kw-card:#181818;--kw-text:#f8f5ee;--kw-muted:#c0b9ad;--kw-gold:#d8ac56;--kw-gold-light:#f2cf83;--kw-border:rgba(216,172,86,.28);--kw-shadow:0 18px 45px rgba(0,0,0,.22)}
+html.kw-light{--kw-bg:#fbf7ef;--kw-surface:#fffdf8;--kw-card:#fff;--kw-text:#211d17;--kw-muted:#625b50;--kw-gold:#916719;--kw-gold-light:#b8862c;--kw-border:rgba(145,103,25,.25);--kw-shadow:0 18px 45px rgba(75,55,20,.08);color-scheme:light}
+html.kw-dark{color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--kw-bg);color:var(--kw-text);font-family:"DM Sans",Arial,sans-serif;line-height:1.7;transition:background .2s,color .2s}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.container{width:min(1160px,92%);margin-inline:auto}
+.site-header{position:sticky;top:0;z-index:20;background:var(--kw-bg);border-bottom:1px solid var(--kw-border)}
+.nav-wrap{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.08em;font-size:.88rem;color:var(--kw-text);white-space:nowrap}
+.brand small{display:block;font-size:.62rem;letter-spacing:.19em;color:var(--kw-gold)}
+.brand-mark{display:grid;place-items:center;width:40px;height:40px;border:1px solid var(--kw-gold);border-radius:50%;font-family:"Playfair Display",serif;font-size:1.4rem;color:var(--kw-gold)}
+.main-nav{display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;font-size:.86rem;color:var(--kw-muted)}
+.main-nav a:hover,.main-nav a.active{color:var(--kw-gold)}
+.nav-actions{display:flex;align-items:center;gap:8px}
+.button{display:inline-flex;align-items:center;justify-content:center;padding:12px 21px;border:1px solid var(--kw-gold);border-radius:5px;background:var(--kw-gold);color:#17120a;font-weight:700;font-size:.9rem;transition:transform .2s,background .2s}
+.button:hover{transform:translateY(-2px);background:var(--kw-gold-light)}
+.button-small{padding:8px 11px;font-size:.78rem}
+.button-outline{background:transparent;color:var(--kw-text)}
+.theme-toggle{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--kw-border);border-radius:5px;background:var(--kw-surface);color:var(--kw-text);padding:8px 10px;cursor:pointer;font:inherit;font-size:.8rem}
+.hero{position:relative;min-height:470px;display:flex;align-items:center;background:linear-gradient(100deg,var(--kw-bg),color-mix(in srgb,var(--kw-bg) 84%,transparent)),url("images/hero-background.webp.jpg") center/cover no-repeat}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,var(--kw-bg) 0%,color-mix(in srgb,var(--kw-bg) 72%,transparent) 72%,transparent)}
+.hero-content{position:relative;padding-block:90px}
+.eyebrow{font-size:.73rem;font-weight:700;letter-spacing:.2em;color:var(--kw-gold);text-transform:uppercase;margin:0 0 13px}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;line-height:1.2;margin-top:0}
+h1{font-size:clamp(2.6rem,6vw,4.8rem);margin-bottom:20px;max-width:780px}
+h1 em{color:var(--kw-gold);font-style:normal}
+h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:15px}
+h3{font-size:1.5rem;margin-bottom:10px}
+.hero-content>p:not(.eyebrow){max-width:580px;color:var(--kw-muted);font-size:1.08rem}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.section{padding-block:76px}
+.section-heading{text-align:center;max-width:760px;margin:0 auto 35px}
+.section-heading>p:last-child,.muted,.notice{color:var(--kw-muted)}
+.feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.feature-card{padding:28px;border:1px solid var(--kw-border);border-radius:10px;background:var(--kw-card);box-shadow:var(--kw-shadow);transition:transform .2s,border-color .2s}
+.feature-card:hover{transform:translateY(-4px);border-color:var(--kw-gold)}
+.feature-card p{color:var(--kw-muted)}
+.feature-icon{display:grid;place-items:center;width:45px;height:45px;border:1px solid var(--kw-border);border-radius:50%;color:var(--kw-gold);font-size:1.4rem;margin-bottom:18px}
+.text-link{font-weight:700;color:var(--kw-gold)}
+.founder-section,.supporters-section{background:var(--kw-surface);border-block:1px solid var(--kw-border)}
+.founder-grid{display:grid;grid-template-columns:minmax(260px,.8fr) minmax(0,1.2fr);gap:56px;align-items:center}
+.founder-photo-wrap{position:relative;max-width:430px;margin:auto}
+.founder-photo{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:10px;border:1px solid var(--kw-border);background:var(--kw-card)}
+.photo-caption{display:block;margin-top:10px;text-align:center;color:var(--kw-muted);font-size:.82rem}
+.founder-copy p,.founder-intro p{color:var(--kw-muted)}
+.founder-copy .lead,.lead{font-size:1.12rem;color:var(--kw-text)}
+blockquote{margin:22px 0;padding:5px 0 5px 18px;border-left:3px solid var(--kw-gold);font-family:"Playfair Display",Georgia,serif;font-size:1.25rem;font-style:italic;color:var(--kw-gold)}
+.support-strip,.donate-panel{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:28px;border:1px solid var(--kw-border);border-radius:10px;background:var(--kw-card)}
+.support-strip h2,.donate-panel h2{margin-bottom:8px;font-size:clamp(1.6rem,3vw,2.3rem)}
+.support-strip p:not(.eyebrow),.donate-panel p:not(.eyebrow){color:var(--kw-muted);margin-bottom:0}
+.page-hero{padding:75px 0;background:var(--kw-surface);border-bottom:1px solid var(--kw-border)}
+.page-hero h1{font-size:clamp(2.4rem,5vw,4rem);margin-bottom:12px}
+.page-hero p:last-child{color:var(--kw-muted);max-width:700px}
+.founder-intro{max-width:900px}
+.supporter-card{display:grid;grid-template-columns:190px 1fr;gap:30px;align-items:center;max-width:920px;margin:0 auto 35px;padding:28px;border:1px solid var(--kw-border);border-radius:10px;background:var(--kw-card);box-shadow:var(--kw-shadow)}
+.supporter-avatar{display:grid;place-items:center;aspect-ratio:1;border-radius:8px;background:linear-gradient(145deg,var(--kw-surface),var(--kw-card));border:1px dashed var(--kw-gold);font-family:"Playfair Display",serif;font-size:4rem;color:var(--kw-gold)}
+.supporter-copy p{color:var(--kw-muted)}
+code{color:var(--kw-gold);overflow-wrap:anywhere}
+.notice{font-size:.82rem;text-align:center;margin-top:16px}
+.site-footer{border-top:1px solid var(--kw-border);background:var(--kw-bg);padding:35px 0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.footer-inner p,.footer-inner>small{color:var(--kw-muted);font-size:.83rem}
+.footer-links{display:flex;gap:15px;font-size:.85rem;color:var(--kw-muted)}
+.footer-links a:hover{color:var(--kw-gold)}
+/* Force all page sections/cards to follow the selected theme */
+html.kw-dark body,html.kw-dark main,html.kw-dark section,html.kw-dark article,html.kw-dark .card,html.kw-dark .navbar{color:var(--kw-text)}
+html.kw-light body,html.kw-light main,html.kw-light section,html.kw-light article,html.kw-light .card,html.kw-light .navbar{color:var(--kw-text)}
+@media(max-width:1000px){.nav-wrap{align-items:flex-start;padding-block:12px;flex-wrap:wrap}.main-nav{order:3;width:100%;justify-content:flex-start}.nav-actions{margin-left:auto}.founder-grid{gap:30px}}
+@media(max-width:700px){.hero{min-height:420px}.hero-content{padding-block:65px}.section{padding-block:52px}.feature-grid{grid-template-columns:1fr}.founder-grid{grid-template-columns:1fr}.founder-photo-wrap{width:min(100%,340px)}.support-strip,.donate-panel{align-items:flex-start;flex-direction:column}.supporter-card{grid-template-columns:1fr}.supporter-avatar{max-width:180px;width:100%;margin:auto}.main-nav{gap:10px;font-size:.8rem}.brand{font-size:.76rem}.nav-actions{gap:5px}.button-small{font-size:.72rem;padding:7px 8px}}
