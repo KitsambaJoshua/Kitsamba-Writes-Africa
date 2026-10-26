@@ -1,0 +1,199 @@
+/* Paste these rules inside the CSS template in theme.js, immediately before its closing backtick.
+   The existing theme.js already applies html.kw-light and html.kw-dark and stores the selected mode. */
+
+/* DARK MODE: one consistent black/navy palette across every section. */
+html.kw-dark {
+  --kw-dark-bg: #080d18;
+  --kw-dark-surface: #0c1322;
+  --kw-dark-card: #111a2b;
+  --kw-dark-text: #f5f3ee;
+  --kw-dark-muted: #b7c0ce;
+  --kw-dark-border: rgba(216,172,86,.2);
+}
+html.kw-dark body,
+html.kw-dark main,
+html.kw-dark main > section,
+html.kw-dark section,
+html.kw-dark .hero,
+html.kw-dark .page-hero,
+html.kw-dark .hero-section,
+html.kw-dark .section,
+html.kw-dark .page-section,
+html.kw-dark .author-section,
+html.kw-dark .founder-section,
+html.kw-dark .beyond-section,
+html.kw-dark .quote-section,
+html.kw-dark .newsletter,
+html.kw-dark .content-section,
+html.kw-dark .about-section,
+html.kw-dark .contact-section,
+html.kw-dark .library,
+html.kw-dark .discover,
+html.kw-dark .lifestyle,
+html.kw-dark .articles,
+html.kw-dark .blog,
+html.kw-dark footer,
+html.kw-dark .footer {
+  background-color: var(--kw-dark-bg) !important;
+  background-image: none !important;
+  color: var(--kw-dark-text) !important;
+  border-color: var(--kw-dark-border) !important;
+}
+html.kw-dark header,
+html.kw-dark .header,
+html.kw-dark .site-header,
+html.kw-dark .navbar,
+html.kw-dark nav,
+html.kw-dark .nav-links,
+html.kw-dark .navlinks,
+html.kw-dark .menu-dropdown,
+html.kw-dark .dropdown-menu {
+  background-color: #080d18 !important;
+  color: var(--kw-dark-text) !important;
+  border-color: var(--kw-dark-border) !important;
+}
+html.kw-dark .card,
+html.kw-dark .novel-card,
+html.kw-dark .play-card,
+html.kw-dark .article-card,
+html.kw-dark .blog-card,
+html.kw-dark .feature-card,
+html.kw-dark .info-card,
+html.kw-dark .contact-card,
+html.kw-dark .form-card,
+html.kw-dark .login-card,
+html.kw-dark .settings-card,
+html.kw-dark .book-card,
+html.kw-dark .supporter-card,
+html.kw-dark .support-panel,
+html.kw-dark .beyond-card,
+html.kw-dark .notice,
+html.kw-dark .note,
+html.kw-dark .reader-card,
+html.kw-dark .paper {
+  background: var(--kw-dark-card) !important;
+  color: var(--kw-dark-text) !important;
+  border-color: var(--kw-dark-border) !important;
+}
+html.kw-dark p,
+html.kw-dark li,
+html.kw-dark small,
+html.kw-dark label,
+html.kw-dark .subtitle,
+html.kw-dark .description,
+html.kw-dark .meta,
+html.kw-dark .section-heading p,
+html.kw-dark .section-head p,
+html.kw-dark .hero p,
+html.kw-dark .page-hero p,
+html.kw-dark .author-copy p,
+html.kw-dark .founder-copy p {
+  color: var(--kw-dark-muted) !important;
+}
+html.kw-dark h1, html.kw-dark h2, html.kw-dark h3,
+html.kw-dark h4, html.kw-dark h5, html.kw-dark h6,
+html.kw-dark strong, html.kw-dark .nav-link, html.kw-dark nav a {
+  color: var(--kw-dark-text);
+}
+
+/* LIGHT MODE: all page sections use cream; cards can be clean white/ivory. */
+html.kw-light body,
+html.kw-light main,
+html.kw-light main > section,
+html.kw-light section,
+html.kw-light .hero,
+html.kw-light .page-hero,
+html.kw-light .hero-section,
+html.kw-light .section,
+html.kw-light .page-section,
+html.kw-light .author-section,
+html.kw-light .founder-section,
+html.kw-light .beyond-section,
+html.kw-light .quote-section,
+html.kw-light .newsletter,
+html.kw-light .content-section,
+html.kw-light .about-section,
+html.kw-light .contact-section,
+html.kw-light .library,
+html.kw-light .discover,
+html.kw-light .lifestyle,
+html.kw-light .articles,
+html.kw-light .blog,
+html.kw-light footer,
+html.kw-light .footer {
+  background-color: var(--kw-light-bg) !important;
+  background-image: none !important;
+  color: var(--kw-light-text) !important;
+  border-color: var(--kw-light-border) !important;
+}
+html.kw-light .card,
+html.kw-light .novel-card,
+html.kw-light .play-card,
+html.kw-light .article-card,
+html.kw-light .blog-card,
+html.kw-light .feature-card,
+html.kw-light .info-card,
+html.kw-light .contact-card,
+html.kw-light .form-card,
+html.kw-light .login-card,
+html.kw-light .settings-card,
+html.kw-light .book-card,
+html.kw-light .supporter-card,
+html.kw-light .support-panel,
+html.kw-light .beyond-card,
+html.kw-light .notice,
+html.kw-light .note,
+html.kw-light .reader-card,
+html.kw-light .paper {
+  background: var(--kw-light-surface) !important;
+  color: var(--kw-light-text) !important;
+  border-color: var(--kw-light-border) !important;
+}
+html.kw-light p,
+html.kw-light li,
+html.kw-light small,
+html.kw-light label,
+html.kw-light .subtitle,
+html.kw-light .description,
+html.kw-light .meta,
+html.kw-light .section-heading p,
+html.kw-light .section-head p,
+html.kw-light .hero p,
+html.kw-light .page-hero p,
+html.kw-light .author-copy p,
+html.kw-light .founder-copy p {
+  color: var(--kw-light-muted) !important;
+}
+html.kw-light h1, html.kw-light h2, html.kw-light h3,
+html.kw-light h4, html.kw-light h5, html.kw-light h6,
+html.kw-light strong, html.kw-light .nav-link, html.kw-light nav a {
+  color: var(--kw-light-text);
+}
+html.kw-light .btn, html.kw-light .btn-gold,
+html.kw-light .start-reading, html.kw-light .account-nav-button,
+html.kw-light .stakeholder-reading {
+  background: var(--kw-gold) !important;
+  color: #17120c !important;
+}
+
+/* Supporter card with a temporary initials placeholder until Kitamba Paul's photo is added. */
+.supporter-grid { display:grid; grid-template-columns:minmax(0,760px); gap:22px; }
+.supporter-card { display:grid; grid-template-columns:minmax(180px,260px) minmax(0,1fr); overflow:hidden; border:1px solid rgba(216,172,86,.25); border-radius:20px; background:linear-gradient(145deg,#111a2b,#0c1322); }
+.supporter-photo-placeholder { min-height:280px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; background:linear-gradient(145deg,#17233a,#0c1322); color:#f2cf83; border-right:1px solid rgba(216,172,86,.2); }
+.supporter-photo-placeholder span { width:90px; height:90px; display:grid; place-items:center; border:2px solid #d8ac56; border-radius:50%; font:700 2rem "Playfair Display",serif; }
+.supporter-photo-placeholder small { color:#b7c0ce; font-size:.72rem; letter-spacing:1px; text-transform:uppercase; }
+.supporter-card-body { padding:28px; }
+.supporter-card-body h3 { font-size:1.8rem; margin:10px 0; }
+.supporter-card-body p { color:#b7c0ce; }
+.supporter-thanks { color:#f2cf83 !important; font-style:italic; margin-top:12px; }
+.supporter-cta { margin-top:38px; padding:28px; border:1px solid rgba(216,172,86,.24); border-radius:18px; background:rgba(216,172,86,.06); }
+.supporter-cta h3 { margin-bottom:10px; color:#f2cf83; font-size:1.6rem; }
+.supporter-cta p { color:#b7c0ce; }
+html.kw-light .supporter-photo-placeholder { background:#efe5d6 !important; color:#8d6424 !important; border-color:var(--kw-light-border) !important; }
+html.kw-light .supporter-photo-placeholder small { color:#6f6458 !important; }
+html.kw-light .supporter-cta { background:#fffaf2 !important; border-color:var(--kw-light-border) !important; }
+@media(max-width:760px) {
+  .supporter-card { grid-template-columns:1fr; }
+  .supporter-photo-placeholder { min-height:190px; border-right:0; border-bottom:1px solid rgba(216,172,86,.2); }
+  .supporter-card-body { padding:22px; }
+}
