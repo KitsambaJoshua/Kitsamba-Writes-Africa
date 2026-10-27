@@ -30,3 +30,10 @@ html.kw-light .founder-quote,html.kw-light .influence-list span,html.kw-light .n
 @media(max-width:1200px){.kwa-header .kwa-nav{flex-wrap:wrap}.kwa-links{order:3;flex-basis:100%;justify-content:flex-start}.kwa-actions{margin-left:auto}}
 @media(max-width:700px){.kwa-header .kwa-nav{gap:10px}.kwa-brand strong{font-size:.9rem!important}.kwa-brand small{font-size:.5rem}.kwa-header .kwa-links{gap:10px 13px}.kwa-header .kwa-links a{font-size:.76rem!important}.kwa-header .kwa-login{font-size:.65rem;padding:9px}.kwa-mark{width:30px;height:30px}.stakeholder-page .founder-grid{grid-template-columns:1fr;padding:18px}.kwa-links.kwa-collapsed{display:none!important}}
 
+
+/* Brand mark and navigation typography */
+.kwa-header .kwa-mark{width:64px;height:64px;border:0;border-radius:8px;background:#090909 url("images/logo.png") center/contain no-repeat;font-size:0;flex-shrink:0}
+.kwa-header .kwa-links a{font-family:"DM Sans",Arial,sans-serif!important;font-size:.84rem!important;font-weight:600!important;letter-spacing:.01em;line-height:1.4}
+.kwa-header .kwa-login,.kwa-header .kwa-menu{font-family:"DM Sans",Arial,sans-serif!important;letter-spacing:.01em}
+@media(max-width:700px){.kwa-header .kwa-mark{width:48px;height:48px}.kwa-header .kwa-links a{font-size:.8rem!important}}
+
