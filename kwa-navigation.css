@@ -1,0 +1,32 @@
+/* Unified site navigation and colour modes */
+header.kwa-old-header{display:none!important}
+header.kwa-header{position:relative!important;top:auto!important;left:auto!important;width:100%!important;z-index:1000;background:#090909!important;border-bottom:1px solid #a37b35;padding:0!important}
+.kwa-header .kwa-nav{width:min(1500px,96%);margin:auto;min-height:94px;display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;gap:18px;padding:14px 0!important}
+.kwa-brand{display:flex!important;align-items:center;gap:10px;flex:0 0 auto;color:#f7f1e5!important;text-decoration:none}
+.kwa-brand strong{font:700 1.12rem Georgia,serif!important;display:block;color:inherit!important}
+.kwa-brand small{display:block;color:#d8ac56;font-size:.57rem;letter-spacing:1.3px;text-transform:uppercase}
+.kwa-mark{display:grid;place-items:center;width:38px;height:38px;border:1px solid #d8ac56;border-radius:50%;color:#d8ac56;font-size:20px}
+.kwa-links{display:flex!important;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px 15px;flex:1}
+.kwa-header .kwa-links a{color:#f4efe7!important;font:600 .79rem Arial,sans-serif!important;white-space:nowrap;text-decoration:none}
+.kwa-header .kwa-links a:hover,.kwa-header .kwa-links a[aria-current=page]{color:#e8bd68!important}
+.kwa-actions{display:flex;align-items:center;gap:9px;flex:0 0 auto}
+.kwa-header .kwa-login{display:inline-flex;align-items:center;justify-content:center;background:#d8ac56!important;color:#17120b!important;padding:11px 15px;border-radius:30px;font:700 .75rem Arial,sans-serif;white-space:nowrap;text-decoration:none}
+.kwa-menu{border:1px solid #b58d4a;border-radius:20px;background:transparent;color:#f7f1e5;padding:7px 9px;font:700 .68rem Arial,sans-serif;cursor:pointer;white-space:nowrap}
+.kwa-header #kw-theme-toggle{margin-left:0!important;order:3}
+html.kw-light .kwa-header{background:#fffaf2!important;border-color:#c9ac7d!important}
+html.kw-light .kwa-header .kwa-brand,html.kw-light .kwa-header .kwa-links a{color:#211c17!important}
+html.kw-light .kwa-menu{color:#211c17;background:#fffaf2}
+html.kw-light body main section,html.kw-light body main article,html.kw-light body main aside,html.kw-light body footer{background-color:#fffaf2;color:#211c17}
+html.kw-light body main section{background-image:none}
+html.kw-dark body main section{background-color:#101010;color:#f7f1e5}
+html.kw-dark body main .submit{background:#101010;color:#f7f1e5}
+html.kw-light .founder-section,html.kw-light .stakeholder-page .hero{background:#fffaf2!important}
+html.kw-light .founder-copy p,html.kw-light .stakeholder-page p{color:#5c5145!important}
+html.kw-light .founder-quote,html.kw-light .influence-list span,html.kw-light .note{background:#f0e7d9!important;color:#514538!important}
+.stakeholder-page .hero{padding:70px 0 40px}
+.stakeholder-page .founder-section{padding:32px 0 60px}
+.stakeholder-page .founder-grid{border:1px solid rgba(216,172,86,.45);border-radius:20px;padding:28px;grid-template-columns:minmax(180px,260px) minmax(0,1fr)}
+.stakeholder-page .founder-photo img{height:340px}
+@media(max-width:1200px){.kwa-header .kwa-nav{flex-wrap:wrap}.kwa-links{order:3;flex-basis:100%;justify-content:flex-start}.kwa-actions{margin-left:auto}}
+@media(max-width:700px){.kwa-header .kwa-nav{gap:10px}.kwa-brand strong{font-size:.9rem!important}.kwa-brand small{font-size:.5rem}.kwa-header .kwa-links{gap:10px 13px}.kwa-header .kwa-links a{font-size:.76rem!important}.kwa-header .kwa-login{font-size:.65rem;padding:9px}.kwa-mark{width:30px;height:30px}.stakeholder-page .founder-grid{grid-template-columns:1fr;padding:18px}.kwa-links.kwa-collapsed{display:none!important}}
+

@@ -23,9 +23,9 @@ header{position:sticky;top:0;z-index:1000;background:rgba(8,8,8,.96);backdrop-fi
 @media(max-width:760px){.intro-grid{grid-template-columns:1fr;text-align:center}.cover{width:min(250px,72%);margin:auto}.meta{justify-content:center}.summary{margin:auto}.reader-top{align-items:flex-start;flex-direction:column}.reader-card{min-height:520px;padding:55px 28px 45px}.reader-nav{flex-wrap:wrap}.page-count{order:3;width:100%}}
 </style>
 <script src="theme.js"></script>
-</head>
-<body>
-<header><div class="container"><nav class="nav"><a href="index.html" class="brand"><div class="brand-icon"><i class="fa-solid fa-feather-pointed"></i></div><div><strong>Kitsamba Writes</strong><span>Africa</span></div></a><div class="nav-actions"><a class="nav-btn" href="authors.html"><i class="fa-solid fa-arrow-left"></i> Library</a><button class="nav-btn" id="bookmarkBtn" title="Save reading position"><i class="fa-regular fa-bookmark"></i></button></div></nav></div></header>
+<link rel="stylesheet" href="kwa-navigation.css"></head>
+<body><header class="kwa-header"><nav class="kwa-nav" aria-label="Main navigation"><a class="kwa-brand" href="index.html"><span class="kwa-mark">✒</span><span><strong>Kitsamba Writes Africa</strong><small>African stories · Global voices</small></span></a><div class="kwa-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="authors.html">Authors</a><a href="novels.html">Novels</a><a href="book.html">Book Library</a><a href="free-books.html">Free Books</a><a href="articles.html">Articles</a><a href="blog.html">Blog</a><a href="lifestyle.html">Lifestyle</a><a href="plays.html">Plays</a><a href="poems.html">Poems</a><a href="videos.html">Videos</a><a href="stakeholders.html">Stakeholders</a><a href="contact.html">Contact</a><a href="settings.html">Settings</a></div><div class="kwa-actions"><a class="kwa-login" href="login.html">Login / Create Account</a><button class="kwa-menu" type="button" aria-label="Show navigation" aria-expanded="true">MENU ☰</button></div></nav></header>
+<header class="kwa-old-header" aria-hidden="true" inert><div class="container"><nav class="nav"><a href="index.html" class="brand"><div class="brand-icon"><i class="fa-solid fa-feather-pointed"></i></div><div><strong>Kitsamba Writes</strong><span>Africa</span></div></a><div class="nav-actions"><a class="nav-btn" href="authors.html"><i class="fa-solid fa-arrow-left"></i> Library</a><button class="nav-btn" id="bookmarkBtn" title="Save reading position"><i class="fa-regular fa-bookmark"></i></button></div></nav></div></header>
 <main id="app"><div class="loading"><i class="fa-solid fa-book-open fa-beat-fade"></i><p>Opening book from the Kitsamba Writes library…</p></div></main>
 <script>
 const app=document.getElementById('app');
@@ -49,5 +49,5 @@ function wire(){document.getElementById('prev').onclick=()=>{if(pageIndex>0){pag
 async function init(){try{if(!id)throw new Error('missing');const lib=await getLibrary();meta=lib[id];if(!meta)throw new Error('missing');const text=await getLocalText(id);isFullText=!!text;pages=text?parseText(text):buildGuide();const saved=parseInt(localStorage.getItem(`kw-reading-${id}`),10);if(Number.isInteger(saved)&&saved>=0&&saved<pages.length)pageIndex=saved;renderShell()}catch(e){app.innerHTML=`<section class="error"><i class="fa-solid fa-book-open"></i><h1>Book not found</h1><p>This book is not yet registered in the local Kitsamba Writes library.</p><a class="nav-btn" href="authors.html">Return to Authors & Books</a></section>`}}
 init();
 </script>
-</body>
+<script src="kwa-navigation.js"></script></body>
 </html>
