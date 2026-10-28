@@ -4,19 +4,15 @@
     "author": "Kitsamba Joshua",
     "country": "Uganda",
     "year": "—",
-    "type": "Biography · introduction",
-    "themes": [
-      "Education",
-      "African storytelling",
-      "Creativity",
-      "Hope"
-    ],
-    "summary": "Discover the life, education and writing journey of Kitsamba Joshua, founder of Kitsamba Writes Africa.",
-    "why": "An introduction to the writer behind Kitsamba Writes Africa, drawn from the biography he shares on this website.",
+    "type": "Biography · coming soon",
+    "themes": [],
+    "summary": "Biography text coming soon.",
+    "why": "",
     "publicDomain": false,
-    "localFullText": true,
+    "localFullText": false,
     "cover": "images/Kitsamba%20Joshua_%20Biography.png",
-    "readingLabel": "Biographical introduction available"
+    "readingLabel": "Coming soon",
+    "pending": true
   },
   "native-life-in-south-africa": {
     "title": "Native Life in South Africa",
