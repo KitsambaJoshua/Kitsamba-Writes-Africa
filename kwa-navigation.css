@@ -42,3 +42,9 @@ html.kw-light .founder-quote,html.kw-light .influence-list span,html.kw-light .n
    Contrasting logo tiles keep both versions visible. */
 html.kw-light .kwa-header .kwa-mark{background-color:#181818!important;background-blend-mode:screen;filter:none}
 html.kw-dark .kwa-header .kwa-mark{background-color:#f5f1e9!important;filter:invert(1)}
+
+/* Theme-responsive logo: use the image as a mask so its visible silhouette has the exact requested colour. */
+html.kw-light .kwa-header .kwa-mark,html.kw-dark .kwa-header .kwa-mark{background-image:none!important;filter:none!important;position:relative;background-color:transparent!important}
+html.kw-light .kwa-header .kwa-mark::after,html.kw-dark .kwa-header .kwa-mark::after{content:"";position:absolute;inset:0;display:block;-webkit-mask:url("images/logo.png") center/contain no-repeat;mask:url("images/logo.png") center/contain no-repeat}
+html.kw-light .kwa-header .kwa-mark::after{background-color:#fff!important}
+html.kw-dark .kwa-header .kwa-mark::after{background-color:#000!important}
