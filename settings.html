@@ -3753,71 +3753,8 @@ FIREBASE + SETTINGS SCRIPT
 FIREBASE IMPORTS
 ====================================== */
 
-import {
-
-initializeApp
-
-}
-
-from
-
-"https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
-
-
-import {
-
-getAuth,
-
-onAuthStateChanged,
-
-updateProfile,
-
-sendPasswordResetEmail,
-
-signOut
-
-}
-
-from
-
-"https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
-
-
-
-/* ======================================
-FIREBASE CONFIG
-====================================== */
-
-const firebaseConfig = {
-
-apiKey:
-"AIzaSyCEQNYqNKCL2uZSenJlv8AO60fNh31F5fg",
-
-authDomain:
-"kitsamba-writes-africa.firebaseapp.com",
-
-projectId:
-"kitsamba-writes-africa",
-
-storageBucket:
-"kitsamba-writes-africa.firebasestorage.app",
-
-messagingSenderId:
-"345094514691",
-
-appId:
-"1:345094514691:web:11ad3be96e1cc312f04636"
-
-};
-
-
-const app =
-initializeApp(firebaseConfig);
-
-
-const auth =
-getAuth(app);
-
+import { auth } from "./firebase-config.js";
+import { onAuthStateChanged, updateProfile, sendPasswordResetEmail, signOut } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
 
 let currentUser = null;
 
