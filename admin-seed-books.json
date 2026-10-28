@@ -85,5 +85,70 @@
     "sourcePage": "",
     "free": false,
     "status": "draft"
+  },
+  {
+    "id": "between-life-and-goodbye",
+    "title": "BETWEEN LIFE AND GOODBYE",
+    "author": "Kitsamba Joshua",
+    "type": "poem",
+    "coverUrl": "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=85",
+    "summary": "A reflective poem about the fragile space between holding on and letting go.",
+    "publicText": "",
+    "purchaseUrl": "",
+    "sourcePage": "",
+    "free": false,
+    "status": "draft"
+  },
+  {
+    "id": "the-smallest-light",
+    "title": "THE SMALLEST LIGHT",
+    "author": "Kitsamba Joshua",
+    "type": "poem",
+    "coverUrl": "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1200&q=85",
+    "summary": "A poem about hope that survives—even when it begins as something almost too small to see.",
+    "publicText": "",
+    "purchaseUrl": "",
+    "sourcePage": "",
+    "free": false,
+    "status": "draft"
+  },
+  {
+    "id": "the-last-spear-of-orens",
+    "title": "THE LAST SPEAR OF ORENS",
+    "author": "Kitsamba Joshua",
+    "type": "poem",
+    "coverUrl": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85",
+    "summary": "A poetic work with a mythic tone, exploring legacy, courage and the final symbol of a fading struggle.",
+    "publicText": "",
+    "purchaseUrl": "",
+    "sourcePage": "",
+    "free": false,
+    "status": "draft"
+  },
+  {
+    "id": "unpredictable-destiny",
+    "title": "UNPREDICTABLE DESTINY",
+    "author": "Kitsamba Joshua",
+    "type": "play",
+    "coverUrl": "https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=1200&q=85",
+    "summary": "A dramatic story about the turns life takes, the choices we make, and the consequences no one sees coming.",
+    "publicText": "",
+    "purchaseUrl": "",
+    "sourcePage": "",
+    "free": false,
+    "status": "draft"
+  },
+  {
+    "id": "last-meet",
+    "title": "LAST MEET",
+    "author": "Kitsamba Joshua",
+    "type": "play",
+    "coverUrl": "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=1200&q=85",
+    "summary": "A story about one final encounter, the words left unsaid, and what remains when paths separate.",
+    "publicText": "",
+    "purchaseUrl": "",
+    "sourcePage": "",
+    "free": false,
+    "status": "draft"
   }
 ]
