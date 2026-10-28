@@ -1,0 +1,37 @@
+/* Professional settings dashboard — scoped to settings.html. */
+.settings-page{--settings-surface:#171717;--settings-panel:#1e1e1e;--settings-ink:#f8f4ec;--settings-muted:#aaa095;--settings-line:rgba(216,172,86,.18);background:radial-gradient(ellipse at 85% 0%,rgba(216,172,86,.11),transparent 38%),#0e0e0e!important}
+.settings-page .container{width:min(1320px,94%)}
+.settings-layout{grid-template-columns:255px minmax(0,1fr);gap:30px}
+.settings-page .sidebar{top:98px;border:1px solid var(--settings-line);border-radius:20px;background:var(--settings-surface);box-shadow:0 15px 42px rgba(0,0,0,.13)}
+.settings-page .sidebar-user{padding:28px 18px 22px;background:linear-gradient(160deg,rgba(216,172,86,.12),transparent 75%)}
+.settings-page .sidebar-avatar{width:76px;height:76px;box-shadow:0 0 0 5px rgba(216,172,86,.12)}
+.settings-page .sidebar-nav{padding:12px}
+.settings-page .sidebar-link{min-height:48px;text-align:left;font-weight:650;border-radius:11px;transition:background .2s,color .2s}
+.settings-page .sidebar-link.active{background:rgba(216,172,86,.16);color:var(--settings-ink);box-shadow:inset 3px 0 0 #d8ac56}
+.settings-page .sidebar-link:hover{background:rgba(216,172,86,.12)}
+.settings-page .settings-hero{padding:clamp(26px,4vw,44px);border-radius:20px;background:linear-gradient(120deg,#242019,#161616 72%);box-shadow:0 12px 38px rgba(0,0,0,.11)}
+.settings-page .settings-hero h1{font-size:clamp(2.15rem,4vw,3.65rem);line-height:1.12;max-width:650px}
+.settings-page .settings-hero p{line-height:1.7;max-width:630px}
+.settings-page .status-pill{border-radius:9px}
+.settings-page .settings-section{border:1px solid var(--settings-line);border-radius:18px;background:var(--settings-surface);box-shadow:0 8px 28px rgba(0,0,0,.09)}
+.settings-page .section-header{padding:23px 27px;border-bottom:1px solid var(--settings-line)}
+.settings-page .section-header h2{font-size:1.45rem}
+.settings-page .section-body{padding:26px 27px}
+.settings-page .section-icon{border-radius:12px}
+.settings-page :is(input[type=text],input[type=email],input[type=password],textarea,select){max-width:100%;border-radius:10px;transition:border-color .2s,box-shadow .2s}
+.settings-page :is(input,textarea,select,button,a):focus-visible{outline:3px solid #d8ac56!important;outline-offset:3px!important}
+.settings-page :is(.primary-btn,.secondary-btn,.danger-btn){border-radius:10px;min-height:43px}
+.settings-page .profile-photo-card{border-radius:14px}
+.settings-page .theme-option{border-radius:14px;transition:transform .2s,border-color .2s}
+.settings-page .theme-option:hover{transform:translateY(-2px)}
+.settings-page .setting-row{gap:18px}
+.settings-page .toast{z-index:11000}
+html.kw-light .settings-page{--settings-surface:#fffdf9;--settings-panel:#f8f1e7;--settings-ink:#211b15;--settings-muted:#6b6259;--settings-line:#e4d7c3;background:radial-gradient(ellipse at 85% 0%,#f1e3c9,transparent 38%),#f7f3ed!important;color:#211b15!important}
+html.kw-light .settings-page .sidebar,html.kw-light .settings-page .settings-section{background:#fffdf9!important;color:#211b15!important;border-color:#e4d7c3!important}
+html.kw-light .settings-page .settings-hero{background:linear-gradient(120deg,#fffaf0,#f5ead6)!important;color:#211b15!important}
+html.kw-light .settings-page .settings-hero p,html.kw-light .settings-page .section-header p,html.kw-light .settings-page .sidebar-user p{color:#645b51!important}
+html.kw-light .settings-page .sidebar-link.active{color:#211b15!important;background:#f2e4cc!important}
+html.kw-light .settings-page .sidebar-link:hover{background:#f6ebdb!important}
+@media(max-width:980px){.settings-layout{grid-template-columns:1fr!important}.settings-page .sidebar{position:static!important}.settings-page .sidebar-user{display:flex;align-items:center;gap:15px;text-align:left;flex-wrap:wrap}.settings-page .sidebar-avatar{margin:0}.settings-page .sidebar-nav{display:flex;gap:7px;overflow-x:auto;padding:12px}.settings-page .sidebar-link{width:auto;min-width:max-content;padding:12px 15px}}
+@media(max-width:600px){.settings-page{padding-top:100px}.settings-page .settings-hero{padding:25px 20px}.settings-page .settings-hero h1{font-size:2.2rem}.settings-page .section-header,.settings-page .section-body{padding:20px 17px}.settings-page .profile-grid,.settings-page .field-grid{grid-template-columns:1fr!important}.settings-page .sidebar-user{padding:17px}.settings-page .sidebar-avatar{width:56px;height:56px}.settings-page .hero-status{gap:7px}.settings-page .status-pill{font-size:.75rem}}
+@media(prefers-reduced-motion:reduce){.settings-page *{transition:none!important;scroll-behavior:auto!important}}
