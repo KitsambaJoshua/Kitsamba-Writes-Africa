@@ -37,3 +37,8 @@ html.kw-light .founder-quote,html.kw-light .influence-list span,html.kw-light .n
 .kwa-header .kwa-login,.kwa-header .kwa-menu{font-family:"DM Sans",Arial,sans-serif!important;letter-spacing:.01em}
 @media(max-width:700px){.kwa-header .kwa-mark{width:48px;height:48px}.kwa-header .kwa-links a{font-size:.8rem!important}}
 
+
+/* Brand logo colours: white in light mode, black in dark mode.
+   Contrasting logo tiles keep both versions visible. */
+html.kw-light .kwa-header .kwa-mark{background-color:#181818!important;background-blend-mode:screen;filter:none}
+html.kw-dark .kwa-header .kwa-mark{background-color:#f5f1e9!important;filter:invert(1)}
