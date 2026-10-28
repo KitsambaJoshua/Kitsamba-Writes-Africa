@@ -1,6 +1,12 @@
 (() => {
   const STORAGE_KEY = 'kitsamba-writes-theme';
   const root = document.documentElement;
+  const colourSheetUrl = new URL('theme-colors.css?v=20261028', document.currentScript.src).href;
+  const colourSheet = document.createElement('link');
+  colourSheet.id = 'kw-colour-sheet';
+  colourSheet.rel = 'stylesheet';
+  colourSheet.href = colourSheetUrl;
+  document.head.appendChild(colourSheet);
 
   const sunIcon = `
     <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -393,6 +399,7 @@
       document.body.insertBefore(button, document.body.firstChild);
     }
 
+    document.head.appendChild(colourSheet);
     applyTheme(readTheme());
   }
 
@@ -402,3 +409,4 @@
     mount();
   }
 })();
+
