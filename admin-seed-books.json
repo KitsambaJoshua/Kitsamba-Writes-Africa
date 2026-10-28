@@ -46,5 +46,44 @@
     "purchaseUrl": "when-our-hearts-learned-silence.html#premium",
     "sourcePage": "when-our-hearts-learned-silence.html",
     "status": "published"
+  },
+  {
+    "id": "a-love-written-in-rain",
+    "title": "A Love Written in Rain",
+    "author": "Kitsamba Joshua",
+    "type": "novel",
+    "coverUrl": "images/A%20Love%20Written%20In%20Rain.png",
+    "summary": "Two wounded hearts meet during a violent storm in Kampala.",
+    "publicText": "",
+    "purchaseUrl": "",
+    "sourcePage": "",
+    "free": false,
+    "status": "draft"
+  },
+  {
+    "id": "before-the-last-goodbye",
+    "title": "Before the Last Goodbye",
+    "author": "Kitsamba Joshua",
+    "type": "novel",
+    "coverUrl": "images/Before%20The%20Last%20Goodbye.png",
+    "summary": "A story of love, time and the words left to say before goodbye.",
+    "publicText": "",
+    "purchaseUrl": "",
+    "sourcePage": "",
+    "free": false,
+    "status": "draft"
+  },
+  {
+    "id": "the-season-between-us",
+    "title": "The Season Between Us",
+    "author": "Kitsamba Joshua",
+    "type": "novel",
+    "coverUrl": "images/The%20Season%20Between%20Us.png",
+    "summary": "A story of second chances and the possibility of love returning.",
+    "publicText": "",
+    "purchaseUrl": "",
+    "sourcePage": "",
+    "free": false,
+    "status": "draft"
   }
 ]
