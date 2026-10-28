@@ -400,6 +400,13 @@
     }
 
     document.head.appendChild(colourSheet);
+    if (!document.getElementById('kwa-auth-navigation')) {
+      const authScript = document.createElement('script');
+      authScript.id = 'kwa-auth-navigation';
+      authScript.type = 'module';
+      authScript.src = new URL('auth-navigation.js?v=20261028', document.currentScript?.src || location.href).href;
+      document.head.appendChild(authScript);
+    }
     applyTheme(readTheme());
   }
 
