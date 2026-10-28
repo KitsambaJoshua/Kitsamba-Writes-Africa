@@ -1473,76 +1473,17 @@ FIREBASE
 IMPORT FIREBASE
 ========================= */
 
+import { auth } from "./firebase-config.js";
 import {
-    initializeApp
-}
-from
-"https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
-
-
-import {
-
-    getAuth,
-
     GoogleAuthProvider,
-
     signInWithPopup,
-
     signInWithEmailAndPassword,
-
     createUserWithEmailAndPassword,
-
     sendPasswordResetEmail,
-
     updateProfile,
-
     onAuthStateChanged,
-
     signOut
-
-}
-from
-"https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
-
-
-/* =========================
-YOUR FIREBASE PROJECT
-========================= */
-
-const firebaseConfig = {
-
-    apiKey:
-    "AIzaSyCEQNYqNKCL2uZSenJlv8AO60fNh31F5fg",
-
-    authDomain:
-    "kitsamba-writes-africa.firebaseapp.com",
-
-    projectId:
-    "kitsamba-writes-africa",
-
-    storageBucket:
-    "kitsamba-writes-africa.firebasestorage.app",
-
-    messagingSenderId:
-    "345094514691",
-
-    appId:
-    "1:345094514691:web:11ad3be96e1cc312f04636"
-
-};
-
-
-/* =========================
-INITIALIZE
-========================= */
-
-const app =
-initializeApp(firebaseConfig);
-
-
-const auth =
-getAuth(app);
-
+} from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
 
 const googleProvider =
 new GoogleAuthProvider();
@@ -1729,7 +1670,7 @@ async function(){
         ){
 
             message =
-            "This website domain has not yet been authorized in Firebase. Add kitsambawisdomjoshua.github.io under Authentication → Settings → Authorized domains.";
+            "This website domain has not yet been authorized in Firebase. Add kitsambajoshua.github.io under Authentication → Settings → Authorized domains.";
 
         }
 
