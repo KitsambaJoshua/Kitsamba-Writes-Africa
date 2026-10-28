@@ -1,11 +1,35 @@
 {
+  "kitsamba-joshua-biography": {
+    "title": "Kitsamba Joshua’s Biography",
+    "author": "Kitsamba Joshua",
+    "country": "Uganda",
+    "year": "—",
+    "type": "Biography · introduction",
+    "themes": [
+      "Education",
+      "African storytelling",
+      "Creativity",
+      "Hope"
+    ],
+    "summary": "Discover the life, education and writing journey of Kitsamba Joshua, founder of Kitsamba Writes Africa.",
+    "why": "An introduction to the writer behind Kitsamba Writes Africa, drawn from the biography he shares on this website.",
+    "publicDomain": false,
+    "localFullText": true,
+    "cover": "images/Kitsamba%20Joshua_%20Biography.png",
+    "readingLabel": "Biographical introduction available"
+  },
   "native-life-in-south-africa": {
     "title": "Native Life in South Africa",
     "author": "Sol T. Plaatje",
     "country": "South Africa",
     "year": "1916",
     "type": "History / political writing",
-    "themes": ["Land", "Colonial rule", "Black South African life", "Justice"],
+    "themes": [
+      "Land",
+      "Colonial rule",
+      "Black South African life",
+      "Justice"
+    ],
     "summary": "Sol Plaatje documents the effects of the 1913 Natives' Land Act on Black South Africans, combining firsthand observation, political argument and accounts of families displaced from their land.",
     "why": "A major early work by a Black South African writer and political leader, preserving firsthand testimony about land dispossession and segregation.",
     "publicDomain": true,
@@ -17,7 +41,12 @@
     "country": "Present-day Nigeria / African diaspora",
     "year": "1789",
     "type": "Autobiography",
-    "themes": ["Slavery", "Freedom", "Travel", "Abolition"],
+    "themes": [
+      "Slavery",
+      "Freedom",
+      "Travel",
+      "Abolition"
+    ],
     "summary": "Equiano recounts his childhood in Africa, enslavement, travels across the Atlantic world, purchase of his freedom and later work as an abolitionist.",
     "why": "One of the most influential first-person narratives connected to the African experience of the transatlantic slave trade and the abolition movement.",
     "publicDomain": true,
@@ -29,7 +58,12 @@
     "country": "South Africa",
     "year": "1883",
     "type": "Novel",
-    "themes": ["Gender", "Faith", "Freedom", "Farm life"],
+    "themes": [
+      "Gender",
+      "Faith",
+      "Freedom",
+      "Farm life"
+    ],
     "summary": "Set on a Karoo farm, the novel follows Waldo, Em and Lyndall from childhood toward adulthood while questioning religion, gender expectations, love and personal freedom.",
     "why": "An important early South African novel, especially noted for its challenge to Victorian assumptions about women, marriage and independence.",
     "publicDomain": true,

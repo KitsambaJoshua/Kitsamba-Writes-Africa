@@ -34,3 +34,7 @@ html:is(.kw-light,.kw-dark) body :is(.btn:not(.btn-outline):not(.btn-secondary),
 /* Reader callout is a panel rather than a section element. */
 html:is(.kw-light,.kw-dark) body .reader-strip{background:var(--kw-surface)!important;color:var(--kw-ink)!important;border-color:var(--kw-line)!important}
 html:is(.kw-light,.kw-dark) body .reader-strip :is(p,span){color:var(--kw-copy)!important}
+
+
+/* Main containers can carry fixed gradients too, notably the login page. */
+html:is(.kw-light,.kw-dark) body main{background-image:none!important}
