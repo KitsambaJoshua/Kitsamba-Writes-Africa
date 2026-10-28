@@ -1,24 +1,96 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function isAdmin() {
+      return signedIn()
+        && exists(/databases/$(database)/documents/siteAdmins/$(request.auth.uid))
+        && get(/databases/$(database)/documents/siteAdmins/$(request.auth.uid)).data.enabled == true;
+    }
+    function validStory() {
+      let d = request.resource.data;
+      return d.keys().hasAll(['title','type','content','authorId','authorName','status','createdAt','updatedAt'])
+        && d.keys().hasOnly(['title','type','content','authorId','authorName','status','createdAt','updatedAt'])
+        && d.authorId is string && d.authorName is string && d.authorName.size() > 0 && d.authorName.size() <= 100
+        && d.title is string && d.title.size() > 0 && d.title.size() <= 160
+        && d.content is string && d.content.size() > 0 && d.content.size() <= 100000
+        && d.type in ['novel','play','poem'] && d.status in ['pending','published','rejected']
+        && d.createdAt is timestamp && d.createdAt <= request.time && d.updatedAt == request.time;
+    }
+    function validBook(bookId) {
+      let d = request.resource.data;
+      return d.id == bookId && d.title is string && d.title.size() > 0 && d.title.size() <= 160
+        && d.author is string && d.author.size() > 0 && d.author.size() <= 100
+        && d.summary is string && d.summary.size() > 0 && d.summary.size() <= 2000
+        && d.publicText is string && d.publicText.size() <= 100000
+        && d.type in ['novel','play','poem','biography','other']
+        && d.coverUrl is string && d.coverUrl.size() <= 2000
+        && d.purchaseUrl is string && d.purchaseUrl.size() <= 2000
+        && d.sourcePage is string && d.sourcePage.size() <= 2000
+        && d.free is bool && d.status in ['draft','published'] && d.updatedAt == request.time;
+    }
+    function validPerson(personId) {
+      let d = request.resource.data;
+      return d.id == personId && d.name is string && d.name.size() > 0 && d.name.size() <= 120
+        && d.role is string && d.role.size() > 0 && d.role.size() <= 120
+        && d.bio is string && d.bio.size() > 0 && d.bio.size() <= 4000
+        && d.photoUrl is string && d.photoUrl.size() <= 2000
+        && d.order is int && d.order >= 0 && d.order <= 9999
+        && d.active is bool && d.updatedAt == request.time;
+    }
+    // Admin membership can only be provisioned by the project owner/server.
+    match /siteAdmins/{uid} {
+      allow get: if signedIn() && request.auth.uid == uid;
+      allow list, create, update, delete: if false;
+    }
     match /communityStories/{storyId} {
-      function validStory() {
-        let d = request.resource.data;
-        return d.keys().hasAll(['title','type','content','authorId','authorName','status','createdAt','updatedAt'])
-          && d.keys().hasOnly(['title','type','content','authorId','authorName','status','createdAt','updatedAt'])
-          && d.authorId == request.auth.uid
-          && d.title is string && d.title.size() > 0 && d.title.size() <= 160
-          && d.content is string && d.content.size() > 0 && d.content.size() <= 100000
-          && d.authorName is string && d.authorName.size() > 0 && d.authorName.size() <= 100
-          && d.type in ['novel','play','poem'] && d.status == 'published'
-          && d.createdAt is timestamp && d.createdAt <= request.time
-          && d.updatedAt == request.time;
-      }
-      allow read: if resource.data.status == 'published' || (request.auth != null && resource.data.authorId == request.auth.uid);
-      allow create: if request.auth != null && validStory();
-      allow update: if request.auth != null && resource.data.authorId == request.auth.uid && validStory()
-        && request.resource.data.createdAt == resource.data.createdAt;
-      allow delete: if request.auth != null && resource.data.authorId == request.auth.uid;
+      allow read: if resource.data.status == 'published' || isAdmin() || (signedIn() && resource.data.authorId == request.auth.uid);
+      allow create: if signedIn() && validStory() && request.resource.data.authorId == request.auth.uid
+        && (request.resource.data.status == 'pending' || isAdmin());
+      allow update: if signedIn() && validStory()
+        && request.resource.data.authorId == resource.data.authorId
+        && request.resource.data.createdAt == resource.data.createdAt
+        && (isAdmin() || (resource.data.authorId == request.auth.uid && request.resource.data.status == 'pending'));
+      allow delete: if isAdmin() || (signedIn() && resource.data.authorId == request.auth.uid);
+    }
+    match /managedBooks/{bookId} {
+      allow read: if isAdmin();
+      allow create, update: if isAdmin() && validBook(bookId) && request.resource.data.updatedBy == request.auth.uid;
+      allow delete: if isAdmin();
+    }
+    match /publicBooks/{bookId} {
+      allow read: if true;
+      allow create, update: if isAdmin() && (
+        (request.resource.data.visible == true && request.resource.data.status == 'published' && validBook(bookId)
+          && request.resource.data.keys().hasOnly(['id','title','author','type','coverUrl','summary','publicText','purchaseUrl','sourcePage','free','status','visible','updatedAt']))
+        || (request.resource.data.visible == false && request.resource.data.id == bookId
+          && request.resource.data.updatedAt == request.time && request.resource.data.keys().hasOnly(['id','visible','updatedAt'])));
+      allow delete: if isAdmin();
+    }
+    match /managedStakeholders/{personId} {
+      allow read: if isAdmin();
+      allow create, update: if isAdmin() && validPerson(personId) && request.resource.data.updatedBy == request.auth.uid;
+      allow delete: if isAdmin();
+    }
+    match /publicStakeholders/{personId} {
+      allow read: if true;
+      allow create, update: if isAdmin() && (
+        (request.resource.data.active == true && validPerson(personId)
+          && request.resource.data.keys().hasOnly(['id','name','role','bio','photoUrl','order','active','updatedAt']))
+        || (request.resource.data.active == false && request.resource.data.id == personId
+          && request.resource.data.updatedAt == request.time
+          && request.resource.data.keys().hasOnly(['id','active','order','updatedAt'])));
+      allow delete: if isAdmin();
+    }
+    match /publicSettings/site {
+      allow read: if true;
+      allow create, update: if isAdmin() && request.resource.data.keys().hasOnly(['siteName','heroLineOne','heroLineTwo','heroIntro','updatedAt'])
+        && request.resource.data.siteName is string && request.resource.data.siteName.size() > 0 && request.resource.data.siteName.size() <= 100
+        && request.resource.data.heroLineOne is string && request.resource.data.heroLineOne.size() > 0 && request.resource.data.heroLineOne.size() <= 100
+        && request.resource.data.heroLineTwo is string && request.resource.data.heroLineTwo.size() > 0 && request.resource.data.heroLineTwo.size() <= 100
+        && request.resource.data.heroIntro is string && request.resource.data.heroIntro.size() > 0 && request.resource.data.heroIntro.size() <= 1500
+        && request.resource.data.updatedAt == request.time;
+      allow delete: if isAdmin();
     }
   }
 }

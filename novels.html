@@ -267,7 +267,7 @@ footer{border-top:1px solid var(--line);padding:35px 0;color:#716b64;font-size:.
 }
 </style>
 <script src="theme.js?v=20261028"></script>
-<link rel="stylesheet" href="kwa-navigation.css"><link rel="stylesheet" href="community.css"><link rel="stylesheet" href="biography.css"><link rel="stylesheet" href="reading-actions.css"></head>
+<link rel="stylesheet" href="kwa-navigation.css"><link rel="stylesheet" href="community.css"><link rel="stylesheet" href="biography.css"><link rel="stylesheet" href="reading-actions.css"><link rel="stylesheet" href="managed-content.css"></head>
 <body><header class="kwa-header"><nav class="kwa-nav" aria-label="Main navigation"><a class="kwa-brand" href="index.html"><span class="kwa-mark">✒</span><span><strong>Kitsamba Writes Africa</strong><small>African stories · Global voices</small></span></a><div class="kwa-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="authors.html">Authors</a><a href="novels.html">Novels</a><a href="book.html">Book Library</a><a href="free-books.html">Free Books</a><a href="articles.html">Articles</a><a href="blog.html">Blog</a><a href="lifestyle.html">Lifestyle</a><a href="plays.html">Plays</a><a href="poems.html">Poems</a><a href="videos.html">Videos</a><a href="stakeholders.html">Stakeholders</a><a href="contact.html">Contact</a><a href="settings.html">Settings</a></div><div class="kwa-actions"><a class="kwa-login" href="login.html">Login / Create Account</a><button class="kwa-menu" type="button" aria-label="Show navigation" aria-expanded="true">MENU ☰</button></div></nav></header>
 <div class="reading-write-bar"><div class="reading-write-inner"><span>Have a story to share?</span><a class="reading-add-story" href="add-story.html">Add a Story <span aria-hidden="true">→</span></a></div></div>
 
@@ -337,10 +337,10 @@ footer{border-top:1px solid var(--line);padding:35px 0;color:#716b64;font-size:.
       <div class="count-badge"><i class="fa-solid fa-circle-check"></i> 3 novels available</div>
     </div>
 
-    <div class="book-grid"><article class="book-card biography-card"><a class="cover biography-cover" href="book.html?book=kitsamba-joshua-biography" aria-label="Read Kitsamba Joshua’s Biography"><img src="images/Kitsamba%20Joshua_%20Biography.png" alt="Kitsamba Joshua’s Biography cover" loading="lazy"></a><div class="book-body"><div class="eyebrow">Featured first · Biography</div><h3>Kitsamba Joshua’s Biography</h3><p>Biography text will be added when supplied by the author.</p><p class="biography-note">Biography · Coming soon</p><a class="read-story biography-read" href="book.html?book=kitsamba-joshua-biography">Coming soon →</a></div></article>
+    <div class="book-grid"><article data-managed-book="kitsamba-joshua-biography" class="book-card biography-card"><a class="cover biography-cover" href="book.html?book=kitsamba-joshua-biography" aria-label="Read Kitsamba Joshua’s Biography"><img src="images/Kitsamba%20Joshua_%20Biography.png" alt="Kitsamba Joshua’s Biography cover" loading="lazy"></a><div class="book-body"><div class="eyebrow">Featured first · Biography</div><h3>Kitsamba Joshua’s Biography</h3><p>Biography text will be added when supplied by the author.</p><p class="biography-note">Biography · Coming soon</p><a class="read-story biography-read" href="book.html?book=kitsamba-joshua-biography">Coming soon →</a></div></article>
 
       <!-- 1: THE SILENCE AT 2PM -->
-      <article class="book-card">
+      <article data-managed-book="silence-at-2pm" class="book-card">
         <div class="cover">
           <img src="images/The Silence At 2PM.png" alt="The Silence at 2PM">
           <span class="badge"><i class="fa-solid fa-unlock"></i> 3 Chapters Free</span>
@@ -373,7 +373,7 @@ footer{border-top:1px solid var(--line);padding:35px 0;color:#716b64;font-size:.
       </article>
 
       <!-- 2: THE STREETS OF FATE -->
-      <article class="book-card">
+      <article data-managed-book="streets-of-fate" class="book-card">
         <div class="cover">
           <img src="images/The Streets of Fate.png" alt="The Streets of Fate">
           <span class="badge"><i class="fa-solid fa-unlock"></i> 6 Chapters Free</span>
@@ -406,7 +406,7 @@ footer{border-top:1px solid var(--line);padding:35px 0;color:#716b64;font-size:.
       </article>
 
       <!-- 3: WHEN OUR HEARTS LEARNED SILENCE -->
-      <article class="book-card">
+      <article data-managed-book="when-our-hearts-learned-silence" class="book-card">
         <div class="cover">
           <img src="images/When Our Hearts Learned Silence.png" alt="When Our Hearts Learned Silence">
           <span class="badge"><i class="fa-solid fa-unlock"></i> 3 Chapters Free</span>
@@ -511,7 +511,7 @@ footer{border-top:1px solid var(--line);padding:35px 0;color:#716b64;font-size:.
 </section>
 </main>
 
-<section class="community-section" data-community-type="novel"><div class="container"><div class="eyebrow">From our writing community</div><h2>Community Novels</h2><p>Discover work shared by readers and writers.</p><a class="btn btn-gold" href="add-story.html">Add a Story →</a><p data-community-status role="status">Loading community stories…</p><div class="community-grid" data-community-list></div></div></section><footer>
+<section class="community-section" data-community-type="novel"><div class="container"><div class="eyebrow">From our writing community</div><h2>Community Novels</h2><p>Discover work shared by readers and writers.</p><a class="btn btn-gold" href="add-story.html">Add a Story →</a><p data-community-status role="status">Loading community stories…</p><div class="community-grid" data-community-list></div></div></section><section hidden class="managed-library" data-managed-library="novel"><div class="container"><h2>More from Kitsamba Writes Africa</h2><div class="managed-grid" data-managed-book-list></div></div></section><footer>
   <div class="container footer-row">
     <div>© <span id="year"></span> Kitsamba Writes Africa. All rights reserved.</div>
     <div class="footer-links">
@@ -608,8 +608,9 @@ async function loadLocalCurrencyPrices(){
 
 loadLocalCurrencyPrices();
 </script>
-<script src="kwa-navigation.js"></script><script type="module" src="community-list.js"></script></body>
+<script src="kwa-navigation.js"></script><script type="module" src="community-list.js"></script><script type="module" src="managed-content.js"></script></body>
 </html>
+
 
 
 

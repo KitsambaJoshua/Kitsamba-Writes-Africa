@@ -1,0 +1,50 @@
+[
+  {
+    "id": "kitsamba-joshua-biography",
+    "title": "Kitsamba Joshua’s Biography",
+    "author": "Kitsamba Joshua",
+    "type": "biography",
+    "coverUrl": "images/Kitsamba%20Joshua_%20Biography.png",
+    "summary": "Biography text coming soon.",
+    "publicText": "",
+    "purchaseUrl": "",
+    "sourcePage": "book.html?book=kitsamba-joshua-biography",
+    "status": "draft"
+  },
+  {
+    "id": "silence-at-2pm",
+    "title": "The Silence at 2PM",
+    "author": "Kitsamba Joshua",
+    "type": "novel",
+    "coverUrl": "images/The%20Silence%20At%202PM.png",
+    "summary": "A story of grief, memory, family and the difficult road toward making peace with loss.",
+    "publicText": "",
+    "purchaseUrl": "silence-at-2pm.html#premium",
+    "sourcePage": "silence-at-2pm.html",
+    "status": "published"
+  },
+  {
+    "id": "streets-of-fate",
+    "title": "The Streets of Fate",
+    "author": "Kitsamba Joshua",
+    "type": "novel",
+    "coverUrl": "images/The%20Streets%20of%20Fate.png",
+    "summary": "Mooli’s journey moves through loss, survival and the search for dignity and purpose.",
+    "publicText": "",
+    "purchaseUrl": "streets-of-fate.html#premium",
+    "sourcePage": "streets-of-fate.html",
+    "status": "published"
+  },
+  {
+    "id": "when-our-hearts-learned-silence",
+    "title": "When Our Hearts Learned Silence",
+    "author": "Kitsamba Joshua",
+    "type": "novel",
+    "coverUrl": "images/When%20Our%20Hearts%20Learned%20Silence.png",
+    "summary": "Elijah and Naomi meet beside Lake Victoria, carrying different wounds and slowly discovering what healing, truth and love require.",
+    "publicText": "",
+    "purchaseUrl": "when-our-hearts-learned-silence.html#premium",
+    "sourcePage": "when-our-hearts-learned-silence.html",
+    "status": "published"
+  }
+]

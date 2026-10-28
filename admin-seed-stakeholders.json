@@ -1,0 +1,20 @@
+[
+  {
+    "id": "joshua",
+    "name": "Kitsamba Joshua",
+    "role": "Founder & CEO",
+    "bio": "Kitsamba Joshua is the founder of Kitsamba Writes Africa, a home for African stories, creativity and culture.",
+    "photoUrl": "images/kitsamba-07.jpg",
+    "order": 10,
+    "active": true
+  },
+  {
+    "id": "paul",
+    "name": "Kitamba Paul",
+    "role": "Supporter & Partner",
+    "bio": "Kitamba Paul has supported and encouraged Kitsamba Joshua to stay strong and continue his work. He is willing to work together to support the growth of Kitsamba Writes Africa.",
+    "photoUrl": "",
+    "order": 20,
+    "active": true
+  }
+]
