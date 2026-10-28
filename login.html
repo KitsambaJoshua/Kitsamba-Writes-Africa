@@ -2157,6 +2157,9 @@ function(user){
 
 
     if(user){
+        const next = new URLSearchParams(location.search).get('next');
+        if (next === 'add-story.html') { location.replace('add-story.html'); return; }
+
 
 
         authArea.style.display =
@@ -2296,5 +2299,6 @@ new Date().getFullYear();
 <script src="kwa-navigation.js"></script></body>
 
 </html>
+
 
 

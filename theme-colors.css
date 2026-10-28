@@ -30,3 +30,7 @@ html:is(.kw-light,.kw-dark) body .preview-paper,html:is(.kw-light,.kw-dark) body
 html:is(.kw-light,.kw-dark) body .preview-sepia,html:is(.kw-light,.kw-dark) body .preview-sepia *{background:#ead7b5!important;color:#3d2c18!important}
 
 html:is(.kw-light,.kw-dark) body :is(.btn:not(.btn-outline):not(.btn-secondary),.nav-btn:not(.secondary),.submit>a,.submit a){background:var(--kw-button)!important;color:#17120b!important;border-color:var(--kw-button)!important}
+
+/* Reader callout is a panel rather than a section element. */
+html:is(.kw-light,.kw-dark) body .reader-strip{background:var(--kw-surface)!important;color:var(--kw-ink)!important;border-color:var(--kw-line)!important}
+html:is(.kw-light,.kw-dark) body .reader-strip :is(p,span){color:var(--kw-copy)!important}
