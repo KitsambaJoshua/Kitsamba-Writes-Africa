@@ -13,3 +13,7 @@
 .reading-write-inner>span{color:#fff!important;font-size:.85rem!important;font-weight:700!important;line-height:1.35!important}
 .reading-add-story{white-space:normal!important;text-align:center!important;background:#fff!important;color:#1d170e!important;border-color:#fff!important;padding:10px 12px!important}
 @media(max-width:600px){.reading-write-bar{right:10px!important;bottom:calc(12px + env(safe-area-inset-bottom,0px))!important;max-width:116px}.reading-write-inner{padding:10px 8px!important;border-radius:16px!important}.reading-write-inner>span{font-size:.73rem!important}.reading-add-story{font-size:.75rem!important;padding:8px!important}}
+
+/* Writing stays in the lower-left corner. */
+.reading-write-bar{left:clamp(12px,2vw,28px)!important;right:auto!important}
+@media(max-width:600px){.reading-write-bar{left:10px!important;right:auto!important}}
