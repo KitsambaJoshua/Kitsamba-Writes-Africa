@@ -4519,8 +4519,8 @@ function renderUser(
 user
 ){
 
-currentUser =
-user;
+currentUser = user;
+window.dispatchEvent(new Event('kwa-profile-updated'));
 
 
 if(user){

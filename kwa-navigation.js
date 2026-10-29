@@ -1,1 +1,4 @@
 (()=>{const header=document.querySelector('.kwa-header');if(!header)return;const links=header.querySelector('.kwa-links'),button=header.querySelector('.kwa-menu');const current=location.pathname.split('/').pop()||'index.html';links.querySelectorAll('a').forEach(a=>{if(a.getAttribute('href')===current)a.setAttribute('aria-current','page')});button.addEventListener('click',()=>{links.classList.toggle('kwa-collapsed');button.setAttribute('aria-expanded',String(!links.classList.contains('kwa-collapsed')))});})();
+
+// Reader profile is shared by every page using this navigation.
+(()=>{const style=document.createElement('link');style.rel='stylesheet';style.href='reader-profile.css?v=20261029';document.head.append(style);import('./reader-profile.js?v=20261029').catch(()=>{/* Keep the sign-in link available if authentication cannot load. */});})();
