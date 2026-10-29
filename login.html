@@ -1631,6 +1631,7 @@ async function(){
             "Google sign-in successful.",
             "success"
         );
+        location.assign("subscriptions.html?welcome=1");
 
     }
     catch(error){
@@ -1758,6 +1759,7 @@ async function(event){
                 "Your Kitsamba reader account has been created successfully.",
                 "success"
             );
+            location.assign("subscriptions.html?welcome=1");
 
 
         }
@@ -1775,6 +1777,7 @@ async function(event){
                 "Welcome back. You are now signed in.",
                 "success"
             );
+            location.assign("subscriptions.html?welcome=1");
 
 
         }
