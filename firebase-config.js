@@ -1,6 +1,7 @@
 // Firebase configuration for Kitsamba Writes Africa
 // Public client-side settings. Never put service-account private keys here.
 import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+import { initializeAppCheck, ReCaptchaEnterpriseProvider } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app-check.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
 
@@ -15,5 +16,10 @@ export const firebaseConfig = {
 };
 
 export const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
+// Initialize App Check before Firebase services. This is the public reCAPTCHA site key.
+export const appCheck = initializeAppCheck(app, {
+  provider: new ReCaptchaEnterpriseProvider("6LdvpAUuAAAAAJviR9KkiD_dc3Uz9XYBIfD-UAhc"),
+  isTokenAutoRefreshEnabled: true
+});
 export const auth = getAuth(app);
 export const db = getFirestore(app);
