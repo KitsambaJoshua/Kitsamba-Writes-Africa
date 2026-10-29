@@ -1,0 +1,41 @@
+/* Membership design: navy, warm paper and gold. */
+body{--membership-page:#061522;--membership-card:#0a2031;--membership-ink:#f8f3e9;--membership-muted:#bdc8d0;--membership-line:#a97c36;background:var(--membership-page)!important;color:var(--membership-ink)!important;font-family:'DM Sans',Arial,sans-serif}
+html.kw-light body{--membership-page:#f6f1e8;--membership-card:#fffdf8;--membership-ink:#10273b;--membership-muted:#536272;--membership-line:#c5a16a}
+body .kwa-header{background:var(--membership-page)!important}
+body .membership-main{max-width:1500px;padding:0 30px 64px}
+.membership-intro{text-align:center;padding:58px 20px 90px;position:relative;isolation:isolate}
+.membership-intro::before{content:'';position:absolute;inset:0 calc(50% - 50vw);z-index:-1;background:linear-gradient(90deg,#061522e8,#061522c9,#061522e8),url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1920&q=85') center/cover;border-bottom:1px solid #a97c3666}
+html.kw-light .membership-intro::before{background:linear-gradient(90deg,#f6f1e8ed,#f6f1e8de,#f6f1e8ed),url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1920&q=85') center/cover}
+.membership-intro .eyebrow{display:flex;align-items:center;justify-content:center;gap:20px;letter-spacing:.32em;color:#d9ad61;font-size:.76rem;margin:0 0 18px}
+.membership-intro .eyebrow::before,.membership-intro .eyebrow::after{content:'';width:70px;height:1px;background:linear-gradient(90deg,transparent,#b88b42)}
+.membership-intro h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.5rem,5vw,4.7rem);font-weight:600;letter-spacing:-.035em;margin:0 0 20px;line-height:1.15;color:var(--membership-ink)}
+.membership-intro h1 span{color:#d9ad61}
+.membership-intro .intro{margin:0 auto 18px;max-width:850px;font-size:1.08rem;color:var(--membership-muted);line-height:1.75}
+.membership-intro .status{font-size:.77rem;border:1px solid #b88b4266;background:transparent;color:var(--membership-muted);border-radius:50px;padding:6px 16px;max-width:100%;overflow-wrap:anywhere}
+body .membership-main .grid{position:relative;margin:-34px 0 30px;gap:20px;align-items:stretch;grid-template-columns:repeat(4,minmax(0,1fr))}
+body .membership-main .plan{background:var(--membership-card)!important;color:var(--membership-ink)!important;border:1px solid var(--membership-line);border-radius:19px;padding:30px 24px 24px;box-shadow:0 18px 45px #0002;text-align:center;overflow:hidden}
+body .membership-main .plan.featured{border:2px solid #e4b55f;padding:29px 23px 23px;box-shadow:0 12px 45px #c3943420}
+.plan-symbol{display:grid;place-items:center;width:65px;height:65px;margin:0 auto 18px;color:#d9ad61}
+.plan-symbol svg{width:54px;height:54px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+body .plan .label{color:#d9ad61;font-size:.65rem;letter-spacing:.08em;min-height:20px}
+body .plan h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.35rem,1.9vw,1.9rem);font-weight:600;margin:8px 0 10px;letter-spacing:-.02em}
+body .membership-main .plan p{color:var(--membership-muted);font-size:.91rem;line-height:1.55;min-height:46px;margin:0 0 14px}
+body .membership-main .plan .price{font:600 clamp(2.5rem,4vw,3.7rem)/1.1 'Playfair Display',Georgia,serif;color:var(--membership-ink)!important;margin:12px 0;letter-spacing:-.035em}
+body .membership-main .plan .price small{display:block;color:var(--membership-muted);font:400 .86rem/1.5 'DM Sans',Arial,sans-serif;letter-spacing:0;margin-top:9px}
+body .membership-main .plan .savings{font-size:.8rem;font-weight:500;color:var(--membership-muted);margin:0 0 9px;min-height:38px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px}
+.savings .save-pill{padding:3px 8px;background:#dfae57;color:#111e2b;border-radius:20px;font-size:.7rem;font-weight:700;white-space:nowrap}
+body .membership-main .plan ul{list-style:none;text-align:left;border-top:1px solid #a97c364a;margin:13px 0 20px;padding:16px 0 0;flex:1;color:var(--membership-ink);font-size:.87rem}
+.plan li{position:relative;padding-left:28px;line-height:1.5;margin:13px 0}
+.plan li::before{content:'✓';position:absolute;left:0;top:1px;display:grid;place-items:center;width:18px;height:18px;border-radius:50%;background:#d9ad61;color:#102134;font-size:.75rem;font-weight:800}
+body .membership-main .plan .action{display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;margin:12px 0 0;border:1px solid #e7bb6a;border-radius:30px;font-size:.9rem;font-weight:800;background:linear-gradient(120deg,#edc879,#c9953f);color:#101c2a;box-shadow:0 5px 20px #a4792320;text-decoration:none}
+body .membership-main .plan .action.disabled{background:transparent;color:var(--membership-muted);border-color:var(--membership-line);box-shadow:none}
+body .membership-main .notice{background:var(--membership-card);border:1px solid #a97c3655;color:var(--membership-muted);border-radius:14px;font-size:.85rem;padding:18px 22px;text-align:center;line-height:1.7}
+.membership-main>.membership-links{text-align:center;font-size:.85rem;color:var(--membership-muted);line-height:2}
+.membership-links a:hover{color:#d9ad61}
+body .exit-subscriptions{position:relative;top:auto;left:auto;width:auto;height:auto;display:inline-flex;gap:10px;align-items:center;background:transparent;border:0;border-radius:0;box-shadow:none;color:var(--membership-muted);font-size:.85rem;margin:20px 0 0;padding:4px 0}
+.exit-subscriptions span{font-size:1.6rem;line-height:1}
+body footer{background:var(--membership-page)!important;border-top:1px solid #a97c3655;color:var(--membership-muted)!important;font-size:.8rem;padding:25px}
+@media(min-width:1500px){.membership-intro{padding-top:70px}}
+@media(max-width:1100px){body .membership-main .grid{grid-template-columns:repeat(2,minmax(0,1fr))}.plan h2{font-size:1.8rem!important}}
+@media(max-width:600px){body .membership-main{padding:0 18px 35px}.membership-intro{padding:36px 0 65px}.membership-intro .intro{font-size:.95rem}.membership-intro .eyebrow{gap:12px;letter-spacing:.2em}.membership-intro .eyebrow::before,.membership-intro .eyebrow::after{width:30px}body .membership-main .grid{grid-template-columns:1fr;gap:22px}body .membership-main .plan{padding:27px}body .membership-main .plan.featured{padding:26px}body .membership-main .plan .price{font-size:3.8rem}.membership-intro h1{font-size:2.65rem}}
+@media(prefers-reduced-motion:reduce){.plan{transition:none!important}.plan:hover{transform:none!important}}
