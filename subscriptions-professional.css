@@ -39,3 +39,12 @@ body footer{background:var(--membership-page)!important;border-top:1px solid #a9
 @media(max-width:1100px){body .membership-main .grid{grid-template-columns:repeat(2,minmax(0,1fr))}.plan h2{font-size:1.8rem!important}}
 @media(max-width:600px){body .membership-main{padding:0 18px 35px}.membership-intro{padding:36px 0 65px}.membership-intro .intro{font-size:.95rem}.membership-intro .eyebrow{gap:12px;letter-spacing:.2em}.membership-intro .eyebrow::before,.membership-intro .eyebrow::after{width:30px}body .membership-main .grid{grid-template-columns:1fr;gap:22px}body .membership-main .plan{padding:27px}body .membership-main .plan.featured{padding:26px}body .membership-main .plan .price{font-size:3.8rem}.membership-intro h1{font-size:2.65rem}}
 @media(prefers-reduced-motion:reduce){.plan{transition:none!important}.plan:hover{transform:none!important}}
+
+/* Upper-right close control, below the navigation so account controls stay usable. */
+body .membership-main{position:relative}
+body .membership-main .exit-subscriptions{position:absolute;right:20px;left:auto;top:16px;width:44px;height:44px;margin:0;padding:0;display:grid;place-items:center;border:1px solid var(--membership-line);border-radius:50%;background:var(--membership-card);color:var(--membership-ink);z-index:10;box-shadow:0 4px 16px #0002}
+body .membership-main .exit-subscriptions span{font:400 30px/1 Arial,sans-serif;color:inherit}
+body .membership-main .exit-subscriptions:hover{background:#d8ac56;color:#102134}
+body .membership-main .exit-subscriptions:focus-visible{outline:3px solid #d8ac56;outline-offset:4px}
+body .membership-intro{padding-top:80px}
+@media(max-width:600px){body .membership-main .exit-subscriptions{right:0;top:12px}body .membership-intro{padding-top:74px}}
