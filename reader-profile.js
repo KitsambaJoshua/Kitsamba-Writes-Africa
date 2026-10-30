@@ -1,3 +1,4 @@
+import {subscribeAdmin} from './admin-session.js';
 import {auth} from './firebase-config.js';
 import {onAuthStateChanged,signOut} from 'https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js';
 
@@ -23,6 +24,7 @@ if(actions){
   for(const [label,url] of [['Account settings','settings.html#profile'],['Reading preferences','settings.html#reading'],['My writing','add-story.html']]){
     const link=document.createElement('a');link.textContent=label;link.href=url;panel.append(link);
   }
+  const dashboard=document.createElement('a');dashboard.href='admin.html';dashboard.textContent='Admin Dashboard';dashboard.hidden=true;panel.append(dashboard);subscribeAdmin(state=>{dashboard.hidden=!state.isAdmin;});
   const logout=document.createElement('button');logout.type='button';logout.textContent='Sign out';
   const status=document.createElement('p');status.className='kwa-account-status';status.setAttribute('role','status');
   panel.append(logout,status);root.append(trigger,panel);actions.append(root);
@@ -49,3 +51,4 @@ if(actions){
     try{await signOut(auth);close();login?.focus();}catch{status.textContent='Could not sign out. Please try again.';}finally{logout.disabled=false;}
   });
 }
+

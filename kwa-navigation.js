@@ -12,7 +12,7 @@
 })();
 
 // Reader profile is shared by every page using this navigation.
-(()=>{const style=document.createElement('link');style.rel='stylesheet';style.href='reader-profile.css?v=20261029';document.head.append(style);import('./reader-profile.js?v=20261029').catch(()=>{/* Keep the sign-in link available if authentication cannot load. */});})();
+(()=>{const style=document.createElement('link');style.rel='stylesheet';style.href='reader-profile.css?v=20261029';document.head.append(style);import('./reader-profile.js?v=20261030-admin').catch(()=>{/* Keep the sign-in link available if authentication cannot load. */});})();
 
 // Membership action sits at the right edge, separate from the header.
 (()=>{
@@ -26,3 +26,7 @@
  for(const duplicate of existing)duplicate.remove();
  box.append(caption,link);document.body.appendChild(box);
 })();
+
+import('./admin-tools.js?v=20261030').catch(()=>{});
+import('./page-content.js?v=20261030').catch(()=>{});
+

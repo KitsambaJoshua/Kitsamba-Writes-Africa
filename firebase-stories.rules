@@ -82,6 +82,17 @@ service cloud.firestore {
           && request.resource.data.keys().hasOnly(['id','active','order','updatedAt'])));
       allow delete: if isAdmin();
     }
+    // Public page copy contains only editorial text, image URLs and links.
+    match /publicPages/{pageId} {
+      allow read: if true;
+      allow create, update: if isAdmin()
+        && pageId.matches('[a-z0-9-]+')
+        && request.resource.data.keys().hasOnly(['id','version','editsJson','updatedAt'])
+        && request.resource.data.id == pageId && request.resource.data.version == 1
+        && request.resource.data.editsJson is string && request.resource.data.editsJson.size() <= 150000
+        && request.resource.data.updatedAt == request.time;
+      allow delete: if isAdmin();
+    }
     match /publicSettings/site {
       allow read: if true;
       allow create, update: if isAdmin() && request.resource.data.keys().hasOnly(['siteName','heroLineOne','heroLineTwo','heroIntro','updatedAt'])
@@ -94,3 +105,4 @@ service cloud.firestore {
     }
   }
 }
+
