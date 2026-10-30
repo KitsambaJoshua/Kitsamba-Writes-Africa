@@ -42,3 +42,8 @@ html.kw-light .founder-quote,html.kw-light .influence-list span,html.kw-light .n
 html.kw-light .kwa-header .kwa-mark,html.kw-dark .kwa-header .kwa-mark{background:#000 url("images/logo.png") center/contain no-repeat!important;filter:none!important;background-blend-mode:normal!important;border:1px solid #b68a3a;border-radius:8px}
 html.kw-light .kwa-header .kwa-mark::after,html.kw-dark .kwa-header .kwa-mark::after{content:none!important;display:none!important;mask:none!important;-webkit-mask:none!important}
 html.kw-light body .hero .kwa-hero-logo img,html.kw-dark body .hero .kwa-hero-logo img{filter:none!important;background:#000!important;opacity:1!important;box-shadow:0 12px 40px #0002!important;border:1px solid #b68a3a55}
+
+/* Light-mode rendering: turn the baked-in black canvas into white, then blend it into the cream surface. */
+html.kw-light .kwa-header .kwa-mark{background-color:#000!important;filter:invert(1) hue-rotate(180deg)!important;mix-blend-mode:multiply;border:0!important}
+html.kw-light body .hero .kwa-hero-logo img{filter:invert(1) hue-rotate(180deg)!important;mix-blend-mode:multiply;background:#000!important;border:0!important;box-shadow:none!important}
+html.kw-dark .kwa-header .kwa-mark,html.kw-dark body .hero .kwa-hero-logo img{mix-blend-mode:normal}
