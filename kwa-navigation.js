@@ -1,7 +1,7 @@
 // Keep main navigation consistent across the website.
 (()=>{
  const links=document.querySelector('.kwa-header .kwa-links');if(!links)return;
- const pages=[['index.html','Home'],['about.html','About'],['authors.html','Authors'],['novels.html','Novels'],['book.html','Book Library'],['free-books.html','Free Books'],['articles.html','Articles'],['blog.html','Blog'],['lifestyle.html','Lifestyle'],['plays.html','Plays'],['poems.html','Poems'],['videos.html','Videos'],['stakeholders.html','Stakeholders'],['contact.html','Contact'],['settings.html','Settings']];
+ const pages=[['index.html','Home'],['about.html','About'],['authors.html','Authors'],['novels.html','Novels'],['book.html','Book Library'],['free-books.html','Free Books'],['dictionary.html','Dictionary'],['articles.html','Articles'],['blog.html','Blog'],['lifestyle.html','Lifestyle'],['plays.html','Plays'],['poems.html','Poems'],['videos.html','Videos'],['stakeholders.html','Stakeholders'],['contact.html','Contact'],['settings.html','Settings']];
  const existing=new Map([...links.querySelectorAll('a')].map(a=>[a.getAttribute('href'),a]));
  const subscription=existing.get('subscriptions.html');links.replaceChildren();if(subscription)links.appendChild(subscription);
  for(const [url,label] of pages){const a=existing.get(url)||document.createElement('a');a.href=url;a.textContent=label;if((location.pathname.split('/').pop()||'index.html')===url)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');links.appendChild(a);}
