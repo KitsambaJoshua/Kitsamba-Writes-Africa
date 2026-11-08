@@ -254,8 +254,8 @@ footer{border-top:1px solid var(--line);padding:35px 0;color:#736e67;font-size:.
       </div>
 
       <div class="price-strip">
-        <div class="price-main"><small>Full novel</small><strong id="localPrice">UGX 18,000</strong></div>
-        <div class="price-side">Official Uganda price: <b>UGX 18,000</b><br>NardoPay checkout: <b>UGX 18,000</b></div>
+        <div class="price-main"><small>Full novel</small><strong id="localPrice">UGX 21,000</strong></div>
+        <div class="price-side">Official Uganda price: <b>UGX 21,000</b><br>NardoPay checkout: <b>UGX 21,000</b></div>
       </div>
 
       <div class="hero-actions">
@@ -306,11 +306,11 @@ footer{border-top:1px solid var(--line);padding:35px 0;color:#736e67;font-size:.
 
       <div class="checkout-card">
         <div class="checkout-label">Complete novel access</div>
-        <div class="checkout-price">UGX 18,000</div>
-        <div class="checkout-sub">Secure NardoPay checkout: <strong style="color:#eee">UGX 18,000</strong></div>
+        <div class="checkout-price">UGX 21,000</div>
+        <div class="checkout-sub">Secure NardoPay checkout: <strong style="color:#eee">UGX 21,000</strong></div>
 
         <div class="paypal-hosted">
-          <a href="https://kitsambawritesafrica.nardopay.com/p/thesilenceat2pm" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#c99a43;color:#111;padding:13px 25px;border-radius:8px;font-weight:800;text-decoration:none;"><i class="fa-solid fa-credit-card" aria-hidden="true"></i> Buy Now — UGX 18,000</a>
+          <a href="https://kitsambawritesafrica.nardopay.com/p/thesilenceat2pm" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#c99a43;color:#111;padding:13px 25px;border-radius:8px;font-weight:800;text-decoration:none;"><i class="fa-solid fa-credit-card" aria-hidden="true"></i> Buy Now — UGX 21,000</a>
         </div>
       </div>
 
@@ -390,17 +390,17 @@ function activateChapterTracking(){
 
 async function loadLocalPrice(){
   const el = document.getElementById("localPrice");
-  const ugx = 18000;
+  const ugx = 21000;
   try{
     const location = await fetch("https://ipapi.co/json/").then(r=>r.json());
-    if(location.country_code === "UG" || location.currency === "UGX"){el.textContent="UGX 18,000";return;}
+    if(location.country_code === "UG" || location.currency === "UGX"){el.textContent="UGX 21,000";return;}
     const currency = location.currency || "USD";
     const rates = await fetch("https://open.er-api.com/v6/latest/UGX").then(r=>r.json());
     if(!rates.rates || !rates.rates[currency]) return;
     const value = ugx * rates.rates[currency];
     el.textContent = new Intl.NumberFormat(undefined,{style:"currency",currency,maximumFractionDigits:2}).format(value);
   }catch(e){
-    el.textContent="UGX 18,000";
+    el.textContent="UGX 21,000";
   }
 }
 
