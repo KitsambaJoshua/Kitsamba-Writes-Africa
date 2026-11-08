@@ -5,31 +5,17 @@
 <script src="kwa-navigation.js"></script>
 <script>
 const form=document.getElementById('lookup'),box=document.getElementById('results'),btn=document.getElementById('search');
+const offline={
+resilience:{definition:'The ability to recover or adapt after difficulty, stress, or change.',example:'Her resilience helped her continue writing despite setbacks.',synonyms:['strength','adaptability','perseverance']},
+destiny:{definition:'The events or future believed to be determined for a person or thing.',example:'He wondered whether destiny had brought them together.',synonyms:['fate','future']},
+courage:{definition:'The ability to face fear, difficulty, or danger.',example:'It took courage to tell the truth.',synonyms:['bravery','boldness']},
+silence:{definition:'The absence of sound or speech.',example:'The room fell into silence.',synonyms:['quiet','stillness']},
+fate:{definition:'The development of events beyond a person’s control, often thought to be predetermined.',example:'Their meeting seemed like fate.',synonyms:['destiny','fortune']},
+love:{definition:'A deep feeling of affection, care, or attachment.',example:'Their love grew through patience and understanding.',synonyms:['affection','devotion']},
+hope:{definition:'A feeling of expectation and desire for a positive outcome.',example:'She held on to hope during difficult days.',synonyms:['optimism','faith']}
+};
 function el(tag,text,cls){const n=document.createElement(tag);if(text!==undefined&&text!==null)n.textContent=text;if(cls)n.className=cls;return n}
-form.addEventListener('submit',async e=>{
- e.preventDefault();const word=document.getElementById('word').value.trim();
- if(!/^[a-zA-Z][a-zA-Z '-]{0,79}$/.test(word)){box.textContent='Please enter an English word.';return}
- btn.disabled=true;box.textContent='Searching for '+word+'…';
- try{
-  const response=await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/'+encodeURIComponent(word));
-  if(!response.ok){box.textContent=response.status===404?'No definition found. Try another word.':'The dictionary service is unavailable. Please try again.';return}
-  const data=await response.json();box.replaceChildren();
-  for(const item of data.slice(0,2)){
-   box.appendChild(el('h2',item.word));
-   const pronunciation=item.phonetic||item.phonetics?.find(x=>x.text)?.text;
-   if(pronunciation)box.appendChild(el('p',pronunciation,'muted'));
-   const audio=item.phonetics?.find(x=>x.audio&&/^https:\/\//.test(x.audio))?.audio;
-   if(audio){const play=el('button','▶ Listen to pronunciation','btn');play.type='button';play.style.marginBottom='16px';play.addEventListener('click',()=>{new Audio(audio).play().catch(()=>{play.textContent='Audio unavailable'})});box.appendChild(play)}
-   for(const meaning of (item.meanings||[]).slice(0,5)){
-    const entry=el('section',null,'entry');entry.appendChild(el('h3',meaning.partOfSpeech||'Meaning'));
-    const list=el('ol');for(const def of (meaning.definitions||[]).slice(0,4)){const li=el('li',def.definition);if(def.example)li.appendChild(el('p','Example: '+def.example,'muted'));list.appendChild(li)}entry.appendChild(list);
-    const syn=[...new Set([...(meaning.synonyms||[]),...(meaning.definitions||[]).flatMap(d=>d.synonyms||[])])].slice(0,10);
-    const ant=[...new Set([...(meaning.antonyms||[]),...(meaning.definitions||[]).flatMap(d=>d.antonyms||[])])].slice(0,10);
-    if(syn.length)entry.appendChild(el('p','Synonyms: '+syn.join(', '),'muted'));
-    if(ant.length)entry.appendChild(el('p','Antonyms: '+ant.join(', '),'muted'));
-    box.appendChild(entry);
-   }
-  }
- }catch(err){box.textContent='Could not reach the dictionary. Check your connection and try again.'}finally{btn.disabled=false}
-});
+function render(entries,source){box.replaceChildren();if(source)box.appendChild(el('p',source,'muted'));for(const item of entries.slice(0,2)){box.appendChild(el('h2',item.word));const pronunciation=item.phonetic||item.phonetics?.find(x=>x.text)?.text;if(pronunciation)box.appendChild(el('p',pronunciation,'muted'));const audio=item.phonetics?.find(x=>x.audio&&/^https:\/\//.test(x.audio))?.audio;if(audio){const play=el('button','▶ Listen to pronunciation','btn');play.type='button';play.style.marginBottom='16px';play.addEventListener('click',()=>{new Audio(audio).play().catch(()=>{play.textContent='Audio unavailable'})});box.appendChild(play)}for(const meaning of (item.meanings||[]).slice(0,5)){const entry=el('section',null,'entry');entry.appendChild(el('h3',meaning.partOfSpeech||'Meaning'));const list=el('ol');for(const def of (meaning.definitions||[]).slice(0,4)){const li=el('li',def.definition);if(def.example)li.appendChild(el('p','Example: '+def.example,'muted'));list.appendChild(li)}entry.appendChild(list);const syn=[...new Set([...(meaning.synonyms||[]),...(meaning.definitions||[]).flatMap(d=>d.synonyms||[])])].slice(0,10);const ant=[...new Set([...(meaning.antonyms||[]),...(meaning.definitions||[]).flatMap(d=>d.antonyms||[])])].slice(0,10);if(syn.length)entry.appendChild(el('p','Synonyms: '+syn.join(', '),'muted'));if(ant.length)entry.appendChild(el('p','Antonyms: '+ant.join(', '),'muted'));box.appendChild(entry)}}}
+async function getJson(url){const controller=new AbortController();const timeout=setTimeout(()=>controller.abort(),6500);try{const res=await fetch(url,{signal:controller.signal});if(!res.ok)throw new Error('Lookup failed');return await res.json()}finally{clearTimeout(timeout)}}
+form.addEventListener('submit',async e=>{e.preventDefault();const word=document.getElementById('word').value.trim();if(!/^[a-zA-Z][a-zA-Z '-]{0,79}$/.test(word)){box.textContent='Please enter an English word.';return}btn.disabled=true;box.textContent='Searching for '+word+'…';try{let entries;try{entries=await getJson('https://api.dictionaryapi.dev/api/v2/entries/en/'+encodeURIComponent(word))}catch(firstError){const data=await getJson('https://api.datamuse.com/words?sp='+encodeURIComponent(word.toLowerCase())+'&md=d&max=5');const exact=data.find(x=>x.word?.toLowerCase()===word.toLowerCase()&&x.defs?.length);if(!exact)throw new Error('No match');entries=[{word:exact.word,meanings:[{partOfSpeech:'Definitions',definitions:exact.defs.slice(0,6).map(d=>({definition:d.replace(/^[a-z]+\t/i,'')}))}]}]}if(!Array.isArray(entries)||!entries.length)throw new Error('No entries');render(entries)}catch(err){const local=offline[word.toLowerCase()];if(local){render([{word,meanings:[{partOfSpeech:'Offline definition',definitions:[{definition:local.definition,example:local.example}],synonyms:local.synonyms}]}],'Online services unavailable. Showing a built-in definition.')}else{box.textContent='No definition available right now. Please try another word or check your internet connection.'}}finally{btn.disabled=false}});
 </script></body></html>
