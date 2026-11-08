@@ -14,7 +14,7 @@
  const current=location.pathname.split('/').pop()||'index.html';
  links.querySelectorAll('a').forEach(a=>{if(a.getAttribute('href')===current)a.setAttribute('aria-current','page')});
  links.id=links.id||'kwa-navigation-links';button.setAttribute('aria-controls',links.id);
- function setOpen(open){links.classList.toggle('kwa-collapsed',!open);button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',open?'Hide navigation':'Show navigation');}
+ function setOpen(open){links.classList.toggle('kwa-collapsed',!open);links.classList.toggle('kwa-open',open);button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',open?'Hide navigation':'Show navigation');}
  const mobile=window.matchMedia('(max-width:700px)');
  setOpen(false);
  const handleViewport=()=>setOpen(false);
