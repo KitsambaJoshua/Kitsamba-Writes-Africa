@@ -227,13 +227,13 @@ footer{border-top:1px solid var(--line);padding:35px 0;color:#736e67;font-size:.
       </div>
 
       <div class="price-strip">
-        <div class="price-main"><small>Full novel</small><strong id="localPrice">UGX 17,000</strong></div>
-        <div class="price-side">Official Uganda price: <b>UGX 17,000</b><br>PayPal checkout: <b>$4.58 USD</b></div>
+        <div class="price-main"><small>Full novel</small><strong id="localPrice">UGX 17,800</strong></div>
+        <div class="price-side">Official Uganda price: <b>UGX 17,800</b><br>NardoPay checkout: <b>UGX 17,800</b></div>
       </div>
 
       <div class="hero-actions">
         <a class="btn btn-primary" href="#chapter-1" data-page-field="page-field-4"><i class="fa-solid fa-book-open-reader"></i> Start Reading Free</a>
-        <a class="btn btn-secondary" href="#premium" data-page-field="page-field-6"><i class="fa-brands fa-paypal"></i> Buy Full Novel</a>
+        <a class="btn btn-secondary" href="#premium" data-page-field="page-field-6"><i class="fa-solid fa-credit-card"></i> Buy Full Novel</a>
       </div>
     </div>
   </div>
@@ -765,24 +765,15 @@ footer{border-top:1px solid var(--line);padding:35px 0;color:#736e67;font-size:.
 
       <div class="checkout-card">
         <div class="checkout-label">Complete novel access</div>
-        <div class="checkout-price">UGX 17,000</div>
-        <div class="checkout-sub">Secure PayPal checkout: <strong style="color:#eee">$4.58 USD</strong></div>
+        <div class="checkout-price">UGX 17,800</div>
+        <div class="checkout-sub">Secure NardoPay checkout: <strong style="color:#eee">UGX 17,800</strong></div>
 
-        <div class="paypal-hosted">
-          <div>
-            <style>.pp-3TQLN5VSDP6HG{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
-            <form action="https://www.paypal.com/ncp/payment/3TQLN5VSDP6HG" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
-              <input class="pp-3TQLN5VSDP6HG" type="submit" value="Buy Now">
-              <img src="https://www.paypalobjects.com/images/Debit_Credit.svg" alt="cards">
-              <section style="font-size:0.75rem;"> Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;display:inline;width:auto;"></section>
-            </form>
-          </div>
-        </div>
+        <div class="paypal-hosted"><a href="https://kitsambawritesafrica.nardopay.com/p/whenourheartslearnedsilence" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#c99a43;color:#111;padding:13px 25px;border-radius:8px;font-weight:800;text-decoration:none;"><i class="fa-solid fa-credit-card" aria-hidden="true"></i> Buy Now — UGX 17,800</a></div>
       </div>
 
       <div class="after-pay">
         <strong>Already paid?</strong>
-        <p data-page-field="page-field-474">Keep your PayPal receipt. Until automatic account unlocking is added, send your payment confirmation to Kitsamba Writes Africa so your full access can be arranged.</p>
+        <p data-page-field="page-field-474">Keep your NardoPay payment confirmation. Until automatic account unlocking is added, send your payment confirmation to Kitsamba Writes Africa so your full access can be arranged.</p>
         <a href="contact.html" data-page-field="page-field-475"><i class="fa-solid fa-envelope"></i> I have paid — contact the author</a>
       </div>
 
@@ -857,17 +848,17 @@ function activateChapterTracking(){
 
 async function loadLocalPrice(){
   const el = document.getElementById("localPrice");
-  const ugx = 17000;
+  const ugx = 17800;
   try{
     const location = await fetch("https://ipapi.co/json/").then(r=>r.json());
-    if(location.country_code === "UG" || location.currency === "UGX"){el.textContent="UGX 17,000";return;}
+    if(location.country_code === "UG" || location.currency === "UGX"){el.textContent="UGX 17,800";return;}
     const currency = location.currency || "USD";
     const rates = await fetch("https://open.er-api.com/v6/latest/UGX").then(r=>r.json());
     if(!rates.rates || !rates.rates[currency]) return;
     const value = ugx * rates.rates[currency];
     el.textContent = new Intl.NumberFormat(undefined,{style:"currency",currency,maximumFractionDigits:2}).format(value);
   }catch(e){
-    el.textContent="UGX 17,000";
+    el.textContent="UGX 17,800";
   }
 }
 
