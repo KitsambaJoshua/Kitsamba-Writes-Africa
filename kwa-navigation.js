@@ -16,13 +16,13 @@
  links.id=links.id||'kwa-navigation-links';button.setAttribute('aria-controls',links.id);
  function setOpen(open){links.classList.toggle('kwa-collapsed',!open);button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',open?'Hide navigation':'Show navigation');}
  const mobile=window.matchMedia('(max-width:700px)');
- setOpen(!mobile.matches);
- const handleViewport=()=>setOpen(!mobile.matches);
+ setOpen(false);
+ const handleViewport=()=>setOpen(false);
  if(mobile.addEventListener)mobile.addEventListener('change',handleViewport);
  else if(mobile.addListener)mobile.addListener(handleViewport);
  button.addEventListener('click',()=>setOpen(links.classList.contains('kwa-collapsed')));
- links.addEventListener('click',event=>{if(mobile.matches && event.target.closest('a'))setOpen(false);});
- document.addEventListener('click',event=>{if(mobile.matches && !header.contains(event.target))setOpen(false);});
+ links.addEventListener('click',event=>{if(event.target.closest('a'))setOpen(false);});
+ document.addEventListener('click',event=>{if(!header.contains(event.target))setOpen(false);});
  header.addEventListener('keydown',event=>{if(event.key==='Escape'&&!links.classList.contains('kwa-collapsed')){setOpen(false);button.focus();}});
 })();
 
