@@ -50,5 +50,5 @@ html.kw-dark .kwa-header .kwa-mark,html.kw-dark body .hero .kwa-hero-logo img{mi
 
 /* Menu-first navigation on every page */
 .kwa-header .kwa-links{display:none!important}
-.kwa-header .kwa-links:not(.kwa-collapsed){display:flex!important}
+.kwa-header .kwa-links.kwa-open{display:flex!important}
 .kwa-header .kwa-links.kwa-collapsed{display:none!important}
