@@ -130,7 +130,7 @@ img{display:block;max-width:100%}
 .checkout-price{font-family:"Cormorant Garamond",serif;color:var(--gold-2);font-size:3rem;font-weight:700;line-height:1.05;margin:6px 0 2px}
 .checkout-sub{color:#918a81;font-size:.72rem;margin-bottom:20px}
 .paypal-hosted{display:flex;justify-content:center;margin-top:8px}
-.paypal-hosted form{max-width:100%}
+.paypal-hosted a:hover{background:var(--gold-2)}
 .after-pay{max-width:610px;margin:18px auto 0;padding:17px 19px;border:1px solid #292621;border-radius:15px;background:rgba(255,255,255,.018);text-align:left}
 .after-pay strong{color:var(--gold-2);font-size:.8rem}
 .after-pay p{color:#8e877e;font-size:.72rem;margin:5px 0 10px}
@@ -255,12 +255,12 @@ footer{border-top:1px solid var(--line);padding:35px 0;color:#736e67;font-size:.
 
       <div class="price-strip">
         <div class="price-main"><small>Full novel</small><strong id="localPrice">UGX 18,000</strong></div>
-        <div class="price-side">Official Uganda price: <b>UGX 18,000</b><br>PayPal checkout: <b>$4.85 USD</b></div>
+        <div class="price-side">Official Uganda price: <b>UGX 18,000</b><br>NardoPay checkout: <b>UGX 18,000</b></div>
       </div>
 
       <div class="hero-actions">
         <a class="btn btn-primary" href="#chapter-1" data-page-field="page-field-4"><i class="fa-solid fa-book-open-reader"></i> Start Reading Free</a>
-        <a class="btn btn-secondary" href="#premium" data-page-field="page-field-6"><i class="fa-brands fa-paypal"></i> Buy Full Novel</a>
+        <a class="btn btn-secondary" href="#premium" data-page-field="page-field-6"><i class="fa-solid fa-credit-card"></i> Buy Full Novel</a>
       </div>
     </div>
   </div>
@@ -307,21 +307,14 @@ footer{border-top:1px solid var(--line);padding:35px 0;color:#736e67;font-size:.
       <div class="checkout-card">
         <div class="checkout-label">Complete novel access</div>
         <div class="checkout-price">UGX 18,000</div>
-        <div class="checkout-sub">Secure PayPal checkout: <strong style="color:#eee">$4.85 USD</strong></div>
+        <div class="checkout-sub">Secure NardoPay checkout: <strong style="color:#eee">UGX 18,000</strong></div>
 
         <div class="paypal-hosted">
-          <div>
-            <style>.pp-PG5KSS95GZC2U{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
-            <form action="https://www.paypal.com/ncp/payment/PG5KSS95GZC2U" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
-              <input class="pp-PG5KSS95GZC2U" type="submit" value="Buy Now">
-              <img src="https://www.paypalobjects.com/images/Debit_Credit.svg" alt="cards">
-              <section style="font-size:0.75rem;"> Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;display:inline;width:auto;"></section>
-            </form>
-          </div>
+          <a href="https://kitsambawritesafrica.nardopay.com/p/thesilenceat2pm" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#c99a43;color:#111;padding:13px 25px;border-radius:8px;font-weight:800;text-decoration:none;"><i class="fa-solid fa-credit-card" aria-hidden="true"></i> Buy Now — UGX 18,000</a>
         </div>
       </div>
 
-      <div class="after-pay"><strong>Already paid?</strong><p data-page-field="page-field-13">Keep your PayPal receipt. Until automatic account unlocking is added, send your payment confirmation to Kitsamba Writes Africa so your full access can be arranged.</p><a href="contact.html" data-page-field="page-field-14"><i class="fa-solid fa-envelope"></i> I have paid — contact the author</a></div>
+      <div class="after-pay"><strong>Already paid?</strong><p data-page-field="page-field-13">Keep your NardoPay payment confirmation. Until automatic access is available, contact Kitsamba Writes Africa with your payment reference so the author can verify your payment and arrange full access.</p><a href="contact.html" data-page-field="page-field-14"><i class="fa-solid fa-envelope"></i> I have paid — contact the author</a></div>
 
       <div class="locked-grid">
         <div class="locked-item"><i class="fa-solid fa-lock"></i><span>Chapter 4: A Life Interrupted</span></div>
