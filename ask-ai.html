@@ -82,15 +82,39 @@ html.kw-light .example{background:#f8faf9!important;color:#172b32!important;bord
 html.kw-light .formatted-answer h2,html.kw-light .formatted-answer h3,html.kw-light .formatted-answer h4,html.kw-light .formatted-answer h5{color:#172b32!important}
 @media(max-width:750px){.shell{grid-template-columns:1fr}.sidebar{width:min(320px,85vw);z-index:20}.topbar{min-height:62px;padding:9px 13px}.wa-avatar{width:39px;height:39px}.ai-top-label{display:none}.mobile-toggle{color:#e9edef;border-color:#617078}.messages{width:calc(100% - 22px);padding:16px 0 22px}.message.user{max-width:88%}.message.assistant{max-width:95%;padding:13px 14px}.composer-wrap{padding:9px 10px}.composer textarea{min-height:43px}.send{height:43px;width:43px}.welcome{margin:22px auto;padding:24px 16px}}
 html.kw-light .mobile-toggle{color:#172b32!important}
+.chat-search{width:100%;background:#202c33;border:1px solid #3c4c54;border-radius:11px;color:#fff;padding:11px 13px;font:inherit;font-size:.87rem;outline:none}
+.chat-search:focus{border-color:#62b9a2}.chat-search::placeholder{color:#9fb0b7}
+.clear-history{background:transparent;border:1px solid #435159;border-radius:10px;color:#c5d3d8;padding:10px 12px;font-size:.8rem;text-align:center}
+.clear-history:hover{background:#26373d}.history{min-height:0}.history button{font-size:.89rem}
+html.kw-light .chat-search{background:#fff;color:#172b32;border-color:#d6dfdc}
+html.kw-light .clear-history{color:#53666d;border-color:#d6dfdc}
 </style></head><body><header class="kwa-header"><nav class="kwa-nav" aria-label="Main navigation"><a class="kwa-brand" href="index.html"><span class="kwa-mark">✒</span><span><strong>Kitsamba Writes Africa</strong><small>African stories · Global voices</small></span></a><div class="kwa-links"><a class="kwa-subscribe-link" href="subscriptions.html">★ Subscriptions</a><a href="index.html">Home</a><a href="about.html">About</a><a href="authors.html">Authors</a><a href="novels.html">Novels</a><a href="book.html">Book Library</a><a href="free-books.html">Free Books</a><a href="articles.html">Articles</a><a href="blog.html">Blog</a><a href="lifestyle.html">Lifestyle</a><a href="plays.html">Plays</a><a href="poems.html">Poems</a><a href="videos.html">Videos</a><a href="stakeholders.html">Stakeholders</a><a href="contact.html">Contact</a><a href="settings.html">Settings</a></div><div class="kwa-actions"><a class="kwa-ask-ai" href="ask-ai.html">✦ Ask AI</a><a class="kwa-login" href="login.html">Login / Create Account</a><button class="kwa-menu" type="button" aria-label="Show navigation" aria-expanded="true">MENU ☰</button></div></nav></header><div class="shell">
-<aside class="sidebar" id="sidebar"><a class="brand" href="index.html"><span class="logo">KWA</span><span>Kitsamba Writes Africa</span></a><button class="new-chat" id="newChat">＋ New chat</button><div class="side-label">This session</div><div class="history" id="history"></div><div class="sidebar-footer"><p class="version">KWA AI · Kitsamba Writes Africa</p></div></aside>
+<aside class="sidebar" id="sidebar"><a class="brand" href="index.html"><span class="logo">KWA</span><span>Kitsamba Writes Africa</span></a><button class="new-chat" id="newChat">＋ New chat</button><div class="side-label">Your conversations</div><input id="chatSearch" class="chat-search" type="search" placeholder="Search chats…" aria-label="Search conversations"><div class="history" id="history"></div><button class="clear-history" id="clearHistory" type="button">Clear chat history</button><div class="sidebar-footer"><p class="version" id="historyNote">Checking account…</p></div></aside>
 <div class="main"><header class="topbar"><div style="display:flex;align-items:center;gap:12px"><button class="mobile-toggle" id="menu" aria-label="Toggle sidebar">☰</button><span class="wa-avatar" aria-hidden="true">✦</span><span class="wa-contact"><strong>KWA AI</strong><small>Literature · Writing · Learning</small></span></div><span class="ai-top-label">✦ AI assistant</span></header>
 <div class="chat-scroll" id="scroll"><div class="messages" id="messages"><section class="welcome" id="welcome"><div class="mark">KWA AI</div><h1>Explore African stories and ideas.</h1><p>Your Kitsamba Writes Africa assistant for literature, creative writing and learning.</p><div class="examples"><button class="example" data-question="Explain the major themes of African literature.">Explore African literary themes</button><button class="example" data-question="Help me plan an original short story set in Uganda.">Plan an original short story</button><button class="example" data-question="How do I analyze a poem for a literature essay?">Learn poetry analysis</button><button class="example" data-question="Help me improve my English grammar.">Improve my English grammar</button></div></section></div></div>
 <div class="composer-wrap"><form class="composer" id="form"><textarea id="prompt" placeholder="Type a message" aria-label="Your question" maxlength="4000" required></textarea><div class="composer-bottom"><span class="hint">Enter to send · Shift+Enter for a new line</span><button class="send" id="send" type="submit" aria-label="Send message">➤</button></div></form><div class="status" id="status" role="status">Connecting to AI service…</div><p class="disclaimer">AI can make mistakes. Check important information. Never share passwords or private details.</p></div>
 </div></div>
 <script type="module">
+import {auth} from "./firebase-config.js";
+import {onAuthStateChanged} from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
 const $=id=>document.getElementById(id),messages=$("messages"),history=$("history"),status=$("status"),prompt=$("prompt"),send=$("send"),scroll=$("scroll");
 let model=null,chat=null,conversations=[],active=null,setupError=null;
+let accountKey="kwa-ai-guest-v1",accountReady=false;
+function persistChats(){
+ if(!accountReady)return;
+ try{localStorage.setItem(accountKey,JSON.stringify(conversations.slice(0,80).map(c=>({...c,messages:c.messages.slice(-100)}))))}
+ catch(e){setStatus("Browser storage is unavailable; chats may not be saved.",true)}
+}
+function loadChats(user){
+ accountKey=user?"kwa-ai-user-"+user.uid+"-v1":"kwa-ai-guest-v1";
+ accountReady=true;
+ try{const saved=JSON.parse(localStorage.getItem(accountKey)||"[]");conversations=Array.isArray(saved)?saved.filter(c=>c&&Array.isArray(c.messages)).slice(0,80):[]}
+ catch(e){conversations=[]}
+ active=conversations[0]?.id??null;
+ if(!active)newChat();else render();
+ $("historyNote").textContent=user?"Saved on this device · "+(user.displayName||user.email||"Signed in"):"Guest chats · saved on this device";
+}
+onAuthStateChanged(auth,loadChats,()=>loadChats(null));
 function setStatus(t,error=false){status.textContent=t;status.classList.toggle("error",error)}
 function escapeHTML(s){return String(s).replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]))}
 function inlineMarkdown(s){return escapeHTML(s).replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/\*(.+?)\*/g,"<em>$1</em>").replace(/`([^`]+)`/g,"<code>$1</code>")}
@@ -109,9 +133,12 @@ function formatAssistant(s){
  }
  close();return out.join("");
 }
-function render(){messages.innerHTML="";const c=conversations.find(x=>x.id===active);if(!c||!c.messages.length){const w=document.createElement("section");w.className="welcome";w.innerHTML='<div class="mark">✦</div><h1>What can I help you explore?</h1><p>Your Kitsamba Writes Africa assistant for literature, creative writing and learning.</p><div class="examples"><button class="example" data-question="Explain the major themes of African literature.">Explore African literary themes</button><button class="example" data-question="Help me plan an original short story set in Uganda.">Plan an original short story</button><button class="example" data-question="How do I analyze a poem for a literature essay?">Learn poetry analysis</button><button class="example" data-question="Help me improve my English grammar.">Improve my English grammar</button></div>';messages.append(w);w.querySelectorAll(".example").forEach(b=>b.addEventListener("click",()=>{prompt.value=b.dataset.question;prompt.focus()}));}else{for(const m of c.messages){const d=document.createElement("div");d.className="message "+m.role;if(m.role==="assistant"){d.classList.add("formatted-answer");d.innerHTML=formatAssistant(m.text)}else{d.textContent=m.text}messages.append(d)}}history.innerHTML="";for(const c of conversations){const b=document.createElement("button");b.textContent=c.title;b.className=c.id===active?"active":"";b.addEventListener("click",()=>{active=c.id;chat=null;render();setStatus("This chat is a local session preview. Start a new chat to send messages.");$("sidebar").classList.remove("open")});history.append(b)}scroll.scrollTop=scroll.scrollHeight}
-function newChat(){const c={id:Date.now()+Math.random(),title:"New conversation",messages:[]};conversations.unshift(c);active=c.id;chat=null;render();setStatus(model?"Ready to chat.":"Connecting to AI service…");$("sidebar").classList.remove("open")}
-$("newChat").onclick=newChat;$("menu").onclick=()=>$("sidebar").classList.toggle("open");newChat();
+function render(){messages.innerHTML="";const c=conversations.find(x=>x.id===active);if(!c||!c.messages.length){const w=document.createElement("section");w.className="welcome";w.innerHTML='<div class="mark">✦</div><h1>What can I help you explore?</h1><p>Your Kitsamba Writes Africa assistant for literature, creative writing and learning.</p><div class="examples"><button class="example" data-question="Explain the major themes of African literature.">Explore African literary themes</button><button class="example" data-question="Help me plan an original short story set in Uganda.">Plan an original short story</button><button class="example" data-question="How do I analyze a poem for a literature essay?">Learn poetry analysis</button><button class="example" data-question="Help me improve my English grammar.">Improve my English grammar</button></div>';messages.append(w);w.querySelectorAll(".example").forEach(b=>b.addEventListener("click",()=>{prompt.value=b.dataset.question;prompt.focus()}));}else{for(const m of c.messages){const d=document.createElement("div");d.className="message "+m.role;if(m.role==="assistant"){d.classList.add("formatted-answer");d.innerHTML=formatAssistant(m.text)}else{d.textContent=m.text}messages.append(d)}}history.innerHTML="";const search=($("chatSearch")?.value||"").toLowerCase();for(const c of conversations.filter(c=>c.title.toLowerCase().includes(search))){const b=document.createElement("button");b.textContent=c.title;b.className=c.id===active?"active":"";b.addEventListener("click",()=>{active=c.id;chat=null;render();setStatus("Ready to chat.");$("sidebar").classList.remove("open")});history.append(b)}scroll.scrollTop=scroll.scrollHeight}
+function newChat(){const c={id:Date.now()+Math.random(),title:"New conversation",messages:[]};conversations.unshift(c);active=c.id;chat=null;persistChats();render();setStatus(model?"Ready to chat.":"Connecting to AI service…");$("sidebar").classList.remove("open")}
+$("newChat").onclick=newChat;
+$("menu").onclick=()=>$("sidebar").classList.toggle("open");
+$("chatSearch").addEventListener("input",render);
+$("clearHistory").onclick=()=>{if(!confirm("Delete all KWA AI chats saved for this account on this device?"))return;conversations=[];active=null;persistChats();newChat()};
 const API_URL="https://kwa-ai-backend.kitsambawritesafrica-ug.workers.dev";
 model={ready:true};
 setStatus("Ready to chat.");
@@ -125,6 +152,7 @@ $("form").addEventListener("submit",async e=>{
   c.messages.push({role:"user",text:question});
   const reply={role:"assistant",text:"Preparing your answer…"};
   c.messages.push(reply);
+  persistChats();
   prompt.value="";
   render();
   send.disabled=true;
@@ -149,6 +177,7 @@ $("form").addEventListener("submit",async e=>{
   }finally{
     clearTimeout(timeout);
     send.disabled=false;
+    persistChats();
     render();
     prompt.focus();
   }
