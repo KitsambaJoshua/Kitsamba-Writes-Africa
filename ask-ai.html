@@ -29,11 +29,64 @@ html.kw-light .message.assistant{background:#fffdf9!important;border-color:#e2d6
 html.kw-light .formatted-answer h2,html.kw-light .formatted-answer h3,html.kw-light .formatted-answer h4,html.kw-light .formatted-answer h5{color:#211c17!important}
 html.kw-light .formatted-answer code{background:#eee7db}
 @media(max-width:750px){.messages{width:calc(100% - 26px);gap:15px;padding:18px 0 25px}.message.assistant{padding:18px 17px}.message.user{max-width:88%}.formatted-answer{font-size:.97rem}.formatted-answer h2{font-size:1.23rem}}
+
+/* WhatsApp-inspired messaging layout, branded for Kitsamba Writes Africa */
+:root{--wa-green:#25d366;--wa-deep:#075e54;--wa-chat:#0b141a;--wa-panel:#202c33;--wa-line:#34434b;--wa-ink:#e9edef}
+.shell{grid-template-columns:330px minmax(0,1fr);background:var(--wa-chat)}
+.sidebar{background:#111b21;border-right:1px solid #29363d;padding:18px 12px;gap:14px}
+.sidebar .brand{font-family:"DM Sans",Arial,sans-serif;font-size:1.05rem;padding:7px 9px}
+.sidebar .logo{width:43px;height:43px;border-radius:50%;background:#005c4b;border:0;color:white;font:800 .8rem "DM Sans",Arial,sans-serif}
+.new-chat{border:0;border-radius:12px;background:#005c4b;color:white;padding:13px 16px;text-align:center;font-weight:700}
+.new-chat:hover{background:#087967}.side-label{padding:5px 10px;color:#8696a0}
+.history button{padding:15px 12px;border-radius:10px;border-bottom:1px solid #243139;color:#e9edef}
+.history button.active,.history button:hover{background:#202c33}
+.sidebar-footer{border-color:#29363d}.main{background:var(--wa-chat);min-width:0}
+.topbar{min-height:70px;padding:10px 23px;background:var(--wa-panel);border-bottom:1px solid var(--wa-line)}
+.topbar>div{gap:12px!important}.wa-avatar{width:44px;height:44px;flex:none;display:grid;place-items:center;border-radius:50%;background:linear-gradient(140deg,#008069,#075e54);color:white;font-size:1.45rem}
+.wa-contact{display:flex;flex-direction:column;gap:1px}.wa-contact strong{font-size:1rem;font-weight:750;color:#f0f4f5}.wa-contact small{font-size:.77rem;color:#aebfc7}
+.ai-top-label{font-size:.78rem;color:#86d8b2}
+.chat-scroll{background-color:#0b141a;background-image:radial-gradient(#263a382c 1px,transparent 1px);background-size:28px 28px}
+.messages{width:min(950px,calc(100% - 42px));padding:28px 0 34px;gap:13px}
+.message{font-size:.96rem;line-height:1.65;box-shadow:0 1px 2px #0003}
+.message.user{max-width:77%;align-self:flex-end;background:#005c4b;color:#fff;border:0;border-radius:12px 12px 3px 12px;padding:11px 15px}
+.message.assistant{max-width:88%;width:auto;align-self:flex-start;background:#202c33;color:#e9edef;border:0;border-radius:12px 12px 12px 3px;padding:15px 19px;box-shadow:0 1px 3px #0003}
+.formatted-answer{font-size:.96rem;line-height:1.72}.formatted-answer h2,.formatted-answer h3,.formatted-answer h4,.formatted-answer h5{color:inherit;font-weight:750}
+.formatted-answer li::marker{color:#64d7a3}.formatted-answer hr{border-color:#405159}
+.formatted-answer code{background:#ffffff14}
+.composer-wrap{padding:12px 18px 13px;background:#202c33;border-top:1px solid #314149}
+.composer{display:flex;align-items:flex-end;gap:10px;width:min(950px,100%);background:transparent;border:0;border-radius:0;box-shadow:none;padding:0}
+.composer:focus-within{border:0;box-shadow:none}
+.composer textarea{flex:1;min-height:46px;max-height:160px;resize:none;border:1px solid #3a4a53;border-radius:23px;background:#2a3942;color:#f0f4f5;padding:11px 18px;font-size:.98rem;line-height:1.45}
+.composer textarea:focus{border-color:#568d7b;outline:none}.composer textarea::placeholder{color:#aab7be}
+.composer-bottom{display:flex;align-items:center;gap:0}.hint{display:none}
+.send{height:46px;width:46px;padding:0;border-radius:50%;background:#00a884;color:white;font-size:1.35rem;display:grid;place-items:center;box-shadow:none}
+.send:hover:not(:disabled){background:#06bd95}.status{width:min(950px,100%);margin:5px auto 0;color:#a8b9c0}
+.disclaimer{width:min(950px,100%);color:#a8b9c0;font-size:.68rem;margin:2px auto 0}
+.welcome{background:#15252b;border:1px solid #31444a;border-radius:22px;max-width:680px;margin:6vh auto 0;padding:32px 25px}
+.welcome h1{color:#f1f6f5}.welcome .mark{color:#65d6ac}.welcome p{color:#bac8cb}
+.example{background:#202f35;color:#f1f6f5;border:1px solid #3c5057;border-radius:12px}.example:hover{background:#2c4448;border-color:#4bbd9d}
+html.kw-light .sidebar{background:#f8faf9!important;border-color:#d9e3df!important}
+html.kw-light .main{background:#efeae2!important}
+html.kw-light .topbar{background:#f0f2f5!important;border-color:#dce4e7!important}
+html.kw-light .wa-contact strong{color:#172b32!important}html.kw-light .wa-contact small{color:#667781!important}
+html.kw-light .chat-scroll{background-color:#efeae2!important;background-image:radial-gradient(#b9c5bc38 1px,transparent 1px)!important}
+html.kw-light .message.user{background:#d9fdd3!important;color:#172b32!important;border:0!important}
+html.kw-light .message.assistant{background:#fff!important;color:#172b32!important;border:0!important;box-shadow:0 1px 2px #0002!important}
+html.kw-light .composer-wrap{background:#f0f2f5!important;border-color:#dce4e7!important}
+html.kw-light .composer{background:transparent!important;border:0!important}
+html.kw-light .composer textarea{background:#fff!important;color:#172b32!important;border-color:#e3e8e9!important}
+html.kw-light .send{background:#00a884!important;color:white!important}
+html.kw-light .welcome{background:#fff!important;border-color:#dce4e7!important}
+html.kw-light .welcome h1{color:#172b32!important}
+html.kw-light .example{background:#f8faf9!important;color:#172b32!important;border-color:#dce4e7!important}
+html.kw-light .formatted-answer h2,html.kw-light .formatted-answer h3,html.kw-light .formatted-answer h4,html.kw-light .formatted-answer h5{color:#172b32!important}
+@media(max-width:750px){.shell{grid-template-columns:1fr}.sidebar{width:min(320px,85vw);z-index:20}.topbar{min-height:62px;padding:9px 13px}.wa-avatar{width:39px;height:39px}.ai-top-label{display:none}.mobile-toggle{color:#e9edef;border-color:#617078}.messages{width:calc(100% - 22px);padding:16px 0 22px}.message.user{max-width:88%}.message.assistant{max-width:95%;padding:13px 14px}.composer-wrap{padding:9px 10px}.composer textarea{min-height:43px}.send{height:43px;width:43px}.welcome{margin:22px auto;padding:24px 16px}}
+html.kw-light .mobile-toggle{color:#172b32!important}
 </style></head><body><header class="kwa-header"><nav class="kwa-nav" aria-label="Main navigation"><a class="kwa-brand" href="index.html"><span class="kwa-mark">✒</span><span><strong>Kitsamba Writes Africa</strong><small>African stories · Global voices</small></span></a><div class="kwa-links"><a class="kwa-subscribe-link" href="subscriptions.html">★ Subscriptions</a><a href="index.html">Home</a><a href="about.html">About</a><a href="authors.html">Authors</a><a href="novels.html">Novels</a><a href="book.html">Book Library</a><a href="free-books.html">Free Books</a><a href="articles.html">Articles</a><a href="blog.html">Blog</a><a href="lifestyle.html">Lifestyle</a><a href="plays.html">Plays</a><a href="poems.html">Poems</a><a href="videos.html">Videos</a><a href="stakeholders.html">Stakeholders</a><a href="contact.html">Contact</a><a href="settings.html">Settings</a></div><div class="kwa-actions"><a class="kwa-ask-ai" href="ask-ai.html">✦ Ask AI</a><a class="kwa-login" href="login.html">Login / Create Account</a><button class="kwa-menu" type="button" aria-label="Show navigation" aria-expanded="true">MENU ☰</button></div></nav></header><div class="shell">
 <aside class="sidebar" id="sidebar"><a class="brand" href="index.html"><span class="logo">KWA</span><span>Kitsamba Writes Africa</span></a><button class="new-chat" id="newChat">＋ New chat</button><div class="side-label">This session</div><div class="history" id="history"></div><div class="sidebar-footer"><p class="version">KWA AI · Kitsamba Writes Africa</p></div></aside>
-<div class="main"><header class="topbar"><div style="display:flex;align-items:center;gap:12px"><button class="mobile-toggle" id="menu" aria-label="Toggle sidebar">☰</button><strong>KWA AI <small style="color:#d8ac56;font-weight:500">· Kitsamba Writes Africa</small></strong></div><span class="ai-top-label">African literature · Writing · Learning</span></header>
+<div class="main"><header class="topbar"><div style="display:flex;align-items:center;gap:12px"><button class="mobile-toggle" id="menu" aria-label="Toggle sidebar">☰</button><span class="wa-avatar" aria-hidden="true">✦</span><span class="wa-contact"><strong>KWA AI</strong><small>Literature · Writing · Learning</small></span></div><span class="ai-top-label">✦ AI assistant</span></header>
 <div class="chat-scroll" id="scroll"><div class="messages" id="messages"><section class="welcome" id="welcome"><div class="mark">KWA AI</div><h1>Explore African stories and ideas.</h1><p>Your Kitsamba Writes Africa assistant for literature, creative writing and learning.</p><div class="examples"><button class="example" data-question="Explain the major themes of African literature.">Explore African literary themes</button><button class="example" data-question="Help me plan an original short story set in Uganda.">Plan an original short story</button><button class="example" data-question="How do I analyze a poem for a literature essay?">Learn poetry analysis</button><button class="example" data-question="Help me improve my English grammar.">Improve my English grammar</button></div></section></div></div>
-<div class="composer-wrap"><form class="composer" id="form"><textarea id="prompt" placeholder="Message KWA AI…" aria-label="Your question" maxlength="4000" required></textarea><div class="composer-bottom"><span class="hint">Enter to send · Shift+Enter for a new line</span><button class="send" id="send" type="submit">Send ↑</button></div></form><div class="status" id="status" role="status">Connecting to AI service…</div><p class="disclaimer">AI can make mistakes. Check important information. Never share passwords or private details.</p></div>
+<div class="composer-wrap"><form class="composer" id="form"><textarea id="prompt" placeholder="Type a message" aria-label="Your question" maxlength="4000" required></textarea><div class="composer-bottom"><span class="hint">Enter to send · Shift+Enter for a new line</span><button class="send" id="send" type="submit" aria-label="Send message">➤</button></div></form><div class="status" id="status" role="status">Connecting to AI service…</div><p class="disclaimer">AI can make mistakes. Check important information. Never share passwords or private details.</p></div>
 </div></div>
 <script type="module">
 const $=id=>document.getElementById(id),messages=$("messages"),history=$("history"),status=$("status"),prompt=$("prompt"),send=$("send"),scroll=$("scroll");
