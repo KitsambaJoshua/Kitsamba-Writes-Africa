@@ -1,0 +1,20 @@
+// Copy these rules into Firebase Console > Firestore Database > Rules,
+// merging with your existing rules rather than replacing other collections.
+// A signed-in user may only read/write their own AI conversations.
+rules_version = '2';
+service cloud.firestore {
+ match /databases/{database}/documents {
+  match /users/{userId}/kwaAiChats/{chatId} {
+   allow read, delete: if request.auth != null && request.auth.uid == userId;
+   allow create, update: if request.auth != null
+    && request.auth.uid == userId
+    && request.resource.data.keys().hasOnly(['title','messages','updatedAt'])
+    && request.resource.data.title is string
+    && request.resource.data.title.size() <= 100
+    && request.resource.data.messages is list
+    && request.resource.data.messages.size() <= 100
+    && request.resource.data.updatedAt is timestamp
+    && request.resource.size() < 1000000;
+  }
+ }
+}
